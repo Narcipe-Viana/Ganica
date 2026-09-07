@@ -810,6 +810,75 @@
   .diag-success h3{ margin-top:8px; }
   .diag-success p{ color:var(--body-on-light); margin-top:12px; max-width:44ch; margin-left:auto; margin-right:auto; }
   .diag-success .btn{ margin-top:24px; }
+
+  /* ---------- Estudo (dados de mercado) ---------- */
+  .estudo{ background:var(--paper-alt); }
+  .stat-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    margin-bottom:44px;
+  }
+  @media (min-width:800px){
+    .stat-grid{ grid-template-columns:repeat(3,1fr); column-gap:56px; }
+    .stat-item{ border-top:none; padding-top:0; position:relative; }
+    .stat-item:not(:first-child)::before{
+      content:"";
+      position:absolute;
+      left:-28px;
+      top:4px;
+      bottom:4px;
+      width:1px;
+      background:var(--line-light);
+    }
+  }
+  .stat-item{
+    padding:26px 0;
+    border-top:1px solid var(--line-light);
+  }
+  .stat-number{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:2.5rem;
+    font-weight:600;
+    color:var(--gold-deep);
+    line-height:1;
+    margin-bottom:12px;
+  }
+  .stat-label{
+    color:var(--body-on-light);
+    font-size:0.95rem;
+    max-width:34ch;
+  }
+  .estudo-insight{
+    max-width:760px;
+    padding-top:32px;
+    border-top:1px solid var(--line-light);
+  }
+  .estudo-insight p{
+    color:var(--body-on-light);
+    font-size:1.02rem;
+    max-width:66ch;
+  }
+  .estudo-actions{
+    margin-top:24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px;
+    align-items:center;
+  }
+  .estudo-link{
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--ink);
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:var(--line-light);
+  }
+  .estudo-link:hover{ text-decoration-color:var(--ink); }
+  @media (max-width:479px){
+    .estudo-actions{ flex-direction:column; align-items:stretch; }
+    .estudo-actions .btn{ width:100%; text-align:center; }
+  }
 </style>
 </head>
 <body>
@@ -823,6 +892,7 @@
     </div>
     <nav class="nav-links">
       <a href="#metodo">Método</a>
+      <a href="#estudo">Estudo</a>
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#principios">Princípios</a>
       <a href="#sobre">Sobre</a>
@@ -835,6 +905,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="#metodo">Método</a>
+      <a href="#estudo">Estudo</a>
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#principios">Princípios</a>
       <a href="#sobre">Sobre</a>
@@ -971,6 +1042,38 @@
       <text x="300" y="234" font-family="Work Sans, sans-serif" font-size="15" fill="#8A93A8">Entrega</text>
     </svg>
     <p class="mobile-chart-caption">Exemplo ilustrativo — não representa um cliente específico.</p>
+  </div>
+</section>
+
+<section id="estudo" class="estudo">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>O mercado cresceu 86% em 5 anos. Mas não do jeito que a maioria pensa.</h2>
+      <p>Cruzamos os dados da Abiacom entre 2020 e 2025 para entender de onde vem o crescimento do e-commerce brasileiro — e o que isso muda na hora de decidir onde investir.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-number">+86,2%</div>
+        <p class="stat-label">Crescimento do faturamento do e-commerce brasileiro entre 2020 e 2025</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+22,4%</div>
+        <p class="stat-label">Crescimento da base de compradores online no mesmo período</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+52,2%</div>
+        <p class="stat-label">Crescimento da receita gerada por cada comprador — mais que o dobro da base</p>
+      </div>
+    </div>
+
+    <div class="estudo-insight">
+      <p>A conclusão prática: a maior parte da expansão do setor vem de quem já compra gastando mais e com mais frequência — não da chegada de compradores novos. Isso muda a prioridade de quem vende online: otimizar a conversão e o ticket médio de quem já visita a loja tende a valer mais do que só aumentar o tráfego.</p>
+      <div class="estudo-actions">
+        <a href="/crescimento-ecommerce-brasil-receita-por-cliente.html" class="btn btn-ink js-track-click" data-cta-location="estudo_home">Ler o estudo completo</a>
+        <a href="#diagnostico" class="link-secondary estudo-link js-track-click" data-cta-location="estudo_home_secondary">Ver como isso se aplica à sua loja →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1157,6 +1260,7 @@
       <div class="brand-mark" style="font-size:1.1rem;">Ganica</div>
       <div class="footer-links">
         <a href="#metodo">Método</a>
+        <a href="#estudo">Estudo</a>
         <a href="#diagnostico">Diagnóstico</a>
         <a href="#principios">Princípios</a>
         <a href="#sobre">Sobre</a>
@@ -1353,7 +1457,7 @@
   // ------------------------------------------------------------
   (function(){
     window.dataLayer = window.dataLayer || [];
-    var sectionIds = ['diferenciais', 'metodo', 'diagnostico', 'principios', 'sobre'];
+    var sectionIds = ['diferenciais', 'metodo', 'estudo', 'diagnostico', 'principios', 'sobre'];
     if(!('IntersectionObserver' in window)) return;
 
     var observer = new IntersectionObserver(function(entries){
@@ -1386,6 +1490,18 @@
       dataLayer.push({ event: 'select_content', content_type: 'metodo_scroll' });
     });
   })();
+</script>
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
 </script>
 </body>
 </html>
