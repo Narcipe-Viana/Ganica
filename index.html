@@ -441,6 +441,11 @@
     font-size:0.8rem;
     color:var(--body-on-dark);
   }
+  @media (max-width:759px){
+    /* mobile-chart-section and #estudo are both dark; without this
+       hairline they'd merge into one undifferentiated block. */
+    #estudo{ border-top:1px solid var(--line-dark); }
+  }
 
   /* ---------- Differentiators ---------- */
   .diff-grid{
@@ -811,74 +816,77 @@
   .diag-success p{ color:var(--body-on-light); margin-top:12px; max-width:44ch; margin-left:auto; margin-right:auto; }
   .diag-success .btn{ margin-top:24px; }
 
-  /* ---------- Estudo (dados de mercado) ---------- */
-  .estudo{ background:var(--paper-alt); }
-  .stat-grid{
+  /* ---------- Estudo (lista de estudos) ---------- */
+  .estudo{ background:var(--ink); color:var(--cream); }
+  .estudo .section-head h2{ color:var(--cream); }
+  .estudo .section-head p{ color:var(--body-on-dark); }
+  .estudo-list{
     display:grid;
     grid-template-columns:1fr;
     gap:0;
-    margin-bottom:44px;
+  }
+  .estudo-entry{
+    padding:40px 0;
+  }
+  @media (max-width:799px){
+    .estudo-entry{ border-top:1px solid var(--line-dark); }
+    .estudo-entry:first-child{ border-top:none; padding-top:0; }
   }
   @media (min-width:800px){
-    .stat-grid{ grid-template-columns:repeat(3,1fr); column-gap:56px; }
-    .stat-item{ border-top:none; padding-top:0; position:relative; }
-    .stat-item:not(:first-child)::before{
+    .estudo-list{ grid-template-columns:repeat(2,1fr); column-gap:64px; }
+    .estudo-entry{ padding-top:0; position:relative; }
+    .estudo-entry:not(:first-child)::before{
       content:"";
       position:absolute;
-      left:-28px;
+      left:-32px;
       top:4px;
       bottom:4px;
       width:1px;
-      background:var(--line-light);
+      background:var(--line-dark);
     }
   }
-  .stat-item{
-    padding:26px 0;
-    border-top:1px solid var(--line-light);
-  }
-  .stat-number{
-    font-family:'Frank Ruhl Libre', serif;
-    font-size:2.5rem;
+  .estudo-entry .kicker{
+    font-size:0.78rem;
+    color:var(--gold);
     font-weight:600;
-    color:var(--gold-deep);
-    line-height:1;
-    margin-bottom:12px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
   }
-  .stat-label{
-    color:var(--body-on-light);
-    font-size:0.95rem;
-    max-width:34ch;
+  .estudo-tag{
+    display:inline-block;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.82rem;
+    font-weight:600;
+    color:var(--gold);
+    border:1px solid rgba(201,154,68,0.4);
+    border-radius:2px;
+    padding:5px 11px;
+    margin-top:16px;
+    margin-bottom:18px;
   }
-  .estudo-insight{
-    max-width:760px;
-    padding-top:32px;
-    border-top:1px solid var(--line-light);
+  .estudo-entry h3{
+    font-size:clamp(1.2rem,2.2vw,1.5rem);
+    color:var(--cream);
+    margin-bottom:14px;
+    line-height:1.3;
   }
-  .estudo-insight p{
-    color:var(--body-on-light);
-    font-size:1.02rem;
-    max-width:66ch;
-  }
-  .estudo-actions{
-    margin-top:24px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:24px;
-    align-items:center;
+  .estudo-entry h3 a{ color:inherit; }
+  .estudo-entry h3 a:hover{ color:var(--gold); }
+  .estudo-entry p{
+    color:var(--body-on-dark);
+    font-size:0.98rem;
+    max-width:46ch;
+    margin-bottom:18px;
   }
   .estudo-link{
     font-weight:600;
     font-size:0.95rem;
-    color:var(--ink);
+    color:var(--cream);
     text-decoration:underline;
     text-underline-offset:4px;
-    text-decoration-color:var(--line-light);
+    text-decoration-color:var(--line-dark);
   }
-  .estudo-link:hover{ text-decoration-color:var(--ink); }
-  @media (max-width:479px){
-    .estudo-actions{ flex-direction:column; align-items:stretch; }
-    .estudo-actions .btn{ width:100%; text-align:center; }
-  }
+  .estudo-link:hover{ color:var(--gold); text-decoration-color:var(--gold); }
 </style>
 </head>
 <body>
@@ -1048,31 +1056,26 @@
 <section id="estudo" class="estudo">
   <div class="wrap">
     <div class="section-head">
-      <h2>O mercado cresceu 86% em 5 anos. Mas não do jeito que a maioria pensa.</h2>
-      <p>Cruzamos os dados da Abiacom entre 2020 e 2025 para entender de onde vem o crescimento do e-commerce brasileiro — e o que isso muda na hora de decidir onde investir.</p>
+      <h2>Estudos exclusivos de CRO</h2>
+      <p>Levantamentos próprios sobre e-commerce e CRO (dado de mercado, heatmap real, comportamento de usuário), publicados à medida que o trabalho de diagnóstico avança.</p>
     </div>
 
-    <div class="stat-grid">
-      <div class="stat-item">
-        <div class="stat-number">+86,2%</div>
-        <p class="stat-label">Crescimento do faturamento do e-commerce brasileiro entre 2020 e 2025</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">+22,4%</div>
-        <p class="stat-label">Crescimento da base de compradores online no mesmo período</p>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">+52,2%</div>
-        <p class="stat-label">Crescimento da receita gerada por cada comprador — mais que o dobro da base</p>
-      </div>
-    </div>
+    <div class="estudo-list">
+      <article class="estudo-entry">
+        <div class="kicker">01 · E-commerce · Dado de mercado</div>
+        <div class="estudo-tag">+86,2% de crescimento em 5 anos</div>
+        <h3><a href="/crescimento-ecommerce-brasil-receita-por-cliente.html" class="js-track-click" data-cta-location="estudo_home_1_titulo">O mercado cresceu 86% em 5 anos. Mas não do jeito que a maioria pensa.</a></h3>
+        <p>Cruzamos os dados da Abiacom entre 2020 e 2025 para entender de onde vem o crescimento do e-commerce brasileiro e o que isso muda na hora de decidir onde investir.</p>
+        <a href="/crescimento-ecommerce-brasil-receita-por-cliente.html" class="estudo-link js-track-click" data-cta-location="estudo_home_1_link">Ler o estudo completo →</a>
+      </article>
 
-    <div class="estudo-insight">
-      <p>A conclusão prática: a maior parte da expansão do setor vem de quem já compra gastando mais e com mais frequência — não da chegada de compradores novos. Isso muda a prioridade de quem vende online: otimizar a conversão e o ticket médio de quem já visita a loja tende a valer mais do que só aumentar o tráfego.</p>
-      <div class="estudo-actions">
-        <a href="/crescimento-ecommerce-brasil-receita-por-cliente.html" class="btn btn-ink js-track-click" data-cta-location="estudo_home">Ler o estudo completo</a>
-        <a href="#diagnostico" class="link-secondary estudo-link js-track-click" data-cta-location="estudo_home_secondary">Ver como isso se aplica à sua loja →</a>
-      </div>
+      <article class="estudo-entry">
+        <div class="kicker">02 · CRO · Heatmap real</div>
+        <div class="estudo-tag">6 em 7 marketplaces não usam CTA na listagem</div>
+        <h3><a href="/botao-comprar-listagem-produtos-heatmap.html" class="js-track-click" data-cta-location="estudo_home_2_titulo">Colocar um botão de comprar direto na página de listagem, ou só na página do produto?</a></h3>
+        <p>Heatmaps reais de dois e-commerces brasileiros, cruzados com o comportamento de 7 grandes marketplaces, respondem a essa pergunta e mostram onde o clique realmente vai numa página de listagem.</p>
+        <a href="/botao-comprar-listagem-produtos-heatmap.html" class="estudo-link js-track-click" data-cta-location="estudo_home_2_link">Ler o estudo completo →</a>
+      </article>
     </div>
   </div>
 </section>
