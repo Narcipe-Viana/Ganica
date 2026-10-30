@@ -479,3 +479,47 @@
   .footer-links a:hover{ color:var(--cream); }
 
   .nw{ white-space:nowrap; }
+
+  /* Etiqueta "Novo" (estudo publicado há até 7 dias) */
+  .tag-novo{
+    display:inline-block;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.68rem;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    line-height:1;
+    color:var(--ink);
+    background:var(--gold);
+    padding:6px 9px 5px;
+    border-radius:2px;
+    vertical-align:middle;
+  }
+  .article-hero .tag-novo{ margin-bottom:18px; }
+
+  /* Resposta direta: o parágrafo que responde a pergunta do título (citável por IA) */
+  .resposta-curta{
+    border-left:3px solid var(--gold);
+    background:var(--cream);
+    padding:22px 24px 22px 22px;
+    margin-bottom:28px;
+  }
+  .resposta-curta .kicker{
+    font-size:0.8rem;
+    color:var(--gold-deep);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .resposta-curta p{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:1.18rem;
+    line-height:1.55;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (min-width:760px){
+    .resposta-curta{ padding:26px 30px 26px 28px; }
+    .resposta-curta p{ font-size:1.28rem; }
+  }

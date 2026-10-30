@@ -1,5 +1,8 @@
 {%- set urlArtigo = site.url + page.url -%}
 {%- set minutos = content | leitura -%}
+{%- set og = imagem_og or ("/assets/og/" + slug + ".png") -%}
+{%- set dataPub = date | dataISO -%}
+{%- set dataMod = (updated or date) | dataISO -%}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,7 +28,7 @@
 <title>{{ seo_title or title }}</title>
 
 <meta name="description" content="{{ description }}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="{{ site.autor }}">
 <link rel="canonical" href="{{ urlArtigo }}">
 <meta name="theme-color" content="#161B2C">
@@ -36,25 +39,23 @@
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ urlArtigo }}">
 <meta property="og:locale" content="pt_BR">
-<meta property="article:published_time" content="{{ date | dataISO }}T00:00:00-03:00">
-<meta property="article:modified_time" content="{{ (updated or date) | dataISO }}T00:00:00-03:00">
+<meta property="article:published_time" content="{{ dataPub }}T00:00:00-03:00">
+<meta property="article:modified_time" content="{{ dataMod }}T00:00:00-03:00">
 <meta property="article:author" content="{{ site.autor }}">
 <meta property="article:section" content="{{ secao or 'E-commerce' }}">
 {%- for t in tags_artigo %}
 <meta property="article:tag" content="{{ t }}">
 {%- endfor %}
-{%- if imagem_og %}
-<meta property="og:image" content="{{ site.url }}{{ imagem_og }}">
+<meta property="og:image" content="{{ site.url }}{{ og }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-{%- endif %}
+<meta property="og:image:alt" content="{{ title }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ seo_title or title }}">
 <meta name="twitter:description" content="{{ twitter_description or description }}">
-{%- if imagem_og %}
-<meta name="twitter:image" content="{{ site.url }}{{ imagem_og }}">
-{%- endif %}
+<meta name="twitter:image" content="{{ site.url }}{{ og }}">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
@@ -72,6 +73,7 @@
       "url": "{{ site.url }}/",
       "description": {{ site.orgDescricao | json | safe }},
       "email": "{{ site.email }}",
+      "logo": { "@type": "ImageObject", "url": "{{ site.url }}/logo-ganica.png", "width": 512, "height": 512 },
       "areaServed": { "@type": "Country", "name": "Brasil" },
       "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
       "founder": { "@id": "{{ site.url }}/#narcipe-viana" }
@@ -81,6 +83,8 @@
       "@id": "{{ site.url }}/#narcipe-viana",
       "name": "{{ site.autor }}",
       "jobTitle": "{{ site.autorCargo }}",
+      "url": "{{ site.url }}/#sobre",
+      "image": "{{ site.url }}/assets/img/narcipe-viana.jpg",
       "worksFor": { "@id": "{{ site.url }}/#organization" },
       "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
     },
@@ -97,8 +101,18 @@
       "@id": "{{ urlArtigo }}#article",
       "headline": {{ title | json | safe }},
       "description": {{ description | json | safe }},
-      "datePublished": "{{ date | dataISO }}",
-      "dateModified": "{{ (updated or date) | dataISO }}",
+      "datePublished": "{{ dataPub }}T00:00:00-03:00",
+      "dateModified": "{{ dataMod }}T00:00:00-03:00",
+      {%- if resposta_curta %}
+      "abstract": {{ resposta_curta | textoPuro | json | safe }},
+      {%- endif %}
+      "image": { "@type": "ImageObject", "url": "{{ site.url }}{{ og }}", "width": 1200, "height": 630 },
+      "wordCount": {{ content | palavras }},
+      "timeRequired": "PT{{ minutos }}M",
+      "isAccessibleForFree": true,
+      {%- if fontes_urls and fontes_urls.length %}
+      "citation": [{% for u in fontes_urls %}{{ u | json | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+      {%- endif %}
       "inLanguage": "pt-BR",
       "author": { "@id": "{{ site.url }}/#narcipe-viana" },
       "publisher": { "@id": "{{ site.url }}/#organization" },
@@ -106,9 +120,6 @@
       "articleSection": {{ (secao or "E-commerce") | json | safe }},
       "keywords": {{ (keywords or []) | json | safe }},
       "about": [{% for a in (sobre or []) %}{ "@type": "Thing", "name": {{ a | json | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}],
-      {%- if imagem_og %}
-      "image": "{{ site.url }}{{ imagem_og }}",
-      {%- endif %}
       "isPartOf": { "@id": "{{ site.url }}/#website" }
     },
     {
@@ -138,6 +149,7 @@
 
 <section class="article-hero">
   <div class="wrap">
+    {%- if date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}
     <p class="breadcrumb">
       <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>{{ breadcrumb }}
     </p>
@@ -146,7 +158,7 @@
     <div class="article-meta">
       <span>Por <strong>{{ site.autor }}</strong></span>
       <span class="dot">·</span>
-      <span>Atualizado em {{ (updated or date) | dataBR }}</span>
+      <span>Atualizado em <time datetime="{{ dataMod }}">{{ (updated or date) | dataBR }}</time></span>
       <span class="dot">·</span>
       <span>{{ minutos }} min de leitura</span>
     </div>
@@ -155,6 +167,13 @@
 
 <section class="article-body">
   <div class="prose">
+
+    {%- if resposta_curta %}
+    <div class="resposta-curta">
+      <div class="kicker">Resposta direta</div>
+      <p>{{ resposta_curta | mdInline | safe }}</p>
+    </div>
+    {%- endif %}
 
     {%- if resumo and resumo.length %}
     <div class="resumo-box">

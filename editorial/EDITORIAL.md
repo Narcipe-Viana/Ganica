@@ -38,7 +38,8 @@ Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos
 2. `seo_title`: até 65 caracteres, com a palavra-chave principal perto do início.
 3. `description`: 120 a 160 caracteres, com a palavra-chave e o achado principal.
 4. `deck`: linha fina de 1 a 2 frases que diz o que o leitor vai entender.
-5. `resumo`: 4 ou 5 itens (o "Resumo rápido"), cada um com um fato ou conclusão concreta; números em **negrito**.
+5. `resposta_curta`: 40 a 70 palavras que respondem o título por inteiro (ver seção 8).
+   `resumo`: 4 ou 5 itens (o "Resumo rápido"), cada um com um fato ou conclusão concreta; números em **negrito**.
 6. Corpo (Markdown) com **pelo menos 5 seções `##`**, entre **1.200 e 2.000 palavras**, contendo:
    - o problema como o mercado costuma enxergar;
    - a evidência (dado público verificado, levantamento próprio, ou caso anonimizado autorizado);
@@ -110,3 +111,49 @@ de `.qa/` do artigo em 390px antes de publicar: tabela legível, títulos sem qu
   `description`, no primeiro parágrafo e em pelo menos um `##`.
 - Não repetir tema já publicado (ler `src/artigos/` antes).
 - Schema (BlogPosting + BreadcrumbList) é gerado pelo template. FAQPage não é usado de propósito.
+
+## 8. GEO: escrever para ser citado por IA (ChatGPT, Gemini, AI Overviews/AI Mode, Perplexity, Claude)
+
+Motores de resposta não leem o artigo inteiro: eles recortam **trechos** que respondem bem a uma
+pergunta e citam quem parece a fonte mais confiável. Cada estudo é escrito para ser recortado.
+
+**Resposta primeiro**
+- `resposta_curta` (obrigatória): 40 a 70 palavras que respondem a pergunta do título de forma
+  completa, sem depender do resto do texto. Começa pela resposta, não pelo contexto. Aparece no topo
+  do artigo ("Resposta direta") e vai para o schema como `abstract`.
+- Em cada seção `##`, a **primeira frase responde** o que o título da seção promete. Detalhe e
+  nuance vêm depois.
+
+**Títulos que são perguntas reais**
+- Pelo menos metade dos `##` em forma de pergunta que alguém digitaria ou falaria para uma IA
+  ("Por que o mobile converte menos no checkout?", "Como montar o funil por dispositivo no GA4?").
+- Variações naturais da palavra-chave e perguntas relacionadas (o que, por que, como, quanto,
+  quando, vale a pena) espalhadas entre títulos e FAQ.
+
+**Trechos autossuficientes**
+- Cada parágrafo se sustenta sozinho: retome o sujeito ("o checkout mobile", e não "ele"),
+  evite "como vimos acima". Parágrafos de 2 a 4 frases.
+- Defina o termo técnico na primeira vez que aparece, numa frase do tipo "X é Y que Z".
+- Ao menos uma **lista numerada de passos** (o método) e uma **tabela** comparativa quando houver
+  dado, porque são os formatos mais extraídos por IA.
+
+**Fatos com atribuição explícita**
+- Número sempre colado à fonte na mesma frase ("segundo o Banco Central, ...", "em análise da
+  Ganica de um e-commerce de saúde, ..."). IA cita frase com fonte; frase sem fonte é descartada.
+- `fontes_urls`: lista com o link de cada fonte primária citada (vai para o schema como `citation`).
+- Datas e períodos explícitos para dado público ("em 2025", "entre 2020 e 2025").
+
+**Autoridade e entidade**
+- Escrever como quem fez a análise: "na Ganica, quando analisamos...", "o método que usamos nos
+  diagnósticos é...". Experiência de primeira mão é o principal diferencial frente a conteúdo genérico.
+- Nome da Ganica e do autor de forma consistente. Não inventar credenciais, clientes ou resultados.
+- Seção "O que ainda não sabemos": honestidade sobre limites aumenta a confiança de quem cita.
+
+**FAQ**
+- 3 a 5 perguntas que **não** repetem os títulos `##`; respostas de 2 a 4 frases, começando pela
+  resposta ("Sim.", "Não.", "Depende de X: ...").
+
+**Técnico (já automático no template)**
+- BlogPosting com `abstract`, `citation`, `image`, `wordCount`, datas com fuso, autor e organização
+  ligados por `@id`; BreadcrumbList; índice `/estudos/` com ItemList; `/feed.xml`; `/llms.txt`;
+  imagem de compartilhamento gerada por `scripts/og.py`.

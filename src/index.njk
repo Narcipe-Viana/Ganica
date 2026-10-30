@@ -40,17 +40,16 @@
 <meta property="og:description" content="Diagnóstico, priorização e execução guiadas por dados, com escopo e prazo fechados. Consultoria independente de CRO para e-commerce.">
 <meta property="og:url" content="https://ganica.com.br/">
 <meta property="og:locale" content="pt_BR">
-<!-- TODO: hospedar uma imagem 1200x630 (ex.: /og-image.jpg) e descomentar as 3 linhas abaixo.
-     Imagens em base64 não funcionam para og:image — precisa ser uma URL pública. -->
-<!-- <meta property="og:image" content="https://ganica.com.br/og-image.jpg"> -->
-<!-- <meta property="og:image:width" content="1200"> -->
-<!-- <meta property="og:image:height" content="630"> -->
+<meta property="og:image" content="https://ganica.com.br/assets/og/ganica.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ganica — Consultoria de CRO para e-commerce">
 <meta name="twitter:description" content="Diagnóstico, priorização e execução guiadas por dados, com escopo e prazo fechados.">
-<!-- <meta name="twitter:image" content="https://ganica.com.br/og-image.jpg"> -->
+<meta name="twitter:image" content="https://ganica.com.br/assets/og/ganica.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
 
 <!-- ==========================================================
      ÍCONE DO NAVEGADOR (favicon)
@@ -74,6 +73,7 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://ganica.com.br/#organization",
+      "logo": { "@type": "ImageObject", "url": "https://ganica.com.br/logo-ganica.png", "width": 512, "height": 512 },
       "name": "Ganica",
       "url": "https://ganica.com.br/",
       "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
@@ -132,7 +132,7 @@
     </div>
     <nav class="nav-links">
       <a href="#metodo">Método</a>
-      <a href="#estudo">Estudo</a>
+      <a href="/estudos/">Estudos</a>
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#principios">Princípios</a>
       <a href="#sobre">Sobre</a>
@@ -145,7 +145,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav class="mobile-menu-links">
       <a href="#metodo">Método</a>
-      <a href="#estudo">Estudo</a>
+      <a href="/estudos/">Estudos</a>
       <a href="#diagnostico">Diagnóstico</a>
       <a href="#principios">Princípios</a>
       <a href="#sobre">Sobre</a>
@@ -296,7 +296,7 @@
       {%- set total = collections.estudos | length %}
       {%- for e in collections.estudos.slice(0, 2) %}
       <article class="estudo-entry">
-        <div class="kicker">{{ (total - loop.index0) | pad2 }} · {{ e.data.card_kicker }}</div>
+        <div class="kicker">{%- if e.data.date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}{{ (total - loop.index0) | pad2 }} · {{ e.data.card_kicker }}</div>
         <div class="estudo-tag">{{ e.data.card_destaque }}</div>
         <h3><a href="{{ e.url }}" class="js-track-click" data-cta-location="estudo_home_{{ loop.index }}_titulo">{{ (e.data.card_titulo or e.data.title) | semQuebraHifen | safe }}</a></h3>
         <p>{{ e.data.card_resumo or e.data.description }}</p>
@@ -496,7 +496,7 @@
       <div class="brand-mark" style="font-size:1.1rem;">Ganica</div>
       <div class="footer-links">
         <a href="#metodo">Método</a>
-        <a href="#estudo">Estudo</a>
+        <a href="/estudos/">Estudos</a>
         <a href="#diagnostico">Diagnóstico</a>
         <a href="#principios">Princípios</a>
         <a href="#sobre">Sobre</a>

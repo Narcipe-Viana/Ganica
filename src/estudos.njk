@@ -14,7 +14,7 @@ permalink: /estudos/index.html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estudos exclusivos de CRO para e-commerce | Ganica</title>
 <meta name="description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão analisados com rigor, sem achismo.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="{{ site.url }}/estudos/">
 <meta name="theme-color" content="#161B2C">
 <meta property="og:type" content="website">
@@ -23,29 +23,83 @@ permalink: /estudos/index.html
 <meta property="og:description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão.">
 <meta property="og:url" content="{{ site.url }}/estudos/">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="{{ site.url }}/assets/og/estudos.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Estudos exclusivos de CRO para e-commerce">
+<meta name="twitter:description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão.">
+<meta name="twitter:image" content="{{ site.url }}/assets/og/estudos.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollectionPage",
+      "@type": "ProfessionalService",
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.nome }}",
+      "url": "{{ site.url }}/",
+      "logo": { "@type": "ImageObject", "url": "{{ site.url }}/logo-ganica.png", "width": 512, "height": 512 },
+      "email": "{{ site.email }}",
+      "founder": { "@id": "{{ site.url }}/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#narcipe-viana",
+      "name": "{{ site.autor }}",
+      "jobTitle": "{{ site.autorCargo }}",
+      "url": "{{ site.url }}/#sobre",
+      "image": "{{ site.url }}/assets/img/narcipe-viana.jpg",
+      "worksFor": { "@id": "{{ site.url }}/#organization" }
+    },
+    {
+      "@type": ["CollectionPage", "Blog"],
       "@id": "{{ site.url }}/estudos/#page",
       "url": "{{ site.url }}/estudos/",
       "name": "Estudos exclusivos de CRO",
+      "headline": "Estudos exclusivos de CRO para e-commerce",
+      "description": "Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão analisados com rigor.",
       "inLanguage": "pt-BR",
+      "image": "{{ site.url }}/assets/og/estudos.png",
       "isPartOf": { "@id": "{{ site.url }}/#website" },
       "publisher": { "@id": "{{ site.url }}/#organization" },
+      "author": { "@id": "{{ site.url }}/#narcipe-viana" },
+      {%- if collections.estudos.length %}
+      "dateModified": "{{ (collections.estudos[0].data.updated or collections.estudos[0].data.date) | dataISO }}",
+      {%- endif %}
+      "breadcrumb": { "@id": "{{ site.url }}/estudos/#breadcrumb" },
       "mainEntity": {
         "@type": "ItemList",
-        "itemListElement": [{% for e in collections.estudos %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "{{ site.url }}{{ e.url }}", "name": {{ e.data.title | json | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": {{ total }},
+        "itemListElement": [{% for e in collections.estudos %}
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index }},
+            "url": "{{ site.url }}{{ e.url }}",
+            "item": {
+              "@type": "BlogPosting",
+              "@id": "{{ site.url }}{{ e.url }}#article",
+              "headline": {{ e.data.title | json | safe }},
+              "description": {{ e.data.description | json | safe }},
+              "url": "{{ site.url }}{{ e.url }}",
+              "datePublished": "{{ e.data.date | dataISO }}",
+              "dateModified": "{{ (e.data.updated or e.data.date) | dataISO }}",
+              "image": "{{ site.url }}{{ e.data.imagem_og or ('/assets/og/' + e.data.slug + '.png') }}",
+              "author": { "@id": "{{ site.url }}/#narcipe-viana" }
+            }
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
       }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}/estudos/#breadcrumb",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Início", "item": "{{ site.url }}/" },
-        { "@type": "ListItem", "position": 2, "name": "Estudos" }
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "{{ site.url }}/estudos/" }
       ]
     }
   ]
@@ -116,9 +170,10 @@ permalink: /estudos/index.html
       <li class="estudo-item">
         <a href="{{ e.url }}" class="js-track-click" data-cta-location="estudos_index_{{ loop.index }}">
           <div class="estudo-meta">
+            {%- if e.data.date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}
             <span class="num">{{ (total - loop.index0) | pad2 }}</span>
             <span>{{ e.data.card_kicker }}</span>
-            <span class="data">{{ (e.data.updated or e.data.date) | dataBR }}</span>
+            <time class="data" datetime="{{ e.data.date | dataISO }}">{{ e.data.date | dataBR }}</time>
           </div>
           <h2>{{ e.data.title | semQuebraHifen | safe }}</h2>
           <p>{{ e.data.card_resumo or e.data.description }}</p>

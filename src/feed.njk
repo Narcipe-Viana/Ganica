@@ -1,0 +1,25 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt-BR">
+  <title>Estudos da Ganica</title>
+  <subtitle>Estudos exclusivos de CRO para e-commerce: dado de mercado, heatmap real e funil de conversão.</subtitle>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <link href="{{ site.url }}/estudos/"/>
+  <id>{{ site.url }}/estudos/</id>
+  <updated>{% if collections.estudos.length %}{{ (collections.estudos[0].data.updated or collections.estudos[0].data.date) | dataRFC3339 }}{% endif %}</updated>
+  <author><name>{{ site.autor }}</name></author>
+  <icon>{{ site.url }}/logo-ganica.png</icon>
+  {%- for e in collections.estudos %}
+  <entry>
+    <title>{{ e.data.title }}</title>
+    <link href="{{ site.url }}{{ e.url }}"/>
+    <id>{{ site.url }}{{ e.url }}</id>
+    <published>{{ e.data.date | dataRFC3339 }}</published>
+    <updated>{{ (e.data.updated or e.data.date) | dataRFC3339 }}</updated>
+    <summary>{{ (e.data.resposta_curta or e.data.description) | textoPuro }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>

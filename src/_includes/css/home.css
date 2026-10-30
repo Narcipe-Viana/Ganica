@@ -772,3 +772,9 @@
   .estudo-todos{ margin-top:36px; }
 
   .nw{ white-space:nowrap; }
+
+  .tag-novo{
+    display:inline-block; font-size:0.68rem; font-weight:600; letter-spacing:0.14em;
+    text-transform:uppercase; line-height:1; color:var(--ink); background:var(--gold);
+    padding:6px 9px 5px; border-radius:2px; vertical-align:middle; margin-right:10px;
+  }

@@ -16,6 +16,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/img/logo-ganica.png": "logo-ganica.png" });
 
   // Datas
   eleventyConfig.addFilter("dataBR", (d) => {
@@ -41,6 +42,13 @@ export default function (eleventyConfig) {
     String(s || "")
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/([\p{L}\d]+(?:-[\p{L}\d]+)+)/gu, '<span class="nw">$1</span>'));
+  // Etiqueta "Novo": estudo publicado há até 7 dias (o site é regerado todo dia pelo workflow)
+  const AGORA = Date.now();
+  eleventyConfig.addFilter("ehNovo", (d) => (AGORA - toDate(d).getTime()) <= 7 * 24 * 3600 * 1000);
+  eleventyConfig.addFilter("palavras", (html) =>
+    String(html || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length);
+  eleventyConfig.addFilter("dataRFC3339", (d) => toDate(d).toISOString());
+  eleventyConfig.addFilter("textoPuro", (s) => String(s || "").replace(/<[^>]+>/g, "").replace(/\*\*/g, ""));
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
   // Coleção de estudos publicados, do mais recente para o mais antigo

@@ -129,6 +129,9 @@ def checar_estrutura(foco=None):
         extraidos[rel] = ex
         ids_por_pagina[rel] = ex.ids
 
+    for arq in ("feed.xml", "llms.txt", "robots.txt", "logo-ganica.png"):
+        if not (SITE / arq).exists():
+            erro(arq, "não foi gerado")
     sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8") if (SITE / "sitemap.xml").exists() else ""
     if not sitemap:
         erro("sitemap.xml", "não existe")
@@ -208,6 +211,19 @@ def checar_estrutura(foco=None):
                 erro(url, f"estudo com dado de cliente tem percentual com casas decimais: {decimais[:3]}. Use número arredondado ou relativo.")
             if reais:
                 erro(url, "estudo com dado de cliente tem valor em reais. Use exemplo hipotético declarado ou número relativo.")
+        og = fm.get("imagem_og") or f"/assets/og/{fm.get('slug')}.png"
+        if not (SITE / og.lstrip("/")).exists():
+            erro(url, f"imagem de compartilhamento não existe: {og} (rode python3 scripts/og.py)")
+        data_pub = str(fm.get("date") or "")
+        rc = fm.get("resposta_curta") or ""
+        if data_pub >= "2026-11-01" or rc:
+            n_rc = len(re.findall(r"\w+", rc))
+            if not 35 <= n_rc <= 80:
+                erro(url, f"resposta_curta com {n_rc} palavras; precisa de 40 a 70 (resposta direta ao título, citável por IA)")
+            if data_pub >= "2026-11-01" and not fm.get("fontes_urls"):
+                erro(url, "fontes_urls vazio: liste os links das fontes primárias citadas")
+        else:
+            aviso(url, "sem resposta_curta (bloco de resposta direta, importante para GEO)")
         palavras = len(re.findall(r"\w+", re.sub(r"<[^>]+>", " ", corpo)))
         if palavras < 900:
             erro(url, f"corpo com {palavras} palavras; mínimo 900 para um estudo")

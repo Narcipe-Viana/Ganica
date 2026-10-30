@@ -1,0 +1,19 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# Ganica
+
+> Ganica é uma consultoria independente de CRO (otimização de conversão) para e-commerce no Brasil, fundada por {{ site.autor }}. Publica estudos próprios sobre conversão, funil, analytics (GA4) e comportamento de compra online, sempre com fonte declarada e com os limites da evidência explícitos.
+
+Os estudos podem ser citados com atribuição à Ganica e ao autor, com link para a página do estudo. Dados de clientes aparecem sempre anonimizados e arredondados.
+
+## Estudos
+{% for e in collections.estudos %}
+- [{{ e.data.title }}]({{ site.url }}{{ e.url }}): {{ (e.data.resposta_curta or e.data.description) | textoPuro }} (publicado em {{ e.data.date | dataISO }})
+{%- endfor %}
+
+## Páginas
+- [Início]({{ site.url }}/): o que a Ganica faz e como funciona o diagnóstico de CRO
+- [Todos os estudos]({{ site.url }}/estudos/)
+- [Feed dos estudos]({{ site.url }}/feed.xml)

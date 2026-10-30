@@ -44,6 +44,9 @@ content:
         type: date
         options:
           format: yyyy-MM-dd
+      - name: resposta_curta
+        label: "Resposta direta (40 a 70 palavras que respondem o título; é o trecho que IAs mais citam)"
+        type: text
       - name: deck
         label: "Linha fina (texto abaixo do título)"
         type: text
@@ -71,6 +74,10 @@ content:
       - name: fontes
         label: "Fontes e metodologia"
         type: text
+      - name: fontes_urls
+        label: "Links das fontes (vão para os dados estruturados)"
+        type: string
+        list: true
       - name: breadcrumb
         label: "Nome curto (trilha de navegação)"
         type: string
@@ -104,7 +111,7 @@ content:
         type: string
         default: E-commerce
       - name: imagem_og
-        label: "Imagem de compartilhamento 1200x630 (opcional)"
+        label: "Imagem de compartilhamento 1200x630 (opcional; sem ela, usa a gerada automaticamente)"
         type: image
       - name: card_kicker
         label: "Card: categoria (ex. \"CRO · Heatmap real\")"
