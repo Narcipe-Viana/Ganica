@@ -200,6 +200,14 @@ def checar_estrutura(foco=None):
                 erro(url, f"campo obrigatório vazio: {campo}")
         if not fm.get("resumo") or len(fm["resumo"]) < 3:
             erro(url, "resumo rápido precisa de pelo menos 3 itens")
+        if fm.get("usa_dado_cliente"):
+            texto_total = corpo + " " + json.dumps(fm, ensure_ascii=False, default=str)
+            decimais = re.findall(r"\d+,\d+\s?%|\d+\.\d+\s?%", texto_total)
+            reais = re.findall(r"R\$\s?\d", texto_total)
+            if decimais:
+                erro(url, f"estudo com dado de cliente tem percentual com casas decimais: {decimais[:3]}. Use número arredondado ou relativo.")
+            if reais:
+                erro(url, "estudo com dado de cliente tem valor em reais. Use exemplo hipotético declarado ou número relativo.")
         palavras = len(re.findall(r"\w+", re.sub(r"<[^>]+>", " ", corpo)))
         if palavras < 900:
             erro(url, f"corpo com {palavras} palavras; mínimo 900 para um estudo")

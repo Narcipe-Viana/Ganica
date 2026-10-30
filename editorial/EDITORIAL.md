@@ -70,13 +70,32 @@ Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos
 
 ## 5. Anonimização de dado de cliente
 
-- Nunca nomear cliente, marca, agência parceira, produto real do cliente, plataforma, cidade ou estado.
-- Descrição máxima permitida: segmento amplo ("e-commerce de saúde", "e-commerce B2B técnico").
-- Nunca valores absolutos de receita, sessões, pedidos, ticket ou taxa exata de conversão.
-- Nunca mecânica de promoção, oferta, frete ou brinde reconhecível.
-- Atenção ao efeito mosaico: não somar, ao longo de vários estudos, detalhes do mesmo cliente
-  que juntos o identifiquem. Ao citar caso de cliente, reler os estudos já publicados.
-- Nomes protegidos são bloqueados automaticamente pelo `scripts/qa.py` (lista em hash em `bloqueio.sha256`).
+Objetivo: **nenhum leitor consegue descobrir qual é o cliente**, nem juntando vários estudos.
+
+Pautas com `usa_dado_cliente: true` só podem usar os números já anonimizados em `dados_anonimizados`
+do `pautas.yml`. E sempre:
+
+- **Segmento no nível mais amplo possível**: "um e-commerce brasileiro de saúde e bem-estar" ou
+  "um e-commerce de consumo recorrente". Nunca o tipo exato de produto, porte, faturamento, número de
+  produtos, tempo de mercado, região, plataforma, meios de pagamento contratados ou ferramentas usadas.
+- **Nunca nomear** cliente, marca, agência parceira, produto real, categoria real do catálogo,
+  gateway, antifraude, cidade ou estado.
+- **Números só relativos ou arredondados** ("quase 3 vezes", "perto de metade", "cerca de 1 em 5").
+  Proibido: valor com casas decimais, valor em reais, volume de sessões, pedidos ou faturamento,
+  taxa de conversão exata.
+- **Período vago**: "ao longo de alguns meses de 2026". Nunca mês, semana ou data comemorativa
+  ligada ao dado (ex.: não dizer que o dado veio da preparação de uma Black Friday específica).
+- **Sem mecânica reconhecível**: nenhuma oferta, cupom, frete, brinde, política de desconto ou
+  sequência de checkout descrita de forma que alguém reconheça o site.
+- **Contra o efeito mosaico**: cada estudo cita "um e-commerce" como caso isolado. Nunca dizer que
+  é o mesmo cliente de outro estudo, nunca somar no mesmo texto vários achados do mesmo cliente,
+  e nunca repetir num estudo o detalhe de contexto usado em outro. Antes de escrever, ler os
+  estudos já publicados e conferir o que já foi dito sobre casos de cliente.
+- **Formato**: o caso entra como ilustração de um método que o leitor pode aplicar na própria loja,
+  nunca como relato de bastidor do cliente.
+- Nomes protegidos são bloqueados automaticamente pelo `scripts/qa.py` (lista em hash em
+  `bloqueio.sha256`), que também reprova número com casas decimais e valor em reais em estudos
+  marcados com `usa_dado_cliente: true` no front matter.
 
 ## 6. Design e mobile primeiro
 

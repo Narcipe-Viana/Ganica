@@ -2,35 +2,77 @@
 # A tarefa agendada publica a primeira pauta com status "fila", na ordem deste arquivo.
 #
 # status:
-#   fila                    -> pronta para ser escrita e publicada
-#   aguardando_autorizacao  -> depende de dado de cliente; só entra quando autorizacao_dados_cliente = true
-#                              E os números autorizados forem adicionados em "dados_autorizados"
-#   publicada               -> já está no ar (a tarefa preenche publicado_em e slug)
-#   pulada                  -> reprovou nas checagens duas vezes; ver "motivo"
+#   fila       -> pronta para ser escrita e publicada
+#   publicada  -> já está no ar (a tarefa preenche publicado_em e slug)
+#   pulada     -> reprovou nas checagens duas vezes; ver "motivo"
 #
 # ATENÇÃO: este repositório é público. Nunca escreva aqui nome de cliente, de agência parceira,
-# nem número bruto de cliente sem autorização. Dado de cliente entra só arredondado ou relativo.
+# produto real, plataforma, local, período exato ou número bruto de cliente.
+# Pautas com `usa_dado_cliente: true` seguem a seção 5 do EDITORIAL.md à risca e só podem usar
+# os números já anonimizados em `dados_anonimizados` (arredondados ou relativos).
 
-autorizacao_dados_cliente: false   # vira true quando o NDA com a agência parceira permitir uso agregado e anônimo
+autorizacao_dados_cliente: true   # decisão do Narcipe (30/10/2026): publicar com anonimização total
 
 pautas:
+  - id: 1
+    status: fila
+    usa_dado_cliente: true
+    titulo_provisorio: "Seu mobile não tem problema de UX. Tem problema em uma etapa só."
+    tese: >-
+      O mobile empata ou vence o desktop nas etapas iniciais do funil (adicionar ao carrinho, chegar
+      ao checkout). A quebra está concentrada numa única etapa: checkout -> pedido. Redesenhar o
+      site mobile inteiro seria atacar o lugar errado.
+    pontos:
+      - "O erro de olhar só a conversão geral por dispositivo."
+      - "Como montar o funil por etapa x dispositivo (passo a passo no GA4)."
+      - "Onde ele inverte."
+      - "O que isso descarta: tráfego, audiência, frete (que pesariam em todas as etapas, não numa só)."
+      - "O que sobra: a mecânica de pagamento no celular."
+    dados_anonimizados:
+      - "Nas etapas iniciais (adicionar ao carrinho, iniciar checkout), mobile empata ou supera o desktop."
+      - "Da etapa checkout para pedido, o desktop conclui quase 3 vezes mais que o mobile (aprox. 3 em cada 5 checkouts no desktop contra 1 em cada 5 no mobile)."
+    palavra_chave: "conversão checkout mobile / funil de conversão por dispositivo"
+    slug_sugerido: conversao-checkout-mobile-funil-por-dispositivo
+    links_com: [2, 8]
+
   - id: 6
     status: fila
     titulo_provisorio: "Rodapé: a página de vendas mais subestimada de um e-commerce de saúde"
     tese: >-
-      Em categorias reguladas e de produto ingerido (suplementos, saúde), o visitante cético procura
+      Em categorias reguladas e de produto ingerido (saúde, bem-estar), o visitante cético procura
       validação antes de comprar, e procura no rodapé: selos de segurança, bandeiras de pagamento,
       política de troca e devolução, CNPJ e razão social, canal de atendimento dentro do próprio site.
     pontos:
       - "Por que o rodapé é lido justamente pelo visitante mais desconfiado (e mais perto de comprar)."
       - "Checklist do rodapé de confiança para nicho sensível."
-      - "Erro concreto: o 'Fale Conosco' que leva o visitante para fora do site no momento de dúvida."
+      - "Erro comum: o 'Fale Conosco' que leva o visitante para fora do site no momento de dúvida."
       - "Vale para qualquer nicho sensível: saúde, cosméticos, infantil."
     fontes_a_verificar:
       - "Dado de confiança/segurança em compra online atribuído à Serasa (91%): CONFIRMAR a fonte original antes de citar. Se não encontrar a fonte primária, NÃO citar o número."
     palavra_chave: "rodapé e-commerce / selos de confiança loja virtual"
     slug_sugerido: rodape-ecommerce-confianca-saude
-    restricoes: "Exemplos genéricos. Não descrever o rodapé de nenhum cliente específico."
+    restricoes: "Exemplos genéricos. Não descrever o rodapé de nenhum site real de cliente."
+
+  - id: 3
+    status: fila
+    usa_dado_cliente: true
+    titulo_provisorio: "O canal de aquisição importa menos do que você pensa"
+    tese: >-
+      Quem converte é o cliente recorrente, não o canal. Separando novos de recorrentes, a diferença
+      dentro do mesmo canal é muito maior que a diferença entre canais. O canal que parecia "especial"
+      só parecia especial por ter público majoritariamente recorrente.
+    pontos:
+      - "Como segmentar novo x recorrente por canal no GA4."
+      - "Por que o ranking de canais muda quando você isola recorrentes."
+      - "O que isso muda na decisão de verba."
+      - "Limite: 'novo usuário' no GA4 é cookie, não pessoa (linkar o estudo sobre GA4/ITP quando publicado)."
+    dados_anonimizados:
+      - "Em redes sociais no mobile, a conversão do usuário recorrente é dezenas de vezes maior que a do novo (perto de 40 vezes)."
+      - "Isolando só recorrentes, mídia paga no desktop conclui a grande maioria dos checkouts iniciados (cerca de 3 em cada 4)."
+      - "O e-mail parecia o melhor canal, mas seu público é majoritariamente recorrente; comparado só entre recorrentes, perde a vantagem."
+    palavra_chave: "taxa de conversão por canal / novo vs recorrente GA4"
+    slug_sugerido: conversao-por-canal-novo-vs-recorrente
+    links_com: [4, 9]
 
   - id: 7
     status: fila
@@ -54,22 +96,40 @@ pautas:
       mais verificação, mais cancelamento) para o Pix. É uma ferramenta de CRO, não só de margem.
     pontos:
       - "Comparativo de fricção entre cartão e Pix no checkout (etapas, verificação, confirmação)."
-      - "Como desenhar a escada de desconto por meio de pagamento."
+      - "Como desenhar a escada de desconto por meio de pagamento (exemplo hipotético)."
       - "Cuidado: permitir cupom em todos os meios. Cliente no Pix que não consegue aplicar cupom também é fricção."
     fontes_a_verificar:
       - "Dados públicos do Banco Central sobre adoção do Pix e, se houver, dados públicos de mercado sobre Pix no e-commerce."
     palavra_chave: "desconto Pix e-commerce / reduzir cancelamento de pedidos"
     slug_sugerido: desconto-pix-ecommerce-friccao-checkout
-    restricoes: "Sem números de cliente (taxa de cancelamento por meio de pagamento de cliente está bloqueada até autorização). Usar só dado público verificado."
-    links_com: [2]
+    restricoes: "Percentuais de desconto só como exemplo hipotético. Não reproduzir a política de desconto de nenhum cliente."
+    links_com: [2, 1]
+
+  - id: 2
+    status: fila
+    usa_dado_cliente: true
+    titulo_provisorio: "Quando a segurança vira a maior inimiga da sua conversão"
+    tese: >-
+      Verificação dupla no pagamento com cartão (captcha + verificação de identidade + clicar em
+      comprar de novo) é ponto de abandono: o cliente não sabe se a compra já foi feita.
+    pontos:
+      - "Como equilibrar antifraude e fricção."
+      - "Quando a verificação deve vir antes do pagamento (login prévio), e não no meio dele."
+      - "Como medir o abandono entre autorização e confirmação."
+    dados_anonimizados:
+      - "Os pedidos cancelados se concentram quase todos no cartão; no Pix, ficam perto de zero. Publicar como hipótese ('pode haver relação'), nunca como causa comprovada."
+    palavra_chave: "antifraude e conversão / abandono no pagamento cartão"
+    slug_sugerido: antifraude-verificacao-pagamento-abandono
+    restricoes: "Não nomear gateway, antifraude, plataforma ou banco. Descrever a sequência de verificação de forma genérica."
+    links_com: [8, 1]
 
   - id: 9
     status: fila
     titulo_provisorio: "Antes de chamar de bug: quando o GA4 mostra mais \"Ver Carrinho\" do que \"Adicionar ao Carrinho\""
     tese: >-
       "Novo usuário" no GA4 é um cookie, não uma pessoa nova. O Safari (ITP) limita cookies de
-      primeira parte definidos por script a cerca de 7 dias, enquanto o carrinho da loja dura de 30 a 90.
-      O cliente que volta pelo link salvo aparece como novo, já com carrinho cheio.
+      primeira parte definidos por script a cerca de 7 dias, enquanto o carrinho da loja costuma durar
+      bem mais. O cliente que volta pelo link salvo aparece como novo, já com carrinho cheio.
     pontos:
       - "As duas hipóteses: expiração de cookie, e funil aberto vs fechado na exploração do GA4."
       - "A ordem barata de investigação: configuração antes de código."
@@ -80,7 +140,24 @@ pautas:
       - "Documentação oficial do Google Analytics sobre usuários novos, identificação por cookie e funis abertos/fechados."
     palavra_chave: "GA4 funil inconsistente / GA4 novo usuário cookie ITP"
     slug_sugerido: ga4-ver-carrinho-maior-que-adicionar-ao-carrinho
-    restricoes: "Caso de cliente contado sem números brutos e sem identificar segmento além de 'e-commerce'."
+    restricoes: "Caso contado sem números e sem segmento além de 'um e-commerce'. Duração do carrinho só com fonte pública ou como faixa genérica."
+
+  - id: 5
+    status: fila
+    usa_dado_cliente: true
+    titulo_provisorio: "O termo mais buscado do seu site não é o que mais vende"
+    tese: >-
+      A categoria que concentra a maior fatia das buscas internas entrega proporcionalmente bem menos
+      em compras. Causa provável: paradoxo da escolha (variações de dosagem, formato e finalidade
+      misturadas sem diferenciação para o leigo).
+    pontos:
+      - "Tabela de % de buscas x % de compras para achar gaps (com números do exemplo anonimizado ou hipotético)."
+      - "Soluções: filtro por objetivo, selo 'Mais vendido', kits por público."
+    dados_anonimizados:
+      - "A categoria mais buscada concentra perto de metade das buscas internas, mas responde por apenas cerca de um terço dessa proporção nas compras."
+    palavra_chave: "busca interna e-commerce / paradoxo da escolha e-commerce"
+    slug_sugerido: busca-interna-termo-mais-buscado-nao-vende
+    restricoes: "Nunca nomear o produto ou a categoria real. Usar 'a categoria mais buscada' e, para ilustrar, um exemplo hipotético de outro nicho."
 
   - id: 10
     status: fila
@@ -91,10 +168,11 @@ pautas:
       - "Usar o ticket médio do segmento afetado, não o geral."
       - "Cruzar com o esforço em horas de tecnologia."
       - "Matriz esforço x confiança x impacto."
-      - "Contexto: planejar a Black Friday com capacidade técnica mensal limitada e prazo de congelamento, e por que o item mais caro (checkout) ainda pode vir primeiro."
+      - "Contexto: planejar uma data de pico com capacidade técnica limitada e prazo de congelamento, e por que o item mais caro (checkout) ainda pode vir primeiro."
     palavra_chave: "como calcular ROI de CRO / priorização de testes CRO"
     slug_sugerido: business-case-cro-roi-priorizacao
-    restricoes: "Todos os números são de um exemplo hipotético, declarado como tal no texto. É o artigo mais comercial: fala com o decisor que contrata a Ganica."
+    restricoes: "Todos os números são de um exemplo hipotético, declarado como tal no texto. Não usar ticket, faturamento ou capacidade técnica de cliente real. É o artigo mais comercial: fala com o decisor que contrata a Ganica."
+    links_com: [1]
 
   - id: 4
     status: fila
@@ -108,7 +186,7 @@ pautas:
       - "Como montar o relatório sem enganar o gestor."
     palavra_chave: "retargeting vs prospecção / ROI redes sociais e-commerce"
     slug_sugerido: campanhas-redes-sociais-media-prospeccao-retargeting
-    restricoes: "Artigo de método. Sem números de cliente enquanto a pauta 3 não for autorizada; exemplos hipotéticos rotulados."
+    restricoes: "Artigo de método. Para o dado real, linkar o estudo da pauta 3 em vez de repetir os números aqui."
     links_com: [3]
 
   - id: 11
@@ -116,68 +194,8 @@ pautas:
     titulo_provisorio: "Antes de rodar teste A/B, conserte o que está quebrado"
     tese: >-
       Teste A/B em cima de experiência quebrada mede ruído. Antes de testar, corrigir o básico:
-      links 404 em lançamentos, banner da home sem link, banners pixelados, menu mobile com 3 cliques
-      até as categorias, barra de frete grátis ausente no mobile.
+      links 404 em lançamentos, banner da home sem link, banners pixelados, menu mobile com muitos
+      cliques até as categorias, barra de frete grátis ausente no mobile.
     palavra_chave: "teste A/B e-commerce / erros básicos de UX e-commerce"
     slug_sugerido: antes-do-teste-ab-conserte-o-basico
     restricoes: "Exemplos genéricos. Artigo de entrada de funil."
-
-  # ---------- Dependem de autorização para uso de dado de cliente ----------
-  - id: 1
-    status: aguardando_autorizacao
-    titulo_provisorio: "Seu mobile não tem problema de UX. Tem problema em uma etapa só."
-    tese: >-
-      O mobile empata ou vence o desktop nas etapas iniciais do funil; a quebra está concentrada
-      na etapa checkout -> pedido. Ensina a ler o funil etapa por etapa, por dispositivo.
-    pontos:
-      - "O erro de olhar só a conversão geral."
-      - "Como montar o funil por etapa x dispositivo."
-      - "Onde ele inverte."
-      - "O que isso descarta: tráfego, audiência, frete."
-      - "O que sobra: a mecânica de pagamento."
-    palavra_chave: "conversão checkout mobile / funil de conversão por dispositivo"
-    slug_sugerido: conversao-checkout-mobile-funil-por-dispositivo
-    dados_autorizados: []   # preencher só após autorização, com números arredondados/relativos
-
-  - id: 3
-    status: aguardando_autorizacao
-    titulo_provisorio: "O canal de aquisição importa menos do que você pensa"
-    tese: >-
-      Quem converte é o cliente recorrente, não o canal. Isolando recorrentes, canais que parecem
-      fracos passam a fechar a maior parte dos checkouts; o canal "especial" só parecia especial
-      por ter público majoritariamente recorrente.
-    palavra_chave: "taxa de conversão por canal / novo vs recorrente GA4"
-    slug_sugerido: conversao-por-canal-novo-vs-recorrente
-    dados_autorizados: []
-    links_com: [4]
-
-  - id: 5
-    status: aguardando_autorizacao
-    titulo_provisorio: "O termo mais buscado do seu site não é o que mais vende"
-    tese: >-
-      A categoria que concentra a maior fatia das buscas internas entrega proporcionalmente bem menos
-      em compras. Causa provável: paradoxo da escolha (dosagens, formatos e propósitos misturados sem
-      diferenciação para o leigo).
-    pontos:
-      - "Tabela de % de buscas x % de compras para achar gaps."
-      - "Soluções: filtro por objetivo, selo 'Mais vendido', kits por público."
-    palavra_chave: "busca interna e-commerce / paradoxo da escolha e-commerce"
-    slug_sugerido: busca-interna-termo-mais-buscado-nao-vende
-    dados_autorizados: []
-    restricoes: "Nunca nomear o produto real; usar 'o suplemento mais buscado' ou exemplo hipotético."
-
-  - id: 2
-    status: aguardando_autorizacao
-    titulo_provisorio: "Quando a segurança vira a maior inimiga da sua conversão"
-    tese: >-
-      Verificação dupla no pagamento com cartão (captcha + verificação de identidade + clicar em
-      comprar de novo) é ponto de abandono: o cliente não sabe se a compra já foi feita.
-    pontos:
-      - "Como equilibrar antifraude e fricção."
-      - "Quando a verificação deve vir antes do pagamento (login prévio), e não no meio dele."
-      - "Como medir o abandono entre autorização e confirmação."
-      - "Gancho: cancelamento concentrado no cartão e quase nulo no Pix, publicado como hipótese, não como causa comprovada."
-    palavra_chave: "antifraude e conversão / abandono no pagamento cartão"
-    slug_sugerido: antifraude-verificacao-pagamento-abandono
-    dados_autorizados: []
-    links_com: [8]
