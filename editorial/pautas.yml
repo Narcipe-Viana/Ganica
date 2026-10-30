@@ -15,7 +15,8 @@ autorizacao_dados_cliente: true   # decisão do Narcipe (30/10/2026): publicar c
 
 pautas:
   - id: 1
-    status: fila
+    status: pulada
+    motivo: "Reprovada duas vezes na revisão independente (30/10/2026). Na segunda, por erros de método sobre o GA4: efeito da atribuição do detalhamento descrito ao contrário e recomendação de funil por sessão que a exploração de funil não oferece."
     usa_dado_cliente: true
     titulo_provisorio: "Seu mobile não tem problema de UX. Tem problema em uma etapa só."
     tese: >-
