@@ -31,7 +31,11 @@ jobs:
       - name: Instalar dependências
         run: |
           npm ci
-          pip install --quiet pyyaml
+          pip install --quiet pyyaml playwright
+          python3 -m playwright install --with-deps chromium
+
+      - name: Gerar imagens de compartilhamento que faltarem
+        run: python3 scripts/og.py
 
       - name: Gerar o site
         run: npx @11ty/eleventy
