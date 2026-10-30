@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     Cole o snippet oficial do GTM (com o seu GTM-XXXXXXX) logo
+     abaixo desta inicialização — e o snippet <noscript> do GTM
+     logo após a tag <body> (marcado mais abaixo no arquivo).
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'landing_page',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganica — Consultoria de CRO para e-commerce</title>
+
+<!-- ==========================================================
+     SEO — tags básicas
+     ========================================================== -->
+<meta name="description" content="Consultoria independente de CRO para e-commerce. Diagnóstico, priorização e execução guiadas por dados, com escopo e prazo fechados — sem retainer, sem hora vendida.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Narcipe Viana">
+<link rel="canonical" href="https://ganica.com.br/">
+<meta name="theme-color" content="#161B2C">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ganica">
+<meta property="og:title" content="Ganica — Consultoria de CRO para e-commerce">
+<meta property="og:description" content="Diagnóstico, priorização e execução guiadas por dados, com escopo e prazo fechados. Consultoria independente de CRO para e-commerce.">
+<meta property="og:url" content="https://ganica.com.br/">
+<meta property="og:locale" content="pt_BR">
+<!-- TODO: hospedar uma imagem 1200x630 (ex.: /og-image.jpg) e descomentar as 3 linhas abaixo.
+     Imagens em base64 não funcionam para og:image — precisa ser uma URL pública. -->
+<!-- <meta property="og:image" content="https://ganica.com.br/og-image.jpg"> -->
+<!-- <meta property="og:image:width" content="1200"> -->
+<!-- <meta property="og:image:height" content="630"> -->
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ganica — Consultoria de CRO para e-commerce">
+<meta name="twitter:description" content="Diagnóstico, priorização e execução guiadas por dados, com escopo e prazo fechados.">
+<!-- <meta name="twitter:image" content="https://ganica.com.br/og-image.jpg"> -->
+
+<!-- ==========================================================
+     ÍCONE DO NAVEGADOR (favicon)
+     SVG embutido — sem depender de arquivo externo.
+     ========================================================== -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- ==========================================================
+     SCHEMA.ORG (JSON-LD) — recomendações de 2026:
+     FAQPage e HowTo não geram mais rich results (removidos em
+     2026), por isso não foram usados aqui. O maior ganho hoje
+     é estabelecer a entidade (Organization/Person) de forma
+     verificável, que é o que o Google usa como sinal de
+     confiança em resultados de IA (AI Mode / AI Overviews).
+     ========================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ganica.com.br/#organization",
+      "name": "Ganica",
+      "url": "https://ganica.com.br/",
+      "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
+      "email": "contato@ganica.com.br",
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "https://ganica.com.br/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ganica.com.br/#narcipe-viana",
+      "name": "Narcipe Viana",
+      "jobTitle": "Consultor de CRO",
+      "worksFor": { "@id": "https://ganica.com.br/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ganica.com.br/#website",
+      "url": "https://ganica.com.br/",
+      "name": "Ganica",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://ganica.com.br/#organization" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ganica.com.br/#diagnostico",
+      "name": "Diagnóstico de Conversão",
+      "serviceType": "Consultoria de CRO",
+      "description": "Diagnóstico fechado que mapeia oportunidades de conversão em e-commerce: verificação de tracking, auditoria de UX e priorização por impacto na receita.",
+      "provider": { "@id": "https://ganica.com.br/#organization" },
+      "areaServed": { "@type": "Country", "name": "Brasil" }
+    }
+  ]
+}
+</script>
+<!-- TODO: quando existirem perfis reais (Instagram, LinkedIn etc.), adicionar
+     "sameAs": ["https://...", "https://..."] dentro do bloco "organization" acima.
+     Não preencher com links fictícios — isso prejudica a entidade, não ajuda. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+{% include "css/home.css" %}
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager (logo após a abertura do body) -->
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="brand-mark">Ganica</span>
+      <span class="brand-sub">Consultoria de CRO</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#metodo">Método</a>
+      <a href="#estudo">Estudo</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#principios">Princípios</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <a href="#contato" class="btn btn-gold nav-cta js-open-diagnostico" data-cta-location="nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links">
+      <a href="#metodo">Método</a>
+      <a href="#estudo">Estudo</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#principios">Princípios</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <a href="#contato" class="btn btn-gold mobile-menu-cta js-open-diagnostico" data-cta-location="nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <h1>Seu tráfego já foi conquistado. O problema é o que acontece depois do clique.</h1>
+      <p class="hero-sub">Consultoria de CRO para e-commerce: diagnóstico, priorização e execução guiadas por dados — com escopo fechado e prazo definido, para você decidir com clareza onde investir.</p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn btn-gold js-open-diagnostico" data-cta-location="hero_primary">Solicitar diagnóstico</a>
+        <a href="#metodo" class="btn btn-ghost-dark link-secondary" data-cta-location="hero_secondary">Ver como funciona</a>
+      </div>
+      <p class="hero-note">Um projeto por vez. Sem retainer. Sem hora vendida.</p>
+    </div>
+
+    <div class="hero-chart-desktop-wrap">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico ilustrativo mostrando a taxa de conversão subindo ao longo de um diagnóstico">
+        <line x1="40" y1="30" x2="40" y2="255" stroke="#3A425C" stroke-width="1"/>
+        <line x1="40" y1="255" x2="450" y2="255" stroke="#3A425C" stroke-width="1"/>
+
+        <path d="M40,225 C100,215 160,185 220,170 C280,155 340,135 380,123 C405,116 428,111 450,106
+                 L450,225 C405,220 340,224 280,220 C200,226 120,218 40,225 Z" fill="#C99A44" fill-opacity="0.14"/>
+
+        <path d="M40,225 C120,218 200,226 280,220 C340,224 405,220 450,225" fill="none" stroke="#7C859C" stroke-width="1.5"/>
+        <path d="M40,225 C100,215 160,185 220,170 C280,155 340,135 380,123 C405,116 428,111 450,106" fill="none" stroke="#C99A44" stroke-width="2.25"/>
+
+        <circle cx="40" cy="225" r="4" fill="#161B2C" stroke="#C7CBD6" stroke-width="1.5"/>
+        <circle cx="450" cy="106" r="5" fill="#C99A44"/>
+
+        <text x="18" y="230" font-family="Work Sans, sans-serif" font-size="12" fill="#C7CBD6">1,8%</text>
+        <text x="415" y="98" font-family="Work Sans, sans-serif" font-size="13" fill="#C99A44" font-weight="600">2,6%</text>
+
+        <text x="40" y="272" font-family="Work Sans, sans-serif" font-size="11" fill="#7C859C">Diagnóstico</text>
+        <text x="405" y="272" font-family="Work Sans, sans-serif" font-size="11" fill="#7C859C">Entrega</text>
+
+        <text x="335" y="140" font-family="Work Sans, sans-serif" font-size="11" fill="#8A93A8">linha de base</text>
+      </svg>
+      <p class="chart-caption">Exemplo ilustrativo de ganho de conversão — não representa um cliente específico.</p>
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Não sou uma agência.</h2>
+      <p>E isso muda como um projeto de CRO é conduzido — do primeiro diagnóstico até a entrega final.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <h3>Um consultor, do início ao fim</h3>
+        <p>Você fala comigo em cada etapa do projeto. Nenhuma parte do trabalho passa por mãos que você não conhece.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Escopo fechado, responsabilidade clara</h3>
+        <p>Cada projeto tem início, fim e um limite explícito do que depende de mim e do que depende do seu time técnico.</p>
+      </div>
+      <div class="diff-item">
+        <h3>Preço amarrado ao que está em jogo</h3>
+        <p>O investimento é dimensionado pela receita que a conversão atual está deixando na mesa — não pelas horas que o projeto consome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="metodo">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Como o diagnóstico é conduzido</h2>
+      <p>Um processo com quatro etapas fixas — a mesma estrutura em qualquer projeto, independente do tamanho da operação.</p>
+    </div>
+
+    <div class="metodo-track">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h3>Diagnóstico</h3>
+          <p>Verificação da estrutura de tracking (GTM, GA4) e auditoria de UX e funil para identificar onde a conversão está sendo perdida.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h3>Priorização</h3>
+          <p>Cada oportunidade encontrada é ordenada pelo impacto esperado na receita — não pelo volume de tarefas que ela gera.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h3>Execução</h3>
+          <p>Implementação das mudanças de maior impacto dentro do prazo fechado combinado no início do projeto.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h3>Validação</h3>
+          <p>Leitura dos resultados em cima dos dados reais, com recomendação clara dos próximos passos para o seu time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mobile-chart-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ganho de conversão</h2>
+      <p>O que um diagnóstico fechado costuma destravar, do primeiro dia até a entrega.</p>
+    </div>
+    <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico ilustrativo mostrando a taxa de conversão subindo ao longo de um diagnóstico">
+      <line x1="34" y1="18" x2="34" y2="210" stroke="#3A425C" stroke-width="1.5"/>
+      <line x1="34" y1="210" x2="374" y2="210" stroke="#3A425C" stroke-width="1.5"/>
+
+      <path d="M34,182 C90,174 150,150 190,138 C230,126 280,110 320,100 C340,95 358,91 374,86
+               L374,182 C340,178 280,180 230,178 C170,182 100,176 34,182 Z" fill="#C99A44" fill-opacity="0.16"/>
+
+      <path d="M34,182 C100,176 170,182 230,178 C280,180 340,178 374,182" fill="none" stroke="#7C859C" stroke-width="2"/>
+      <path d="M34,182 C90,174 150,150 190,138 C230,126 280,110 320,100 C340,95 358,91 374,86" fill="none" stroke="#C99A44" stroke-width="3"/>
+
+      <circle cx="34" cy="182" r="5" fill="#161B2C" stroke="#C7CBD6" stroke-width="2"/>
+      <circle cx="374" cy="86" r="6.5" fill="#C99A44"/>
+
+      <text x="6" y="169" font-family="Work Sans, sans-serif" font-size="17" fill="#C7CBD6">1,8%</text>
+      <text x="323" y="72" font-family="Work Sans, sans-serif" font-size="19" fill="#C99A44" font-weight="600">2,6%</text>
+
+      <text x="34" y="234" font-family="Work Sans, sans-serif" font-size="15" fill="#8A93A8">Diagnóstico</text>
+      <text x="300" y="234" font-family="Work Sans, sans-serif" font-size="15" fill="#8A93A8">Entrega</text>
+    </svg>
+    <p class="mobile-chart-caption">Exemplo ilustrativo — não representa um cliente específico.</p>
+  </div>
+</section>
+
+<section id="estudo" class="estudo">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Estudos exclusivos de CRO</h2>
+      <p>Levantamentos próprios sobre e-commerce e CRO (dado de mercado, heatmap real, comportamento de usuário), publicados à medida que o trabalho de diagnóstico avança.</p>
+    </div>
+
+    <div class="estudo-list">
+      {%- set total = collections.estudos | length %}
+      {%- for e in collections.estudos.slice(0, 2) %}
+      <article class="estudo-entry">
+        <div class="kicker">{{ (total - loop.index0) | pad2 }} · {{ e.data.card_kicker }}</div>
+        <div class="estudo-tag">{{ e.data.card_destaque }}</div>
+        <h3><a href="{{ e.url }}" class="js-track-click" data-cta-location="estudo_home_{{ loop.index }}_titulo">{{ (e.data.card_titulo or e.data.title) | semQuebraHifen | safe }}</a></h3>
+        <p>{{ e.data.card_resumo or e.data.description }}</p>
+        <a href="{{ e.url }}" class="estudo-link js-track-click" data-cta-location="estudo_home_{{ loop.index }}_link">Ler o estudo completo →</a>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- if total > 2 %}
+    <p class="estudo-todos"><a href="/estudos/" class="estudo-link js-track-click" data-cta-location="estudo_home_todos">Ver todos os {{ total }} estudos →</a></p>
+    {%- endif %}
+  </div>
+</section>
+
+<section id="diagnostico">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Diagnóstico de Conversão</h2>
+      <p>O ponto de entrada para trabalhar comigo: um projeto fechado que mapeia exatamente onde sua conversão está travando e o que fazer a respeito.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="offer-left">
+        <div class="kicker">Prazo</div>
+        <h3>Prazo de entrega</h3>
+        <p>O prazo varia conforme a maturidade da sua estrutura de tracking hoje.</p>
+        <div class="timeline-row"><span>Tracking já saudável</span><span>~14 dias</span></div>
+        <div class="timeline-row"><span>Tracking precisa de setup</span><span>~20 dias</span></div>
+        <div class="timeline-stats-mobile">
+          <div class="timeline-stat">
+            <div class="timeline-days-row">
+              <span class="timeline-days">~14</span>
+              <span class="timeline-unit">dias</span>
+            </div>
+            <p class="timeline-caption">Tracking já saudável</p>
+          </div>
+          <div class="timeline-stat">
+            <div class="timeline-days-row">
+              <span class="timeline-days">~20</span>
+              <span class="timeline-unit">dias</span>
+            </div>
+            <p class="timeline-caption">Tracking precisa de setup</p>
+          </div>
+        </div>
+        <p class="offer-left-note">Escopo fechado desde o início — sem hora vendida, sem retrabalho fora do combinado.</p>
+      </div>
+      <div class="offer-right">
+        <ul class="offer-list">
+          <li>Verificação de tracking (GTM → GA4 → Looker Studio)</li>
+          <li>Auditoria de UX e gatilhos comportamentais</li>
+          <li>Mapa de oportunidades priorizado por impacto na receita</li>
+          <li>Relatório de escopo fechado com prazo definido</li>
+        </ul>
+
+        <div class="dependency-box">
+          <h4>Condição para o prazo mais curto</h4>
+          <p>O prazo de 14 dias considera que a implementação dos eventos do dataLayer já está pronta no seu site. Caso contrário, essa etapa entra no escopo e o prazo passa a ser de 20 dias.</p>
+        </div>
+
+        <p class="offer-price">Investimento dimensionado pela receita mensal do seu e-commerce — enviado após uma conversa inicial.</p>
+        <a href="#contato" class="btn btn-ink js-open-diagnostico" data-cta-location="oferta">Solicitar diagnóstico</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="principios" class="principios">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Como eu penso sobre otimização</h2>
+      <p>Alguns princípios que guiam qualquer projeto que eu assumo.</p>
+    </div>
+
+    <p class="quote">Conversão não é sorte. É a soma de decisões que alguém tomou — ou deixou de tomar.</p>
+    <p class="quote">O maior risco de um projeto de CRO não é o custo. É a lentidão de quem depende de outra pessoa para agir.</p>
+    <p class="quote">Meu trabalho começa onde a dúvida termina: eu não recomendo o que não consigo medir.</p>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="sobre-card">
+    <div class="sobre-photo-col">
+      <picture>
+          <source srcset="/assets/img/narcipe-viana.webp" type="image/webp">
+          <img class="sobre-photo" src="/assets/img/narcipe-viana.jpg" width="700" height="822" loading="lazy" decoding="async" alt="Foto de Narcipe Viana, consultor de CRO">
+        </picture>
+      <div class="sobre-caption">
+        <p class="sobre-name">Narcipe Viana</p>
+        <p class="sobre-role">Consultor de CRO</p>
+      </div>
+    </div>
+    <div class="sobre-text-col">
+      <h2>Sobre</h2>
+      <p>Sou consultor de CRO focado em e-commerce. Trabalho a fundo com estrutura de analytics — GTM, GA4 e Looker Studio — e com auditoria comportamental para transformar o tráfego que você já tem em mais receita, sem depender de aumentar o investimento em mídia.</p>
+      <p>Prefiro projetos fechados, com começo e fim definidos, a contratos abertos por hora. É mais fácil avaliar o retorno — para você e para mim.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>Pronto pra ver onde sua conversão está travando?</h2>
+    <p>Me conta um pouco sobre sua operação e eu te digo se faz sentido começarmos por um diagnóstico.</p>
+    <div class="hero-ctas">
+      <a href="mailto:contato@ganica.com.br" class="btn btn-gold js-open-diagnostico" data-cta-location="cta_final">Solicitar diagnóstico</a>
+    </div>
+  </div>
+</section>
+
+<div class="diag-modal-overlay" id="diagModalOverlay" hidden>
+  <div class="diag-modal" role="dialog" aria-modal="true" aria-labelledby="diagModalTitle">
+    <button type="button" class="diag-modal-close" id="diagModalClose" aria-label="Fechar formulário">&times;</button>
+
+    <div class="diag-modal-body">
+      <div id="diagFormIntro">
+        <div class="kicker">Diagnóstico de Conversão</div>
+        <h3 id="diagModalTitle">Solicitar diagnóstico</h3>
+        <p class="diag-modal-intro">Preencha os dados abaixo — eu respondo por e-mail te dizendo se faz sentido começarmos por um diagnóstico.</p>
+      </div>
+
+      <form id="diagForm" class="diag-form">
+        <input type="hidden" name="access_key" value="8396b81e-8425-4158-b713-f147ddb9eadc">
+        <input type="hidden" name="subject" value="Novo pedido de diagnóstico — site Ganica">
+        <input type="hidden" name="from_name" value="Formulário Ganica">
+        <input type="checkbox" name="botcheck" class="diag-botcheck" tabindex="-1" autocomplete="off">
+
+        <div class="diag-field">
+          <label for="diagNome">Nome*</label>
+          <input type="text" id="diagNome" name="name" required autocomplete="name">
+        </div>
+
+        <div class="diag-field-row">
+          <div class="diag-field">
+            <label for="diagEmail">E-mail*</label>
+            <input type="email" id="diagEmail" name="email" required autocomplete="email">
+          </div>
+          <div class="diag-field">
+            <label for="diagTelefone">WhatsApp*</label>
+            <input type="tel" id="diagTelefone" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+
+        <div class="diag-field">
+          <label for="diagSite">Site do e-commerce*</label>
+          <input type="text" id="diagSite" name="site" required placeholder="www.sualoja.com.br" inputmode="url">
+        </div>
+
+        <div class="diag-field-row">
+          <div class="diag-field">
+            <label for="diagPlataforma">Plataforma</label>
+            <select id="diagPlataforma" name="plataforma">
+              <option value="">Selecione</option>
+              <option>Shopify</option>
+              <option>VTEX</option>
+              <option>Nuvemshop</option>
+              <option>WooCommerce</option>
+              <option>Magento</option>
+              <option>Outra</option>
+            </select>
+          </div>
+          <div class="diag-field">
+            <label for="diagFaturamento">Faturamento mensal</label>
+            <select id="diagFaturamento" name="faturamento_mensal">
+              <option value="">Selecione</option>
+              <option>Até R$ 50 mil</option>
+              <option>R$ 50 mil – R$ 150 mil</option>
+              <option>R$ 150 mil – R$ 500 mil</option>
+              <option>Acima de R$ 500 mil</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="diag-field">
+          <label for="diagMensagem">Conte um pouco sobre sua operação</label>
+          <textarea id="diagMensagem" name="message" rows="3" placeholder="Principal dor hoje, o que já tentou, etc. (opcional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold diag-submit" id="diagSubmitBtn">Enviar diagnóstico</button>
+        <p class="diag-form-note">Seus dados são usados só para essa análise. Sem spam.</p>
+        <p class="diag-form-error" id="diagFormError" hidden></p>
+      </form>
+
+      <div class="diag-success" id="diagSuccess" hidden>
+        <div class="kicker">Recebido</div>
+        <h3>Pedido enviado.</h3>
+        <p>Recebi seus dados e volto por e-mail em breve dizendo se faz sentido começarmos por um diagnóstico.</p>
+        <button type="button" class="btn btn-ink" id="diagSuccessClose">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="brand-mark" style="font-size:1.1rem;">Ganica</div>
+      <div class="footer-links">
+        <a href="#metodo">Método</a>
+        <a href="#estudo">Estudo</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#principios">Princípios</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+    </div>
+    <div class="hairline-dark" style="padding-top:20px;">
+      Consultoria independente de CRO para e-commerce. © 2026 Ganica.
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  (function(){
+    // --------------------------------------------------------------
+    // Cole aqui a sua chave de acesso do Web3Forms (web3forms.com).
+    // Sem ela, o formulário mostra um aviso e não envia nada.
+    // --------------------------------------------------------------
+    var WEB3FORMS_ACCESS_KEY = '8396b81e-8425-4158-b713-f147ddb9eadc';
+
+    var overlay = document.getElementById('diagModalOverlay');
+    var closeBtn = document.getElementById('diagModalClose');
+    var formIntro = document.getElementById('diagFormIntro');
+    var form = document.getElementById('diagForm');
+    var submitBtn = document.getElementById('diagSubmitBtn');
+    var errorEl = document.getElementById('diagFormError');
+    var successEl = document.getElementById('diagSuccess');
+    var successCloseBtn = document.getElementById('diagSuccessClose');
+    var lastFocused = null;
+
+    if(!overlay || !form) return;
+
+    var accessKeyField = form.querySelector('input[name="access_key"]');
+    if(accessKeyField) accessKeyField.value = WEB3FORMS_ACCESS_KEY;
+
+    function openModal(){
+      lastFocused = document.activeElement;
+      overlay.hidden = false;
+      document.body.classList.add('modal-open');
+      var firstField = form.querySelector('#diagNome');
+      if(firstField) firstField.focus();
+      document.addEventListener('keydown', onKeydown);
+    }
+
+    function closeModal(){
+      overlay.hidden = true;
+      document.body.classList.remove('modal-open');
+      document.removeEventListener('keydown', onKeydown);
+      if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function onKeydown(e){
+      if(e.key === 'Escape') closeModal();
+    }
+
+    document.querySelectorAll('.js-open-diagnostico').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        errorEl.hidden = true;
+        if(formIntro) formIntro.hidden = false;
+        form.hidden = false;
+        successEl.hidden = true;
+        openModal();
+
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          event: 'cta_click',
+          cta_location: btn.dataset.ctaLocation || 'unknown',
+          cta_text: btn.textContent.trim()
+        });
+      });
+    });
+
+    // CTA secundária do hero ("Ver como funciona") não abre o modal,
+    // só rola até o Método — rastreada à parte.
+    var heroSecondary = document.querySelector('[data-cta-location="hero_secondary"]');
+    if(heroSecondary){
+      heroSecondary.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+          event: 'cta_click',
+          cta_location: 'hero_secondary',
+          cta_text: heroSecondary.textContent.trim()
+        });
+      });
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeModal();
+    });
+    if(successCloseBtn) successCloseBtn.addEventListener('click', closeModal);
+
+    // form_start: dispara uma única vez, no primeiro campo preenchido.
+    var formStarted = false;
+    form.addEventListener('input', function(){
+      if(formStarted) return;
+      formStarted = true;
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'form_start', form_id: 'diagnostico' });
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      errorEl.hidden = true;
+
+      if(!WEB3FORMS_ACCESS_KEY || WEB3FORMS_ACCESS_KEY.indexOf('COLOQUE_') === 0){
+        errorEl.textContent = 'Formulário ainda não configurado: falta colocar a chave de acesso do Web3Forms no código.';
+        errorEl.hidden = false;
+        return;
+      }
+
+      var siteField = form.querySelector('#diagSite');
+      if(siteField && siteField.value && !/^https?:\/\//i.test(siteField.value.trim())){
+        siteField.value = 'https://' + siteField.value.trim();
+      }
+
+      var data = new FormData(form);
+      var payload = {};
+      data.forEach(function(value, key){ payload[key] = value; });
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function(res){ return res.json(); })
+        .then(function(result){
+          window.dataLayer = window.dataLayer || [];
+          if(result.success){
+            form.reset();
+            if(formIntro) formIntro.hidden = true;
+            form.hidden = true;
+            successEl.hidden = false;
+            // Evento recomendado do GA4 para geração de lead.
+            dataLayer.push({
+              event: 'generate_lead',
+              form_id: 'diagnostico',
+              lead_source: 'diagnostico_form'
+            });
+          } else {
+            errorEl.textContent = 'Não consegui enviar agora. Tenta de novo ou escreve pra contato@ganica.com.br.';
+            errorEl.hidden = false;
+            dataLayer.push({ event: 'form_error', form_id: 'diagnostico', error_reason: 'api_response' });
+          }
+        })
+        .catch(function(){
+          errorEl.textContent = 'Não consegui enviar agora. Tenta de novo ou escreve pra contato@ganica.com.br.';
+          errorEl.hidden = false;
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({ event: 'form_error', form_id: 'diagnostico', error_reason: 'network' });
+        })
+        .finally(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar diagnóstico';
+        });
+    });
+  })();
+</script>
+<script>
+  // ------------------------------------------------------------
+  // Profundidade de conteúdo: dispara uma vez por seção quando
+  // ela entra na tela — dá visão de até onde o usuário rola.
+  // ------------------------------------------------------------
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    var sectionIds = ['diferenciais', 'metodo', 'estudo', 'diagnostico', 'principios', 'sobre'];
+    if(!('IntersectionObserver' in window)) return;
+
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+
+  // ------------------------------------------------------------
+  // Engajamento com o scroll horizontal do Método (mobile).
+  // Dispara uma vez, na primeira rolagem perceptível.
+  // ------------------------------------------------------------
+  (function(){
+    var track = document.querySelector('.metodo-track');
+    if(!track) return;
+    var fired = false;
+    track.addEventListener('scroll', function(){
+      if(fired || track.scrollLeft < 20) return;
+      fired = true;
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'select_content', content_type: 'metodo_scroll' });
+    });
+  })();
+</script>
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+</body>
+</html>

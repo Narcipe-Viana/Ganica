@@ -1,0 +1,60 @@
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+
+<script>
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    if(!('IntersectionObserver' in window)) return;
+    var sectionIds = ['autor', 'contato'];
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+</script>

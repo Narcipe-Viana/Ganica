@@ -1,0 +1,129 @@
+# Configuração do Pages CMS (https://app.pagescms.org)
+# Define o formulário "Artigos" que você usa para editar o site sem abrir código.
+# Cada campo aqui corresponde a um componente do design do artigo.
+
+media:
+  input: src/assets/img
+  output: /assets/img
+
+content:
+  - name: artigos
+    label: "Estudos (artigos)"
+    type: collection
+    path: src/artigos
+    format: yaml-frontmatter
+    filename: "{fields.slug}.md"
+    exclude: [artigos.11tydata.js]
+    view:
+      fields: [title, date, rascunho]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: rascunho
+        label: "Rascunho (não aparece no site)"
+        type: boolean
+        default: false
+      - name: title
+        label: "Título (H1 do artigo)"
+        type: string
+        required: true
+      - name: slug
+        label: "Endereço (slug): vira ganica.com.br/SLUG.html. Não mude depois de publicado."
+        type: string
+        required: true
+      - name: date
+        label: "Data de publicação"
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: updated
+        label: "Data de atualização"
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: deck
+        label: "Linha fina (texto abaixo do título)"
+        type: text
+      - name: resumo
+        label: "Resumo rápido (caixa escura no topo, um item por linha)"
+        type: string
+        list: true
+      - name: body
+        label: "Texto do artigo"
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: faq
+        label: "Perguntas frequentes"
+        type: object
+        list: true
+        fields:
+          - name: pergunta
+            label: "Pergunta"
+            type: string
+          - name: resposta
+            label: "Resposta"
+            type: text
+      - name: fontes
+        label: "Fontes e metodologia"
+        type: text
+      - name: breadcrumb
+        label: "Nome curto (trilha de navegação)"
+        type: string
+      - name: seo_title
+        label: "SEO: título da aba do navegador e do Google (opcional, até ~65 caracteres)"
+        type: string
+      - name: og_title
+        label: "SEO: título ao compartilhar (opcional)"
+        type: string
+      - name: description
+        label: "SEO: meta description (até ~155 caracteres)"
+        type: text
+        required: true
+      - name: twitter_description
+        label: "SEO: descrição curta para redes (opcional)"
+        type: text
+      - name: keywords
+        label: "SEO: palavras-chave"
+        type: string
+        list: true
+      - name: tags_artigo
+        label: "Tags do artigo"
+        type: string
+        list: true
+      - name: sobre
+        label: "Assuntos (schema \"about\")"
+        type: string
+        list: true
+      - name: secao
+        label: "Seção"
+        type: string
+        default: E-commerce
+      - name: imagem_og
+        label: "Imagem de compartilhamento 1200x630 (opcional)"
+        type: image
+      - name: card_kicker
+        label: "Card: categoria (ex. \"CRO · Heatmap real\")"
+        type: string
+      - name: card_destaque
+        label: "Card: dado em destaque (selo)"
+        type: string
+      - name: card_titulo
+        label: "Card: título na home (opcional)"
+        type: string
+      - name: card_resumo
+        label: "Card: resumo na home e no índice"
+        type: text
+      - name: cta_titulo
+        label: "Chamada final: título"
+        type: string
+      - name: cta_texto
+        label: "Chamada final: texto"
+        type: text
+      - name: autor_texto
+        label: "Texto \"Sobre quem escreveu\" (opcional)"
+        type: text

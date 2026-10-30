@@ -1,0 +1,207 @@
+{%- set urlArtigo = site.url + page.url -%}
+{%- set minutos = content | leitura -%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'article',
+    content_group: 'estudo',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ seo_title or title }}</title>
+
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="index, follow">
+<meta name="author" content="{{ site.autor }}">
+<link rel="canonical" href="{{ urlArtigo }}">
+<meta name="theme-color" content="#161B2C">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="{{ site.nome }}">
+<meta property="og:title" content="{{ og_title or title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ urlArtigo }}">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="{{ date | dataISO }}T00:00:00-03:00">
+<meta property="article:modified_time" content="{{ (updated or date) | dataISO }}T00:00:00-03:00">
+<meta property="article:author" content="{{ site.autor }}">
+<meta property="article:section" content="{{ secao or 'E-commerce' }}">
+{%- for t in tags_artigo %}
+<meta property="article:tag" content="{{ t }}">
+{%- endfor %}
+{%- if imagem_og %}
+<meta property="og:image" content="{{ site.url }}{{ imagem_og }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{%- endif %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title or title }}">
+<meta name="twitter:description" content="{{ twitter_description or description }}">
+{%- if imagem_og %}
+<meta name="twitter:image" content="{{ site.url }}{{ imagem_og }}">
+{%- endif %}
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+
+<!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
+     deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.nome }}",
+      "url": "{{ site.url }}/",
+      "description": {{ site.orgDescricao | json | safe }},
+      "email": "{{ site.email }}",
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "{{ site.url }}/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#narcipe-viana",
+      "name": "{{ site.autor }}",
+      "jobTitle": "{{ site.autorCargo }}",
+      "worksFor": { "@id": "{{ site.url }}/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.nome }}",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "{{ site.url }}/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ urlArtigo }}#article",
+      "headline": {{ title | json | safe }},
+      "description": {{ description | json | safe }},
+      "datePublished": "{{ date | dataISO }}",
+      "dateModified": "{{ (updated or date) | dataISO }}",
+      "inLanguage": "pt-BR",
+      "author": { "@id": "{{ site.url }}/#narcipe-viana" },
+      "publisher": { "@id": "{{ site.url }}/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ urlArtigo }}" },
+      "articleSection": {{ (secao or "E-commerce") | json | safe }},
+      "keywords": {{ (keywords or []) | json | safe }},
+      "about": [{% for a in (sobre or []) %}{ "@type": "Thing", "name": {{ a | json | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}],
+      {%- if imagem_og %}
+      "image": "{{ site.url }}{{ imagem_og }}",
+      {%- endif %}
+      "isPartOf": { "@id": "{{ site.url }}/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ urlArtigo }}#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "{{ site.url }}/estudos/" },
+        { "@type": "ListItem", "position": 3, "name": {{ breadcrumb | json | safe }} }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+{% include "css/artigo.css" %}
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+{% include "partials/header-artigo.njk" %}
+
+<section class="article-hero">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>{{ breadcrumb }}
+    </p>
+    <h1>{{ title | semQuebraHifen | safe }}</h1>
+    <p class="article-deck">{{ deck }}</p>
+    <div class="article-meta">
+      <span>Por <strong>{{ site.autor }}</strong></span>
+      <span class="dot">·</span>
+      <span>Atualizado em {{ (updated or date) | dataBR }}</span>
+      <span class="dot">·</span>
+      <span>{{ minutos }} min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="prose">
+
+    {%- if resumo and resumo.length %}
+    <div class="resumo-box">
+      <div class="kicker">Resumo rápido</div>
+      <ul class="resumo-list">
+        {%- for item in resumo %}
+        <li>{{ item | mdInline | safe }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+
+{{ content | safe }}
+
+    {%- if faq and faq.length %}
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      {%- for f in faq %}
+      <details class="faq-item">
+        <summary>{{ f.pergunta }}</summary>
+        {{ f.resposta | md | safe }}
+      </details>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if fontes %}
+    <p class="article-sources">Fontes e metodologia: {{ fontes | mdInline | safe }}</p>
+    {%- endif %}
+
+  </div>
+</section>
+
+{% include "partials/autor.njk" %}
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>{{ cta_titulo or "Quer saber o que isso significa para a sua loja?" }}</h2>
+    <p>{{ cta_texto or "Um diagnóstico de CRO cruza esse tipo de leitura com os dados reais da sua operação e mostra onde está a receita que você está deixando na mesa." }}</p>
+    <div class="hero-ctas">
+      <a href="mailto:{{ site.email }}" class="btn btn-gold js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-ghost-dark js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/footer.njk" %}
+{% include "partials/scripts-artigo.njk" %}
+</body>
+</html>

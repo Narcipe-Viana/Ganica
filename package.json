@@ -1,0 +1,23 @@
+{
+  "name": "ganica-site",
+  "version": "1.0.0",
+  "description": "Site da Ganica (ganica.com.br)",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "qa": "python3 scripts/qa.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narcipe-Viana/ganica.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Narcipe-Viana/ganica/issues"
+  },
+  "homepage": "https://github.com/Narcipe-Viana/ganica#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  },
+  "private": true,
+  "type": "module"
+}

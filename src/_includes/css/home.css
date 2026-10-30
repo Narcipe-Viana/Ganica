@@ -1,0 +1,774 @@
+:root{
+    --ink:#161B2C;
+    --ink-soft:#232A42;
+    --paper:#F1F1EC;
+    --paper-alt:#E8E8E1;
+    --cream:#F5F3EC;
+    --gold:#C99A44;
+    --gold-deep:#A97D2F;
+    --teal:#2F6E63;
+    --body-on-light:#4A5060;
+    --body-on-dark:#C7CBD6;
+    --line-light: rgba(22,27,44,0.14);
+    --line-dark: rgba(245,243,236,0.18);
+    --max: 1120px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:500;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  img,svg{ display:block; max-width:100%; }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  section{ padding:88px 0; }
+
+  @media (max-width:640px){ section{ padding:64px 0; } }
+
+  .hairline{ border-top:1px solid var(--line-light); }
+  .hairline-dark{ border-top:1px solid var(--line-dark); }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-block;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.98rem;
+    padding:15px 28px;
+    border:1px solid transparent;
+    border-radius:2px;
+    cursor:pointer;
+    transition:background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-gold{ background:var(--gold); color:var(--ink); }
+  .btn-gold:hover{ background:var(--gold-deep); }
+  .btn-ink{ background:var(--ink); color:var(--cream); }
+  .btn-ink:hover{ background:var(--ink-soft); }
+  .btn-ghost-dark{
+    background:transparent; color:var(--cream); border-color:var(--line-dark);
+  }
+  .btn-ghost-dark:hover{ border-color:var(--cream); }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ink);
+    color:var(--cream);
+    position:relative;
+    z-index:50;
+  }
+  @media (max-width:759px){
+    header{ position:sticky; top:0; }
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:20px;
+    padding-bottom:20px;
+    position:relative;
+    z-index:60;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+  }
+  .brand-mark{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:1.35rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .brand-sub{
+    font-size:0.78rem;
+    color:var(--body-on-dark);
+    padding-left:14px;
+    border-left:1px solid var(--line-dark);
+  }
+  @media (max-width:380px){
+    .brand-sub{ display:none; }
+  }
+  .nav-links{
+    display:flex;
+    gap:32px;
+    font-size:0.92rem;
+  }
+  .nav-links a{ color:var(--body-on-dark); }
+  .nav-links a:hover{ color:var(--cream); }
+  .nav-cta{ display:none; }
+  @media (min-width:760px){
+    .nav-cta{ display:inline-block; }
+  }
+  @media (max-width:759px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Mobile menu ---------- */
+  .menu-toggle{
+    display:none;
+    position:relative;
+    width:40px;
+    height:40px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  @media (max-width:759px){
+    .menu-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  }
+  .menu-icon{
+    position:absolute;
+    top:50%; left:50%;
+    width:20px; height:2px;
+    background:var(--cream);
+    transform:translate(-50%,-50%);
+    transition:background 0.15s ease;
+  }
+  .menu-icon::before,
+  .menu-icon::after{
+    content:"";
+    position:absolute;
+    left:0;
+    width:20px; height:2px;
+    background:var(--cream);
+    transition:transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
+  }
+  .menu-icon::before{ top:-6px; }
+  .menu-icon::after{ top:6px; }
+  .menu-toggle.open .menu-icon{ background:transparent; }
+  .menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+  .menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+  .mobile-menu{
+    position:fixed;
+    inset:0;
+    background:var(--ink);
+    z-index:40;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:56px;
+    padding:90px 28px 60px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-14px);
+    transition:opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
+  }
+  .mobile-menu.open{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    transition:opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0s;
+  }
+  .mobile-menu-links{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .mobile-menu-links a{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:2rem;
+    font-weight:500;
+    color:var(--cream);
+    padding:11px 0;
+    letter-spacing:-0.01em;
+  }
+  .mobile-menu-links a:active{ color:var(--gold); }
+  .mobile-menu-cta{
+    display:block;
+    width:100%;
+    text-align:center;
+  }
+  body.menu-open{ overflow:hidden; }
+  @media (min-width:760px){
+    .mobile-menu{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ background:var(--ink); color:var(--cream); padding-top:56px; padding-bottom:80px; }
+  @media (max-width:640px){
+    .hero{ padding-top:36px; padding-bottom:48px; }
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (min-width:900px){
+    .hero-inner{ grid-template-columns:1.05fr 0.95fr; gap:56px; }
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    max-width:14ch;
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:1.08rem;
+    color:var(--body-on-dark);
+    max-width:46ch;
+    line-height:1.7;
+  }
+  .hero-ctas{
+    margin-top:36px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  @media (max-width:479px){
+    .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .hero-ctas .btn{ width:100%; text-align:center; }
+  }
+  @media (max-width:640px){
+    .hero-ctas{ margin-top:28px; }
+  }
+  /* Secondary action becomes a quiet text link on mobile instead of a
+     second competing button — desktop keeps the original two-button look. */
+  @media (max-width:759px){
+    .hero-ctas .link-secondary,
+    .cta-final .link-secondary{
+      background:none;
+      border:none;
+      padding:2px 0 0;
+      width:auto;
+      align-self:flex-start;
+      text-align:left;
+      font-weight:600;
+      font-size:0.95rem;
+      color:var(--body-on-dark);
+      text-decoration:underline;
+      text-underline-offset:4px;
+      text-decoration-color:var(--line-dark);
+    }
+    .hero-ctas .link-secondary:hover,
+    .cta-final .link-secondary:hover{
+      background:none;
+      color:var(--cream);
+      text-decoration-color:var(--cream);
+    }
+  }
+  .hero-note{
+    margin-top:28px;
+    font-size:0.9rem;
+    color:var(--body-on-dark);
+    padding-top:18px;
+    border-top:1px solid var(--line-dark);
+    max-width:46ch;
+  }
+  @media (max-width:640px){
+    .hero-note{ margin-top:22px; padding-top:16px; }
+  }
+
+  /* Desktop chart: full illustration alongside the copy */
+  @media (max-width:759px){
+    .hero-chart-desktop-wrap{ display:none; }
+  }
+  .chart-caption{
+    margin-top:14px;
+    font-size:0.8rem;
+    color:var(--body-on-dark);
+    text-align:right;
+  }
+
+  /* Mobile: the chart lives in its own section after "Não sou uma
+     agência" instead of squeezed into the hero — same dark canvas as
+     the hero, full width to breathe, shown only below the desktop
+     breakpoint (desktop keeps its chart in the hero, untouched). */
+  .mobile-chart-section{ display:none; }
+  @media (max-width:759px){
+    .mobile-chart-section{
+      display:block;
+      background:var(--ink);
+      color:var(--cream);
+    }
+  }
+  .mobile-chart-section .section-head h2{ color:var(--cream); }
+  .mobile-chart-section .section-head p{ color:var(--body-on-dark); }
+  .mobile-chart-caption{
+    margin-top:18px;
+    font-size:0.8rem;
+    color:var(--body-on-dark);
+  }
+  @media (max-width:759px){
+    /* mobile-chart-section and #estudo are both dark; without this
+       hairline they'd merge into one undifferentiated block. */
+    #estudo{ border-top:1px solid var(--line-dark); }
+  }
+
+  /* ---------- Differentiators ---------- */
+  .diff-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  @media (min-width:800px){
+    .diff-grid{ grid-template-columns:repeat(3,1fr); column-gap:56px; }
+    .diff-item{ position:relative; border-left:none; padding-left:0; }
+    .diff-item:not(:first-child)::before{
+      content:"";
+      position:absolute;
+      left:-28px;
+      top:4px;
+      bottom:4px;
+      width:1px;
+      background:var(--line-light);
+    }
+  }
+  .diff-item{
+    padding:28px 0;
+    border-top:1px solid var(--line-light);
+  }
+  @media (min-width:800px){
+    .diff-item{ border-top:none; padding-top:0; }
+  }
+  .diff-item h3{
+    font-size:1.18rem;
+    margin-bottom:12px;
+  }
+  .diff-item p{
+    color:var(--body-on-light);
+    font-size:0.98rem;
+  }
+
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head h2{ font-size:clamp(1.7rem,3vw,2.3rem); }
+  .section-head p{ color:var(--body-on-light); margin-top:14px; font-size:1.02rem; }
+  @media (max-width:640px){
+    .section-head{ margin-bottom:34px; }
+  }
+
+  /* ---------- Método ---------- */
+  .metodo{ background:var(--paper-alt); }
+  .step{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+    padding:32px 0;
+    border-top:1px solid var(--line-light);
+  }
+  .step:last-child{ border-bottom:1px solid var(--line-light); }
+  @media (min-width:760px){
+    .step{ grid-template-columns:120px 1fr; gap:32px; align-items:start; }
+  }
+  .step-num{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:2.6rem;
+    color:var(--teal);
+    opacity:0.42;
+    font-weight:500;
+    line-height:1;
+  }
+  .step h3{ font-size:1.2rem; margin-bottom:8px; }
+  .step p{ color:var(--body-on-light); max-width:56ch; }
+  @media (max-width:640px){
+    .step{ padding:22px 0; gap:2px; }
+    .step-num{ font-size:1.9rem; opacity:0.5; }
+  }
+
+  /* Mobile: horizontal scroll-snap track instead of a vertical stack.
+     Desktop (min-width:760px) is untouched — .step keeps its original rules. */
+  @media (max-width:759px){
+    .metodo-track{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-padding-left:24px;
+      -webkit-overflow-scrolling:touch;
+      margin:0 -24px;
+      padding:4px 24px 8px;
+      scrollbar-width:none;
+    }
+    .metodo-track::-webkit-scrollbar{ display:none; }
+    .metodo-track .step{
+      flex:0 0 72%;
+      max-width:280px;
+      scroll-snap-align:start;
+      border:1px solid var(--line-light);
+      border-radius:2px;
+      background:var(--paper);
+      padding:22px 20px;
+    }
+    .metodo-track .step:last-child{
+      border:1px solid var(--line-light);
+      border-radius:2px;
+      margin-right:10px;
+    }
+  }
+
+  /* ---------- Oferta ---------- */
+  .offer-card{
+    display:grid;
+    grid-template-columns:1fr;
+    border:1px solid var(--line-light);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  @media (min-width:820px){
+    .offer-card{ grid-template-columns:0.85fr 1.15fr; }
+  }
+  .offer-left{
+    background:var(--ink);
+    color:var(--cream);
+    padding:44px 36px;
+    display:flex;
+    flex-direction:column;
+  }
+  .offer-left-note{
+    margin-top:auto;
+    padding-top:24px;
+    border-top:1px solid var(--line-dark);
+    font-size:0.85rem;
+    color:var(--body-on-dark);
+  }
+  .offer-left .kicker{ font-size:0.85rem; color:var(--body-on-dark); }
+  .offer-left h3{ font-size:1.7rem; margin:10px 0 20px; }
+  .offer-left p{ color:var(--body-on-dark); font-size:0.98rem; margin-bottom:26px; }
+  .timeline-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-top:1px solid var(--line-dark);
+    font-size:0.92rem;
+  }
+  .timeline-row:last-child{ border-bottom:1px solid var(--line-dark); }
+  .timeline-row span:first-child{ color:var(--body-on-dark); }
+  .timeline-row span:last-child{ font-weight:600; }
+
+  .offer-right{ padding:44px 36px; }
+
+  /* Mobile: the two stacked label/value rows (each with its own hairline)
+     read as a spreadsheet. Two side-by-side stat blocks — same visual
+     language as the numerals in Método — read as a card instead. */
+  .timeline-stats-mobile{ display:none; }
+  @media (max-width:640px){
+    .offer-left, .offer-right{ padding:30px 22px; }
+    .offer-left h3{ font-size:1.45rem; margin:8px 0 16px; }
+    .timeline-row{ display:none; }
+    .timeline-stats-mobile{
+      display:flex;
+      gap:28px;
+      margin:22px 0 6px;
+      padding-top:22px;
+      border-top:1px solid var(--line-dark);
+    }
+    .timeline-stat{ flex:1; }
+    .timeline-days-row{ display:flex; align-items:baseline; gap:6px; }
+    .timeline-days{
+      font-family:'Frank Ruhl Libre', serif;
+      font-size:1.9rem;
+      font-weight:600;
+      color:var(--gold);
+      line-height:1;
+    }
+    .timeline-unit{ font-size:0.85rem; color:var(--body-on-dark); }
+    .timeline-caption{
+      margin-top:8px;
+      font-size:0.82rem;
+      color:var(--body-on-dark);
+      line-height:1.35;
+    }
+  }
+  .offer-list{ list-style:none; }
+  .offer-list li{
+    padding:16px 0;
+    border-top:1px solid var(--line-light);
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  .offer-list li:last-child{ border-bottom:1px solid var(--line-light); }
+
+  .dependency-box{
+    margin-top:28px;
+    padding:20px 22px;
+    border:1px solid var(--line-light);
+    border-radius:2px;
+    background:var(--paper-alt);
+  }
+  .dependency-box h4{
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.92rem;
+    margin-bottom:8px;
+  }
+  .dependency-box p{ font-size:0.92rem; color:var(--body-on-light); }
+
+  .offer-price{
+    margin-top:28px;
+    font-size:0.98rem;
+    color:var(--body-on-light);
+  }
+  .offer-right .btn{ margin-top:24px; }
+
+  /* ---------- Princípios ---------- */
+  .principios{ background:var(--ink); color:var(--cream); }
+  .principios .section-head p,
+  .principios .section-head h2{ color:var(--cream); }
+  .principios .section-head p{ color:var(--body-on-dark); }
+  .quote{
+    max-width:720px;
+    padding:36px 0;
+    border-top:1px solid var(--line-dark);
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:400;
+    font-size:clamp(1.25rem,2.3vw,1.6rem);
+    line-height:1.4;
+  }
+  .quote:last-of-type{ border-bottom:1px solid var(--line-dark); }
+  @media (max-width:640px){
+    .quote{ padding:24px 0; font-size:1.15rem; }
+  }
+  /* Wide screens: the dark canvas has nothing on the right to counter-
+     balance left-aligned text (unlike the hero, which has the chart).
+     Scaling the typography up fills the width intentionally instead
+     of leaving a void. */
+  @media (min-width:1200px){
+    .principios .section-head{ max-width:760px; }
+    .principios .section-head h2{ font-size:clamp(1.8rem,2.4vw,2.2rem); }
+    .quote{ max-width:800px; font-size:clamp(1.4rem,1.7vw,1.7rem); }
+  }
+
+  /* ---------- Sobre ---------- */
+  .sobre-card{
+    display:grid;
+    grid-template-columns:1fr;
+    border:1px solid var(--line-light);
+    border-radius:2px;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  @media (min-width:820px){
+    .sobre-card{ grid-template-columns:300px 1fr; }
+  }
+  .sobre-photo-col{
+    background:var(--paper-alt);
+    border-bottom:1px solid var(--line-light);
+  }
+  @media (min-width:820px){
+    .sobre-photo-col{ border-bottom:none; border-right:1px solid var(--line-light); }
+  }
+  .sobre-photo{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .sobre-caption{
+    padding:16px 18px;
+    border-top:1px solid var(--line-light);
+  }
+  .sobre-name{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:1.1rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .sobre-role{
+    margin-top:2px;
+    font-size:0.85rem;
+    color:var(--body-on-light);
+  }
+  .sobre-text-col{ padding:36px 32px; }
+  .sobre-text-col h2{ margin-bottom:20px; }
+  .sobre-text-col p{ color:var(--body-on-light); max-width:60ch; margin-bottom:16px; font-size:1.02rem; }
+  @media (max-width:640px){
+    .sobre-text-col{ padding:26px 22px; }
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{ background:var(--ink); color:var(--cream); text-align:left; }
+  .cta-final h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); max-width:16ch; }
+  .cta-final p{ color:var(--body-on-dark); margin-top:16px; max-width:52ch; font-size:1.02rem; }
+  .cta-final .hero-ctas{ margin-top:32px; }
+  @media (min-width:1200px){
+    .cta-final h2{ font-size:clamp(2.6rem,4vw,4rem); max-width:17ch; }
+    .cta-final p{ max-width:56ch; font-size:1.15rem; }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{ background:var(--ink-soft); color:var(--body-on-dark); padding:44px 0; font-size:0.88rem; }
+  .footer-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    margin-bottom:24px;
+  }
+  .footer-links{ display:flex; gap:24px; flex-wrap:wrap; }
+  .footer-links a:hover{ color:var(--cream); }
+
+  /* ---------- Modal: formulário de diagnóstico ---------- */
+  body.modal-open{ overflow:hidden; }
+  .diag-modal-overlay{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(22,27,44,0.62);
+    display:flex; align-items:flex-start; justify-content:center;
+    padding:64px 20px;
+    overflow-y:auto;
+  }
+  .diag-modal-overlay[hidden]{ display:none; }
+  .diag-modal{
+    background:var(--cream);
+    color:var(--ink);
+    width:100%;
+    max-width:560px;
+    border-radius:2px;
+    position:relative;
+    padding:40px 36px 32px;
+  }
+  @media (max-width:640px){
+    .diag-modal-overlay{ padding:28px 12px; }
+    .diag-modal{ padding:30px 20px 24px; }
+  }
+  .diag-modal-close{
+    position:absolute; top:14px; right:14px;
+    background:transparent; border:none; cursor:pointer;
+    font-size:1.7rem; line-height:1; color:var(--body-on-light);
+    padding:8px;
+  }
+  .diag-modal-close:hover{ color:var(--ink); }
+  .diag-modal-body .kicker{
+    font-size:0.8rem; color:var(--gold-deep); font-weight:600;
+    letter-spacing:0.03em; text-transform:uppercase;
+  }
+  .diag-modal-body h3{ font-size:1.5rem; margin-top:8px; }
+  .diag-modal-intro{ color:var(--body-on-light); font-size:0.95rem; margin-top:10px; margin-bottom:26px; }
+  .diag-form{ display:flex; flex-direction:column; gap:16px; }
+  .diag-form[hidden]{ display:none; }
+  .diag-field{ display:flex; flex-direction:column; gap:6px; flex:1; }
+  .diag-field-row{ display:flex; gap:16px; }
+  @media (max-width:520px){ .diag-field-row{ flex-direction:column; gap:16px; } }
+  .diag-field label{ font-size:0.84rem; color:var(--body-on-light); font-weight:500; }
+  .diag-field input, .diag-field select, .diag-field textarea{
+    font-family:'Work Sans', sans-serif;
+    font-size:0.96rem;
+    color:var(--ink);
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line-light);
+    padding:8px 2px;
+    border-radius:0;
+    width:100%;
+  }
+  .diag-field textarea{ resize:vertical; min-height:64px; }
+  .diag-field input:focus, .diag-field select:focus, .diag-field textarea:focus{
+    outline:none; border-bottom-color:var(--gold-deep);
+  }
+  .diag-botcheck{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+  .diag-submit{ margin-top:8px; width:100%; text-align:center; }
+  .diag-submit[disabled]{ opacity:0.6; cursor:not-allowed; }
+  .diag-form-note{ font-size:0.8rem; color:var(--body-on-light); text-align:center; }
+  .diag-form-error{ font-size:0.88rem; color:#A94430; text-align:center; }
+  .diag-success{ text-align:center; padding:12px 0; }
+  .diag-success h3{ margin-top:8px; }
+  .diag-success p{ color:var(--body-on-light); margin-top:12px; max-width:44ch; margin-left:auto; margin-right:auto; }
+  .diag-success .btn{ margin-top:24px; }
+
+  /* ---------- Estudo (lista de estudos) ---------- */
+  .estudo{ background:var(--ink); color:var(--cream); }
+  .estudo .section-head h2{ color:var(--cream); }
+  .estudo .section-head p{ color:var(--body-on-dark); }
+  .estudo-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .estudo-entry{
+    padding:40px 0;
+  }
+  @media (max-width:799px){
+    .estudo-entry{ border-top:1px solid var(--line-dark); }
+    .estudo-entry:first-child{ border-top:none; padding-top:0; }
+  }
+  @media (min-width:800px){
+    .estudo-list{ grid-template-columns:repeat(2,1fr); column-gap:64px; }
+    .estudo-entry{ padding-top:0; position:relative; }
+    .estudo-entry:not(:first-child)::before{
+      content:"";
+      position:absolute;
+      left:-32px;
+      top:4px;
+      bottom:4px;
+      width:1px;
+      background:var(--line-dark);
+    }
+  }
+  .estudo-entry .kicker{
+    font-size:0.78rem;
+    color:var(--gold);
+    font-weight:600;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .estudo-tag{
+    display:inline-block;
+    font-family:'Work Sans', sans-serif;
+    font-size:0.82rem;
+    font-weight:600;
+    color:var(--gold);
+    border:1px solid rgba(201,154,68,0.4);
+    border-radius:2px;
+    padding:5px 11px;
+    margin-top:16px;
+    margin-bottom:18px;
+  }
+  .estudo-entry h3{
+    font-size:clamp(1.2rem,2.2vw,1.5rem);
+    color:var(--cream);
+    margin-bottom:14px;
+    line-height:1.3;
+  }
+  .estudo-entry h3 a{ color:inherit; }
+  .estudo-entry h3 a:hover{ color:var(--gold); }
+  .estudo-entry p{
+    color:var(--body-on-dark);
+    font-size:0.98rem;
+    max-width:46ch;
+    margin-bottom:18px;
+  }
+  .estudo-link{
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--cream);
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:var(--line-dark);
+  }
+  .estudo-link:hover{ color:var(--gold); text-decoration-color:var(--gold); }
+
+  /* Link para o índice completo de estudos (aparece quando há mais de 2) */
+  .estudo-todos{ margin-top:36px; }
+
+  .nw{ white-space:nowrap; }

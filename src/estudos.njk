@@ -1,0 +1,148 @@
+---
+permalink: /estudos/index.html
+---
+{%- set total = collections.estudos | length -%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({ event: 'page_data', page_type: 'listing', content_group: 'estudo', page_language: 'pt-BR', business_unit: 'ganica_cro' });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudos exclusivos de CRO para e-commerce | Ganica</title>
+<meta name="description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão analisados com rigor, sem achismo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ site.url }}/estudos/">
+<meta name="theme-color" content="#161B2C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.nome }}">
+<meta property="og:title" content="Estudos exclusivos de CRO para e-commerce">
+<meta property="og:description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão.">
+<meta property="og:url" content="{{ site.url }}/estudos/">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ site.url }}/estudos/#page",
+      "url": "{{ site.url }}/estudos/",
+      "name": "Estudos exclusivos de CRO",
+      "inLanguage": "pt-BR",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "publisher": { "@id": "{{ site.url }}/#organization" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [{% for e in collections.estudos %}{ "@type": "ListItem", "position": {{ loop.index }}, "url": "{{ site.url }}{{ e.url }}", "name": {{ e.data.title | json | safe }} }{% if not loop.last %}, {% endif %}{% endfor %}]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "{{ site.url }}/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos" }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+{% include "css/artigo.css" %}
+
+  /* ---------- Índice de estudos (mobile primeiro) ---------- */
+  .estudos-index{ padding:56px 0 72px; }
+  .estudos-lista{ list-style:none; max-width:760px; }
+  .estudo-item{ border-top:1px solid var(--line-light); }
+  .estudo-item:last-child{ border-bottom:1px solid var(--line-light); }
+  .estudo-item a{ display:block; padding:28px 0 30px; }
+  .estudo-meta{
+    display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center;
+    font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--gold-deep); font-weight:600; margin-bottom:12px;
+  }
+  .estudo-meta .num{ color:var(--ink); }
+  .estudo-meta .data{ color:var(--body-on-light); font-weight:500; flex-basis:100%; }
+  @media (min-width:760px){ .estudo-meta .data{ flex-basis:auto; } .estudo-meta .data::before{ content:"·"; margin-right:12px; color:var(--line-light); } }
+  .estudo-item h2{
+    font-size:1.45rem; line-height:1.18; color:var(--ink);
+    transition:color .2s ease;
+  }
+  .estudo-item p{ color:var(--body-on-light); margin-top:10px; font-size:0.98rem; }
+  .estudo-destaque{
+    display:inline-block; margin-top:16px; padding:6px 10px;
+    border:1px solid var(--line-light); border-radius:2px;
+    font-size:0.82rem; font-weight:600; color:var(--teal);
+  }
+  .estudo-ler{
+    display:inline-block; margin-top:16px; font-weight:600; font-size:0.92rem;
+    text-decoration:underline; text-underline-offset:4px; text-decoration-color:var(--line-light);
+  }
+  .estudo-item a:hover h2{ color:var(--gold-deep); }
+  .estudo-item a:hover .estudo-ler{ text-decoration-color:var(--gold); }
+  @media (min-width:760px){
+    .estudos-index{ padding:80px 0 104px; }
+    .estudo-item a{ padding:36px 0 38px; }
+    .estudo-item h2{ font-size:1.85rem; }
+    .estudo-item p{ font-size:1.02rem; }
+  }
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+{% include "partials/header-artigo.njk" %}
+
+<section class="article-hero">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">Início</a><span class="sep">/</span>Estudos</p>
+    <h1>Estudos exclusivos de CRO</h1>
+    <p class="article-deck">Levantamentos próprios sobre e-commerce e CRO: dado de mercado, heatmap real e funil de conversão, lidos com o mesmo rigor de um diagnóstico.</p>
+    <div class="article-meta"><span>{{ total }} {{ "estudo publicado" if total == 1 else "estudos publicados" }}</span></div>
+  </div>
+</section>
+
+<section class="estudos-index">
+  <div class="wrap">
+    <ol class="estudos-lista">
+      {%- for e in collections.estudos %}
+      <li class="estudo-item">
+        <a href="{{ e.url }}" class="js-track-click" data-cta-location="estudos_index_{{ loop.index }}">
+          <div class="estudo-meta">
+            <span class="num">{{ (total - loop.index0) | pad2 }}</span>
+            <span>{{ e.data.card_kicker }}</span>
+            <span class="data">{{ (e.data.updated or e.data.date) | dataBR }}</span>
+          </div>
+          <h2>{{ e.data.title | semQuebraHifen | safe }}</h2>
+          <p>{{ e.data.card_resumo or e.data.description }}</p>
+          {%- if e.data.card_destaque %}<span class="estudo-destaque">{{ e.data.card_destaque }}</span><br>{% endif %}
+          <span class="estudo-ler">Ler o estudo →</span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>Quer essa leitura aplicada à sua loja?</h2>
+    <p>Os estudos mostram padrões. Um diagnóstico mostra onde eles aparecem, e com que intensidade, na sua operação, com os seus próprios dados.</p>
+    <div class="hero-ctas">
+      <a href="mailto:{{ site.email }}" class="btn btn-gold js-track-click" data-cta-location="estudos_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-ghost-dark js-track-click" data-cta-location="estudos_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/footer.njk" %}
+{% include "partials/scripts-artigo.njk" %}
+</body>
+</html>
