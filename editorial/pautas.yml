@@ -200,3 +200,14 @@ pautas:
     palavra_chave: "teste A/B e-commerce / erros básicos de UX e-commerce"
     slug_sugerido: antes-do-teste-ab-conserte-o-basico
     restricoes: "Exemplos genéricos. Artigo de entrada de funil."
+
+  - id: 12
+    status: publicada
+    titulo_provisorio: "Persona não é um avatar com nome e foto: é o mapa de quem trava em cada etapa do seu funil"
+    tese: >-
+      A persona que serve para CRO responde quem é a pessoa, o que ela precisa sentir para comprar e
+      onde desiste. Persona comportamental, montada a partir do GA4 e validada com fontes qualitativas.
+    palavra_chave: "persona e-commerce / como criar persona para CRO / persona comportamental"
+    restricoes: "Artigo de método. Personas e números só como exemplo hipotético; nenhum dado de cliente."
+    publicado_em: 2026-10-30
+    slug: persona-ecommerce-cro-comportamental
