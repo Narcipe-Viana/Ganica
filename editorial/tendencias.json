@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T00:17:35+00:00",
+ "gerado_em": "2026-10-31T00:22:49+00:00",
  "geo": "BR",
  "janela_explore": "últimos 90 dias",
  "aviso": "Índices do Google Trends são relativos (0 a 100) e variações percentuais; não são volume de buscas.",
@@ -145,7 +145,7 @@
    "pesquisa": "kimi antonelli",
    "trafego_aprox": "500+",
    "publicado": "Fri, 30 Oct 2026 16:50:00 -0700",
-   "relevante_ecommerce": true,
+   "relevante_ecommerce": false,
    "noticias": [
     {
      "titulo": "Análise: Antonelli deve sair campeão do México, mas Ferrari e Verstappen podem carimbar a faixa",
@@ -258,8 +258,9 @@
   }
  ],
  "categoria_compras": {
-  "variacao_90d_pct": 13,
+  "variacao_90d_pct": 9,
   "indice_atual": 100,
+  "base_baixa": false,
   "principais": [
    {
     "consulta": "tenis",
@@ -270,16 +271,8 @@
     "valor": "73"
    },
    {
-    "consulta": "shopping",
-    "valor": "67"
-   },
-   {
     "consulta": "netflix",
     "valor": "57"
-   },
-   {
-    "consulta": "vestido",
-    "valor": "56"
    },
    {
     "consulta": "nike",
@@ -302,10 +295,6 @@
     "valor": "34"
    },
    {
-    "consulta": "relogio",
-    "valor": "33"
-   },
-   {
     "consulta": "google",
     "valor": "31"
    },
@@ -314,33 +303,45 @@
     "valor": "28"
    },
    {
-    "consulta": "ouro",
-    "valor": "28"
+    "consulta": "reclame aqui",
+    "valor": "24"
    },
    {
-    "consulta": "ingresso",
-    "valor": "26"
+    "consulta": "chuva",
+    "valor": "24"
+   },
+   {
+    "consulta": "mercado livre",
+    "valor": "24"
+   },
+   {
+    "consulta": "relógio",
+    "valor": "23"
+   },
+   {
+    "consulta": "casas bahia",
+    "valor": "22"
    }
   ],
   "em_ascensao": [
    {
-    "consulta": "semana mundial do espaço de 2026",
-    "valor": "Aumento repentino"
+    "consulta": "fantasia halloween",
+    "valor": "Mais 1.450%"
    },
    {
-    "consulta": "leilão casas bahia",
-    "valor": "Mais 950%"
+    "consulta": "horario debate band",
+    "valor": "Mais 750%"
    },
    {
     "consulta": "felca",
+    "valor": "Mais 350%"
+   },
+   {
+    "consulta": "black friday 2026",
     "valor": "Mais 300%"
    },
    {
-    "consulta": "reacher",
-    "valor": "Mais 300%"
-   },
-   {
-    "consulta": "cplay",
+    "consulta": "black friday",
     "valor": "Mais 250%"
    },
    {
@@ -348,11 +349,11 @@
     "valor": "Mais 90%"
    },
    {
-    "consulta": "chuva",
-    "valor": "Mais 60%"
+    "consulta": "mercado li",
+    "valor": "Mais 80%"
    },
    {
-    "consulta": "amazon kindle",
+    "consulta": "chuva",
     "valor": "Mais 60%"
    }
   ],
@@ -360,8 +361,9 @@
  },
  "sementes": {
   "e-commerce": {
-   "variacao_90d_pct": -32,
-   "indice_atual": 0,
+   "variacao_90d_pct": -8,
+   "indice_atual": 9,
+   "base_baixa": true,
    "principais": [
     {
      "consulta": "o que é e-commerce",
@@ -374,6 +376,10 @@
     {
      "consulta": "e-commerce brasil",
      "valor": "88"
+    },
+    {
+     "consulta": "o que e e-commerce",
+     "valor": "72"
     },
     {
      "consulta": "tray e-commerce",
@@ -418,17 +424,9 @@
     {
      "consulta": "assistente de e-commerce",
      "valor": "11"
-    },
-    {
-     "consulta": "contabilidade para e-commerce",
-     "valor": "10"
     }
    ],
    "em_ascensao": [
-    {
-     "consulta": "koala",
-     "valor": "Aumento repentino"
-    },
     {
      "consulta": "weather tomorrow",
      "valor": "Mais 350%"
@@ -453,24 +451,29 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=e-commerce&hl=pt-BR"
   },
   "loja virtual": {
-   "variacao_90d_pct": -5,
-   "indice_atual": 77,
+   "variacao_90d_pct": -11,
+   "indice_atual": 57,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "criar loja virtual",
      "valor": "100"
     },
     {
-     "consulta": "loja virtual uol",
-     "valor": "58"
+     "consulta": "loja online",
+     "valor": "62"
     },
     {
      "consulta": "uol host loja virtual",
      "valor": "55"
     },
     {
-     "consulta": "montar loja virtual",
-     "valor": "43"
+     "consulta": "minha loja virtual",
+     "valor": "54"
+    },
+    {
+     "consulta": "como criar loja virtual",
+     "valor": "49"
     },
     {
      "consulta": "loja virtual sptrans",
@@ -481,24 +484,12 @@
      "valor": "36"
     },
     {
-     "consulta": "loja virtual roupas",
-     "valor": "34"
-    },
-    {
-     "consulta": "loja virtual tim",
-     "valor": "34"
+     "consulta": "tim loja virtual",
+     "valor": "35"
     },
     {
      "consulta": "loja virtual juntos somos mais",
      "valor": "31"
-    },
-    {
-     "consulta": "loja virtual de roupas",
-     "valor": "29"
-    },
-    {
-     "consulta": "site para loja virtual",
-     "valor": "28"
     },
     {
      "consulta": "loja virtual peter paiva",
@@ -515,6 +506,14 @@
     {
      "consulta": "loja virtual nuvem",
      "valor": "24"
+    },
+    {
+     "consulta": "loja virtual claro",
+     "valor": "22"
+    },
+    {
+     "consulta": "vivo loja virtual",
+     "valor": "21"
     }
    ],
    "em_ascensao": [
@@ -523,27 +522,39 @@
      "valor": "Aumento repentino"
     },
     {
+     "consulta": "melhor site para criar loja virtual grátis",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "loja virtual editora do brasil",
+     "valor": "Aumento repentino"
+    },
+    {
      "consulta": "ana cosentino loja virtual",
      "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "litoarte loja virtual",
+     "valor": "Mais 900%"
+    },
+    {
+     "consulta": "atelier coração de pano loja virtual",
+     "valor": "Mais 800%"
     },
     {
      "consulta": "getnet loja virtual",
      "valor": "Mais 450%"
     },
     {
+     "consulta": "loja virtual brastemp",
+     "valor": "Mais 250%"
+    },
+    {
      "consulta": "petz loja virtual",
      "valor": "Mais 250%"
     },
     {
-     "consulta": "crie sua loja virtual",
-     "valor": "Mais 170%"
-    },
-    {
-     "consulta": "como criar uma loja virtual grátis",
-     "valor": "Mais 130%"
-    },
-    {
-     "consulta": "loja virtual de calçados femininos",
+     "consulta": "loja virtual para iniciantes",
      "valor": "Mais 100%"
     },
     {
@@ -570,16 +581,13 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=loja+virtual&hl=pt-BR"
   },
   "marketplace": {
-   "variacao_90d_pct": -33,
+   "variacao_90d_pct": -32,
    "indice_atual": 12,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "marketplace facebook",
      "valor": "100"
-    },
-    {
-     "consulta": "what is an nft marketplace",
-     "valor": "24"
     },
     {
      "consulta": "marketplace no facebook",
@@ -595,6 +603,10 @@
     },
     {
      "consulta": "o que é marketplace",
+     "valor": "7"
+    },
+    {
+     "consulta": "mercado livre marketplace",
      "valor": "7"
     },
     {
@@ -630,8 +642,8 @@
      "valor": "3"
     },
     {
-     "consulta": "creator marketplace",
-     "valor": "3"
+     "consulta": "marketplace usados",
+     "valor": "2"
     }
    ],
    "em_ascensao": [
@@ -640,16 +652,16 @@
      "valor": "Aumento repentino"
     },
     {
+     "consulta": "grok bot marketplace",
+     "valor": "Mais 4.850%"
+    },
+    {
      "consulta": "blow marketplace ltda",
      "valor": "Mais 140%"
     },
     {
      "consulta": "facebook̈ marketplace",
      "valor": "Mais 110%"
-    },
-    {
-     "consulta": "what is an nft marketplace",
-     "valor": "Mais 100%"
     },
     {
      "consulta": "blow marketplace",
@@ -666,17 +678,14 @@
     {
      "consulta": "como anunciar no marketplace do facebook",
      "valor": "Mais 40%"
-    },
-    {
-     "consulta": "vr marketplace",
-     "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=marketplace&hl=pt-BR"
   },
   "mercado livre": {
    "variacao_90d_pct": 2,
-   "indice_atual": 53,
+   "indice_atual": 54,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "cupom mercado livre",
@@ -700,6 +709,10 @@
     },
     {
      "consulta": "cupom desconto mercado livre",
+     "valor": "18"
+    },
+    {
+     "consulta": "mercado livre vender",
      "valor": "18"
     },
     {
@@ -733,35 +746,40 @@
     {
      "consulta": "mercado livre vendedor",
      "valor": "12"
-    },
-    {
-     "consulta": "cupons mercado livre",
-     "valor": "12"
     }
    ],
    "em_ascensao": [
     {
-     "consulta": "shopee seller",
-     "valor": "Mais 60%"
+     "consulta": "forneceup",
+     "valor": "Mais 750%"
     },
     {
-     "consulta": "mercado livre seller",
-     "valor": "Mais 40%"
+     "consulta": "pc gamer completo mercado livre 44.999",
+     "valor": "Mais 500%"
+    },
+    {
+     "consulta": "pc gamer completo mercado livre",
+     "valor": "Mais 200%"
+    },
+    {
+     "consulta": "fornecedor mercado livre",
+     "valor": "Mais 120%"
+    },
+    {
+     "consulta": "shopee seller",
+     "valor": "Mais 60%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=mercado+livre&hl=pt-BR"
   },
   "shopee": {
-   "variacao_90d_pct": -8,
-   "indice_atual": 57,
+   "variacao_90d_pct": -7,
+   "indice_atual": 58,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "na shopee",
      "valor": "100"
-    },
-    {
-     "consulta": "da shopee",
-     "valor": "76"
     },
     {
      "consulta": "mercado livre",
@@ -769,6 +787,10 @@
     },
     {
      "consulta": "shopee brasil",
+     "valor": "8"
+    },
+    {
+     "consulta": "entrega shopee",
      "valor": "8"
     },
     {
@@ -818,36 +840,8 @@
    ],
    "em_ascensao": [
     {
-     "consulta": "simbolo da shopee png",
-     "valor": "Mais 650%"
-    },
-    {
-     "consulta": "articoolo",
+     "consulta": "maree instituição de pagamento ltda é da shopee",
      "valor": "Mais 400%"
-    },
-    {
-     "consulta": "logo shopee branco png",
-     "valor": "Mais 250%"
-    },
-    {
-     "consulta": "logo shopee png",
-     "valor": "Mais 190%"
-    },
-    {
-     "consulta": "logo shopee preto e branco",
-     "valor": "Mais 140%"
-    },
-    {
-     "consulta": "shopee logo preto",
-     "valor": "Mais 140%"
-    },
-    {
-     "consulta": "imagens shopee png",
-     "valor": "Mais 140%"
-    },
-    {
-     "consulta": "logo shopee branco",
-     "valor": "Mais 130%"
     },
     {
      "consulta": "programa de afiliados shopee",
@@ -858,11 +852,15 @@
      "valor": "Mais 130%"
     },
     {
-     "consulta": "shopee png",
-     "valor": "Mais 70%"
+     "consulta": "shopee vip",
+     "valor": "Mais 90%"
     },
     {
      "consulta": "shopee afiliados",
+     "valor": "Mais 60%"
+    },
+    {
+     "consulta": "wms shopee",
      "valor": "Mais 60%"
     },
     {
@@ -881,16 +879,17 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=shopee&hl=pt-BR"
   },
   "amazon": {
-   "variacao_90d_pct": -8,
-   "indice_atual": 44,
+   "variacao_90d_pct": -7,
+   "indice_atual": 45,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "prime",
      "valor": "100"
     },
     {
-     "consulta": "prime amazon",
-     "valor": "100"
+     "consulta": "amazon prime",
+     "valor": "99"
     },
     {
      "consulta": "amazon video",
@@ -947,16 +946,16 @@
    ],
    "em_ascensao": [
     {
-     "consulta": "amazon encha seu kindle",
-     "valor": "Aumento repentino"
-    },
-    {
      "consulta": "amazon quase novo",
      "valor": "Mais 400%"
     },
     {
-     "consulta": "how to cancel amazon prime",
-     "valor": "Mais 90%"
+     "consulta": "black friday amazon",
+     "valor": "Mais 200%"
+    },
+    {
+     "consulta": "black friday amazon 2026",
+     "valor": "Mais 190%"
     },
     {
      "consulta": "mercado li",
@@ -974,8 +973,9 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=amazon&hl=pt-BR"
   },
   "frete grátis": {
-   "variacao_90d_pct": -21,
-   "indice_atual": 39,
+   "variacao_90d_pct": -23,
+   "indice_atual": 36,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "frete grátis mercado livre",
@@ -988,6 +988,10 @@
     {
      "consulta": "frete grátis shopee",
      "valor": "49"
+    },
+    {
+     "consulta": "mercadolivre frete grátis",
+     "valor": "39"
     },
     {
      "consulta": "frete grátis shein",
@@ -1032,10 +1036,6 @@
     {
      "consulta": "promoção mercado livre frete grátis",
      "valor": "4"
-    },
-    {
-     "consulta": "cama box casal frete grátis",
-     "valor": "3"
     }
    ],
    "em_ascensao": [
@@ -1051,16 +1051,13 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=frete+gr%C3%A1tis&hl=pt-BR"
   },
   "pix": {
-   "variacao_90d_pct": 42,
-   "indice_atual": 45,
+   "variacao_90d_pct": 40,
+   "indice_atual": 44,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "chave pix",
      "valor": "100"
-    },
-    {
-     "consulta": "pix nubank",
-     "valor": "95"
     },
     {
      "consulta": "como fazer pix",
@@ -1079,24 +1076,28 @@
      "valor": "45"
     },
     {
-     "consulta": "qr code pix",
-     "valor": "36"
+     "consulta": "pix credito",
+     "valor": "38"
     },
     {
-     "consulta": "pix na hora",
-     "valor": "33"
+     "consulta": "qr code pix",
+     "valor": "36"
     },
     {
      "consulta": "pix parcelado",
      "valor": "31"
     },
     {
-     "consulta": "pix no crédito",
+     "consulta": "pix 5 mil",
      "valor": "30"
     },
     {
-     "consulta": "pix mei 5 mil",
-     "valor": "20"
+     "consulta": "pix 5 mil mei",
+     "valor": "23"
+    },
+    {
+     "consulta": "taxa pix",
+     "valor": "21"
     },
     {
      "consulta": "live pix",
@@ -1111,17 +1112,17 @@
      "valor": "16"
     },
     {
-     "consulta": "pix caiu",
-     "valor": "14"
+     "consulta": "pix de 5 mil",
+     "valor": "16"
     }
    ],
    "em_ascensao": [
     {
-     "consulta": "pix mei lula",
+     "consulta": "pix 5 mil mei",
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "pix mei 5 mil",
+     "consulta": "pix 5 mil lula",
      "valor": "Aumento repentino"
     },
     {
@@ -1129,55 +1130,60 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "pix mei",
+     "consulta": "pix 5000 mei",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "pix meis",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "como vai funcionar o pix mei",
+     "valor": "Mais 2.850%"
+    },
+    {
+     "consulta": "ana gaming brasil recebi um pix",
+     "valor": "Mais 2.450%"
+    },
+    {
+     "consulta": "pix mei como funciona",
+     "valor": "Mais 1.450%"
+    },
+    {
+     "consulta": "pix mei como receber",
+     "valor": "Mais 1.450%"
+    },
+    {
+     "consulta": "pix 5 mil",
+     "valor": "Mais 1.450%"
+    },
+    {
+     "consulta": "como receber o pix mei",
      "valor": "Mais 1.250%"
     },
     {
-     "consulta": "nova regra pix",
-     "valor": "Mais 1.100%"
+     "consulta": "pix mei",
+     "valor": "Mais 1.200%"
+    },
+    {
+     "consulta": "pix de 5000 para mei",
+     "valor": "Mais 1.050%"
     },
     {
      "consulta": "pix para mei",
      "valor": "Mais 900%"
     },
     {
-     "consulta": "pix do mei",
-     "valor": "Mais 600%"
-    },
-    {
-     "consulta": "bolsonaro criou o pix",
-     "valor": "Mais 200%"
-    },
-    {
-     "consulta": "pix na banca",
-     "valor": "Mais 180%"
-    },
-    {
-     "consulta": "quem criou o pix",
-     "valor": "Mais 110%"
-    },
-    {
-     "consulta": "emprestimo pessoal rapido e facil na hora via pix",
-     "valor": "Mais 100%"
-    },
-    {
-     "consulta": "quem criou o pix no brasil",
-     "valor": "Mais 90%"
-    },
-    {
-     "consulta": "quem fez o pix",
-     "valor": "Mais 60%"
-    },
-    {
-     "consulta": "plural de pix",
-     "valor": "Mais 40%"
+     "consulta": "pix de 5 mil",
+     "valor": "Mais 900%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=pix&hl=pt-BR"
   },
   "cupom de desconto": {
-   "variacao_90d_pct": -29,
-   "indice_atual": 51,
+   "variacao_90d_pct": -27,
+   "indice_atual": 56,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "cupom desconto mercado livre",
@@ -1216,8 +1222,8 @@
      "valor": "18"
     },
     {
-     "consulta": "cupom mercado livre hoje",
-     "valor": "18"
+     "consulta": "cupom centauro",
+     "valor": "17"
     },
     {
      "consulta": "cupom de desconto centauro",
@@ -1242,19 +1248,24 @@
    ],
    "em_ascensao": [
     {
-     "consulta": "cupom de desconto temu",
+     "consulta": "cupom de desconto bonox",
      "valor": "Mais 60%"
     },
     {
      "consulta": "cupom de desconto sympla",
+     "valor": "Mais 50%"
+    },
+    {
+     "consulta": "cupom de desconto ri happy",
      "valor": "Mais 50%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=cupom+de+desconto&hl=pt-BR"
   },
   "black friday": {
-   "variacao_90d_pct": 869,
-   "indice_atual": 78,
+   "variacao_90d_pct": 864,
+   "indice_atual": 76,
+   "base_baixa": true,
    "principais": [
     {
      "consulta": "black friday 2026",
@@ -1262,7 +1273,7 @@
     },
     {
      "consulta": "quando black friday",
-     "valor": "87"
+     "valor": "86"
     },
     {
      "consulta": "black friday quando é",
@@ -1293,7 +1304,11 @@
      "valor": "17"
     },
     {
-     "consulta": "quando começa a black friday",
+     "consulta": "que dia black friday",
+     "valor": "16"
+    },
+    {
+     "consulta": "a black friday começa quando",
      "valor": "14"
     },
     {
@@ -1311,10 +1326,6 @@
     {
      "consulta": "black friday amazon",
      "valor": "11"
-    },
-    {
-     "consulta": "ps5",
-     "valor": "9"
     }
    ],
    "em_ascensao": [
@@ -1323,7 +1334,23 @@
      "valor": "Aumento repentino"
     },
     {
+     "consulta": "black friday sephora 2026",
+     "valor": "Aumento repentino"
+    },
+    {
      "consulta": "quando sera a black friday no brasil 2026",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "black friday é quando?",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "como se escreve black friday",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "que dia será a black friday 2026",
      "valor": "Aumento repentino"
     },
     {
@@ -1333,6 +1360,10 @@
     {
      "consulta": "quando comeca a black friday",
      "valor": "Mais 700%"
+    },
+    {
+     "consulta": "sephora black friday",
+     "valor": "Mais 450%"
     },
     {
      "consulta": "quando é black friday no brasil",
@@ -1357,33 +1388,14 @@
     {
      "consulta": "quando começa black friday",
      "valor": "Mais 250%"
-    },
-    {
-     "consulta": "quando começa a black friday",
-     "valor": "Mais 250%"
-    },
-    {
-     "consulta": "esquenta black friday",
-     "valor": "Mais 250%"
-    },
-    {
-     "consulta": "qual o dia da black friday",
-     "valor": "Mais 250%"
-    },
-    {
-     "consulta": "qual o dia da black friday 2026",
-     "valor": "Mais 250%"
-    },
-    {
-     "consulta": "que dia é a black friday",
-     "valor": "Mais 200%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=black+friday&hl=pt-BR"
   },
   "checkout": {
-   "variacao_90d_pct": -25,
-   "indice_atual": 11,
+   "variacao_90d_pct": -40,
+   "indice_atual": 0,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "checkout hotel",
@@ -1486,6 +1498,10 @@
     {
      "consulta": "samsung checkout app",
      "valor": "Mais 40%"
+    },
+    {
+     "consulta": "checkout ou check out",
+     "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=checkout&hl=pt-BR"
@@ -1493,6 +1509,7 @@
   "taxa de conversão": {
    "variacao_90d_pct": 2625,
    "indice_atual": 0,
+   "base_baixa": true,
    "principais": [
     {
      "consulta": "o que é taxa de conversão",
@@ -1511,8 +1528,9 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=taxa+de+convers%C3%A3o&hl=pt-BR"
   },
   "tiktok shop": {
-   "variacao_90d_pct": -3,
-   "indice_atual": 43,
+   "variacao_90d_pct": -5,
+   "indice_atual": 40,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "seller tiktok shop",
@@ -1532,11 +1550,15 @@
     },
     {
      "consulta": "shopee",
-     "valor": "71"
+     "valor": "72"
     },
     {
      "consulta": "vender no tiktok shop",
      "valor": "67"
+    },
+    {
+     "consulta": "tik",
+     "valor": "57"
     },
     {
      "consulta": "live tiktok shop",
@@ -1569,16 +1591,16 @@
     {
      "consulta": "seller center tiktok shop",
      "valor": "34"
-    },
-    {
-     "consulta": "entrega tiktok shop",
-     "valor": "34"
     }
    ],
    "em_ascensao": [
     {
      "consulta": "tiktok shop streamer desktop",
      "valor": "Mais 130%"
+    },
+    {
+     "consulta": "tiktok shop desktop",
+     "valor": "Mais 110%"
     },
     {
      "consulta": "tiktok shop streamer",
@@ -1598,6 +1620,7 @@
   "vender online": {
    "variacao_90d_pct": -34,
    "indice_atual": 0,
+   "base_baixa": false,
    "principais": [
     {
      "consulta": "como vender online",
