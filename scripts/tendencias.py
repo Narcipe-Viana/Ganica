@@ -19,6 +19,7 @@ sem quebrar. Uso: python3 scripts/tendencias.py
 import datetime as dt
 import json
 import random
+import re
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
@@ -51,7 +52,7 @@ RELEVANTES = [
     "e-commerce", "ecommerce", "marketplace", "entrega", "correios", "taxa", "importação",
     "remessa", "procon", "reembolso", "golpe", "boleto", "cartão", "parcelamento", "natal",
     "dia das mães", "dia dos pais", "dia dos namorados", "dia das crianças", "consumidor",
-    "preço", "oferta", "liquidação", "app", "varejo",
+    "preço", "oferta", "liquidação", "varejo",
 ]
 
 SESSAO = requests.Session()
@@ -102,11 +103,12 @@ def em_alta_hoje():
             "fonte": (n.findtext("ht:news_item_source", namespaces=ns) or "").strip(),
         } for n in item.findall("ht:news_item", ns)]
         texto = (titulo + " " + " ".join(n["titulo"] for n in noticias)).lower()
+        relevante = any(re.search(r"(?<![\w])" + re.escape(p) + r"(?![\w])", texto) for p in RELEVANTES)
         itens.append({
             "pesquisa": titulo,
             "trafego_aprox": (item.findtext("ht:approx_traffic", namespaces=ns) or "").strip(),
             "publicado": (item.findtext("pubDate") or "").strip(),
-            "relevante_ecommerce": any(p in texto for p in RELEVANTES),
+            "relevante_ecommerce": relevante,
             "noticias": noticias[:3],
         })
     return itens
@@ -166,6 +168,8 @@ def relacionadas(termo=None, categoria=0):
                 fim = sum(pontos[-4:]) / 4
                 resultado["variacao_90d_pct"] = round(100 * (fim - ini) / ini)
                 resultado["indice_atual"] = pontos[-1]
+                # Base baixa: variação grande sobre quase nenhuma busca; não usar como tendência.
+                resultado["base_baixa"] = (sum(pontos[:4]) / 4) < 10
     resultado["link"] = ("https://trends.google.com/trends/explore?" + urllib.parse.urlencode(
         {k: v for k, v in {"date": JANELA, "geo": GEO, "q": termo or None,
                            "cat": categoria or None, "hl": HL}.items() if v}))
@@ -245,7 +249,8 @@ def resumo_md(s):
             continue
         var = d.get("variacao_90d_pct")
         asc = ", ".join(f"{q['consulta']} ({q['valor']})" for q in d.get("em_ascensao", [])[:6]) or "nenhuma"
-        l.append(f"- **{termo}**" + (f" (variação 90 dias: {var:+d}%)" if var is not None else "") + f": em ascensão: {asc}")
+        base = " [base baixa: ignorar a variação]" if d.get("base_baixa") else ""
+        l.append(f"- **{termo}**" + (f" (variação 90 dias: {var:+d}%{base})" if var is not None else "") + f": em ascensão: {asc}")
     if s["erros"]:
         l += ["", "## Falhas desta coleta", ""] + [f"- {e}" for e in s["erros"][:15]]
     return "\n".join(l) + "\n"

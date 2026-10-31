@@ -157,3 +157,58 @@ pergunta e citam quem parece a fonte mais confiável. Cada estudo é escrito par
 - BlogPosting com `abstract`, `citation`, `image`, `wordCount`, datas com fuso, autor e organização
   ligados por `@id`; BreadcrumbList; índice `/estudos/` com ItemList; `/feed.xml`; `/llms.txt`;
   imagem de compartilhamento gerada por `scripts/og.py`.
+
+## 9. Estudos de tendência (Google Trends)
+
+Fonte: `editorial/tendencias.json` (e o resumo `TENDENCIAS.md`), atualizado todo dia às 5h10 pelo
+GitHub Actions com: pesquisas em alta no Brasil, consultas em ascensão da categoria Compras e de
+termos-semente de e-commerce e marketplace (90 dias), e as próximas datas do varejo.
+
+**Como escolher o tema (quartas-feiras)**
+1. Ler o arquivo e conferir `gerado_em`. Se tiver mais de 3 dias, buscar o sinal por WebSearch e
+   tratar o arquivo só como pista.
+2. Candidatos, em ordem de preferência:
+   a) consulta em ascensão ligada a uma data próxima do calendário (ex.: dúvidas sobre Black Friday);
+   b) consulta em ascensão de um termo-semente que um decisor de e-commerce faria (meios de pagamento,
+      marketplaces, frete, regras novas, ferramentas de venda);
+   c) pesquisa "em alta hoje" com `relevante_ecommerce: true` e ligação real com comércio online.
+3. Descartar: celebridades, esporte, política partidária, marcas de terceiros como protagonistas,
+   consultas de navegação ("logo shopee png", "login"), termos em outro idioma, variações sobre
+   base baixa (`base_baixa: true`), e qualquer coisa em que a Ganica não tenha leitura de CRO a dar.
+4. Confirmar **por que** está subindo com WebSearch (notícia, regra nova, data). Sem causa
+   confirmada, não vira estudo.
+5. O ângulo é sempre "o que isso muda na conversão de uma loja", não a notícia. O estudo precisa
+   continuar útil depois que a tendência passar (evergreen com gancho atual).
+6. Registrar a pauta no `pautas.yml` com `tipo: tendencia` e um campo `sinal` (termo, valor,
+   janela, link do Explore) antes de escrever.
+
+**Como citar o Trends no texto**
+- Sempre como índice relativo ou variação: "as buscas por X no Google cresceram cerca de N% nos
+  últimos 90 dias, segundo o Google Trends". Nunca como volume ("milhões de buscas").
+- "Aumento repentino" (Breakout) = alta acima de 5.000%; descrever como "salto repentino".
+- Colocar o link do Explore em `fontes_urls` e a data da coleta em `fontes`.
+- Se não houver tema que passe no critério, a quarta usa a próxima pauta `base`.
+
+## 10. Estudos Marketing 3.0 + conhecimento de campo (sextas-feiras)
+
+Fontes: `editorial/referencias/marketing-3-0.md` (paráfrase das ideias do livro de Kotler,
+Kartajaya e Setiawan, 2010) e `editorial/conhecimento-campo.md` (padrões C1 a C15 observados em
+diagnósticos reais, já generalizados).
+
+**Fórmula do estudo: conceito, campo, dado, ação**
+1. **Conceito**: a ideia do livro em linguagem simples, com atribuição (autores, título, 2010), em
+   paráfrase. Nenhuma frase entre aspas atribuída ao livro.
+2. **Campo**: o padrão de diagnóstico que mostra o conceito acontecendo (ou falhando) no e-commerce
+   brasileiro. É a experiência de primeira mão: "é um padrão que encontramos com frequência".
+3. **Dado**: pelo menos uma evidência verificável e atual (pesquisa pública primária, Google Trends,
+   documentação oficial). O conceito nunca prova nada sozinho.
+4. **Ação**: o que a loja faz na segunda-feira, em passos numerados, e como medir se funcionou.
+
+**O que torna o estudo valioso (e não resumo de livro)**
+- Dizer onde o livro **acertou** e onde **envelheceu** (o livro é anterior a Pix, marketplaces
+  dominantes, TikTok Shop e busca por IA). Essa leitura crítica é o diferencial.
+- Uma "tese própria da Ganica" explícita: a frase que a Ganica defende e que o livro sozinho não diz.
+- Nada de "propósito" ou "valores" soltos: todo conceito termina numa decisão de página, oferta,
+  checkout, mídia ou recompra.
+- Respeitar as regras de uso de `conhecimento-campo.md` (no máximo um padrão como caso central,
+  nada de detalhe novo) e a seção 5 (anonimização).

@@ -1,5 +1,12 @@
 # Fila editorial dos estudos da Ganica.
-# A tarefa agendada publica a primeira pauta com status "fila", na ordem deste arquivo.
+#
+# ROTAÇÃO (cada execução da tarefa agendada, horário de Brasília):
+#   segunda -> tipo "base"       (primeira pauta base com status fila)
+#   quarta  -> tipo "tendencia"  (gerada na hora a partir de editorial/tendencias.json; ver EDITORIAL.md seção 9)
+#              se nenhuma tendência passar no critério, usa a próxima pauta "base"
+#   sexta   -> tipo "m30"        (Marketing 3.0 + conhecimento de campo; ver EDITORIAL.md seção 10)
+#   outro dia (execução manual) -> próxima pauta "base"
+# Pauta sem "tipo" é "base".
 #
 # status:
 #   fila       -> pronta para ser escrita e publicada
@@ -15,8 +22,14 @@ autorizacao_dados_cliente: true   # decisão do Narcipe (30/10/2026): publicar c
 
 pautas:
   - id: 1
-    status: pulada
-    motivo: "Reprovada duas vezes na revisão independente (30/10/2026). Na segunda, por erros de método sobre o GA4: efeito da atribuição do detalhamento descrito ao contrário e recomendação de funil por sessão que a exploração de funil não oferece."
+    status: fila
+    historico: "Pulada em 30/10/2026 (reprovada duas vezes por erro de método sobre o GA4). Devolvida à fila em 30/10/2026 com as correções em metodo_ga4."
+    metodo_ga4:
+      - "A exploração de funil do GA4 conta USUÁRIOS em cada etapa, não sessões. Não recomendar 'funil por sessão' dentro da exploração de funil."
+      - "Antes de afirmar qualquer coisa sobre como a dimensão de detalhamento (ex.: categoria do dispositivo) é atribuída entre as etapas, confirmar na documentação oficial. Se não for possível confirmar, não descrever esse detalhe; dizer só que o corte por dispositivo é feito com a dimensão de detalhamento."
+      - "Passo a passo do texto deve ser conferido contra a documentação oficial da exploração de funil, item por item."
+    fontes_a_verificar:
+      - "https://support.google.com/analytics/answer/9327974 (exploração de funil: etapas, funil aberto/fechado, detalhamento)"
     usa_dado_cliente: true
     titulo_provisorio: "Seu mobile não tem problema de UX. Tem problema em uma etapa só."
     tese: >-
@@ -211,3 +224,150 @@ pautas:
     restricoes: "Artigo de método. Personas e números só como exemplo hipotético; nenhum dado de cliente."
     publicado_em: 2026-10-30
     slug: persona-ecommerce-cro-comportamental
+
+
+  # ---------- Trilha Marketing 3.0 + conhecimento de campo (sextas) ----------
+  # conceito: ver editorial/referencias/marketing-3-0.md | campo: ver editorial/conhecimento-campo.md
+  - id: 15
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Confiança horizontal: por que a avaliação de outro cliente pesa mais que o selo da marca"
+    conceito: "Confiança horizontal (consumidor confia mais em outro consumidor do que na marca); credo 6 (estar disponível e fazer a boa notícia circular)."
+    campo: [C5, C14]
+    tese: >-
+      O Marketing 3.0 previu em 2010 que a confiança migraria da marca para os pares. No e-commerce isso
+      virou mecânica de página: avaliações, perguntas de clientes e prova social perto do botão. Em nichos
+      sensíveis, sem esses sinais, o visitante desconfiado procura no rodapé e, se não acha, vai embora.
+    pontos:
+      - "O conceito em uma frase, e o que envelheceu desde 2010 (marketplaces e IA também leem avaliações)."
+      - "Onde a prova social precisa estar na página de produto e no checkout."
+      - "O padrão de campo: confiança que mora no rodapé e marca nova sem prova social."
+      - "Como medir: conversão de quem interage com avaliações x quem não interage."
+    fontes_a_verificar:
+      - "Pesquisa pública e primária sobre impacto de avaliações na conversão (ex.: Spiegel Research Center, Northwestern). Só citar número conferido na fonte original."
+    palavra_chave: "prova social e-commerce / avaliações de clientes conversão"
+    slug_sugerido: confianca-horizontal-avaliacoes-prova-social-ecommerce
+
+  - id: 14
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Integridade de marca: onde a promessa do anúncio morre no checkout"
+    conceito: "Modelo dos 3 Is (identidade, integridade, imagem): posicionamento sem entrega vira promessa vazia; credo 5 (pacote justo a preço justo)."
+    campo: [C6, C1]
+    tese: >-
+      O anúncio promete um preço, um prazo e um benefício. O checkout é onde essa promessa é testada:
+      frete que aparece tarde, benefício que não se aplica, regra escondida. Para o livro, isso é falta de
+      integridade de marca; para o CRO, é a etapa onde o abandono se concentra.
+    pontos:
+      - "Os 3 Is explicados com uma loja, não com teoria."
+      - "Os pontos em que a promessa é testada: frete, prazo, preço final, cupom, meio de pagamento."
+      - "Padrão de campo: benefícios empilhados sem hierarquia."
+      - "Checklist de integridade do anúncio ao pedido concluído."
+    fontes_a_verificar:
+      - "Pesquisa pública e primária sobre motivos de abandono de carrinho (ex.: Baymard Institute). Conferir número e ano na fonte original."
+    palavra_chave: "abandono de carrinho causas / frete no checkout"
+    slug_sugerido: integridade-marca-promessa-anuncio-checkout
+
+  - id: 13
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Mente, coração e espírito: como o Marketing 3.0 reorganiza uma página de produto"
+    conceito: "Consumidor como ser humano inteiro (mente, coração, espírito) e a matriz de missão, visão e valores."
+    campo: [C12, C4]
+    tese: >-
+      A maioria das páginas de produto fala só com a mente (especificação). O livro propõe falar também com
+      o coração (o benefício sentido) e com o espírito (por que a marca existe). Na prática de CRO, isso
+      vira ordem de blocos na página e kits organizados pelo objetivo do cliente, não pela ficha técnica.
+    pontos:
+      - "Os três níveis traduzidos em blocos de uma página de produto."
+      - "Quando o 'espírito' vira discurso vazio e atrapalha a conversão."
+      - "Padrão de campo: kits por objetivo e excesso de variações sem orientação."
+      - "Como testar a ordem dos blocos."
+    palavra_chave: "página de produto que converte / marketing 3.0 e-commerce"
+    slug_sugerido: marketing-3-0-pagina-de-produto-mente-coracao-espirito
+
+  - id: 17
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Comece por quem mais se beneficia: o credo do Marketing 3.0 que a mídia paga esquece"
+    conceito: "Credo 4 (clientes são diferentes; comece por quem mais se beneficia de você)."
+    campo: [C10, C2]
+    tese: >-
+      Escalar verba antes de saber quem mais se beneficia do produto é pagar para levar o público errado a
+      páginas que ainda não convertem. O credo 4 vira método: primeiro identificar o segmento de maior
+      propensão, depois arrumar a casa para ele, só então escalar.
+    pontos:
+      - "O credo em linguagem de mídia: segmento de maior propensão."
+      - "Padrão de campo: tráfego pago antes da casa arrumada."
+      - "Como achar o segmento no próprio GA4 (novo x recorrente, dispositivo, canal) sem citar números de cliente."
+    palavra_chave: "segmentação de público e-commerce / mídia paga e-commerce conversão"
+    slug_sugerido: credo-marketing-3-0-midia-paga-segmentacao
+    links_com: [3, 4]
+
+  - id: 16
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Recompra não é cupom, é pertencimento: comunitização para quem vende online"
+    conceito: "Comunitização (consumidores conectados entre si; a marca é convidada, não dona); credo 7 (conquistar, manter e fazer crescer)."
+    campo: [C2, C6]
+    tese: >-
+      Muitas lojas tentam gerar recompra só com desconto, o que treina o cliente a esperar cupom. O livro
+      propõe outra alavanca: pertencimento a uma comunidade de pessoas com o mesmo objetivo. No e-commerce,
+      isso aparece em conteúdo de clientes, programas de indicação e rotinas de uso.
+    pontos:
+      - "O que é comunitização e o que não é (grupo de WhatsApp de promoção não é comunidade)."
+      - "Padrão de campo: recorrente converte muito mais; benefício empilhado corrói margem."
+      - "Três formatos práticos para e-commerce de pequeno e médio porte."
+    palavra_chave: "fidelização de clientes e-commerce / como aumentar recompra"
+    slug_sugerido: comunitizacao-recompra-ecommerce-marketing-3-0
+
+  - id: 19
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Cocriação na prática: quando o cliente monta o próprio kit"
+    conceito: "Cocriação (plataforma, personalização pelo cliente e ciclo de feedback)."
+    campo: [C12]
+    tese: >-
+      Cocriação no e-commerce não precisa ser projeto colaborativo grande. Deixar o cliente montar o kit
+      pelo próprio objetivo, transformar perguntas frequentes em conteúdo da página e usar a devolutiva
+      para mudar o catálogo já são formas de cocriar valor, com efeito em ticket e conversão.
+    pontos:
+      - "Os três elementos da cocriação aplicados a uma loja."
+      - "Padrão de campo: kits por objetivo."
+      - "Como medir: uso do recurso e ticket de quem usa x quem não usa."
+    palavra_chave: "montar kit e-commerce / como aumentar ticket médio"
+    slug_sugerido: cocriacao-kits-ecommerce-ticket-medio
+
+  - id: 18
+    tipo: m30
+    status: fila
+    titulo_provisorio: "Todo e-commerce é um negócio de serviço: o atendimento como etapa do funil"
+    conceito: "Credo 8 (qualquer negócio é um negócio de serviço); credo 6 (estar sempre disponível)."
+    campo: [C5, C14]
+    tese: >-
+      O atendimento costuma ser tratado como custo de pós-venda, mas para o visitante em dúvida ele é uma
+      etapa do funil. Canal que leva para fora do site no momento da dúvida, ou que só existe depois da
+      compra, derruba conversão em nichos onde a confiança decide.
+    pontos:
+      - "O credo 8 traduzido para a jornada de compra online."
+      - "Padrão de campo: atendimento fora do site e marca nova sem sinais de confiança."
+      - "Como medir o atendimento como etapa: conversão de quem fala com a loja antes de comprar."
+    palavra_chave: "atendimento e-commerce conversão / SAC loja virtual"
+    slug_sugerido: atendimento-etapa-do-funil-ecommerce
+
+  - id: 20
+    tipo: m30
+    status: fila
+    titulo_provisorio: "O mesmo produto em todo lugar: o caráter da marca entre loja própria, revenda e marketplace"
+    conceito: "Construção de caráter (DNA autêntico da marca); credo 3 (proteja sua reputação e deixe claro quem você é)."
+    campo: [C7, C8, C15]
+    tese: >-
+      Quando o mesmo produto está na loja oficial, em revendedores e em marketplaces, o preço deixa de
+      diferenciar. O que sobra para a loja própria é caráter: informação melhor, garantia, atendimento,
+      conteúdo e um papel claro (vender, informar ou gerar confiança). Sem isso, ela vira vitrine.
+    pontos:
+      - "Por que o conceito de caráter ficou mais importante com marketplaces."
+      - "Padrões de campo: loja oficial como vitrine, lojas próprias competindo, revendedor contra fabricante."
+      - "Decidir o papel de cada canal antes de otimizar conversão."
+    palavra_chave: "loja oficial vs marketplace / canais de venda da marca"
+    slug_sugerido: carater-marca-loja-propria-revenda-marketplace
