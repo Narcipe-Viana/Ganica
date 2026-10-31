@@ -168,8 +168,9 @@ def relacionadas(termo=None, categoria=0):
                 fim = sum(pontos[-4:]) / 4
                 resultado["variacao_90d_pct"] = round(100 * (fim - ini) / ini)
                 resultado["indice_atual"] = pontos[-1]
-                # Base baixa: variação grande sobre quase nenhuma busca; não usar como tendência.
-                resultado["base_baixa"] = (sum(pontos[:4]) / 4) < 10
+                # Série esparsa: muitos pontos zerados = pouca busca real; a variação vira ruído.
+                # (O Trends normaliza cada termo de 0 a 100, então "começar baixo" não indica pouca busca.)
+                resultado["base_baixa"] = sum(1 for v in pontos if v == 0) / len(pontos) > 0.25
     resultado["link"] = ("https://trends.google.com/trends/explore?" + urllib.parse.urlencode(
         {k: v for k, v in {"date": JANELA, "geo": GEO, "q": termo or None,
                            "cat": categoria or None, "hl": HL}.items() if v}))
@@ -249,7 +250,7 @@ def resumo_md(s):
             continue
         var = d.get("variacao_90d_pct")
         asc = ", ".join(f"{q['consulta']} ({q['valor']})" for q in d.get("em_ascensao", [])[:6]) or "nenhuma"
-        base = " [base baixa: ignorar a variação]" if d.get("base_baixa") else ""
+        base = " [série esparsa: pouca busca, ignorar a variação]" if d.get("base_baixa") else ""
         l.append(f"- **{termo}**" + (f" (variação 90 dias: {var:+d}%{base})" if var is not None else "") + f": em ascensão: {asc}")
     if s["erros"]:
         l += ["", "## Falhas desta coleta", ""] + [f"- {e}" for e in s["erros"][:15]]

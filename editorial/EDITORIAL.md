@@ -173,8 +173,8 @@ termos-semente de e-commerce e marketplace (90 dias), e as próximas datas do va
       marketplaces, frete, regras novas, ferramentas de venda);
    c) pesquisa "em alta hoje" com `relevante_ecommerce: true` e ligação real com comércio online.
 3. Descartar: celebridades, esporte, política partidária, marcas de terceiros como protagonistas,
-   consultas de navegação ("logo shopee png", "login"), termos em outro idioma, variações sobre
-   base baixa (`base_baixa: true`), e qualquer coisa em que a Ganica não tenha leitura de CRO a dar.
+   consultas de navegação ("logo shopee png", "login"), termos em outro idioma, variações de série
+   esparsa (`base_baixa: true`, pouca busca real), e qualquer coisa em que a Ganica não tenha leitura de CRO a dar.
 4. Confirmar **por que** está subindo com WebSearch (notícia, regra nova, data). Sem causa
    confirmada, não vira estudo.
 5. O ângulo é sempre "o que isso muda na conversão de uma loja", não a notícia. O estudo precisa
