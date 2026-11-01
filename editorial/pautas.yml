@@ -6,7 +6,8 @@
 #              se nenhuma tendência passar no critério, usa a próxima pauta "m30"; sem m30, a próxima "base"
 #   sexta   -> tipo "cxl"        (estudo próprio a partir de um artigo sobre IA do blog da CXL, com dados
 #              brasileiros; ver EDITORIAL.md seção 11 e editorial/cxl-usados.yml)
-#              se não houver artigo de IA da CXL ainda não usado e relevante, usa a próxima pauta "m30"
+#              se nenhum artigo de IA da CXL ainda não usado agregar, usa outro conteúdo da CXL (CRO, testes,
+#              analytics, UX, psicologia do consumidor, copy); só sem nada aproveitável na CXL usa a próxima "m30"
 #   outro dia (execução manual) -> próxima pauta "base"
 #   PRIORIDADE: se existir pauta com `status: pronta` e `publicar_em` igual à data de hoje, ela é a
 #   pauta do dia (o artigo já está escrito em src/artigos como rascunho), e a rotação fica para a
@@ -232,7 +233,7 @@ pautas:
     slug: persona-ecommerce-cro-comportamental
 
 
-  # ---------- Trilha Marketing 3.0 + conhecimento de campo (reserva das quartas e sextas) ----------
+  # ---------- Trilha Marketing 3.0 + conhecimento de campo (reserva das quartas; última reserva das sextas) ----------
   # conceito: ver editorial/referencias/marketing-3-0.md | campo: ver editorial/conhecimento-campo.md
   - id: 15
     tipo: m30

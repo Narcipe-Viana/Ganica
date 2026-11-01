@@ -215,7 +215,7 @@ diagnósticos reais, já generalizados).
 
 ## 11. Estudos a partir da CXL (sextas-feiras)
 
-Toda sexta, um estudo próprio da Ganica parte de um artigo sobre IA do blog da CXL
+Toda sexta, um estudo próprio da Ganica parte de um artigo do blog da CXL, de preferência sobre IA,
 (https://cxl.com/blog/), confronta o que ele diz com dados do Brasil e chega a uma conclusão da
 Ganica. Modelo de referência: `src/artigos/ia-pesquisa-cro-ecommerce-brasil.md`.
 
@@ -232,8 +232,15 @@ marketplaces locais, porte das lojas) e leitura de CRO da Ganica.
 2. Descartar os já listados em `editorial/cxl-usados.yml` (seção `usados`).
 3. Preferir, nesta ordem: o mais recente; o mais ligado a conversão de e-commerce; o que tem um
    ângulo brasileiro claro. A seção `candidatos` do mesmo arquivo traz os já mapeados.
-4. Se nenhum artigo de IA da CXL ainda não usado servir para um decisor de e-commerce, a sexta usa
-   a próxima pauta `m30` (Marketing 3.0 + campo).
+4. Se nenhum artigo de IA da CXL ainda não usado **agregar** para um decisor de e-commerce, analisar
+   os outros conteúdos da CXL (CRO e testes A/B, analytics, UX e design, psicologia do consumidor,
+   copy, precificação), inclusive os mais antigos das categorias do blog, com o mesmo método e a
+   mesma exigência de dado brasileiro. Preferir os que conversam com conversão de e-commerce e que
+   ainda não foram usados (`editorial/cxl-usados.yml`, candidatos de IA e de outros temas).
+5. Só se nada da CXL agregar, a sexta usa a próxima pauta `m30` (Marketing 3.0 + campo).
+6. "Agregar" significa: o tema importa para quem vende online no Brasil, existe dado brasileiro
+   verificável para confrontar e a Ganica tem uma leitura própria a acrescentar. Artigo que só daria
+   um resumo não agrega.
 
 **Estrutura obrigatória (além das seções 3 e 8)**
 - O que o artigo da CXL propõe: resumo em paráfrase, com autor, data e link, em no máximo
@@ -247,5 +254,5 @@ marketplaces locais, porte das lojas) e leitura de CRO da Ganica.
 - O que fazer: passos numerados aplicáveis a uma loja brasileira.
 - O que ainda não sabemos.
 - Título, slug, estrutura e exemplos próprios: nunca o título da CXL traduzido.
-- `card_kicker`: "IA · <tema>". Em `fontes`, o artigo da CXL vem primeiro como "artigo de partida".
+- `card_kicker`: "IA · <tema>" quando o artigo de partida for sobre IA; senão "CRO · <tema>". Em `fontes`, o artigo da CXL vem primeiro como "artigo de partida".
 - Depois de publicar, mover o artigo de `candidatos` para `usados` em `editorial/cxl-usados.yml`.

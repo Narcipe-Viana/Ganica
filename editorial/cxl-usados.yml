@@ -31,3 +31,30 @@ candidatos:
     titulo_original: "How to build an AI second brain for marketing with Obsidian and Claude Code"
     data_original: 2026-07-28
     angulo_brasil: "Prioridade baixa: tema de produtividade pessoal, pouco ligado a conversão de e-commerce."
+
+# Outros conteúdos da CXL (não IA), para quando nenhum artigo de IA agregar.
+candidatos_outros_temas:
+  - url: https://cxl.com/blog/form-design-best-practices/
+    titulo_original: "Form design best practices"
+    angulo_brasil: "Checkout e cadastro brasileiros: CPF, CEP com preenchimento automático, endereço e o peso de cada campo no celular."
+  - url: https://cxl.com/blog/better-way-prioritize-ab-tests/
+    titulo_original: "Prioritize A/B tests like a pro"
+    angulo_brasil: "Priorizar testes em lojas brasileiras com pouco tráfego e pouca hora de tecnologia."
+  - url: https://cxl.com/blog/ab-testing-guide/
+    titulo_original: "A guide to A/B testing"
+    angulo_brasil: "Quanto tráfego uma loja brasileira média precisa para um teste confiável, e o que fazer quando não tem."
+  - url: https://cxl.com/blog/cialdinis-principles-persuasion/
+    titulo_original: "Cialdini's principles of persuasion"
+    angulo_brasil: "Prova social, escassez e autoridade no varejo brasileiro, e os limites do Código de Defesa do Consumidor (ex.: escassez falsa)."
+  - url: https://cxl.com/blog/10-useful-findings-about-how-people-view-websites/
+    titulo_original: "How people view websites"
+    angulo_brasil: "Leitura de página no celular, que é maioria das compras no Brasil."
+  - url: https://cxl.com/blog/value-proposition-examples-how-to-create/
+    titulo_original: "How to write your value proposition"
+    angulo_brasil: "Proposta de valor de loja própria quando o mesmo produto está nos marketplaces."
+  - url: https://cxl.com/blog/pricing-experiments-you-might-not-know-but-can-learn-from/
+    titulo_original: "Pricing experiments you can learn from"
+    angulo_brasil: "Parcelamento sem juros, desconto no Pix e preço psicológico no Brasil."
+  - url: https://cxl.com/blog/north-star-metric/
+    titulo_original: "Setting a North Star Metric"
+    angulo_brasil: "Métrica norte para e-commerce brasileiro de pequeno e médio porte."
