@@ -6,12 +6,16 @@
 #              se nenhuma tendência passar no critério, usa a próxima pauta "base"
 #   sexta   -> tipo "m30"        (Marketing 3.0 + conhecimento de campo; ver EDITORIAL.md seção 10)
 #   outro dia (execução manual) -> próxima pauta "base"
+#   PRIORIDADE: se existir pauta com `status: pronta` e `publicar_em` igual à data de hoje, ela é a
+#   pauta do dia (o artigo já está escrito em src/artigos como rascunho), e a rotação fica para a
+#   próxima execução do mesmo dia da semana.
 # Pauta sem "tipo" é "base".
 #
 # status:
 #   fila       -> pronta para ser escrita e publicada
 #   publicada  -> já está no ar (a tarefa preenche publicado_em e slug)
 #   pulada     -> reprovou nas checagens duas vezes; ver "motivo"
+#   pronta     -> artigo já escrito (rascunho em src/artigos), aguardando a data `publicar_em`
 #
 # ATENÇÃO: este repositório é público. Nunca escreva aqui nome de cliente, de agência parceira,
 # produto real, plataforma, local, período exato ou número bruto de cliente.
@@ -371,3 +375,13 @@ pautas:
       - "Decidir o papel de cada canal antes de otimizar conversão."
     palavra_chave: "loja oficial vs marketplace / canais de venda da marca"
     slug_sugerido: carater-marca-loja-propria-revenda-marketplace
+
+  # ---------- Estudos prontos com data marcada (têm prioridade sobre a rotação) ----------
+  - id: 21
+    tipo: agendado
+    status: pronta
+    publicar_em: '2026-11-06'
+    arquivo: src/artigos/ia-pesquisa-cro-ecommerce-brasil.md
+    titulo_provisorio: "A IA já escreve a sua loja. Mas ainda não está ouvindo o seu cliente"
+    origem: "Análise crítica do artigo da CXL 'AI for CRO research: what to automate (and what not to)' (ago/2026), cruzada com dados brasileiros (TIC Empresas 2025, NuvemCommerce 2026, TIC Domicílios 2025, ANPD, LGPD). Pedido do Narcipe em 01/11/2026 para a sexta 06/11."
+    observacao: "Escrito em sessão com o Narcipe em 01/11/2026 e aprovado nas checagens automáticas. Falta a revisão independente, feita na execução do dia."

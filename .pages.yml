@@ -26,6 +26,11 @@ content:
         label: "Rascunho (não aparece no site)"
         type: boolean
         default: false
+      - name: publicar_em
+        label: "Publicar em (só para rascunho agendado: a automação publica nesta data)"
+        type: date
+        options:
+          format: yyyy-MM-dd
       - name: title
         label: "Título (H1 do artigo)"
         type: string

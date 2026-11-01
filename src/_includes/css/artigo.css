@@ -523,3 +523,24 @@
     .resposta-curta{ padding:26px 30px 26px 28px; }
     .resposta-curta p{ font-size:1.28rem; }
   }
+
+  /* Listas no corpo do estudo (mobile primeiro): número dentro da coluna de texto,
+     espaço entre itens e antes do parágrafo seguinte */
+  .prose > ul, .prose > ol{
+    color:var(--body-on-light);
+    font-size:1.04rem;
+    line-height:1.7;
+    margin:0 0 26px;
+    padding-left:1.45em;
+  }
+  .prose > ol > li, .prose > ul > li{ margin-bottom:12px; padding-left:4px; }
+  .prose > ol > li::marker{ color:var(--gold-deep); font-weight:600; }
+  .prose > ul > li::marker{ color:var(--gold-deep); }
+  .prose li strong{ color:var(--ink); }
+
+  /* Tabelas de 2 colunas cabem na tela do celular sem rolagem lateral */
+  .data-table:not(:has(th:nth-child(3))){ min-width:0; }
+  @media (max-width:479px){
+    .data-table:not(:has(th:nth-child(3))) thead th,
+    .data-table:not(:has(th:nth-child(3))) tbody td{ padding:12px 12px; }
+  }
