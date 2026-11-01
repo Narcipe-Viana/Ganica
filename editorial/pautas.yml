@@ -3,8 +3,10 @@
 # ROTAÇÃO (cada execução da tarefa agendada, horário de Brasília):
 #   segunda -> tipo "base"       (primeira pauta base com status fila)
 #   quarta  -> tipo "tendencia"  (gerada na hora a partir de editorial/tendencias.json; ver EDITORIAL.md seção 9)
-#              se nenhuma tendência passar no critério, usa a próxima pauta "base"
-#   sexta   -> tipo "m30"        (Marketing 3.0 + conhecimento de campo; ver EDITORIAL.md seção 10)
+#              se nenhuma tendência passar no critério, usa a próxima pauta "m30"; sem m30, a próxima "base"
+#   sexta   -> tipo "cxl"        (estudo próprio a partir de um artigo sobre IA do blog da CXL, com dados
+#              brasileiros; ver EDITORIAL.md seção 11 e editorial/cxl-usados.yml)
+#              se não houver artigo de IA da CXL ainda não usado e relevante, usa a próxima pauta "m30"
 #   outro dia (execução manual) -> próxima pauta "base"
 #   PRIORIDADE: se existir pauta com `status: pronta` e `publicar_em` igual à data de hoje, ela é a
 #   pauta do dia (o artigo já está escrito em src/artigos como rascunho), e a rotação fica para a
@@ -230,7 +232,7 @@ pautas:
     slug: persona-ecommerce-cro-comportamental
 
 
-  # ---------- Trilha Marketing 3.0 + conhecimento de campo (sextas) ----------
+  # ---------- Trilha Marketing 3.0 + conhecimento de campo (reserva das quartas e sextas) ----------
   # conceito: ver editorial/referencias/marketing-3-0.md | campo: ver editorial/conhecimento-campo.md
   - id: 15
     tipo: m30
@@ -378,7 +380,7 @@ pautas:
 
   # ---------- Estudos prontos com data marcada (têm prioridade sobre a rotação) ----------
   - id: 21
-    tipo: agendado
+    tipo: cxl
     status: pronta
     publicar_em: '2026-11-06'
     arquivo: src/artigos/ia-pesquisa-cro-ecommerce-brasil.md

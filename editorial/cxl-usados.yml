@@ -1,0 +1,33 @@
+# Artigos da CXL (https://cxl.com/blog/) já usados como ponto de partida de estudos da Ganica.
+# A execução de sexta escolhe um artigo sobre IA que NÃO esteja nesta lista e o acrescenta aqui.
+#
+# candidatos: artigos sobre IA já identificados e ainda não usados (a execução pode achar outros).
+
+usados:
+  - url: https://cxl.com/blog/ai-cro-research/
+    titulo_original: "AI for CRO research: what to automate (and what not to)"
+    data_original: 2026-08-20
+    estudo_ganica: /ia-pesquisa-cro-ecommerce-brasil.html
+    publicado_em: 2026-11-06
+
+candidatos:
+  - url: https://cxl.com/blog/chatgpt-reddit-citations/
+    titulo_original: "ChatGPT is citing Reddit less. What does it mean for marketers?"
+    data_original: 2026-08-27
+    angulo_brasil: "Fontes que as IAs citam para compras no Brasil (Reclame Aqui, fóruns, marketplaces, sites de marca) e o que isso muda para a página de produto. GEO."
+  - url: https://cxl.com/blog/ai-aeo-geo-research-engine/
+    titulo_original: "How to build an AI-powered research engine for AEO and GEO"
+    data_original: 2026-08-05
+    angulo_brasil: "Como um e-commerce brasileiro descobre o que perguntam às IAs sobre a sua categoria, em português, e transforma isso em pauta e página."
+  - url: https://cxl.com/blog/ai-and-conversion-rate-optimization-strategy/
+    titulo_original: "AI & CRO: Why teams should focus on strategy, not small tweaks"
+    data_original: null
+    angulo_brasil: "Personalização e testes com IA em lojas brasileiras de pequeno e médio porte: o que dá para fazer com o tráfego que elas têm."
+  - url: https://cxl.com/blog/marketing-jobs-ai-skills-q3-2026/
+    titulo_original: "Marketing hiring trends 2026: the skills employers want in Q3"
+    data_original: 2026-10-09
+    angulo_brasil: "Só usar se houver dado brasileiro de mercado de trabalho em e-commerce/marketing (ex.: CAGED, levantamentos públicos de vagas). Prioridade baixa."
+  - url: https://cxl.com/blog/second-brain-for-marketing/
+    titulo_original: "How to build an AI second brain for marketing with Obsidian and Claude Code"
+    data_original: 2026-07-28
+    angulo_brasil: "Prioridade baixa: tema de produtividade pessoal, pouco ligado a conversão de e-commerce."

@@ -212,3 +212,40 @@ diagnósticos reais, já generalizados).
   checkout, mídia ou recompra.
 - Respeitar as regras de uso de `conhecimento-campo.md` (no máximo um padrão como caso central,
   nada de detalhe novo) e a seção 5 (anonimização).
+
+## 11. Estudos a partir da CXL (sextas-feiras)
+
+Toda sexta, um estudo próprio da Ganica parte de um artigo sobre IA do blog da CXL
+(https://cxl.com/blog/), confronta o que ele diz com dados do Brasil e chega a uma conclusão da
+Ganica. Modelo de referência: `src/artigos/ia-pesquisa-cro-ecommerce-brasil.md`.
+
+**Por que não é reescrita.** Reescrever ou traduzir o texto da CXL com outro título é conteúdo
+derivado de terceiros: viola direito autoral e cai na política de spam do Google para conteúdo
+reaproveitado (*scraped content*). E não seria citado por IA, porque não acrescenta nada. O valor
+está no que o artigo original não tem: dado brasileiro, contexto brasileiro (LGPD, Pix, WhatsApp,
+marketplaces locais, porte das lojas) e leitura de CRO da Ganica.
+
+**Como escolher o artigo**
+1. Abrir https://cxl.com/blog/ e listar os artigos sobre IA (IA em CRO, experimentação, analytics,
+   busca por IA/GEO/AEO, agentes, IA em marketing). Para abrir um artigo, achar a URL dele pelo
+   WebSearch e então usar WebFetch nela.
+2. Descartar os já listados em `editorial/cxl-usados.yml` (seção `usados`).
+3. Preferir, nesta ordem: o mais recente; o mais ligado a conversão de e-commerce; o que tem um
+   ângulo brasileiro claro. A seção `candidatos` do mesmo arquivo traz os já mapeados.
+4. Se nenhum artigo de IA da CXL ainda não usado servir para um decisor de e-commerce, a sexta usa
+   a próxima pauta `m30` (Marketing 3.0 + campo).
+
+**Estrutura obrigatória (além das seções 3 e 8)**
+- O que o artigo da CXL propõe: resumo em paráfrase, com autor, data e link, em no máximo
+  2 parágrafos. Nenhuma frase traduzida ou copiada; nenhuma citação entre aspas maior que 10 palavras.
+- As lacunas do artigo original (dados ausentes, contexto só dos EUA, falta de resultado, temas não
+  tratados), dito com respeito e sem provocação.
+- Como é no Brasil: **pelo menos 2 fontes brasileiras primárias** e verificadas (ex.: Cetic.br,
+  IBGE, Banco Central, ANPD, legislação, entidades do varejo com metodologia divulgada), de
+  preferência numa tabela de 2 colunas.
+- O que a Ganica conclui: a tese própria, que não está no artigo da CXL.
+- O que fazer: passos numerados aplicáveis a uma loja brasileira.
+- O que ainda não sabemos.
+- Título, slug, estrutura e exemplos próprios: nunca o título da CXL traduzido.
+- `card_kicker`: "IA · <tema>". Em `fontes`, o artigo da CXL vem primeiro como "artigo de partida".
+- Depois de publicar, mover o artigo de `candidatos` para `usados` em `editorial/cxl-usados.yml`.
