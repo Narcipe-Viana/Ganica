@@ -29,9 +29,10 @@ autorizacao_dados_cliente: true   # decisão do Narcipe (30/10/2026): publicar c
 
 pautas:
   - id: 1
-    status: pulada
-    motivo: "Reprovada duas vezes na revisão independente em 02/11/2026: na segunda, frase comparava participação nas compras com faturamento do setor, sem fonte para a causa."
-    historico: "Pulada em 30/10/2026 (reprovada duas vezes por erro de método sobre o GA4). Devolvida à fila em 30/10/2026 com as correções em metodo_ga4."
+    status: publicada
+    publicado_em: 2026-11-02
+    slug: conversao-checkout-mobile-funil-por-dispositivo
+    historico: "Pulada em 30/10/2026 (reprovada duas vezes por erro de método sobre o GA4). Devolvida à fila em 30/10/2026 com as correções em metodo_ga4. Pulada em 02/11/2026 e publicada no mesmo dia, depois de corrigida com fontes primárias."
     metodo_ga4:
       - "A exploração de funil do GA4 conta USUÁRIOS em cada etapa, não sessões. Não recomendar 'funil por sessão' dentro da exploração de funil."
       - "Antes de afirmar qualquer coisa sobre como a dimensão de detalhamento (ex.: categoria do dispositivo) é atribuída entre as etapas, confirmar na documentação oficial. Se não for possível confirmar, não descrever esse detalhe; dizer só que o corte por dispositivo é feito com a dimensão de detalhamento."
