@@ -29,7 +29,8 @@ autorizacao_dados_cliente: true   # decisão do Narcipe (30/10/2026): publicar c
 
 pautas:
   - id: 1
-    status: fila
+    status: pulada
+    motivo: "Reprovada duas vezes na revisão independente em 02/11/2026: na segunda, frase comparava participação nas compras com faturamento do setor, sem fonte para a causa."
     historico: "Pulada em 30/10/2026 (reprovada duas vezes por erro de método sobre o GA4). Devolvida à fila em 30/10/2026 com as correções em metodo_ga4."
     metodo_ga4:
       - "A exploração de funil do GA4 conta USUÁRIOS em cada etapa, não sessões. Não recomendar 'funil por sessão' dentro da exploração de funil."
