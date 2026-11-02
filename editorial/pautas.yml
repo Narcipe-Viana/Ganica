@@ -2,6 +2,8 @@
 #
 # ROTAÇÃO (cada execução da tarefa agendada, horário de Brasília):
 #   segunda -> tipo "base"       (primeira pauta base com status fila)
+#   terça   -> tipo "tecnico"    (rastreamento, ferramentas de dados, integrações, IA sobre dados;
+#              ver EDITORIAL.md seção 12 e editorial/casos-tecnicos.md)
 #   quarta  -> tipo "tendencia"  (gerada na hora a partir de editorial/tendencias.json; ver EDITORIAL.md seção 9)
 #              se nenhuma tendência passar no critério, usa a próxima pauta "m30"; sem m30, a próxima "base"
 #   sexta   -> tipo "cxl"        (estudo próprio a partir de um artigo sobre IA do blog da CXL, com dados
@@ -390,3 +392,58 @@ pautas:
     titulo_provisorio: "A IA já escreve a sua loja. Mas ainda não está ouvindo o seu cliente"
     origem: "Análise crítica do artigo da CXL 'AI for CRO research: what to automate (and what not to)' (ago/2026), cruzada com dados brasileiros (TIC Empresas 2025, NuvemCommerce 2026, TIC Domicílios 2025, ANPD, LGPD). Pedido do Narcipe em 01/11/2026 para a sexta 06/11."
     observacao: "Escrito em sessão com o Narcipe em 01/11/2026 e aprovado nas checagens automáticas. Falta a revisão independente, feita na execução do dia."
+
+  - id: 22
+    tipo: tecnico
+    status: pronta
+    publicar_em: '2026-11-03'
+    arquivo: src/artigos/integrar-posthog-bigquery-ecommerce.md
+    titulo_provisorio: "PostHog, GA4 e BigQuery no e-commerce: as integrações que valem a pena e os cuidados que quase ninguém conta"
+    caso: T1
+    observacao: "Escrito em sessão com o Narcipe em 02/11/2026; aprovado nas checagens automáticas. Falta a revisão independente."
+
+  # ---------- Trilha técnica (terças) ----------
+  - id: 23
+    tipo: tecnico
+    status: fila
+    titulo_provisorio: "Auditoria de rastreamento: o checklist antes de confiar em qualquer número do seu e-commerce"
+    caso: T2
+    pontos:
+      - "Evento duplicado por tags sobrepostas no GTM: como achar no DebugView e no Tag Assistant, e como resolver."
+      - "Conferir purchase contra a base de pedidos por transaction_id."
+      - "Consentimento, bloqueadores e o que é diferença normal entre ferramentas."
+    palavra_chave: "auditoria GA4 e-commerce / evento duplicado GA4 GTM"
+    slug_sugerido: auditoria-rastreamento-ga4-gtm-ecommerce
+  - id: 24
+    tipo: tecnico
+    status: fila
+    titulo_provisorio: "GA4, PostHog, Hotjar, Clarity ou LogRocket: qual ferramenta responde qual pergunta do seu e-commerce"
+    pontos:
+      - "Comparar por pergunta de negócio, não por recurso. Tabela de 2 colunas."
+      - "Preços e planos só com conferência na documentação no dia; sem tom de propaganda."
+    palavra_chave: "posthog vs hotjar / ferramentas de analytics e-commerce"
+    slug_sugerido: ga4-posthog-hotjar-clarity-logrocket-ecommerce
+  - id: 25
+    tipo: tecnico
+    status: fila
+    titulo_provisorio: "Gravação de sessão e LGPD: o que mascarar, o que não gravar e como provar que fez"
+    pontos:
+      - "Padrões de mascaramento de cada ferramenta (documentação oficial)."
+      - "Áreas sensíveis do e-commerce: conta, checkout, confirmação; saúde como dado sensível."
+    palavra_chave: "gravação de sessão LGPD / session replay LGPD"
+    slug_sugerido: gravacao-de-sessao-lgpd-ecommerce
+  - id: 26
+    tipo: tecnico
+    status: fila
+    titulo_provisorio: "Looker Studio para CRO: campos calculados que mostram o que o relatório padrão esconde"
+    caso: T3
+    palavra_chave: "looker studio campos calculados GA4 / dashboard CRO"
+    slug_sugerido: looker-studio-campos-calculados-cro
+  - id: 27
+    tipo: tecnico
+    status: fila
+    titulo_provisorio: "Scripts de terceiros no GTM: como auditar o que roda na sua loja e quanto isso custa em velocidade"
+    caso: T4
+    palavra_chave: "auditoria GTM scripts de terceiros / tags GTM performance"
+    slug_sugerido: auditoria-scripts-terceiros-gtm-ecommerce
+

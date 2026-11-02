@@ -256,3 +256,23 @@ marketplaces locais, porte das lojas) e leitura de CRO da Ganica.
 - Título, slug, estrutura e exemplos próprios: nunca o título da CXL traduzido.
 - `card_kicker`: "IA · <tema>" quando o artigo de partida for sobre IA; senão "CRO · <tema>". Em `fontes`, o artigo da CXL vem primeiro como "artigo de partida".
 - Depois de publicar, mover o artigo de `candidatos` para `usados` em `editorial/cxl-usados.yml`.
+
+## 12. Estudos técnicos (terças-feiras)
+
+Conteúdo técnico sobre captação e uso de dados num e-commerce: rastreamento correto (GA4, GTM,
+eventos de e-commerce), ferramentas (PostHog, Hotjar, Clarity, LogRocket e outras), integrações
+(BigQuery, Looker Studio) e IA aplicada sobre esses dados. Objetivo: demonstrar credibilidade
+técnica da Ganica para quem decide e para quem executa. Modelo:
+`src/artigos/integrar-posthog-bigquery-ecommerce.md`.
+
+**Regras**
+- Todo passo técnico, limite, preço ou comportamento de ferramenta conferido na documentação oficial
+  no dia (WebFetch), com o link em `fontes_urls`. Ferramentas mudam rápido: registrar em `fontes`
+  o mês da consulta.
+- Prova social só a partir de `editorial/casos-tecnicos.md`, com a redação e os limites definidos
+  lá. Nunca inventar caso, resultado ou prática da Ganica. Recomendação é escrita como recomendação
+  ("a recomendação da Ganica é..."), não como prática comprovada.
+- Neutro em relação a fornecedores: nada de tom de propaganda, comparação pela pergunta de negócio.
+- LGPD sempre que houver dado pessoal (gravação de sessão, IP, identificadores).
+- Trechos de código só curtos e conferidos na documentação; nomes de evento e parâmetro em `código`.
+- `card_kicker`: "Técnico · <tema>".
