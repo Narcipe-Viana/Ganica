@@ -305,7 +305,7 @@
     line-height:1.65;
   }
   .resumo-list li:first-child{ border-top:none; padding-top:0; }
-  .resumo-list strong{ color:var(--cream); }
+  .prose .resumo-list strong{ color:var(--cream); }
   @media (max-width:640px){
     .resumo-box{ padding:26px 22px; }
   }
