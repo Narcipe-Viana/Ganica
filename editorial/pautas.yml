@@ -395,7 +395,8 @@ pautas:
 
   - id: 22
     tipo: tecnico
-    status: pronta
+    status: pulada
+    motivo: "Reprovada duas vezes na revisão independente em 03/11/2026. A primeira correção ainda deixou erro sobre o alcance do MCP do PostHog (tabelas vinculadas ficam ao alcance do SQL), atribuição imprecisa ao Google sobre permissões, e trecho do caso além do T1."
     publicar_em: '2026-11-03'
     arquivo: src/artigos/integrar-posthog-bigquery-ecommerce.md
     titulo_provisorio: "PostHog, GA4 e BigQuery no e-commerce: as integrações que valem a pena e os cuidados que quase ninguém conta"
