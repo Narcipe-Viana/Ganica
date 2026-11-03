@@ -12,6 +12,11 @@ on:
   schedule:
     - cron: "5 3 * * *"   # todo dia 00:05 (Brasília): regera o site para a etiqueta "Novo" expirar no prazo
   workflow_dispatch:
+    inputs:
+      indexnow_tudo:
+        description: "Avisar os buscadores (IndexNow) sobre TODOS os endereços do sitemap"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -50,6 +55,7 @@ jobs:
         run: |
           git fetch -q --depth=1 origin gh-pages:refs/remotes/origin/gh-pages || true
           git show origin/gh-pages:sitemap.xml > /tmp/sitemap-anterior.xml 2>/dev/null || : > /tmp/sitemap-anterior.xml
+          if [ "${{ inputs.indexnow_tudo }}" = "true" ]; then : > /tmp/sitemap-anterior.xml; fi
 
       - name: Publicar na branch gh-pages
         run: |
