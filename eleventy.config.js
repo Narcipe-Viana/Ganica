@@ -18,6 +18,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img/apple-touch-icon.png": "apple-touch-icon.png" });
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
+  // Chave do IndexNow (arquivo de 32 caracteres hexadecimais na raiz do site)
+  eleventyConfig.addPassthroughCopy({ "src/*.txt": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img/logo-ganica.png": "logo-ganica.png" });
 
   // Datas

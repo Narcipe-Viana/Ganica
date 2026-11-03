@@ -17,6 +17,15 @@ Um estudo da Ganica nunca é:
 - promessa de resultado ("aumente suas vendas em X%");
 - crítica ou provocação contra agências ou concorrentes.
 
+## 1.1 Ordem de prioridades
+
+1. **Conteúdo rico, que gera valor real para o leitor.** Nada passa na frente disso.
+2. **SEO**, logo abaixo: todo estudo publicado precisa estar indexável, no sitemap com a data certa,
+   com título, descrição, dados estruturados e links internos corretos. Um estudo bom que o Google
+   não encontra não cumpre seu papel. O `scripts/qa.py` bloqueia a publicação se o sitemap estiver
+   incompleto ou inválido, e o workflow confere o sitemap no ar depois de cada publicação.
+3. Todo o resto (formato, ritmo, distribuição).
+
 ## 2. Voz e estilo
 
 - Português do Brasil, direto, frases curtas a médias. Tom de consultor sênior explicando para um

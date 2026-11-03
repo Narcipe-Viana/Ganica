@@ -151,10 +151,15 @@ def checar_estrutura(foco=None):
         erro("sitemap.xml", "não existe")
 
     artigos_publicados = {}
+    rascunhos = set()
     for md in sorted(ARTIGOS_SRC.glob("*.md")):
         fm, corpo = frontmatter(md)
         if not fm.get("rascunho"):
             artigos_publicados[f"/{fm.get('slug')}.html"] = (fm, corpo, md.name)
+        else:
+            rascunhos.add(f"/{fm.get('slug')}.html")
+
+    checar_sitemap(sitemap, artigos_publicados, rascunhos)
 
     for rel, ex in extraidos.items():
         texto = html.unescape(" ".join(ex.texto))
@@ -218,8 +223,6 @@ def checar_estrutura(foco=None):
         if ex is None:
             erro(url, f"artigo {nome} não foi gerado")
             continue
-        if url not in sitemap:
-            erro(url, "ausente do sitemap.xml")
         desc = fm.get("description") or ""
         if not 70 <= len(desc) <= 230:
             aviso(url, f"meta description com {len(desc)} caracteres (ideal 120 a 160)")
@@ -274,6 +277,59 @@ def checar_estrutura(foco=None):
     slugs = [fm.get("slug") for fm, _, _ in artigos_publicados.values()]
     if len(slugs) != len(set(slugs)):
         erro("artigos", "há slugs repetidos")
+
+
+def checar_sitemap(sitemap, artigos_publicados, rascunhos):
+    """SEO é prioridade: o sitemap precisa ser XML válido, conter a home, o índice e TODOS os
+    estudos publicados (com lastmod igual à data de atualização), e só endereços que existem."""
+    import xml.etree.ElementTree as ET
+    if not sitemap:
+        return
+    try:
+        raiz = ET.fromstring(sitemap.encode("utf-8"))
+    except ET.ParseError as e:
+        erro("sitemap.xml", f"XML inválido: {e}")
+        return
+    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    entradas = {}
+    for u in raiz.findall("s:url", ns):
+        loc = (u.findtext("s:loc", namespaces=ns) or "").strip()
+        lastmod = (u.findtext("s:lastmod", namespaces=ns) or "").strip()
+        if loc in entradas:
+            erro("sitemap.xml", f"endereço repetido: {loc}")
+        entradas[loc] = lastmod
+        if not loc.startswith(URL_BASE + "/"):
+            erro("sitemap.xml", f"endereço fora do domínio canônico: {loc}")
+            continue
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod):
+            erro("sitemap.xml", f"lastmod ausente ou inválido em {loc}: {lastmod!r}")
+        caminho = loc[len(URL_BASE):]
+        alvo = SITE / caminho.lstrip("/")
+        if caminho.endswith("/"):
+            alvo = alvo / "index.html"
+        if not alvo.exists():
+            erro("sitemap.xml", f"endereço listado não existe no site: {loc}")
+        if caminho in rascunhos:
+            erro("sitemap.xml", f"rascunho listado no sitemap: {loc}")
+    for obrigatorio in ("/", "/estudos/"):
+        if URL_BASE + obrigatorio not in entradas:
+            erro("sitemap.xml", f"falta a página {obrigatorio}")
+    for url, (fm, _, _) in artigos_publicados.items():
+        loc = URL_BASE + url
+        if loc not in entradas:
+            erro("sitemap.xml", f"estudo publicado ausente do sitemap: {url}")
+            continue
+        esperado = str(fm.get("updated") or fm.get("date") or "")[:10]
+        if esperado and entradas[loc] != esperado:
+            erro("sitemap.xml", f"lastmod de {url} é {entradas[loc]}, esperado {esperado}")
+    # Toda página HTML indexável do site precisa estar no sitemap
+    for p in SITE.rglob("*.html"):
+        rel = "/" + str(p.relative_to(SITE)).replace("index.html", "")
+        txt = p.read_text(encoding="utf-8", errors="ignore")
+        if re.search(r'<meta name="robots" content="[^"]*noindex', txt):
+            continue
+        if URL_BASE + rel not in entradas:
+            erro("sitemap.xml", f"página indexável fora do sitemap: {rel}")
 
 
 def checar_navegador(foco=None):

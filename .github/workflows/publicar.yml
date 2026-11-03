@@ -46,6 +46,11 @@ jobs:
       - name: Checagens de estrutura (sem navegador)
         run: python3 scripts/qa.py --sem-navegador
 
+      - name: Guardar o sitemap da publicação anterior
+        run: |
+          git fetch -q --depth=1 origin gh-pages:refs/remotes/origin/gh-pages || true
+          git show origin/gh-pages:sitemap.xml > /tmp/sitemap-anterior.xml 2>/dev/null || : > /tmp/sitemap-anterior.xml
+
       - name: Publicar na branch gh-pages
         run: |
           cd _site
@@ -56,3 +61,6 @@ jobs:
           git add -A
           git commit -q -m "Publicação de ${GITHUB_SHA::7} (${GITHUB_REF_NAME})"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+
+      - name: Conferir o sitemap no ar e avisar os buscadores (IndexNow)
+        run: python3 scripts/pos_publicacao.py /tmp/sitemap-anterior.xml _site/sitemap.xml
