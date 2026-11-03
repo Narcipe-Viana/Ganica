@@ -4,7 +4,8 @@ Site estático gerado com [Eleventy](https://www.11ty.dev/) e publicado no GitHu
 
 - **Editar conteúdo sem código:** entre em https://app.pagescms.org com sua conta do GitHub e abra este repositório.
 - **Estudos (artigos):** `src/artigos/*.md` (um arquivo por estudo; o formulário do CMS edita esses arquivos).
-- **Design:** `src/_includes/` (template único; mudar aqui muda todos os estudos).
+- **Design:** `src/_includes/` (template único; mudar aqui muda todos os estudos). Marca e componentes comuns em `css/base.css`; cards da biblioteca em `css/estudos.css`.
+- **Logo:** `src/assets/img/logo-ganica.svg` e `src/favicon.svg`. Os ícones PNG e as imagens de compartilhamento saem de `python3 scripts/og.py --todas`.
 - **Home:** `src/index.njk` · **Índice de estudos:** `src/estudos.njk` · **Sitemap:** gerado sozinho.
 - **Publicação automática:** `editorial/` (manual editorial e fila de pautas) + tarefa agendada no Claude.
 - **Checagens:** `npx @11ty/eleventy && python3 scripts/qa.py`.

@@ -14,6 +14,8 @@ function toDate(d) {
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/img/favicon-48.png": "favicon-48.png" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/img/apple-touch-icon.png": "apple-touch-icon.png" });
   eleventyConfig.addPassthroughCopy({ "CNAME": "CNAME" });
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img/logo-ganica.png": "logo-ganica.png" });
@@ -23,6 +25,12 @@ export default function (eleventyConfig) {
     const x = toDate(d);
     return `${x.getUTCDate()} de ${MESES[x.getUTCMonth()]} de ${x.getUTCFullYear()}`;
   });
+  const MESES_CURTOS = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+  eleventyConfig.addFilter("dataCurta", (d) => {
+    const x = toDate(d);
+    return `${String(x.getUTCDate()).padStart(2, "0")} ${MESES_CURTOS[x.getUTCMonth()]} ${x.getUTCFullYear()}`;
+  });
+  eleventyConfig.addGlobalData("anoAtual", () => new Date().getUTCFullYear());
   eleventyConfig.addFilter("dataISO", (d) => toDate(d).toISOString().slice(0, 10));
 
   // Tempo de leitura (~200 palavras por minuto, mínimo 2)
@@ -49,6 +57,12 @@ export default function (eleventyConfig) {
     String(html || "").replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length);
   eleventyConfig.addFilter("dataRFC3339", (d) => toDate(d).toISOString());
   eleventyConfig.addFilter("textoPuro", (s) => String(s || "").replace(/<[^>]+>/g, "").replace(/\*\*/g, ""));
+  // "CRO · Checkout mobile" -> "Checkout mobile"
+  eleventyConfig.addFilter("kickerFim", (s) => String(s || "").split("·").pop().trim());
+  eleventyConfig.addFilter("comPonto", (s) => {
+    const t = String(s || "").trim();
+    return /[.!?]$/.test(t) ? t : `${t}.`;
+  });
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
   // Coleção de estudos publicados, do mais recente para o mais antigo

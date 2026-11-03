@@ -1,17 +1,18 @@
 ---
 title: Por Que o Faturamento do E-commerce Brasileiro Cresce Mais Rápido que o Número de Compradores
-seo_title: Crescimento do E-commerce Vem de Receita por Cliente, Não de Novos Compradores
+seo_title: E-commerce cresce por receita por cliente, não por novos compradores
 og_title: Crescimento do E-commerce Vem de Receita por Cliente, Não de Novos Compradores
 description: Dados da Abiacom (2020–2025) mostram que a receita por comprador cresce mais que o dobro da base de compradores no e-commerce brasileiro. Entenda o que isso muda no CRO.
 twitter_description: 'Dados da Abiacom (2020–2025): a receita por comprador cresce mais que o dobro da base de compradores no e-commerce brasileiro.'
 slug: crescimento-ecommerce-brasil-receita-por-cliente
 date: '2026-09-07'
-updated: '2026-09-07'
+updated: '2026-11-02'
 breadcrumb: Crescimento do e-commerce brasileiro
 secao: E-commerce
 card_kicker: E-commerce · Dado de mercado
 card_destaque: +86,2% de crescimento em 5 anos
 card_titulo: O mercado cresceu 86% em 5 anos. Mas não do jeito que a maioria pensa.
+resposta_curta: "O crescimento do e-commerce brasileiro vem principalmente de quem já compra: entre 2020 e 2025, o faturamento subiu 86,2% e o número de compradores só 22,4%, segundo a Abiacom. A receita por comprador cresceu 52,2%, mais que o dobro da base, o que favorece investir em conversão e ticket médio antes de comprar mais tráfego."
 card_resumo: Cruzamos os dados da Abiacom entre 2020 e 2025 para entender de onde vem o crescimento do e-commerce brasileiro e o que isso muda na hora de decidir onde investir.
 tags_artigo:
 - CRO

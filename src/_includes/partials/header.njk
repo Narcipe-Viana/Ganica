@@ -1,0 +1,30 @@
+{#- Cabeçalho único do site. `ancora` é "" na home (rola na mesma página) e "/" nas demais. -#}
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="marca" href="/" aria-label="Ganica, página inicial">
+      <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="{{ ancora }}#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="{{ ancora }}#diagnostico">Diagnóstico</a>
+      <a href="{{ ancora }}#principios">Princípios</a>
+      <a href="{{ ancora }}#sobre">Sobre</a>
+    </nav>
+    <a href="{{ ancora }}#contato" class="btn btn-contorno nav-cta js-cta" data-cta-location="{{ origem }}nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links" aria-label="Menu do celular">
+      <a href="{{ ancora }}#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="{{ ancora }}#diagnostico">Diagnóstico</a>
+      <a href="{{ ancora }}#principios">Princípios</a>
+      <a href="{{ ancora }}#sobre">Sobre</a>
+    </nav>
+    <a href="{{ ancora }}#contato" class="btn btn-ambar btn-bloco js-cta" data-cta-location="{{ origem }}nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>

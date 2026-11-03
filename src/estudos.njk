@@ -12,11 +12,10 @@ permalink: /estudos/index.html
 </script>
 <!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estudos exclusivos de CRO para e-commerce | Ganica</title>
-<meta name="description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão analisados com rigor, sem achismo.">
+<title>Biblioteca de estudos de CRO para e-commerce | Ganica</title>
+<meta name="description" content="Biblioteca de estudos da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão analisados com rigor, sem achismo. Leitura gratuita.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="{{ site.url }}/estudos/">
-<meta name="theme-color" content="#161B2C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ site.nome }}">
 <meta property="og:title" content="Estudos exclusivos de CRO para e-commerce">
@@ -26,12 +25,12 @@ permalink: /estudos/index.html
 <meta property="og:image" content="{{ site.url }}/assets/og/estudos.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Biblioteca de estudos de CRO da Ganica">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Estudos exclusivos de CRO para e-commerce">
 <meta name="twitter:description" content="Levantamentos próprios da Ganica sobre CRO e e-commerce: dado de mercado, heatmap real e funil de conversão.">
 <meta name="twitter:image" content="{{ site.url }}/assets/og/estudos.png">
-<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+{% include "partials/head-comum.njk" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -105,82 +104,40 @@ permalink: /estudos/index.html
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+{% include "css/base.css" %}
 {% include "css/artigo.css" %}
-
-  /* ---------- Índice de estudos (mobile primeiro) ---------- */
-  .estudos-index{ padding:56px 0 72px; }
-  .estudos-lista{ list-style:none; max-width:760px; }
-  .estudo-item{ border-top:1px solid var(--line-light); }
-  .estudo-item:last-child{ border-bottom:1px solid var(--line-light); }
-  .estudo-item a{ display:block; padding:28px 0 30px; }
-  .estudo-meta{
-    display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center;
-    font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--gold-deep); font-weight:600; margin-bottom:12px;
-  }
-  .estudo-meta .num{ color:var(--ink); }
-  .estudo-meta .data{ color:var(--body-on-light); font-weight:500; flex-basis:100%; }
-  @media (min-width:760px){ .estudo-meta .data{ flex-basis:auto; } .estudo-meta .data::before{ content:"·"; margin-right:12px; color:var(--line-light); } }
-  .estudo-item h2{
-    font-size:1.45rem; line-height:1.18; color:var(--ink);
-    transition:color .2s ease;
-  }
-  .estudo-item p{ color:var(--body-on-light); margin-top:10px; font-size:0.98rem; }
-  .estudo-destaque{
-    display:inline-block; margin-top:16px; padding:6px 10px;
-    border:1px solid var(--line-light); border-radius:2px;
-    font-size:0.82rem; font-weight:600; color:var(--teal);
-  }
-  .estudo-ler{
-    display:inline-block; margin-top:16px; font-weight:600; font-size:0.92rem;
-    text-decoration:underline; text-underline-offset:4px; text-decoration-color:var(--line-light);
-  }
-  .estudo-item a:hover h2{ color:var(--gold-deep); }
-  .estudo-item a:hover .estudo-ler{ text-decoration-color:var(--gold); }
-  @media (min-width:760px){
-    .estudos-index{ padding:80px 0 104px; }
-    .estudo-item a{ padding:36px 0 38px; }
-    .estudo-item h2{ font-size:1.85rem; }
-    .estudo-item p{ font-size:1.02rem; }
+{% include "css/estudos.css" %}
+  .estudos-index{ padding:12px 0 72px; background:var(--panel); }
+  .estudos-index .wrap{ padding-inline:12px; padding-top:36px; }
+  @media (min-width:900px){
+    .estudos-index .wrap{ padding-inline:var(--gutter); padding-top:56px; }
+    .estudos-index{ padding-bottom:104px; }
   }
 </style>
 </head>
 <body>
 <!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
 
-{% include "partials/header-artigo.njk" %}
+{% set ancora = "/" %}{% set origem = "estudos_" %}
+{% include "partials/header.njk" %}
 
-<section class="article-hero">
+<main id="conteudo">
+<section class="article-hero com-trama">
   <div class="wrap">
-    <p class="breadcrumb"><a href="/">Início</a><span class="sep">/</span>Estudos</p>
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb"><a href="/">Início</a><span class="sep">/</span>Estudos</p></nav>
+    <p class="biblioteca-selo"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 5.5C8.5 4.2 6.2 3.7 3 3.8v11.4c3.2-.1 5.5.4 7 1.7 1.5-1.3 3.8-1.8 7-1.7V3.8c-3.2-.1-5.5.4-7 1.7zM10 5.5v11.4"/></svg>Biblioteca de estudos</p>
     <h1>Estudos exclusivos de CRO</h1>
-    <p class="article-deck">Levantamentos próprios sobre e-commerce e CRO: dado de mercado, heatmap real e funil de conversão, lidos com o mesmo rigor de um diagnóstico.</p>
+    <p class="article-deck">Conteúdo próprio e gratuito sobre <span class="nw">e-commerce</span> e CRO: dado de mercado, heatmap real e funil de conversão, lidos com o mesmo rigor de um diagnóstico.</p>
     <div class="article-meta"><span>{{ total }} {{ "estudo publicado" if total == 1 else "estudos publicados" }}</span></div>
   </div>
 </section>
 
-<section class="estudos-index">
+<section class="estudos-index" aria-label="Lista de estudos">
   <div class="wrap">
-    <ol class="estudos-lista">
+    <ol class="biblioteca-lista">
       {%- for e in collections.estudos %}
-      <li class="estudo-item">
-        <a href="{{ e.url }}" class="js-track-click" data-cta-location="estudos_index_{{ loop.index }}">
-          <div class="estudo-meta">
-            {%- if e.data.date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}
-            <span class="num">{{ (total - loop.index0) | pad2 }}</span>
-            <span>{{ e.data.card_kicker }}</span>
-            <time class="data" datetime="{{ e.data.date | dataISO }}">{{ e.data.date | dataBR }}</time>
-          </div>
-          <h2>{{ e.data.title | semQuebraHifen | safe }}</h2>
-          <p>{{ e.data.card_resumo or e.data.description }}</p>
-          {%- if e.data.card_destaque %}<span class="estudo-destaque">{{ e.data.card_destaque }}</span><br>{% endif %}
-          <span class="estudo-ler">Ler o estudo →</span>
-        </a>
-      </li>
+      <li>{% set tag = "h2" %}{% set local = "estudos_index" %}{% include "partials/card-estudo.njk" %}</li>
       {%- endfor %}
     </ol>
   </div>
@@ -191,11 +148,12 @@ permalink: /estudos/index.html
     <h2>Quer essa leitura aplicada à sua loja?</h2>
     <p>Os estudos mostram padrões. Um diagnóstico mostra onde eles aparecem, e com que intensidade, na sua operação, com os seus próprios dados.</p>
     <div class="hero-ctas">
-      <a href="mailto:{{ site.email }}" class="btn btn-gold js-track-click" data-cta-location="estudos_cta_final">Solicitar diagnóstico</a>
-      <a href="/#diagnostico" class="btn btn-ghost-dark js-track-click" data-cta-location="estudos_cta_final_secondary">Ver como funciona</a>
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="estudos_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="estudos_cta_final_secondary">Ver como funciona</a>
     </div>
   </div>
 </section>
+</main>
 
 {% include "partials/footer.njk" %}
 {% include "partials/scripts-artigo.njk" %}

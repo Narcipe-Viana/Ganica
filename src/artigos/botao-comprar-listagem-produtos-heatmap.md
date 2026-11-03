@@ -12,6 +12,7 @@ secao: E-commerce
 card_kicker: CRO · Heatmap real
 card_destaque: 6 em 7 marketplaces não usam CTA na listagem
 card_titulo: Colocar um botão de comprar direto na página de listagem, ou só na página do produto?
+resposta_curta: "Para a maioria das lojas, o botão de comprar direto na listagem não é a prioridade: em heatmaps reais de dois e-commerces, o clique se concentrou em busca, imagens e escolha de variante, e 6 de 7 grandes marketplaces brasileiros não usam esse botão. A pergunta certa é o que o visitante ainda precisa decidir antes de comprar."
 card_resumo: Heatmaps reais de dois e-commerces brasileiros, cruzados com o comportamento de 7 grandes marketplaces, respondem a essa pergunta e mostram onde o clique realmente vai numa página de listagem.
 tags_artigo:
 - CRO
