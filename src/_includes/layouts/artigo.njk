@@ -31,7 +31,6 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="{{ site.autor }}">
 <link rel="canonical" href="{{ urlArtigo }}">
-<meta name="theme-color" content="#161B2C">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{{ site.nome }}">
@@ -55,10 +54,7 @@
 <meta name="twitter:title" content="{{ seo_title or title }}">
 <meta name="twitter:description" content="{{ twitter_description or description }}">
 <meta name="twitter:image" content="{{ site.url }}{{ og }}">
-<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/favicon.svg">
+{% include "partials/head-comum.njk" %}
 
 <!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
      deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
@@ -135,24 +131,25 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+{% include "css/base.css" %}
 {% include "css/artigo.css" %}
 </style>
 </head>
 <body>
 <!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
 
-{% include "partials/header-artigo.njk" %}
+{% set ancora = "/" %}{% set origem = "artigo_" %}
+{% include "partials/header.njk" %}
 
-<section class="article-hero">
+<main id="conteudo">
+<article>
+<section class="article-hero com-trama">
   <div class="wrap">
     {%- if date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}
-    <p class="breadcrumb">
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb">
       <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>{{ breadcrumb }}
-    </p>
+    </p></nav>
     <h1>{{ title | semQuebraHifen | safe }}</h1>
     <p class="article-deck">{{ deck }}</p>
     <div class="article-meta">
@@ -207,6 +204,8 @@
   </div>
 </section>
 
+</article>
+
 {% include "partials/autor.njk" %}
 
 <section id="contato" class="cta-final">
@@ -214,11 +213,12 @@
     <h2>{{ cta_titulo or "Quer saber o que isso significa para a sua loja?" }}</h2>
     <p>{{ cta_texto or "Um diagnóstico de CRO cruza esse tipo de leitura com os dados reais da sua operação e mostra onde está a receita que você está deixando na mesa." }}</p>
     <div class="hero-ctas">
-      <a href="mailto:{{ site.email }}" class="btn btn-gold js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
-      <a href="/#diagnostico" class="btn btn-ghost-dark js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
     </div>
   </div>
 </section>
+</main>
 
 {% include "partials/footer.njk" %}
 {% include "partials/scripts-artigo.njk" %}

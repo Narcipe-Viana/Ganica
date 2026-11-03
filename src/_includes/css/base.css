@@ -1,0 +1,201 @@
+/* Base compartilhada por todas as páginas: marca, tipografia, botões, cabeçalho e rodapé.
+   Cores derivadas da logo. Mobile primeiro. */
+@font-face{
+  font-family:'Lexend Deca';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2-variations'),
+      url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2');
+}
+/* Fallback com métricas próximas: reduz o salto de layout (CLS) quando a fonte carrega */
+@font-face{
+  font-family:'Lexend Fallback';
+  src:local('Arial');
+  size-adjust:112%;
+  ascent-override:89%;
+  descent-override:22%;
+  line-gap-override:0%;
+}
+
+:root{
+  --ink:#0B3842;
+  --ink-hover:#0F4A57;
+  --paper:#F5F9F9;
+  --panel:#E6F1F3;
+  --white:#FFFFFF;
+  --amber:#FAB32B;
+  --amber-hover:#F0A312;
+  --teal:#107088;
+  --teal-bright:#1A8BA3;
+  --body:#2C4A53;
+  --muted:#466069;
+  --line:#C9DEE2;
+  --line-soft:#DCE9EC;
+  --line-strong:#6F8A92;
+  --font:'Lexend Deca','Lexend Fallback',Arial,sans-serif;
+  --max:1440px;
+  --gutter:clamp(20px,5vw,72px);
+  --sombra-card:0 1px 2px rgba(11,56,66,.05),0 14px 32px -22px rgba(11,56,66,.22);
+  --sombra-folha:0 1px 2px rgba(11,56,66,.05),0 28px 64px -28px rgba(11,56,66,.24);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ font-weight:400; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+ul,ol{ list-style:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+[hidden]{ display:none !important; }
+.nw{ white-space:nowrap; }
+.wrap{ max-width:var(--max); margin:0 auto; padding-inline:var(--gutter); }
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--teal-bright);
+  outline-offset:3px;
+}
+.pular{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  padding:10px 16px; background:var(--ink); color:var(--white); border-radius:10px;
+}
+.pular:focus{ top:12px; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Títulos de seção ---------- */
+.rotulo{
+  font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:58px; padding:0 22px;
+  border:1px solid transparent; border-radius:12px;
+  font-weight:600; font-size:1rem; line-height:1.2; text-decoration:none; text-align:center;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+.btn-ambar{ background:var(--amber); color:var(--ink); }
+.btn-ambar:hover{ background:var(--amber-hover); }
+.btn-leve{ background:var(--white); color:var(--ink); font-weight:500; }
+.btn-leve:hover{ background:var(--line-soft); }
+.btn-contorno{ background:transparent; border-color:var(--ink); color:var(--ink); border-radius:10px; font-weight:500; }
+.btn-contorno:hover{ background:var(--panel); }
+.btn-bloco{ display:flex; width:100%; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,249,249,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);
+  min-height:64px;
+}
+.marca{ display:flex; align-items:center; min-height:44px; flex-shrink:0; position:relative; z-index:60; }
+.marca img{ height:32px; width:auto; }
+.nav-links{ display:none; }
+.nav-cta{ display:none; }
+.menu-toggle{
+  position:relative; z-index:60;
+  width:44px; height:44px; margin-right:-10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; flex-shrink:0;
+}
+.menu-icon,.menu-icon::before,.menu-icon::after{
+  display:block; width:22px; height:1.5px; background:var(--ink);
+  transition:transform .2s ease,background .15s ease;
+}
+.menu-icon{ position:relative; }
+.menu-icon::before,.menu-icon::after{ content:""; position:absolute; left:0; }
+.menu-icon::before{ top:-7px; }
+.menu-icon::after{ top:7px; }
+.menu-toggle.open .menu-icon{ background:transparent; }
+.menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+.menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:40;
+  display:flex; flex-direction:column; justify-content:center; gap:40px;
+  padding:88px 24px 48px;
+  background:var(--paper);
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+}
+.mobile-menu.open{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .25s ease,transform .25s ease,visibility 0s;
+}
+.mobile-menu-links{ display:flex; flex-direction:column; }
+.mobile-menu-links a{
+  display:flex; align-items:center; min-height:56px;
+  font-size:1.6rem; text-decoration:none; border-bottom:1px solid var(--line-soft);
+}
+body.menu-open{ overflow:hidden; }
+
+@media (min-width:900px){
+  .nav{ min-height:80px; }
+  .marca img{ height:36px; }
+  .nav-links{ display:flex; gap:32px; font-size:1rem; }
+  .nav-links a{ display:flex; align-items:center; min-height:44px; text-decoration:none; color:var(--body); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{ display:inline-flex; min-height:46px; padding:0 18px; }
+  .menu-toggle,.mobile-menu{ display:none; }
+}
+
+/* ---------- Trama da logo (detalhe de fundo, nunca atrás de texto em peso visual) ---------- */
+.com-trama{ position:relative; overflow:hidden; }
+.com-trama::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:url('/assets/img/trama.svg') center/1200px 900px;
+  opacity:.2;
+  -webkit-mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+  mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+}
+.com-trama > *{ position:relative; }
+@media (min-width:900px){
+  .com-trama::before{
+    left:34%; opacity:.26;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 62%);
+    mask-image:linear-gradient(to right,transparent,#000 62%);
+  }
+}
+
+/* ---------- Etiqueta "Novo" ---------- */
+.tag-novo{
+  display:inline-flex; align-items:center;
+  padding:4px 10px; border-radius:999px;
+  background:var(--amber); color:var(--ink);
+  font-size:.8125rem; font-weight:600; line-height:1.4;
+}
+
+/* ---------- Sobre (card usado nos estudos) ---------- */
+.foto-autor{ display:block; width:100%; height:auto; }
+
+/* ---------- Rodapé ---------- */
+.site-footer{ border-top:1px solid var(--line); }
+.site-footer .wrap{ padding-block:36px; display:flex; flex-direction:column; gap:20px; }
+.site-footer img{ height:32px; width:auto; align-self:flex-start; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:0 24px; font-size:.9375rem; }
+.footer-links a{ display:inline-flex; align-items:center; min-height:44px; color:var(--body); text-decoration:none; }
+.footer-links a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.site-footer p{ font-size:.875rem; color:var(--muted); }
+@media (min-width:900px){
+  .site-footer .wrap{ flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+  .site-footer img{ align-self:center; }
+  .site-footer p{ flex-basis:100%; }
+}

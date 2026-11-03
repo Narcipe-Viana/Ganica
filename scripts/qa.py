@@ -41,6 +41,8 @@ class Extrator(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.texto, self.links, self.ids, self.h1, self.jsonld = [], [], set(), [], []
+        self.imgs, self.title, self.meta = [], [], {}
+        self._em_title = False
         self._pilha_ignorar = 0
         self._em_jsonld = False
         self._em_h1 = False
@@ -52,6 +54,14 @@ class Extrator(HTMLParser):
             self.ids.add(a["id"])
         if tag == "a" and a.get("href"):
             self.links.append(a["href"])
+        if tag == "img":
+            self.imgs.append(a)
+        if tag == "meta" and a.get("name"):
+            self.meta[a["name"]] = a.get("content", "")
+        if tag == "link" and a.get("rel") == "canonical":
+            self.meta["canonical"] = a.get("href", "")
+        if tag == "title":
+            self._em_title = True
         if tag == "script" and a.get("type") == "application/ld+json":
             self._em_jsonld, self._buf = True, []
         elif tag in ("script", "style", "noscript"):
@@ -70,6 +80,10 @@ class Extrator(HTMLParser):
             self._em_h1 = False
 
     def handle_data(self, data):
+        if self._em_title:
+            self.title.append(data)
+            self._em_title = False
+            return
         if self._em_jsonld:
             self._buf.append(data)
             return
@@ -129,7 +143,7 @@ def checar_estrutura(foco=None):
         extraidos[rel] = ex
         ids_por_pagina[rel] = ex.ids
 
-    for arq in ("feed.xml", "llms.txt", "robots.txt", "logo-ganica.png"):
+    for arq in ("feed.xml", "llms.txt", "robots.txt", "logo-ganica.png", "favicon-48.png", "apple-touch-icon.png"):
         if not (SITE / arq).exists():
             erro(arq, "não foi gerado")
     sitemap = (SITE / "sitemap.xml").read_text(encoding="utf-8") if (SITE / "sitemap.xml").exists() else ""
@@ -150,12 +164,25 @@ def checar_estrutura(foco=None):
         n = texto.count("—")
         if n:
             trecho = texto[max(0, texto.find("—") - 60): texto.find("—") + 40].strip()
-            # Regra rígida nos estudos e no índice; a home ainda tem travessões no texto original.
-            (aviso if pg == "/" else erro)(pg, f"{n} travessão(ões) no texto visível. Ex.: \"…{trecho}…\"")
+            erro(pg, f"{n} travessão(ões) no texto visível. Ex.: \"…{trecho}…\"")
 
         # 2. Exatamente um H1
         if len(ex.h1) != 1:
             erro(pg, f"esperado 1 H1, encontrados {len(ex.h1)}")
+
+        # 2b. SEO básico de toda página
+        if not ex.title or not 20 <= len(ex.title[0].strip()) <= 70:
+            aviso(pg, f"title ausente ou fora de 20 a 70 caracteres: {ex.title[:1]}")
+        desc_pg = ex.meta.get("description", "")
+        if not desc_pg:
+            erro(pg, "sem meta description")
+        if not ex.meta.get("canonical", "").startswith(URL_BASE):
+            erro(pg, "sem canonical absoluto")
+        for img in ex.imgs:
+            if img.get("alt") in (None, ""):
+                erro(pg, f"imagem sem alt: {img.get('src')}")
+            if not img.get("width") or not img.get("height"):
+                erro(pg, f"imagem sem width/height (causa CLS): {img.get('src')}")
 
         # 3. JSON-LD válido
         for bloco in ex.jsonld:

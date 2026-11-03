@@ -2,7 +2,8 @@
 """Gera as imagens de compartilhamento (Open Graph, 1200x630) e o logo do site.
 
 - Uma imagem por estudo em src/assets/og/<slug>.png (só cria as que faltam; use --todas para refazer).
-- src/assets/og/ganica.png (home), src/assets/og/estudos.png (índice) e src/assets/img/logo-ganica.png (512x512).
+- src/assets/og/ganica.png (home), src/assets/og/estudos.png (índice) e os ícones PNG (logo 512, favicon 48, Apple 180),
+  gerados a partir de src/favicon.svg.
 
 Usa as fontes do próprio site (pacotes @fontsource em node_modules) e o Chromium do Playwright.
 Uso: python3 scripts/og.py [--todas]
@@ -26,42 +27,41 @@ def _fonte(familia, peso, arquivo):
 
 
 # Fontes embutidas em base64 (página em about:blank não carrega file://)
-CSS_FONTES = "".join([
-    _fonte("Frank Ruhl Libre", 500, "frank-ruhl-libre/files/frank-ruhl-libre-latin-500-normal.woff2"),
-    _fonte("Frank Ruhl Libre", 700, "frank-ruhl-libre/files/frank-ruhl-libre-latin-700-normal.woff2"),
-    _fonte("Work Sans", 400, "work-sans/files/work-sans-latin-400-normal.woff2"),
-    _fonte("Work Sans", 600, "work-sans/files/work-sans-latin-600-normal.woff2"),
-])
+CSS_FONTES = "".join(
+    _fonte("Lexend Deca", p, f"lexend-deca/files/lexend-deca-latin-{p}-normal.woff2") for p in (400, 500, 600)
+)
+LOGO_SVG = (RAIZ / "src" / "assets" / "img" / "logo-ganica.svg").read_text(encoding="utf-8")
+FAVICON_SVG = (RAIZ / "src" / "favicon.svg").read_text(encoding="utf-8")
+TRAMA = "data:image/svg+xml;base64," + base64.b64encode((RAIZ / "src" / "assets" / "img" / "trama.svg").read_bytes()).decode()
 
 
 def cartao(kicker, titulo, destaque, rodape):
     e = html.escape
-    tam = 64 if len(titulo) <= 70 else 54 if len(titulo) <= 95 else 46
+    tam = 62 if len(titulo) <= 70 else 52 if len(titulo) <= 95 else 44
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS_FONTES}
 *{{margin:0;padding:0;box-sizing:border-box}}
-body{{width:1200px;height:630px;background:#161B2C;color:#F5F3EC;font-family:'Work Sans';position:relative;overflow:hidden}}
-.borda{{position:absolute;inset:28px;border:1px solid rgba(245,243,236,.14)}}
-.faixa{{position:absolute;left:0;top:0;bottom:0;width:10px;background:#C99A44}}
-.box{{position:absolute;left:84px;right:84px;top:72px;bottom:72px;display:flex;flex-direction:column}}
-.topo{{display:flex;align-items:center;gap:18px}}
-.marca{{font-family:'Frank Ruhl Libre';font-weight:700;font-size:34px;color:#F5F3EC}}
-.sep{{width:1px;height:26px;background:rgba(245,243,236,.25)}}
-.kicker{{font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:#C99A44;font-weight:600}}
-h1{{font-family:'Frank Ruhl Libre';font-weight:500;font-size:{tam}px;line-height:1.08;letter-spacing:-.01em;margin-top:auto;max-width:980px}}
-.base{{display:flex;align-items:center;justify-content:space-between;margin-top:40px;gap:24px}}
-.dest{{font-size:21px;font-weight:600;color:#161B2C;background:#C99A44;padding:10px 16px;border-radius:2px;max-width:720px}}
-.rod{{font-size:19px;color:#C7CBD6;white-space:nowrap}}
-</style></head><body><div class="faixa"></div><div class="borda"></div><div class="box">
-<div class="topo"><span class="marca">Ganica</span><span class="sep"></span><span class="kicker">{e(kicker)}</span></div>
+body{{width:1200px;height:630px;background:#F5F9F9;color:#0B3842;font-family:'Lexend Deca';position:relative;overflow:hidden}}
+.trama{{position:absolute;inset:0 0 0 40%;background:url('{TRAMA}') center/1200px 900px;opacity:.42;-webkit-mask-image:linear-gradient(to right,transparent,#000 62%)}}
+.box{{position:absolute;left:72px;right:72px;top:60px;bottom:60px;display:flex;flex-direction:column}}
+.topo{{display:flex;align-items:center;justify-content:space-between;gap:24px}}
+.marca{{width:190px}}.marca svg{{display:block;width:100%;height:auto}}
+.kicker{{font-size:20px;font-weight:500;color:#107088}}
+h1{{font-weight:500;font-size:{tam}px;line-height:1.1;letter-spacing:-.015em;margin-top:auto;max-width:1020px}}
+.base{{display:flex;align-items:center;justify-content:space-between;margin-top:36px;gap:24px}}
+.dest{{font-size:22px;font-weight:600;color:#0B3842;background:#FAB32B;padding:10px 18px;border-radius:12px;max-width:760px}}
+.rod{{font-size:20px;color:#466069;white-space:nowrap}}
+</style></head><body><div class="trama"></div><div class="box">
+<div class="topo"><span class="marca">{LOGO_SVG}</span><span class="kicker">{e(kicker)}</span></div>
 <h1>{e(titulo)}</h1>
 <div class="base">{f'<span class="dest">{e(destaque)}</span>' if destaque else '<span></span>'}<span class="rod">{e(rodape)}</span></div>
 </div></body></html>"""
 
 
-LOGO = f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS_FONTES}
-*{{margin:0;padding:0}}body{{width:512px;height:512px;background:#161B2C;display:flex;align-items:center;justify-content:center}}
-span{{font-family:'Frank Ruhl Libre';font-weight:700;font-size:300px;color:#C99A44;line-height:1;margin-top:-20px}}
-</style></head><body><span>G</span></body></html>"""
+def icone(tam):
+    """Símbolo da logo em PNG quadrado (schema Organization, favicon, ícone do iPhone)."""
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+*{{margin:0;padding:0}}body{{width:{tam}px;height:{tam}px;background:#fff}}svg{{display:block;width:100%;height:100%}}
+</style></head><body>{FAVICON_SVG}</body></html>"""
 
 
 async def render(pg, conteudo, destino, w, h):
@@ -79,8 +79,10 @@ async def main(todas):
         pg = await nav.new_page()
         fixos = [
             (OG / "ganica.png", cartao("Consultoria de CRO para e-commerce", "Seu tráfego já foi conquistado. O problema é o que acontece depois do clique.", "", "ganica.com.br"), 1200, 630),
-            (OG / "estudos.png", cartao("Estudos exclusivos de CRO", "Dado de mercado, heatmap real e funil de conversão, lidos com rigor.", "", "ganica.com.br/estudos"), 1200, 630),
-            (RAIZ / "src" / "assets" / "img" / "logo-ganica.png", LOGO, 512, 512),
+            (OG / "estudos.png", cartao("Estudos exclusivos de CRO", "Biblioteca de estudos: dado de mercado, heatmap real e funil de conversão.", "", "ganica.com.br/estudos"), 1200, 630),
+            (RAIZ / "src" / "assets" / "img" / "logo-ganica.png", icone(512), 512, 512),
+            (RAIZ / "src" / "assets" / "img" / "favicon-48.png", icone(48), 48, 48),
+            (RAIZ / "src" / "assets" / "img" / "apple-touch-icon.png", icone(180), 180, 180),
         ]
         for destino, conteudo, w, h in fixos:
             if todas or not destino.exists():

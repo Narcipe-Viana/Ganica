@@ -1,0 +1,16 @@
+{#- Card de estudo. Variáveis: e (item da coleção), tag ("h2" ou "h3"), local (prefixo de rastreamento), loop. -#}
+<article class="estudo-card">
+  <div class="estudo-corpo">
+    <p class="estudo-meta">
+      {%- if e.data.date | ehNovo %}<span class="tag-novo">Novo</span>{% endif %}
+      <span class="estudo-tema">Estudo · {{ e.data.card_kicker | kickerFim }}</span>
+      <span><time datetime="{{ e.data.date | dataISO }}">{{ e.data.date | dataCurta }}</time> · {{ e.content | leitura }} min de leitura</span>
+    </p>
+    <{{ tag }}><a class="estudo-titulo js-track-click" href="{{ e.url }}" data-cta-location="{{ local }}_{{ loop.index }}">{{ (e.data.card_titulo or e.data.title) | semQuebraHifen | safe }}</a></{{ tag }}>
+    {%- if e.data.card_destaque %}
+    <p class="estudo-achado">{{ e.data.card_destaque | comPonto }}</p>
+    {%- endif %}
+    <p class="estudo-resumo">{{ e.data.card_resumo or e.data.description }}</p>
+  </div>
+  <span class="estudo-ler" aria-hidden="true">Ler estudo →</span>
+</article>
