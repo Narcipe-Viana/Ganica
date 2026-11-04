@@ -39,6 +39,15 @@ Um estudo da Ganica nunca é:
 - Seção "O que ainda não sabemos" (ou equivalente) sempre que o estudo usar amostra pequena,
   um cliente só ou dado indireto.
 
+- **Linguagem simples (pedido do Narcipe, 04/11/2026).** Qualquer pessoa precisa entender na
+  primeira leitura: frases curtas, palavras do dia a dia, nenhum malabarismo gramatical. Todo termo
+  técnico (CRO, ticket médio, SEO, GA4) é explicado em palavras simples na primeira vez que aparece.
+  Profundidade vem do conteúdo, não do vocabulário.
+- **Pauta com concorrentes citados pela IA.** Quando a pauta trouxer as páginas que a IA do Google
+  cita para a consulta, ler todas, registrar formato, dados e lacunas em `editorial/concorrentes/`
+  e escrever para preencher as lacunas (ordem, conta, dado brasileiro verificado, medição), nunca
+  para repetir a lista de dicas.
+
 ## 3. Estrutura obrigatória de um estudo
 
 Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos/` como modelo.

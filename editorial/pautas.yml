@@ -479,3 +479,10 @@ pautas:
     palavra_chave: "como vender mais no Natal / vendas de Natal e-commerce"
     publicado_em: 2026-11-04
     slug: como-vender-mais-natal-ano-novo-ecommerce
+  - id: 30
+    tipo: base
+    status: revisao
+    origem: "Pedido do Narcipe em 04/11/2026: aparecer na Visão geral da IA do Google para 'como aumentar as vendas online'. Análise das 10 páginas citadas em editorial/concorrentes/aumentar-vendas-online.md."
+    titulo_provisorio: "Como aumentar as vendas online? Descubra primeiro onde a sua loja perde venda"
+    palavra_chave: "aumentar vendas online / como aumentar as vendas online"
+    slug: como-aumentar-vendas-online
