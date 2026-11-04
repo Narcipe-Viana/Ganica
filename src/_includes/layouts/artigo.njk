@@ -102,7 +102,7 @@
       {%- if resposta_curta %}
       "abstract": {{ resposta_curta | textoPuro | json | safe }},
       {%- endif %}
-      "image": { "@type": "ImageObject", "url": "{{ site.url }}{{ og }}", "width": 1200, "height": 630 },
+      "image": [{ "@type": "ImageObject", "url": "{{ site.url }}{{ og }}", "width": 1200, "height": 630 }{% for im in imagens_corpo %}{% set d = im | dimensoes %}, { "@type": "ImageObject", "url": "{{ site.url }}{{ im }}"{% if d %}, "width": {{ d.w }}, "height": {{ d.h }}{% endif %} }{% endfor %}],
       "wordCount": {{ content | palavras }},
       "timeRequired": "PT{{ minutos }}M",
       "isAccessibleForFree": true,

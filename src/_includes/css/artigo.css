@@ -191,6 +191,15 @@
     font-style:italic;
   }
 
+  .figura{ margin:36px 0; }
+  .figura img{
+    display:block; width:100%; max-width:520px; margin:0 auto; height:auto; border-radius:14px;
+    border:1px solid var(--line-soft); box-shadow:var(--sombra-card); background:var(--white);
+  }
+  .figura-link{ display:block; }
+  .figura figcaption{ max-width:520px; margin:12px auto 0; font-size:0.82rem; line-height:1.5; color:var(--muted); }
+  @media (max-width:640px){ .prose .figura{ margin:28px -8px; } .figura img{ border-radius:10px; } }
+
   .article-links{ margin-top:20px; }
   .prose .article-links-titulo,.article-links-titulo{
     font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;

@@ -2,6 +2,31 @@
 // O design vive em src/_includes; o conteúdo dos artigos vive em src/artigos/*.md
 // e é editado pelo Pages CMS (ver .pages.yml).
 
+import { readFileSync } from "node:fs";
+
+// Largura e altura de uma imagem PNG, JPEG ou WebP do site (para width/height e evitar CLS).
+export function dimensoesImagem(src) {
+  try {
+    const b = readFileSync(new URL(`./src${decodeURI(src)}`, import.meta.url));
+    if (b.toString("ascii", 1, 4) === "PNG") return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+    if (b.toString("ascii", 8, 12) === "WEBP") {
+      const t = b.toString("ascii", 12, 16);
+      if (t === "VP8X") return { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+      if (t === "VP8 ") return { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+      if (t === "VP8L") { const v = b.readUInt32LE(21); return { w: (v & 0x3fff) + 1, h: ((v >> 14) & 0x3fff) + 1 }; }
+    }
+    if (b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i < b.length) {
+        const m = b[i + 1], len = b.readUInt16BE(i + 2);
+        if (m >= 0xc0 && m <= 0xc3) return { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) };
+        i += 2 + len;
+      }
+    }
+  } catch (e) {}
+  return null;
+}
+
 const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho",
   "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
@@ -76,6 +101,7 @@ export default function (eleventyConfig) {
   };
   eleventyConfig.addFilter("fonte", fonte);
   eleventyConfig.addFilter("fonteUrl", (s) => fonte(s).url);
+  eleventyConfig.addFilter("dimensoes", (src) => dimensoesImagem(src));
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
   // Coleção de estudos publicados, do mais recente para o mais antigo
@@ -94,6 +120,14 @@ export default function (eleventyConfig) {
       .replace(/<table>/g, '<div class="data-table-wrap"><table class="data-table">')
       .replace(/<\/table>\s*<p><em>([\s\S]*?)<\/em><\/p>/g, '</table></div>\n<p class="table-caption">$1</p>')
       .replace(/<\/table>(?!\s*<\/div>)/g, "</table></div>")
+      // Imagem do corpo em Markdown, ![alt](/assets/... "legenda"), vira figura com legenda,
+      // dimensões reais (sem CLS) e carregamento preguiçoso.
+      .replace(/<p>\s*<img src="([^"]+)" alt="([^"]*)"(?: title="([^"]*)")?\s*\/?>\s*<\/p>/g, (m, src, alt, legenda) => {
+        const d = dimensoesImagem(src);
+        const dim = d ? ` width="${d.w}" height="${d.h}"` : "";
+        const cap = legenda ? `<figcaption>${legenda}</figcaption>` : "";
+        return `<figure class="figura"><a href="${src}" class="figura-link" aria-label="Abrir imagem em tamanho real"><img src="${src}" alt="${alt}"${dim} loading="lazy" decoding="async"></a>${cap}</figure>`;
+      })
       .replace(/<blockquote>\s*<p>([\s\S]*?)<\/p>\s*<\/blockquote>/g, '<p class="pull-quote">$1</p>');
   });
 
