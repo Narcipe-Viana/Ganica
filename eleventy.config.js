@@ -31,7 +31,9 @@ const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julh
   "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
 function toDate(d) {
-  if (d instanceof Date) return d;
+  // Datas do YAML sem aspas chegam como Date à meia-noite UTC; com aspas, como texto.
+  // Normalizar as duas para meio-dia UTC do mesmo dia, para a ordenação não depender das aspas.
+  if (d instanceof Date) return new Date(`${d.toISOString().slice(0, 10)}T12:00:00Z`);
   // datas "AAAA-MM-DD" sem hora: interpretar como meio-dia UTC para não virar o dia anterior no fuso -03
   return new Date(String(d).length === 10 ? `${d}T12:00:00Z` : d);
 }
@@ -108,7 +110,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("estudos", (api) =>
     api.getFilteredByGlob("src/artigos/*.md")
       .filter((p) => !p.data.rascunho)
-      .sort((a, b) => toDate(b.data.date) - toDate(a.data.date))
+      // Mesmo dia: o publicado por último (campo "hora", HH:MM de Brasília) fica no topo
+      .sort((a, b) => (toDate(b.data.date) - toDate(a.data.date)) ||
+        String(b.data.hora || "00:00").localeCompare(String(a.data.hora || "00:00")))
   );
 
   // Componentes do design aplicados ao HTML gerado pelo Markdown do corpo:

@@ -44,6 +44,9 @@ content:
         type: date
         options:
           format: yyyy-MM-dd
+      - name: hora
+        label: "Hora de publicação (HH:MM, horário de Brasília; desempata estudos do mesmo dia na listagem)"
+        type: string
       - name: updated
         label: "Data de atualização"
         type: date

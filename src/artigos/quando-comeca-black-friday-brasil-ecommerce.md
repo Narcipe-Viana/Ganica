@@ -6,6 +6,7 @@ description: "Quando começa a Black Friday 2026? Em 27 de novembro, mas 50% de 
 twitter_description: "A sexta-feira segue sendo o pico, mas a preparação não pode começar nela. As três datas que uma loja precisa medir na Black Friday."
 slug: quando-comeca-black-friday-brasil-ecommerce
 date: '2026-11-04'
+hora: "08:49"
 updated: 2026-11-04
 rascunho: false
 breadcrumb: Quando começa a Black Friday

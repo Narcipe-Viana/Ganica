@@ -6,6 +6,7 @@ description: "O rodapé de e-commerce é onde o cliente desconfiado confere a lo
 twitter_description: "O rodapé não vende sozinho, mas é onde o visitante cético verifica quem está por trás da loja. O que colocar ali, e o que o selo não resolve."
 slug: rodape-ecommerce-confianca-saude
 date: '2026-11-04'
+hora: "09:52"
 updated: 2026-11-04
 rascunho: false
 breadcrumb: Rodapé de e-commerce
