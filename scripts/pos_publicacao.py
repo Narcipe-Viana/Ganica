@@ -45,7 +45,7 @@ def main():
 
     # 1. Conferir o sitemap no ar
     no_ar = {}
-    for tentativa in range(24):  # até ~6 minutos
+    for tentativa in range(80):  # até ~20 minutos (o deploy do GitHub Pages às vezes passa de 8 minutos)
         try:
             no_ar = ler(baixar(f"https://{HOST}/sitemap.xml"))
         except Exception as e:
