@@ -61,7 +61,9 @@ pautas:
     links_com: [2, 8]
 
   - id: 6
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-04
+    slug: rodape-ecommerce-confianca-saude
     titulo_provisorio: "Rodapé: a página de vendas mais subestimada de um e-commerce de saúde"
     tese: >-
       Em categorias reguladas e de produto ingerido (saúde, bem-estar), o visitante cético procura
