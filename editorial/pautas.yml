@@ -407,8 +407,10 @@ pautas:
   # ---------- Trilha de tendências (quartas) ----------
   - id: 28
     tipo: tendencia
-    status: pulada
-    motivo: "Reprovada duas vezes na revisão independente em 04/11/2026: o período do Procon-SP foi lido errado e havia atribuições a corrigir."
+    status: publicada
+    publicado_em: 2026-11-04
+    slug: quando-comeca-black-friday-brasil-ecommerce
+    historico: "Pulada em 04/11/2026 após reprovar duas vezes na revisão independente. Corrigida e publicada no mesmo dia, a pedido do Narcipe."
     titulo_provisorio: "Quando começa a Black Friday 2026? Para quem vende, antes de 27 de novembro"
     sinal:
       termo: "quando começa a black friday no brasil"
