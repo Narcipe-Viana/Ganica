@@ -44,6 +44,7 @@ Um estudo da Ganica nunca é:
 Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos/` como modelo.
 
 1. `title`: título do H1. Pode ser pergunta ou afirmação contraintuitiva. Até ~90 caracteres.
+   `date` sempre entre aspas (`'AAAA-MM-DD'`) e `hora: "HH:MM"` com a hora da publicação (Brasília): desempata estudos do mesmo dia na listagem e entra no `datePublished`.
 2. `seo_title`: até 65 caracteres, com a palavra-chave principal perto do início.
 3. `description`: 120 a 160 caracteres, com a palavra-chave e o achado principal.
 4. `deck`: linha fina de 1 a 2 frases que diz o que o leitor vai entender.

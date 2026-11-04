@@ -5,7 +5,7 @@ og_title: "Como vender mais no Natal e no Ano Novo: o guia do lojista para 2026"
 description: "Para vender mais no Natal, comece na Black Friday: dezembro tem duas temporadas. Calendário, concorrentes, home, e-mail e pós-venda até o Ano Novo."
 twitter_description: "Dezembro não é um pico, são duas temporadas. O método para preparar calendário, home, captura de contato e pós-venda do Natal ao Ano Novo."
 slug: como-vender-mais-natal-ano-novo-ecommerce
-date: 2026-11-04
+date: '2026-11-04'
 hora: "13:18"
 updated: 2026-11-04
 rascunho: false
