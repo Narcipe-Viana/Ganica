@@ -404,6 +404,24 @@ pautas:
     caso: T1
     observacao: "Escrito em sessão com o Narcipe em 02/11/2026; aprovado nas checagens automáticas. Falta a revisão independente."
 
+  # ---------- Trilha de tendências (quartas) ----------
+  - id: 28
+    tipo: tendencia
+    status: pulada
+    motivo: "Reprovada duas vezes na revisão independente em 04/11/2026: o período do Procon-SP foi lido errado e havia atribuições a corrigir."
+    titulo_provisorio: "Quando começa a Black Friday 2026? Para quem vende, antes de 27 de novembro"
+    sinal:
+      termo: "quando começa a black friday no brasil"
+      valor: "Aumento repentino; termo-semente black friday com variação de +1440% em 90 dias"
+      janela: "últimos 90 dias, coleta de 2026-11-03"
+      link: "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=black+friday&hl=pt-BR"
+    causa: "Proximidade da data oficial (27/11/2026) e antecipação das ofertas pelo varejo já no início de novembro."
+    tese: >-
+      A data oficial responde o consumidor, não o lojista. Para a loja, a Black Friday começa quando o
+      cliente passa a comparar e termina quando o pedido é entregue; só uma fatia de novembro cai nos dias do evento.
+    palavra_chave: "quando começa a black friday / calendário black friday e-commerce"
+    slug_sugerido: quando-comeca-black-friday-brasil-ecommerce
+
   # ---------- Trilha técnica (terças) ----------
   - id: 23
     tipo: tecnico
