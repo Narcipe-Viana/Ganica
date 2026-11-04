@@ -191,6 +191,25 @@
     font-style:italic;
   }
 
+  .article-links{ margin-top:20px; }
+  .prose .article-links-titulo,.article-links-titulo{
+    font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 10px; line-height:1.4;
+  }
+  .article-links ol{ list-style:none; margin:0; padding:0; counter-reset:fonte; }
+  .article-links li{
+    counter-increment:fonte; position:relative;
+    padding:10px 0 10px 32px; border-top:1px solid var(--line-soft);
+    font-size:0.9rem; line-height:1.45;
+  }
+  .article-links li::before{
+    content:counter(fonte,decimal-leading-zero); position:absolute; left:0; top:11px;
+    font-size:0.75rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  .article-links a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+  .article-links a:hover{ color:var(--ink); }
+  .article-links-dominio{ display:block; font-size:0.75rem; color:var(--muted); margin-top:2px; }
+
   /* ---------- Sobre (autor) ---------- */
   .autor{ padding-block:0 56px; }
   .sobre-card{

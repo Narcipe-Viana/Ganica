@@ -107,7 +107,7 @@
       "timeRequired": "PT{{ minutos }}M",
       "isAccessibleForFree": true,
       {%- if fontes_urls and fontes_urls.length %}
-      "citation": [{% for u in fontes_urls %}{{ u | json | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+      "citation": [{% for u in fontes_urls %}{{ u | fonteUrl | json | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
       {%- endif %}
       "inLanguage": "pt-BR",
       "author": { "@id": "{{ site.url }}/#narcipe-viana" },
@@ -199,6 +199,17 @@
 
     {%- if fontes %}
     <p class="article-sources">Fontes e metodologia: {{ fontes | mdInline | safe }}</p>
+    {%- endif %}
+
+    {%- if fontes_urls and fontes_urls.length %}
+    <nav class="article-links" aria-labelledby="links-fontes">
+      <h2 id="links-fontes" class="article-links-titulo">Links das fontes</h2>
+      <ol>
+        {%- for u in fontes_urls %}{% set f = u | fonte %}
+        <li><a href="{{ f.url }}" rel="noopener" target="_blank">{{ f.titulo }}</a><span class="article-links-dominio">{{ f.dominio }}</span></li>
+        {%- endfor %}
+      </ol>
+    </nav>
     {%- endif %}
 
   </div>

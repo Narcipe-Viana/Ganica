@@ -51,12 +51,12 @@ faq:
     resposta: "Sim, e talvez seja quem mais ganha. A parte que a IA acelera, organizar centenas de comentários e chamados em temas, é justamente a que equipes pequenas não têm tempo de fazer. O que não muda é a necessidade de validar cada tema contra o comportamento real antes de mexer no site."
 fontes: "Artigo de partida: Tarek Reslan, \"AI for CRO research: what to automate (and what not to)\", CXL, publicado em agosto de 2026 e atualizado em outubro de 2026 (ideias resumidas em paráfrase). TIC Empresas 2025, Cetic.br/NIC.br: empresas com mais de dez pessoas ocupadas, 4.174 entrevistas por telefone de fevereiro de 2025 a janeiro de 2026. NuvemCommerce 2026, da Nuvemshop, com mais de 1.500 lojistas, conforme divulgado pela TI Inside em julho de 2026 (o método de coleta não foi informado na divulgação). TIC Domicílios 2025, Cetic.br/NIC.br, campo de março a setembro de 2025. Nota Técnica nº 12/2025 da ANPD, que consolida contribuições da sociedade a uma tomada de subsídios sobre IA e não representa posição final da autoridade. Lei nº 13.709/2018 (LGPD). Este estudo não é orientação jurídica."
 fontes_urls:
-  - https://cxl.com/blog/ai-cro-research/
-  - https://cetic.br/media/docs/publicacoes/2/pt-br/20260831091252/TIC_EMPRESAS_2025_PT_RE.pdf
-  - https://tiinside.com.br/15/07/2026/72-dos-e-commerces-utilizam-ia-ativamente-aponta-nuvemshop/
-  - https://www.cetic.br/media/docs/publicacoes/2/pt-br/20260511173151/tic_domicilios_2025_resumoexecutivo%20pt.pdf
-  - https://www.ba.gov.br/ssp/sites/site-ssp/files/2026-01/26.%20Nota%20a%20t%C3%A9cnica%20n.%C2%BA%2012%20ANPD%20sobre%20AI%20e%20decis%C3%B5es%20automatizadas.pdf
-  - https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
+  - "AI for CRO research, Tarek Reslan (CXL) | https://cxl.com/blog/ai-cro-research/"
+  - "TIC Empresas 2025, resumo executivo (Cetic.br/NIC.br, PDF) | https://cetic.br/media/docs/publicacoes/2/pt-br/20260831091252/TIC_EMPRESAS_2025_PT_RE.pdf"
+  - "NuvemCommerce 2026, da Nuvemshop, conforme a TI Inside (jul. 2026) | https://tiinside.com.br/15/07/2026/72-dos-e-commerces-utilizam-ia-ativamente-aponta-nuvemshop/"
+  - "TIC Domicílios 2025, resumo executivo (Cetic.br/NIC.br, PDF) | https://www.cetic.br/media/docs/publicacoes/2/pt-br/20260511173151/tic_domicilios_2025_resumoexecutivo%20pt.pdf"
+  - "Nota Técnica nº 12/2025 da ANPD sobre IA e decisões automatizadas (PDF) | https://www.ba.gov.br/ssp/sites/site-ssp/files/2026-01/26.%20Nota%20a%20t%C3%A9cnica%20n.%C2%BA%2012%20ANPD%20sobre%20AI%20e%20decis%C3%B5es%20automatizadas.pdf"
+  - "Lei nº 13.709/2018, Lei Geral de Proteção de Dados (Planalto) | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
 cta_titulo: "Quer saber o que o seu cliente está dizendo, e onde ele desiste?"
 cta_texto: "A IA organiza a evidência. Um diagnóstico de CRO cruza essa evidência com o comportamento real da sua loja e diz o que corrigir primeiro."
 autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, Looker Studio) e auditoria comportamental. Uso IA como apoio de pesquisa nos diagnósticos, sempre com a mesma regra: ela organiza a evidência, e a decisão fica com quem conhece o comportamento real da loja."
@@ -64,7 +64,7 @@ autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em 
 
 ## O que a CXL propõe sobre IA na pesquisa de CRO?
 
-A proposta da CXL é usar IA nas etapas da pesquisa de CRO em que há muito trabalho operacional e pouca evidência, e manter pessoas nas etapas em que há julgamento. O texto, publicado em agosto de 2026 por Tarek Reslan, relata um workshop interno com Ruben de Boer, consultor de experimentação, em que um agente de IA foi encadeado em três tarefas: revisão heurística das jornadas, análise temática dos achados e geração de ideias de teste.
+A proposta da CXL é usar IA nas etapas da pesquisa de CRO em que há muito trabalho operacional e pouca evidência, e manter pessoas nas etapas em que há julgamento. [O texto](https://cxl.com/blog/ai-cro-research/), publicado em agosto de 2026 por Tarek Reslan, relata um workshop interno com Ruben de Boer, consultor de experimentação, em que um agente de IA foi encadeado em três tarefas: revisão heurística das jornadas, análise temática dos achados e geração de ideias de teste.
 
 A escolha da revisão heurística como ponto de partida tem uma lógica que vale guardar. Revisão heurística é a avaliação de uma página por critérios de usabilidade e persuasão (clareza, relevância, fricção, motivação), normalmente feita por uma ou duas pessoas, e por isso é uma das formas de evidência mais fracas da pesquisa de CRO. Se a evidência já é fraca, automatizar custa pouco e economiza muito: segundo a CXL, o agente revisou cinco jornadas em cerca de meia hora, contra horas de um workshop humano.
 
@@ -74,9 +74,9 @@ Há, porém, três lacunas. O texto não traz nenhum dado de resultado (se as id
 
 ## Como o e-commerce brasileiro está usando IA hoje?
 
-O e-commerce brasileiro já adotou IA em massa, mas principalmente para produzir conteúdo. Segundo o NuvemCommerce 2026, da Nuvemshop, divulgado pela TI Inside em julho de 2026, 72% dos lojistas online usam IA ativamente nas operações. O uso mais citado é gerar descrição de produto, apontado por 50%, e 54% pretendem implementar atendimento ou chatbot com IA em 2026.
+O e-commerce brasileiro já adotou IA em massa, mas principalmente para produzir conteúdo. Segundo o NuvemCommerce 2026, da Nuvemshop, [divulgado pela TI Inside em julho de 2026](https://tiinside.com.br/15/07/2026/72-dos-e-commerces-utilizam-ia-ativamente-aponta-nuvemshop/), 72% dos lojistas online usam IA ativamente nas operações. O uso mais citado é gerar descrição de produto, apontado por 50%, e 54% pretendem implementar atendimento ou chatbot com IA em 2026.
 
-Fora do e-commerce, o quadro é bem mais tímido. A TIC Empresas 2025, do Cetic.br, mostra que 17% das empresas brasileiras com mais de dez pessoas ocupadas usaram IA em 2025, contra 13% em 2024. A diferença por porte é grande: 15% entre as pequenas e 50% entre as grandes.
+Fora do e-commerce, o quadro é bem mais tímido. A [TIC Empresas 2025, do Cetic.br](https://cetic.br/media/docs/publicacoes/2/pt-br/20260831091252/TIC_EMPRESAS_2025_PT_RE.pdf), mostra que 17% das empresas brasileiras com mais de dez pessoas ocupadas usaram IA em 2025, contra 13% em 2024. A diferença por porte é grande: 15% entre as pequenas e 50% entre as grandes.
 
 | Indicador | Valor |
 |---|---|
@@ -120,9 +120,9 @@ O ponto da priorização merece ênfase. Uma nota de 7,8 dada pela IA a um probl
 
 ## O que a LGPD muda nessa conta?
 
-A LGPD coloca a privacidade dentro do método: antes de enviar qualquer material de pesquisa para uma ferramenta de IA, a loja precisa retirar ou mascarar os dados pessoais. Gravação de sessão, conversa de atendimento, resposta de pesquisa e exportação de CRM costumam trazer nome, e-mail, telefone, CPF e endereço. A Lei nº 13.709/2018 se aplica a esses dados, qualquer que seja a ferramenta que os processe.
+A [LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm) coloca a privacidade dentro do método: antes de enviar qualquer material de pesquisa para uma ferramenta de IA, a loja precisa retirar ou mascarar os dados pessoais. Gravação de sessão, conversa de atendimento, resposta de pesquisa e exportação de CRM costumam trazer nome, e-mail, telefone, CPF e endereço. A Lei nº 13.709/2018 se aplica a esses dados, qualquer que seja a ferramenta que os processe.
 
-A Autoridade Nacional de Proteção de Dados reuniu, na Nota Técnica nº 12/2025, as contribuições de uma consulta sobre IA e proteção de dados. O documento registra que as contribuições não representam a posição final da autoridade, mas as recomendações que mais aparecem são práticas e servem de bom roteiro: relatório de impacto antes de tratamentos em grande escala, privacidade desde a concepção, anonimização ou pseudonimização sempre que possível e registro do que foi tratado e por quê.
+A Autoridade Nacional de Proteção de Dados reuniu, na [Nota Técnica nº 12/2025](https://www.ba.gov.br/ssp/sites/site-ssp/files/2026-01/26.%20Nota%20a%20t%C3%A9cnica%20n.%C2%BA%2012%20ANPD%20sobre%20AI%20e%20decis%C3%B5es%20automatizadas.pdf), as contribuições de uma consulta sobre IA e proteção de dados. O documento registra que as contribuições não representam a posição final da autoridade, mas as recomendações que mais aparecem são práticas e servem de bom roteiro: relatório de impacto antes de tratamentos em grande escala, privacidade desde a concepção, anonimização ou pseudonimização sempre que possível e registro do que foi tratado e por quê.
 
 Para a pesquisa de CRO, isso se traduz em três cuidados:
 

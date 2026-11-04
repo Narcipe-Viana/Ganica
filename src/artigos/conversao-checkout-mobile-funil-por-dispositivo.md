@@ -6,7 +6,7 @@ description: "A conversão no checkout mobile costuma quebrar entre o checkout e
 twitter_description: "Antes de redesenhar o site mobile, abra o funil por etapa e dispositivo. A quebra pode estar em um ponto só, e pode até ser de medição."
 slug: conversao-checkout-mobile-funil-por-dispositivo
 date: '2026-11-02'
-updated: '2026-11-02'
+updated: 2026-11-04
 usa_dado_cliente: true
 breadcrumb: Conversão no checkout mobile
 secao: E-commerce
@@ -49,18 +49,18 @@ faq:
     resposta: "Pode distorcer. Sem login, o GA4 tende a enxergar dois usuários: um que abandonou no celular e outro que comprou no computador. Segundo a TIC Domicílios 2025, usar os dois aparelhos é mais comum nas classes A e B, e por isso vale cruzar a leitura com pesquisa de pós-compra."
 fontes: "Análise de funil de um e-commerce brasileiro, com dados anonimizados e arredondados. A frequência do padrão descrito é observação de campo da Ganica, não uma contagem. TIC Domicílios 2025, Cetic.br/NIC.br, tabelas C16A e H2, usuários de internet. Panorama E-commerce, Visa do Brasil, conduzido pela On The Go, 1.521 entrevistas online com consumidores digitalizados acima de 18 anos, de 18 a 26 de dezembro de 2025, margem de erro de 2,5 pontos percentuais, conforme o estudo e o comunicado da Visa de fevereiro de 2026. Baymard Institute: lista de taxas de abandono de carrinho (50 estudos de 2006 a 2025, atualizada em setembro de 2025), benchmark de UX mobile (atualizado em julho de 2026) e artigo sobre checkout mobile (2013). Central de Ajuda do Google Analytics: Funnel exploration, Checkout journey report, Create event-scoped custom dimensions e Monitor events in DebugView, e referência de eventos recomendados do Google for Developers, consultadas em novembro de 2026."
 fontes_urls:
-  - https://cetic.br/en/tics/domicilios/2025/individuos/C16A/
-  - https://cetic.br/en/tics/domicilios/2025/individuos/H2/
-  - https://www.visa.com.br/sobre-a-visa/noticias-visa/nova-sala-de-imprensa/panorama-ecommerce-brasil-desistencia-pagamento-online.html
-  - https://www.visa.com.br/content/dam/VCOM/regional/lac/brazil/visa-conecta/panorama-ecommerce-2026.pdf
-  - https://baymard.com/lists/cart-abandonment-rate
-  - https://baymard.com/research-articles/mobile-ux-ecommerce
-  - https://baymard.com/blog/mobile-checkout
-  - https://support.google.com/analytics/answer/9327974?hl=en
-  - https://support.google.com/analytics/answer/14000977?hl=en
-  - https://support.google.com/analytics/answer/14239696?hl=en
-  - https://support.google.com/analytics/answer/7201382?hl=en
-  - https://developers.google.com/analytics/devguides/collection/ga4/reference/events
+  - "TIC Domicílios 2025, tabela C16A (Cetic.br/NIC.br) | https://cetic.br/en/tics/domicilios/2025/individuos/C16A/"
+  - "TIC Domicílios 2025, tabela H2 (Cetic.br/NIC.br) | https://cetic.br/en/tics/domicilios/2025/individuos/H2/"
+  - "Panorama E-commerce, comunicado da Visa do Brasil (fev. 2026) | https://www.visa.com.br/sobre-a-visa/noticias-visa/nova-sala-de-imprensa/panorama-ecommerce-brasil-desistencia-pagamento-online.html"
+  - "Panorama E-commerce 2026, estudo completo (Visa do Brasil, PDF) | https://www.visa.com.br/content/dam/VCOM/regional/lac/brazil/visa-conecta/panorama-ecommerce-2026.pdf"
+  - "Taxas de abandono de carrinho, compilação de 50 estudos (Baymard Institute) | https://baymard.com/lists/cart-abandonment-rate"
+  - "Benchmark de UX mobile em e-commerce (Baymard Institute) | https://baymard.com/research-articles/mobile-ux-ecommerce"
+  - "Checkout mobile (Baymard Institute) | https://baymard.com/blog/mobile-checkout"
+  - "Funnel exploration, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/9327974?hl=en"
+  - "Checkout journey report, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/14000977?hl=en"
+  - "Create event-scoped custom dimensions, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/14239696?hl=en"
+  - "Monitor events in DebugView, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/7201382?hl=en"
+  - "Eventos recomendados do GA4 (Google for Developers) | https://developers.google.com/analytics/devguides/collection/ga4/reference/events"
 cta_titulo: "Em qual etapa o celular da sua loja quebra?"
 cta_texto: "Uma média diz que o celular perde. Um diagnóstico de CRO localiza a etapa, confere a medição e mostra o que vale corrigir primeiro na sua operação."
 autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, Looker Studio) e auditoria comportamental. Essa análise nasce do mesmo processo que uso nos diagnósticos que conduzo: localizar a etapa que quebra antes de discutir qualquer solução."
@@ -73,7 +73,7 @@ Na leitura da Ganica, a conversão geral por dispositivo engana porque soma vár
 
 Saber a etapa define o tamanho do investimento. Um redesenho do site mobile mexe em páginas, navegação e componentes que talvez já funcionem bem. Se a perda estiver em um ponto só, o projeto gasta capacidade de tecnologia no lugar errado.
 
-Médias de mercado também não resolvem. A Baymard calcula em cerca de 70% a média de abandono de carrinho em 50 estudos, na lista atualizada em setembro de 2025, mas a própria lista mostra variação ampla entre eles e não separa o número por dispositivo. Em [outro estudo](/crescimento-ecommerce-brasil-receita-por-cliente.html), a Ganica já tratou dos limites desses benchmarks genéricos.
+Médias de mercado também não resolvem. A [Baymard calcula](https://baymard.com/lists/cart-abandonment-rate) em cerca de 70% a média de abandono de carrinho em 50 estudos, na lista atualizada em setembro de 2025, mas a própria lista mostra variação ampla entre eles e não separa o número por dispositivo. Em [outro estudo](/crescimento-ecommerce-brasil-receita-por-cliente.html), a Ganica já tratou dos limites desses benchmarks genéricos.
 
 ## O que muda quando o funil é aberto por etapa e dispositivo?
 
@@ -113,11 +113,11 @@ Há também uma ressalva sobre público. Celular e computador podem reunir pesso
 
 ## Por que o pagamento pesa mais no celular brasileiro?
 
-Na leitura da Ganica, o pagamento tende a pesar mais no celular porque concentra digitação, autenticação e troca de aplicativo em uma tela pequena. Segundo a TIC Domicílios 2025, do Cetic.br, 65% dos usuários de internet no Brasil acessam a rede só pelo celular, e não pelo computador, e 34% usam os dois.
+Na leitura da Ganica, o pagamento tende a pesar mais no celular porque concentra digitação, autenticação e troca de aplicativo em uma tela pequena. Segundo a [TIC Domicílios 2025, do Cetic.br](https://cetic.br/en/tics/domicilios/2025/individuos/C16A/), 65% dos usuários de internet no Brasil acessam a rede só pelo celular, e não pelo computador, e 34% usam os dois.
 
 Para a Ganica, os 65% da TIC Domicílios enfraquecem a interpretação comum de que o cliente pesquisa no celular e termina no computador. A explicação cabe melhor nas classes em que o acesso pelos dois aparelhos é comum, e cabe pior onde só o celular é usado. A tabela C16A da TIC mede o aparelho de acesso, e não o aparelho da compra, portanto essa é uma leitura, não um achado da pesquisa.
 
-Há um limite importante nessa leitura. Na mesma TIC Domicílios 2025, 52% dos usuários de internet compraram online em 12 meses, com 91% na classe A e 76% na classe B, justamente onde os dois aparelhos são mais comuns. Na leitura da Ganica, em marcas premium a troca de aparelho merece mais atenção do que a média nacional sugere.
+Há um limite importante nessa leitura. Na mesma [TIC Domicílios 2025](https://cetic.br/en/tics/domicilios/2025/individuos/H2/), 52% dos usuários de internet compraram online em 12 meses, com 91% na classe A e 76% na classe B, justamente onde os dois aparelhos são mais comuns. Na leitura da Ganica, em marcas premium a troca de aparelho merece mais atenção do que a média nacional sugere.
 
 | Classe social | Usuários que acessam só pelo celular (2025) |
 |---|---|
@@ -129,17 +129,17 @@ Há um limite importante nessa leitura. Na mesma TIC Domicílios 2025, 52% dos u
 
 *Fonte: TIC Domicílios 2025, Cetic.br/NIC.br, tabela C16A. Universo: usuários de internet.*
 
-A pesquisa Panorama E-commerce, da Visa, com 1.521 entrevistas em dezembro de 2025, ajuda a dimensionar a pressão sobre essa etapa. Segundo o estudo da Visa, 79% dos que compraram online no último mês fizeram a última compra pelo celular, contra 12% no computador. Segundo o comunicado da Visa, entre os consumidores que desistiram de finalizar um pagamento, 58% abandonaram no momento do pagamento: 37% ao escolher o meio e 21% ao inserir ou confirmar dados. A pesquisa da Visa é declarada e vem de uma empresa de pagamentos, portanto serve como sinal, não como medida de abandono.
+A pesquisa [Panorama E-commerce, da Visa](https://www.visa.com.br/content/dam/VCOM/regional/lac/brazil/visa-conecta/panorama-ecommerce-2026.pdf), com 1.521 entrevistas em dezembro de 2025, ajuda a dimensionar a pressão sobre essa etapa. Segundo o estudo da Visa, 79% dos que compraram online no último mês fizeram a última compra pelo celular, contra 12% no computador. Segundo o [comunicado da Visa](https://www.visa.com.br/sobre-a-visa/noticias-visa/nova-sala-de-imprensa/panorama-ecommerce-brasil-desistencia-pagamento-online.html), entre os consumidores que desistiram de finalizar um pagamento, 58% abandonaram no momento do pagamento: 37% ao escolher o meio e 21% ao inserir ou confirmar dados. A pesquisa da Visa é declarada e vem de uma empresa de pagamentos, portanto serve como sinal, não como medida de abandono.
 
 Três mecânicas são as hipóteses mais comuns para testar. Nenhuma delas descreve um caso específico:
 
-- **Digitação.** A Baymard estimou, em artigo de 2013, que o teclado virtual ocupa cerca de metade da tela em modo retrato, e aponta, em benchmark atualizado em julho de 2026, erros de endereço mais frequentes no celular.
+- **Digitação.** A Baymard estimou, em [artigo de 2013](https://baymard.com/blog/mobile-checkout), que o teclado virtual ocupa cerca de metade da tela em modo retrato, e aponta, em [benchmark atualizado em julho de 2026](https://baymard.com/research-articles/mobile-ux-ecommerce), erros de endereço mais frequentes no celular.
 - **Troca de aplicativo.** Pix Copia e Cola é o código que o cliente copia na loja e cola no aplicativo do banco. No computador, ele lê um QR Code com o celular e continua vendo a tela da loja. No celular, sai da loja e precisa voltar, e o comunicado da Visa aponta essa saída para o aplicativo do banco como ponto de atrito.
 - **Autenticação.** A confirmação extra do pagamento pode abrir outra tela ou outro aplicativo no meio da compra. Sem retorno claro, o cliente fica sem saber se o pedido foi feito.
 
 ## Como montar o funil de conversão por dispositivo no GA4?
 
-O caminho mais direto é a exploração de funil do GA4, com a categoria do dispositivo como detalhamento. A exploração de funil é a técnica do GA4 que mostra quantos usuários avançam por etapas definidas. A exploração de funil conta usuários: segundo a documentação do Google Analytics, cada usuário entra uma vez no período e só a primeira sequência é reportada.
+O caminho mais direto é a exploração de funil do GA4, com a categoria do dispositivo como detalhamento. A exploração de funil é a técnica do GA4 que mostra quantos usuários avançam por etapas definidas. A exploração de funil conta usuários: segundo a [documentação do Google Analytics](https://support.google.com/analytics/answer/9327974?hl=en), cada usuário entra uma vez no período e só a primeira sequência é reportada.
 
 1. **Crie a exploração.** Em Explorar, escolha o modelo Exploração de funil.
 2. **Defina as etapas por evento.** Use `view_item`, `add_to_cart`, `begin_checkout`, `add_payment_info` e `purchase`. A ferramenta aceita até 10 etapas. Confira antes se todo meio de pagamento dispara `add_payment_info`, porque quem pula uma etapa cai do funil, e isso criaria uma quebra falsa.
@@ -148,16 +148,16 @@ O caminho mais direto é a exploração de funil do GA4, com a categoria do disp
 5. **Escolha um período sem campanha atípica.** A janela precisa ter volume suficiente nos dois dispositivos para que a taxa não oscile por acaso.
 6. **Calcule o índice por etapa.** Divida a taxa do celular pela do computador, etapa por etapa. Índice perto de 1 indica empate. A etapa em que ele despenca é a que merece investigação.
 
-Para uma primeira leitura, o GA4 tem o relatório de jornada de checkout (Checkout journey), na área de Monetização. Ele segue, em funil fechado, os eventos `begin_checkout`, `add_shipping_info`, `add_payment_info` e `purchase`, com a categoria do dispositivo como detalhamento padrão. Se não aparecer, editores e administradores podem incluí-lo pela Biblioteca.
+Para uma primeira leitura, o GA4 tem o [relatório de jornada de checkout (Checkout journey)](https://support.google.com/analytics/answer/14000977?hl=en), na área de Monetização. Ele segue, em funil fechado, os eventos `begin_checkout`, `add_shipping_info`, `add_payment_info` e `purchase`, com a categoria do dispositivo como detalhamento padrão. Se não aparecer, editores e administradores podem incluí-lo pela Biblioteca.
 
 ## O que fazer depois de achar a etapa que quebra?
 
 Depois de achar a etapa, confira a medição primeiro e só então mexa no checkout. Esta é a ordem que a Ganica segue nos diagnósticos:
 
-1. **Audite a compra.** O DebugView do GA4 exige o modo de depuração ativo, por Tag Assistant, modo de visualização do Tag Manager ou parâmetro `debug_mode`. Com ele ligado e o consentimento aceito, faça pedidos de teste no celular, com cada meio de pagamento, voltando à loja e também sem voltar, e veja se `purchase` dispara.
+1. **Audite a compra.** O [DebugView do GA4](https://support.google.com/analytics/answer/7201382?hl=en) exige o modo de depuração ativo, por Tag Assistant, modo de visualização do Tag Manager ou parâmetro `debug_mode`. Com ele ligado e o consentimento aceito, faça pedidos de teste no celular, com cada meio de pagamento, voltando à loja e também sem voltar, e veja se `purchase` dispara.
 2. **Cruze com os pedidos.** Compare o `transaction_id` das compras do GA4 com os pedidos pagos da loja, sem os expirados. Como quem recusa cookies também pode faltar, compare falta e sobra entre meios de pagamento, e não o valor absoluto.
 3. **Abra a etapa.** Use as subetapas de envio e pagamento para saber se a perda vem antes ou depois de informar o pagamento.
-4. **Separe por meio de pagamento.** Quando a loja preenche o parâmetro opcional `payment_type` em `add_payment_info`, ele registra o meio escolhido. Para usá-lo em relatórios e explorações, crie uma dimensão personalizada de escopo de evento, que pode levar de 24 a 48 horas para aparecer.
+4. **Separe por meio de pagamento.** Quando a loja preenche o [parâmetro opcional](https://developers.google.com/analytics/devguides/collection/ga4/reference/events) `payment_type` em `add_payment_info`, ele registra o meio escolhido. Para usá-lo em relatórios e explorações, crie uma [dimensão personalizada de escopo de evento](https://support.google.com/analytics/answer/14239696?hl=en), que pode levar de 24 a 48 horas para aparecer.
 5. **Compare públicos parecidos.** Repita o funil com um segmento, como clientes recorrentes. Se a distância persistir, a explicação por perfil de público perde força.
 6. **Observe pessoas pagando.** Use gravações de sessão e compras reais em Android e iPhone, em rede móvel, para ver o que o funil não mostra.
 7. **Corrija um ponto por vez.** Reduza campos, ajuste o teclado de cada campo, deixe claro o retorno do aplicativo do banco e mostre a confirmação do pedido.

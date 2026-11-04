@@ -6,7 +6,7 @@ description: "Como integrar PostHog e BigQuery num e-commerce com GA4: os caminh
 twitter_description: "PostHog para o BigQuery, BigQuery para o PostHog, GA4 no meio. O que cada integração resolve, o que ela quebra e onde a IA ajuda."
 slug: integrar-posthog-bigquery-ecommerce
 date: '2026-11-03'
-updated: '2026-11-03'
+updated: 2026-11-04
 rascunho: false
 breadcrumb: Integrar PostHog e BigQuery
 secao: E-commerce
@@ -51,28 +51,28 @@ faq:
     resposta: "Pode ser, com os controles certos em cada ferramenta. Segundo o Google Cloud, o assistente deve ter identidade separada, e uma política de negação pode restringir `execute_sql`, a única ferramenta MCP do BigQuery que não é somente leitura. Segundo a documentação do PostHog, o modo só leitura é opcional e as chamadas devem ser revisadas antes de executar, por causa do risco de injeção de prompt. A recomendação da Ganica é manter dado pessoal fora do alcance do assistente."
 fontes: "Experiência da Ganica em projeto de e-commerce com PostHog e BigQuery (sem identificação da empresa). Documentação oficial do PostHog: Batch exports, BigQuery destination, Linking BigQuery as a source, Session replay privacy controls, Controlling data collection, Data storage, Events, Identifying users, Model Context Protocol (MCP), MCP FAQ, Data warehouse MCP e Pricing. Documentação oficial do Google: BigQuery Export, Set up BigQuery Export e BigQuery Export schema (Central de Ajuda do Google Analytics); Estimate and control costs, Query partitioned tables, sandbox, Use the BigQuery MCP server e release notes (Google Cloud). Lei 13.709/2018 (LGPD), arts. 5º, 7º e 33, e página da ANPD para titulares. Tudo consultado em novembro de 2026; recursos e preços dessas ferramentas mudam com frequência."
 fontes_urls:
-  - https://posthog.com/docs/data-pipelines/batch-exports
-  - https://posthog.com/docs/data-pipelines/batch-exports/bigquery
-  - https://posthog.com/docs/data-pipelines/sources/bigquery
-  - https://posthog.com/docs/session-replay/privacy
-  - https://posthog.com/docs/privacy/data-collection
-  - https://posthog.com/docs/privacy/data-storage
-  - https://posthog.com/docs/data/events
-  - https://posthog.com/docs/product-analytics/identify
-  - https://posthog.com/docs/model-context-protocol
-  - https://posthog.com/docs/model-context-protocol/faq
-  - https://posthog.com/docs/data-warehouse/surfaces/mcp
-  - https://posthog.com/pricing
-  - https://support.google.com/analytics/answer/9358801
-  - https://support.google.com/analytics/answer/9823238
-  - https://support.google.com/analytics/answer/7029846
-  - https://docs.cloud.google.com/bigquery/docs/best-practices-costs
-  - https://docs.cloud.google.com/bigquery/docs/querying-partitioned-tables
-  - https://docs.cloud.google.com/bigquery/docs/sandbox
-  - https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp
-  - https://docs.cloud.google.com/bigquery/docs/release-notes
-  - https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
-  - https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1
+  - "Batch exports, documentação do PostHog | https://posthog.com/docs/data-pipelines/batch-exports"
+  - "BigQuery destination, documentação do PostHog | https://posthog.com/docs/data-pipelines/batch-exports/bigquery"
+  - "Linking BigQuery as a source, documentação do PostHog | https://posthog.com/docs/data-pipelines/sources/bigquery"
+  - "Session replay privacy controls, documentação do PostHog | https://posthog.com/docs/session-replay/privacy"
+  - "Controlling data collection, documentação do PostHog | https://posthog.com/docs/privacy/data-collection"
+  - "Data storage, documentação do PostHog | https://posthog.com/docs/privacy/data-storage"
+  - "Events, documentação do PostHog | https://posthog.com/docs/data/events"
+  - "Identifying users, documentação do PostHog | https://posthog.com/docs/product-analytics/identify"
+  - "Model Context Protocol (MCP), documentação do PostHog | https://posthog.com/docs/model-context-protocol"
+  - "MCP FAQ, documentação do PostHog | https://posthog.com/docs/model-context-protocol/faq"
+  - "Data warehouse MCP, documentação do PostHog | https://posthog.com/docs/data-warehouse/surfaces/mcp"
+  - "Preços do PostHog | https://posthog.com/pricing"
+  - "BigQuery Export, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/9358801"
+  - "Set up BigQuery Export, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/9823238"
+  - "BigQuery Export schema, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/7029846"
+  - "Estimate and control costs, documentação do BigQuery (Google Cloud) | https://docs.cloud.google.com/bigquery/docs/best-practices-costs"
+  - "Query partitioned tables, documentação do BigQuery (Google Cloud) | https://docs.cloud.google.com/bigquery/docs/querying-partitioned-tables"
+  - "BigQuery sandbox, documentação do Google Cloud | https://docs.cloud.google.com/bigquery/docs/sandbox"
+  - "Use the BigQuery MCP server, documentação do Google Cloud | https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp"
+  - "Release notes do BigQuery (Google Cloud) | https://docs.cloud.google.com/bigquery/docs/release-notes"
+  - "Lei nº 13.709/2018, Lei Geral de Proteção de Dados (Planalto) | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+  - "Página da ANPD para titulares de dados | https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1"
 cta_titulo: "Seus números de analytics estão contando a mesma história?"
 cta_texto: "Antes de qualquer teste, um diagnóstico de CRO confere se o rastreamento da sua loja é confiável e mapeia onde a conversão está sendo perdida."
 autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, PostHog, BigQuery, Looker Studio) e auditoria comportamental. Meu princípio é simples: antes de analisar, garantir que o dado conta a verdade."
@@ -96,11 +96,11 @@ São cinco caminhos práticos: PostHog para o BigQuery, BigQuery para o PostHog,
 | **4. BigQuery para o Looker Studio** | Painéis para o time e a diretoria, a partir de tabelas tratadas. |
 | **5. IA conectada por MCP ao BigQuery e ao PostHog** | Fazer perguntas em linguagem natural, com o assistente consultando os dados. |
 
-**Exportação em lote do PostHog.** Segundo a documentação do PostHog, as exportações em lote enviam dados com frequências que vão de 5 minutos até semanal, para destinos como BigQuery, Snowflake, Redshift, Postgres e S3. Os modelos principais são eventos, que são imutáveis, pessoas, que mudam com o tempo, e sessões. No BigQuery, a tabela de eventos é criada particionada por dia na coluna `timestamp`.
+**Exportação em lote do PostHog.** Segundo a [documentação do PostHog](https://posthog.com/docs/data-pipelines/batch-exports), as exportações em lote enviam dados com frequências que vão de 5 minutos até semanal, para destinos como BigQuery, Snowflake, Redshift, Postgres e S3. Os modelos principais são eventos, que são imutáveis, pessoas, que mudam com o tempo, e sessões. No BigQuery, a tabela de eventos é criada particionada por dia na coluna `timestamp`.
 
-**BigQuery como fonte do PostHog.** O caminho inverso usa uma conta de serviço do Google Cloud com permissão de leitura e escrita num conjunto de dados. A documentação do PostHog alerta que o teste de conexão só valida a leitura, de modo que uma permissão de escrita faltando passa no teste e falha na primeira sincronização. A mesma documentação informa que o modo sandbox do BigQuery não é suportado nesse caminho.
+**BigQuery como fonte do PostHog.** O caminho inverso usa uma conta de serviço do Google Cloud com permissão de leitura e escrita num conjunto de dados. A [documentação do PostHog](https://posthog.com/docs/data-pipelines/sources/bigquery) alerta que o teste de conexão só valida a leitura, de modo que uma permissão de escrita faltando passa no teste e falha na primeira sincronização. A mesma documentação informa que o modo sandbox do BigQuery não é suportado nesse caminho.
 
-**GA4 para o BigQuery.** Segundo a Central de Ajuda do Google Analytics, a exportação diária traz o dado bruto do dia anterior, sem horário garantido, e propriedades padrão têm limite de 1 milhão de eventos por dia. Se a propriedade passa desse limite de forma consistente, o Google avisa que a exportação diária é pausada e que os dias anteriores não são reprocessados. Segundo o Google, a exportação em streaming entrega o dia corrente em minutos, sem garantia de completude, por 0,05 dólar adicional por GB.
+**GA4 para o BigQuery.** Segundo a [Central de Ajuda do Google Analytics](https://support.google.com/analytics/answer/9358801), a exportação diária traz o dado bruto do dia anterior, sem horário garantido, e propriedades padrão têm limite de 1 milhão de eventos por dia. Se a propriedade passa desse limite de forma consistente, o Google avisa que a exportação diária é pausada e que os dias anteriores não são reprocessados. Segundo o Google, a exportação em streaming entrega o dia corrente em minutos, sem garantia de completude, por 0,05 dólar adicional por GB.
 
 ## O que fizemos num projeto real com PostHog e BigQuery?
 
@@ -110,12 +110,12 @@ Num projeto de e-commerce em que atuamos, integramos o PostHog ao BigQuery porqu
 
 Seis cuidados, reunidos pela Ganica a partir da documentação do PostHog e do Google, evitam números errados: deduplicar eventos, contar com dados atrasados, partir da tabela de eventos, planejar colunas novas, filtrar pela partição e fechar números na tabela diária do GA4.
 
-1. **Deduplique os eventos.** A documentação do PostHog avisa que a exportação pode gerar duplicatas e recomenda deduplicar no destino. Cada evento tem um `uuid` único: use-o numa visão ou tabela tratada antes de qualquer contagem.
+1. **Deduplique os eventos.** A [documentação do PostHog](https://posthog.com/docs/data-pipelines/batch-exports/bigquery) avisa que a exportação pode gerar duplicatas e recomenda deduplicar no destino. Cada evento tem um `uuid` único: use-o numa visão ou tabela tratada antes de qualquer contagem.
 2. **Conte com dados atrasados.** Segundo o PostHog, os dados entram em cada lote pelo momento em que chegaram ao PostHog, não pelo momento em que aconteceram. Relatórios que fecham o dia cedo demais subcontam.
 3. **Não espere o visitante anônimo na tabela de pessoas.** Segundo o PostHog, a exportação de pessoas só inclui quem tem perfil de pessoa. As análises de funil precisam partir da tabela de eventos.
 4. **Planeje colunas novas.** O PostHog avisa que campos novos dos modelos de exportação não são adicionados sozinhos às tabelas de destino: é preciso criar a coluna manualmente. As propriedades de evento ficam na coluna `properties`, em JSON ou texto, conforme a opção da exportação.
-5. **Filtre pela partição.** No modelo sob demanda, o BigQuery cobra pelo volume lido, e a documentação do Google Cloud diz que filtrar pela coluna de partição reduz esse volume.
-6. **Use a tabela diária do GA4 para fechar números.** O Google orienta consultar `events_YYYYMMDD`, e não a tabela provisória `events_intraday_YYYYMMDD`, avisa que os números do export podem diferir da interface e informa que tabelas diárias ainda recebem eventos atrasados por até 2 dias corridos, além de hoje.
+5. **Filtre pela partição.** No modelo sob demanda, o BigQuery cobra pelo volume lido, e a [documentação do Google Cloud](https://docs.cloud.google.com/bigquery/docs/querying-partitioned-tables) diz que filtrar pela coluna de partição reduz esse volume.
+6. **Use a tabela diária do GA4 para fechar números.** O [Google orienta](https://support.google.com/analytics/answer/7029846) consultar `events_YYYYMMDD`, e não a tabela provisória `events_intraday_YYYYMMDD`, avisa que os números do export podem diferir da interface e informa que tabelas diárias ainda recebem eventos atrasados por até 2 dias corridos, além de hoje.
 
 A recomendação da Ganica é transformar esses pontos numa camada de tabelas tratadas antes de qualquer análise.
 
@@ -137,8 +137,8 @@ Na leitura da Ganica, a IA entra depois do modelo de dados, nunca antes. Com as 
 
 BigQuery e PostHog oferecem servidor MCP oficial, cada um sobre os próprios dados:
 
-- **BigQuery.** Segundo o Google Cloud, o servidor MCP lista tabelas e executa SQL, com a ferramenta `execute_sql_readonly` só de leitura, limite padrão de três minutos por consulta e máximo de 3.000 linhas por resultado.
-- **PostHog.** Segundo a documentação do PostHog, o servidor MCP consulta dados com SQL, gerencia flags e experimentos e investiga erros. Conectar é gratuito, mas ferramentas que usam IA internamente podem ser cobradas.
+- **BigQuery.** Segundo o [Google Cloud](https://docs.cloud.google.com/bigquery/docs/use-bigquery-mcp), o servidor MCP lista tabelas e executa SQL, com a ferramenta `execute_sql_readonly` só de leitura, limite padrão de três minutos por consulta e máximo de 3.000 linhas por resultado.
+- **PostHog.** Segundo a [documentação do PostHog](https://posthog.com/docs/model-context-protocol), o servidor MCP consulta dados com SQL, gerencia flags e experimentos e investiga erros. Conectar é gratuito, mas ferramentas que usam IA internamente podem ser cobradas.
 
 A recomendação da Ganica é usar assistentes conectados por MCP na primeira leitura dos dados: perguntar em que etapa o funil caiu esta semana, por dispositivo e por meio de pagamento, e receber a consulta pronta junto com o resultado. O ganho é de velocidade. A interpretação continua humana.
 
@@ -152,9 +152,9 @@ A documentação do PostHog também alerta para o risco de injeção de prompt e
 
 ## O que a LGPD exige numa integração como essa?
 
-A LGPD trata como dado pessoal toda informação relacionada a pessoa natural identificada ou identificável (art. 5º, I, da Lei 13.709/2018), e cada integração leva esse dado para mais um lugar. O tratamento precisa de hipótese legal (art. 7º), e a transferência internacional só é permitida nos casos previstos (art. 33). Na prática, quatro pontos merecem atenção:
+A LGPD trata como dado pessoal toda informação relacionada a pessoa natural identificada ou identificável (art. 5º, I, da [Lei 13.709/2018](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)), e cada integração leva esse dado para mais um lugar. O tratamento precisa de hipótese legal (art. 7º), e a transferência internacional só é permitida nos casos previstos (art. 33). Na prática, quatro pontos merecem atenção:
 
-1. **Gravação de sessão.** Segundo a documentação do PostHog, os campos de formulário são mascarados por padrão, mas o texto da página não. Em áreas como "minha conta" e confirmação de pedido, mascare o texto ou use a classe `ph-no-capture`, que substitui o elemento por um bloco na gravação.
+1. **Gravação de sessão.** Segundo a [documentação do PostHog](https://posthog.com/docs/session-replay/privacy), os campos de formulário são mascarados por padrão, mas o texto da página não. Em áreas como "minha conta" e confirmação de pedido, mascare o texto ou use a classe `ph-no-capture`, que substitui o elemento por um bloco na gravação.
 2. **IP e propriedades exportadas.** A tabela de eventos exportada para o BigQuery tem uma coluna `ip`, e o PostHog permite configurar o projeto para descartar o IP. Na leitura da Ganica, remover só a coluna pode não bastar: a propriedade `$ip` e `person_properties` também merecem revisão.
 3. **Identificadores.** `transaction_id`, `user_id` e `distinct_id` não mostram um nome, mas podem ser religados à base de pedidos. A Ganica recomenda tratá-los como dado pessoal.
 4. **Acesso.** No BigQuery, quem acessa o quê é controlado por permissões. Separe a tabela bruta, de acesso restrito, das tabelas tratadas.
@@ -167,7 +167,7 @@ A recomendação da Ganica é começar pela pergunta de negócio, não pela ferr
 
 1. **Escreva as três perguntas** que hoje ninguém consegue responder. Por exemplo: quanto o GA4 está deixando de registrar.
 2. **Audite o rastreamento** antes de exportar qualquer coisa.
-3. **Ative a exportação do GA4 para o BigQuery**, que é nativa e, segundo o Google, começa a enviar dados em até 24 horas depois do vínculo. Confira antes se a propriedade cabe no limite diário.
+3. **Ative a exportação do GA4 para o BigQuery**, que é nativa e, [segundo o Google](https://support.google.com/analytics/answer/9823238), começa a enviar dados em até 24 horas depois do vínculo. Confira antes se a propriedade cabe no limite diário.
 4. **Configure a exportação do PostHog** com as colunas de propriedades em JSON e frequência compatível com o uso.
 5. **Leve os pedidos da loja para o BigQuery** e garanta o ID do pedido nos eventos de compra das duas ferramentas.
 6. **Monte a camada tratada**, com deduplicação, janela para dados atrasados e sem dados pessoais diretos.

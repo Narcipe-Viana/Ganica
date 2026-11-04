@@ -149,7 +149,8 @@ pergunta e citam quem parece a fonte mais confiável. Cada estudo é escrito par
 **Fatos com atribuição explícita**
 - Número sempre colado à fonte na mesma frase ("segundo o Banco Central, ...", "em análise da
   Ganica de um e-commerce de saúde, ..."). IA cita frase com fonte; frase sem fonte é descartada.
-- `fontes_urls`: lista com o link de cada fonte primária citada (vai para o schema como `citation`).
+- `fontes_urls`: lista com o link de cada fonte primária citada, no formato `"Título legível (Instituição) | https://..."`. Aparece no fim do artigo como "Links das fontes" (link clicável, com o domínio) e vai para o schema como `citation`.
+- Links externos no texto (obrigatório): o dado de terceiro leva o link da fonte primária no próprio trecho em que aparece, em markdown `[texto descritivo](https://...)`, no nome da fonte ou do estudo, nunca em "clique aqui". Mínimo de 2 links externos no corpo quando houver 2 ou mais fontes; todo link do corpo também entra em `fontes_urls`. Linkar a fonte primária (a pesquisa, a documentação oficial, a lei), não um agregador, quando ela existir. Sem `nofollow`: citar fonte confiável é sinal de qualidade para o Google e dá ao leitor e aos motores de IA como conferir o número.
 - Datas e períodos explícitos para dado público ("em 2025", "entre 2020 e 2025").
 
 **Autoridade e entidade**

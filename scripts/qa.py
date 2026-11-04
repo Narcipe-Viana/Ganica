@@ -252,6 +252,18 @@ def checar_estrutura(foco=None):
                 erro(url, f"resposta_curta com {n_rc} palavras; precisa de 40 a 70 (resposta direta ao título, citável por IA)")
             if data_pub >= "2026-11-01" and not fm.get("fontes_urls"):
                 erro(url, "fontes_urls vazio: liste os links das fontes primárias citadas")
+            fu = [str(x) for x in (fm.get("fontes_urls") or [])]
+            if data_pub >= "2026-11-05":
+                sem_titulo = [x for x in fu if " | " not in x]
+                if sem_titulo:
+                    erro(url, f"fontes_urls sem título legível (use \"Título | URL\"): {sem_titulo[:2]}")
+                externos = set(re.findall(r"\]\((https?://[^)\s]+)\)", corpo))
+                if len(fu) >= 2 and len(externos) < 2:
+                    erro(url, f"corpo com {len(externos)} link(s) externo(s); o dado de terceiro precisa do link da fonte no próprio trecho (mínimo 2)")
+                urls_fontes = {x.rsplit(" | ", 1)[-1].strip() for x in fu}
+                fora = [u for u in externos if u not in urls_fontes]
+                if fora:
+                    aviso(url, f"link externo no corpo que não está em fontes_urls: {fora[:2]}")
         else:
             aviso(url, "sem resposta_curta (bloco de resposta direta, importante para GEO)")
         palavras = len(re.findall(r"\w+", re.sub(r"<[^>]+>", " ", corpo)))

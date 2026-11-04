@@ -65,6 +65,17 @@ export default function (eleventyConfig) {
     const t = String(s || "").trim();
     return /[.!?]$/.test(t) ? t : `${t}.`;
   });
+  // Fonte: "Título | https://..." ou só a URL. Devolve { titulo, url, dominio }.
+  const fonte = (s) => {
+    const txt = String(s || "").trim();
+    const i = txt.lastIndexOf(" | ");
+    const url = i >= 0 ? txt.slice(i + 3).trim() : txt;
+    let dominio = url;
+    try { dominio = new URL(url).hostname.replace(/^www\d?\./, ""); } catch (e) {}
+    return { titulo: i >= 0 ? txt.slice(0, i).trim() : dominio, url, dominio };
+  };
+  eleventyConfig.addFilter("fonte", fonte);
+  eleventyConfig.addFilter("fonteUrl", (s) => fonte(s).url);
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));
 
   // Coleção de estudos publicados, do mais recente para o mais antigo

@@ -6,7 +6,7 @@ description: "Persona para e-commerce que serve ao CRO responde quem é, o que p
 twitter_description: A persona de slide não decide nada. A persona comportamental diz quem trava em cada etapa do funil e o que corrigir primeiro.
 slug: persona-ecommerce-cro-comportamental
 date: '2026-10-30'
-updated: '2026-10-30'
+updated: 2026-11-04
 breadcrumb: Persona comportamental
 secao: E-commerce
 card_kicker: CRO · Método
@@ -48,8 +48,8 @@ faq:
   resposta: Poucas. Na prática, três a cinco grupos com comportamento claramente diferente já cobrem a maior parte das decisões. Mais do que isso costuma gerar personas que nenhum time consegue usar no dia a dia.
 fontes: "Artigo de método da Ganica. Os exemplos de personas e os números do exemplo de canal são hipotéticos, declarados como tal no texto, e não descrevem nenhum cliente. Referências de funcionalidade do Google Analytics 4: Central de Ajuda do Google Analytics, artigo \"[GA4] Funnel exploration\", e Google for Developers, referência de eventos recomendados (parâmetro payment_type), consultadas em outubro de 2026."
 fontes_urls:
-- https://support.google.com/analytics/answer/9327974
-- https://developers.google.com/analytics/devguides/collection/ga4/reference/events
+- "Funnel exploration, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/9327974"
+- "Eventos recomendados do GA4 (Google for Developers) | https://developers.google.com/analytics/devguides/collection/ga4/reference/events"
 cta_titulo: Quem trava no seu funil, e onde?
 cta_texto: Uma persona de slide descreve um cliente ideal. Um diagnóstico mostra quais públicos chegam à sua loja, onde cada um desiste e qual fricção vale corrigir primeiro.
 autor_texto: 'Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, Looker Studio) e auditoria comportamental. Essa análise nasce do mesmo processo que uso nos diagnósticos que conduzo: separar públicos antes de tirar conclusão de qualquer média.'
@@ -96,9 +96,9 @@ O ponto de partida não é uma pesquisa nova, é o dado que a loja já coleta. N
 - **Categoria do dispositivo.** Celular e computador costumam ter funis com desenhos diferentes, e não só taxas diferentes.
 - **Canal de origem.** Busca orgânica, mídia paga, redes sociais, e-mail e acesso direto trazem intenções diferentes.
 - **Termo de busca interna.** O que a pessoa digita na busca do site é uma das poucas declarações explícitas de intenção que o analytics registra.
-- **Meio de pagamento.** O evento de dados de pagamento aceita o parâmetro `payment_type`, que registra o meio escolhido. Quando ele está preenchido, mostra preferências que se repetem por público.
+- **Meio de pagamento.** O evento de dados de pagamento aceita o parâmetro `payment_type` ([referência de eventos do GA4](https://developers.google.com/analytics/devguides/collection/ga4/reference/events)), que registra o meio escolhido. Quando ele está preenchido, mostra preferências que se repetem por público.
 
-O método é cruzar esses cortes com as etapas do funil, numa exploração de funil com detalhamento por um corte de cada vez, e procurar grupos que se comportam de forma parecida entre si e diferente do resto. Cada grupo com volume relevante e um ponto de abandono claro é uma candidata a persona.
+O método é cruzar esses cortes com as etapas do funil, numa [exploração de funil](https://support.google.com/analytics/answer/9327974) com detalhamento por um corte de cada vez, e procurar grupos que se comportam de forma parecida entre si e diferente do resto. Cada grupo com volume relevante e um ponto de abandono claro é uma candidata a persona.
 
 Para ilustrar, um conjunto **hipotético** de personas que esse cruzamento costuma sugerir, válido para lojas de vários nichos:
 
