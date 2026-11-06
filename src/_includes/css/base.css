@@ -199,3 +199,13 @@ body.menu-open{ overflow:hidden; }
   .site-footer img{ align-self:center; }
   .site-footer p{ flex-basis:100%; }
 }
+
+/* Escala do desktop: conteúdo mais contido em telas grandes (o mobile não é afetado) */
+@media (min-width:900px){
+  :root{ --max:1240px; --gutter:clamp(32px,4vw,56px); }
+  .nav{ min-height:72px; }
+  .marca img{ height:32px; }
+  .nav-links{ gap:28px; font-size:.9375rem; }
+  .nav-cta{ min-height:42px; padding:0 16px; font-size:.9375rem; }
+  .btn{ min-height:52px; font-size:.9375rem; }
+}
