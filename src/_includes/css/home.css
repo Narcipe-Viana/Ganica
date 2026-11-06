@@ -201,3 +201,57 @@
   .diag-campo input,.diag-campo select{ min-height:56px; }
   .diag-acoes .btn{ min-height:60px; }
 }
+
+/* Escala do desktop: tipografia e espaçamentos proporcionais à tela (o mobile não é afetado) */
+@media (min-width:900px){
+  body{ font-size:16px; }
+  .secao{ padding-block:clamp(56px,6vw,96px); }
+  .titulo-grande{ font-size:clamp(2.5rem,4vw,3.75rem); line-height:1.04; }
+  .titulo-secao{ font-size:clamp(2rem,3vw,2.75rem); line-height:1.08; }
+  .rotulo{ font-size:.75rem; }
+
+  .hero .wrap{ padding-block:clamp(40px,5vw,80px); }
+  .hero .rotulo{ margin-bottom:22px; }
+  .hero h1{ font-size:clamp(2.5rem,4.4vw,4rem); line-height:1.04; max-width:980px; }
+  .hero-baixo{ margin-top:clamp(28px,3vw,44px); gap:24px 56px; }
+  .hero-sub{ font-size:1.125rem; max-width:520px; }
+  .hero-ctas .btn-ambar{ min-height:54px; gap:22px; padding:0 22px; }
+  .hero-nota{ margin-top:22px; font-size:.8125rem; }
+
+  .diferenciais .wrap{ padding-block:clamp(56px,6vw,104px); gap:32px 64px; }
+  .diferenciais-intro{ font-size:1.125rem; }
+  .diff-item{ padding-block:18px; }
+  .diff-item h3{ font-size:1.25rem; }
+
+  .metodo h2{ margin-bottom:clamp(32px,4vw,56px); max-width:760px; }
+  .etapa-num{ margin-bottom:40px; }
+  .metodo-etapas h3{ font-size:1.3125rem; }
+  .metodo-etapas p:last-child{ font-size:.9375rem; }
+
+  .oferta .wrap{ gap:32px 64px; }
+  .folha{ padding:clamp(24px,2.6vw,36px); }
+  .folha h3{ font-size:1.25rem; margin-bottom:16px; }
+  .prazo{ padding:16px 18px; }
+  .prazo strong{ font-size:clamp(1.625rem,2.2vw,2rem); }
+  .entregas{ font-size:.9375rem; }
+  .folha-nota{ font-size:.8125rem; margin:20px 0; }
+
+  .biblioteca-topo{ margin-bottom:28px; }
+  .biblioteca-topo > div{ max-width:680px; }
+  .biblioteca-rotulo{ font-size:.875rem; }
+  .biblioteca-acao{ min-height:46px; }
+
+  .principios h2{ font-size:clamp(1.5rem,2.2vw,1.875rem); margin-bottom:clamp(28px,3vw,40px); }
+  .principio h3{ font-size:1.0625rem; }
+  .principio p{ font-size:.9375rem; }
+
+  .sobre-foto img{ max-height:620px; min-height:400px; }
+  .sobre-texto{ padding:clamp(32px,5vw,72px) var(--gutter); }
+  .sobre-texto h2{ font-size:clamp(2rem,3.2vw,3rem); }
+  .sobre-cargo{ margin-bottom:22px; }
+
+  .contato .wrap{ gap:32px 64px; }
+  .contato h2{ font-size:clamp(2rem,3.2vw,3rem); line-height:1.06; }
+  .diag-campo input,.diag-campo select{ min-height:52px; }
+  .diag-acoes .btn{ min-height:54px; }
+}

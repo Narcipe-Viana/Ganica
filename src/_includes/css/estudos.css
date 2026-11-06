@@ -51,3 +51,11 @@
   }
   .estudo-resumo{ font-size:1rem; }
 }
+
+/* Escala do desktop */
+@media (min-width:900px){
+  .estudo-card{ gap:32px; padding:clamp(20px,2.2vw,28px); }
+  .estudo-card h2,.estudo-card h3{ font-size:clamp(1.25rem,1.7vw,1.5rem); }
+  .estudo-resumo{ font-size:.9375rem; }
+  .estudo-ler{ min-height:44px; }
+}
