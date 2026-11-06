@@ -59,7 +59,7 @@ Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos
 4. `deck`: linha fina de 1 a 2 frases que diz o que o leitor vai entender.
 5. `resposta_curta`: 40 a 70 palavras que respondem o título por inteiro (ver seção 8).
    `resumo`: 4 ou 5 itens (o "Resumo rápido"), cada um com um fato ou conclusão concreta; números em **negrito**.
-6. Corpo (Markdown) com **pelo menos 5 seções `##`**, entre **1.200 e 2.000 palavras**, contendo:
+6. Corpo (Markdown) com **pelo menos 5 seções `##`**, entre **1.200 e 2.000 palavras** (guias de referência pedidos pelo Narcipe podem ser mais extensos, desde que cada seção seja útil), contendo:
    - o problema como o mercado costuma enxergar;
    - a evidência (dado público verificado, levantamento próprio, ou caso anonimizado autorizado);
    - a leitura da Ganica (o que a evidência realmente mostra);
