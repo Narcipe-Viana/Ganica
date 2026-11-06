@@ -76,6 +76,11 @@ Campos do front matter (os mesmos do formulário no Pages CMS): ver `src/artigos
 11. `keywords`, `tags_artigo`, `sobre`: 3 a 6 itens cada.
 12. `slug`: minúsculas, sem acento, palavras separadas por hífen, com a palavra-chave. **Nunca mudar depois de publicado.**
 
+**Publicação agendada.** Para publicar num dia sem execução da automação, o estudo fica com
+`rascunho: false` e `publicar_em: 'AAAA-MM-DD'`: ele não entra no site, no sitemap nem nas
+listagens até essa data, e o build diário das 00:05 (Brasília) publica sozinho, com aviso ao
+IndexNow. `date` e `updated` já devem vir com a data da publicação.
+
 ## 4. Regra de ouro dos números
 
 **Todo número publicado precisa ter origem verificável.** Antes de publicar:

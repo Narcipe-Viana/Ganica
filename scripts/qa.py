@@ -23,6 +23,9 @@ SITE = RAIZ / "_site"
 ARTIGOS_SRC = RAIZ / "src" / "artigos"
 BLOQUEIO = RAIZ / "editorial" / "bloqueio.sha256"
 URL_BASE = "https://ganica.com.br"
+# Hoje em Brasília: estudo com publicar_em futuro é tratado como agendado (fora do site)
+import datetime as _dt
+HOJE_BR = (_dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(hours=3)).strftime("%Y-%m-%d")
 
 erros, avisos = [], []
 
@@ -154,7 +157,9 @@ def checar_estrutura(foco=None):
     rascunhos = set()
     for md in sorted(ARTIGOS_SRC.glob("*.md")):
         fm, corpo = frontmatter(md)
-        if not fm.get("rascunho"):
+        pub = str(fm.get("publicar_em") or "")[:10]
+        agendado = bool(pub) and pub > HOJE_BR
+        if not fm.get("rascunho") and not agendado:
             artigos_publicados[f"/{fm.get('slug')}.html"] = (fm, corpo, md.name)
         else:
             rascunhos.add(f"/{fm.get('slug')}.html")

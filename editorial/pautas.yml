@@ -508,3 +508,10 @@ pautas:
     titulo_provisorio: "Taxa de conversão do e-commerce: como identificar gargalos e transformar tráfego em mais receita"
     palavra_chave: "taxa de conversão do site / taxa de conversão e-commerce"
     slug: taxa-de-conversao-ecommerce
+  - id: 32
+    tipo: tecnico
+    status: revisao
+    origem: "Pauta do Narcipe em 06/11/2026 (pauta_posthog_ecommerce_analytics_IA.docx), para publicar em 07/11/2026; precisa superar bixtecnologia.com.br/posthog-plataforma-de-analytics/. Caso usado: T1."
+    titulo_provisorio: "PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão"
+    palavra_chave: "PostHog"
+    slug: posthog
