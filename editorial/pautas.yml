@@ -502,7 +502,8 @@ pautas:
     nota: "Pauta 13 (Marketing 3.0 e página de produto) se sobrepõe a este tema; revisar o ângulo antes de escrevê-la."
   - id: 31
     tipo: base
-    status: revisao
+    status: publicada
+    publicado_em: 2026-11-06
     origem: "Pauta do Narcipe em 06/11/2026 (documento pauta_taxa_conversao_ecommerce_CRO.docx): guia extenso para gestores, com linha DIAGNOSTICAR, INVESTIGAR, PRIORIZAR, EXPERIMENTAR, MENSURAR. Imagens serão feitas pelo Narcipe no Nano Banana."
     titulo_provisorio: "Taxa de conversão do e-commerce: como identificar gargalos e transformar tráfego em mais receita"
     palavra_chave: "taxa de conversão do site / taxa de conversão e-commerce"
