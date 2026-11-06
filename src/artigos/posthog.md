@@ -9,7 +9,7 @@ date: '2026-11-07'
 hora: "00:05"
 updated: '2026-11-07'
 publicar_em: '2026-11-07'
-rascunho: true
+rascunho: false
 breadcrumb: PostHog no e-commerce
 secao: E-commerce
 card_kicker: "Técnico · PostHog"
@@ -42,10 +42,10 @@ resumo:
   - "A qualidade da análise depende da instrumentação: autocapture ajuda a começar, mas os eventos de negócio (carrinho, checkout, compra) precisam ser enviados de forma explícita e conferidos contra os pedidos reais."
   - "O servidor MCP oficial é **gratuito**, fica em mcp.posthog.com, funciona com Claude, Cursor, Codex, VS Code e outros clientes, e pode ser restrito a **somente leitura**, a um projeto e a ferramentas específicas."
   - "No ChatGPT, servidores MCP personalizados funcionam nos planos Business, Enterprise e Edu; no Pro, só com leitura e busca, no modo desenvolvedor, segundo a OpenAI."
-  - "Plano gratuito do PostHog, consultado em 6/11/2026: **1 milhão** de eventos e **5 mil** gravações por mês, sem cartão, com gravações guardadas por 1 mês."
+  - "Segundo a página de preços do PostHog, consultada em 6/11/2026, o plano gratuito inclui **1 milhão** de eventos e **5 mil** gravações por mês, sem cartão. Uma loja com 200 mil sessões mensais pagaria **cerca de US$ 129** por mês no plano por uso, pela conta da Ganica."
 faq:
-  - pergunta: "O PostHog é gratuito?"
-    resposta: "Tem um plano gratuito permanente, sem cartão, com cotas mensais por produto. Na consulta de 6/11/2026, eram 1 milhão de eventos de analytics, 5 mil gravações de sessão, 1 milhão de requisições de feature flags e 1.500 respostas de pesquisa. Acima disso, cada produto é cobrado por uso, e os valores devem ser conferidos na página oficial de preços."
+  - pergunta: "O PostHog substitui o GA4?"
+    resposta: "Na maioria dos e-commerces, não por completo. O GA4 continua mais integrado ao Google Ads e ao ecossistema do Google, enquanto o PostHog vai melhor na investigação de comportamento, com funil, pessoa e gravação no mesmo lugar. O uso mais comum é manter os dois, cada um respondendo às perguntas em que é mais forte."
   - pergunta: "O PostHog tem gravação de sessão?"
     resposta: "Sim. A gravação reconstrói a navegação a partir das mudanças na página, sem gravar vídeo, e fica ligada aos eventos da mesma pessoa. Dá para gravar só uma parte das sessões, todas as sessões do checkout e excluir visitas muito curtas, o que controla custo e volume."
   - pergunta: "O PostHog mostra dados em tempo real?"
@@ -54,7 +54,7 @@ faq:
     resposta: "Consegue consultar os dados e, quando as permissões permitem, criar insights e dashboards pelo servidor MCP. O resultado precisa ser conferido: peça sempre o período, os filtros, a definição da métrica e a consulta usada, e trate a explicação da IA como hipótese até ser validada."
   - pergunta: "É seguro enviar dados do e-commerce ao PostHog e à IA?"
     resposta: "Depende do que é enviado e de como o acesso é controlado. A prática segura é não capturar dados pessoais sem necessidade, mascarar campos sensíveis nas gravações, escolher a região de dados, dar à IA acesso somente leitura a um projeto e revisar cada chamada de ferramenta, porque o próprio PostHog alerta que modelos de IA podem ser induzidos a seguir comandos não confiáveis."
-fontes: "Documentação oficial do PostHog, consultada em 6/11/2026: Model Context Protocol (MCP) e MCP FAQ, Autocapture, Session replay (configuração de gravações e controles de privacidade), tutorial de gravações a partir de insights, SQL editor, Events, Identifying users, Data storage e Pricing. Central de Ajuda da OpenAI, Modo desenvolvedor e apps MCP no ChatGPT, consultada em 6/11/2026. Central de Ajuda do Google Analytics, Data retention. Experiência da Ganica em projeto de e-commerce com PostHog e BigQuery (sem identificação da empresa). A taxonomia de eventos, os prompts, a resposta de exemplo e a estimativa de volume são exemplos da Ganica com dados fictícios. Preços, cotas e disponibilidade de recursos mudam com frequência; confira as páginas oficiais antes de decidir."
+fontes: "Documentação oficial do PostHog, consultada em 6/11/2026: Model Context Protocol (MCP) e MCP FAQ, Autocapture, Session replay (configuração de gravações e controles de privacidade), tutorial de gravações a partir de insights, SQL editor, Events, Identifying users, Data storage e Pricing. Central de Ajuda da OpenAI, Modo desenvolvedor e apps MCP no ChatGPT, consultada em 6/11/2026. Central de Ajuda do Google Analytics, Data retention. Resolução CD/ANPD nº 19/2024, conforme o Migalhas. O cálculo de custo é da Ganica, com os preços por unidade da página oficial em 6/11/2026. Experiência da Ganica em projeto de e-commerce com PostHog e BigQuery (sem identificação da empresa). A taxonomia de eventos, os prompts, a resposta de exemplo e a estimativa de volume são exemplos da Ganica com dados fictícios. Preços, cotas e disponibilidade de recursos mudam com frequência; confira as páginas oficiais antes de decidir."
 fontes_urls:
   - "Model Context Protocol (MCP), documentação do PostHog | https://posthog.com/docs/model-context-protocol"
   - "MCP FAQ e configuração avançada, documentação do PostHog | https://posthog.com/docs/model-context-protocol/faq"
@@ -68,6 +68,7 @@ fontes_urls:
   - "Data storage, documentação do PostHog | https://posthog.com/docs/privacy/data-storage"
   - "Preços do PostHog | https://posthog.com/pricing"
   - "Modo desenvolvedor e apps MCP no ChatGPT (Central de Ajuda da OpenAI) | https://help.openai.com/pt-br/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt"
+  - "Regulamento de transferência internacional de dados, Resolução CD/ANPD nº 19/2024 (Migalhas) | https://www.migalhas.com.br/depeso/415220/anpd-aprova-o-regulamento-de-transferencia-internacional-de-dados"
   - "Data retention, Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/7667196?hl=en"
 cta_titulo: "Quer avaliar como o PostHog se aplica ao seu e-commerce?"
 cta_texto: "Converse com um especialista para desenhar a mensuração, validar os dados contra os pedidos reais e montar um piloto com as perguntas de negócio da sua operação."
@@ -76,15 +77,15 @@ autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em 
 
 ## Por que gestores de e-commerce procuram complementos ao GA4?
 
-Gestores de e-commerce procuram complementos ao GA4 porque, quando a conversão cai, descobrir o porquê costuma exigir juntar relatórios, explorações, eventos e outras ferramentas, e cada passo leva tempo. O GA4 é bom para medir tráfego, campanhas e vendas no ecossistema do Google. A dificuldade aparece na investigação: sair de um número agregado, como "a conversão do checkout caiu", e chegar à sequência de ações das pessoas que desistiram.
+Gestores de e-commerce procuram complementos ao GA4 porque, quando a conversão cai, descobrir o porquê costuma exigir juntar relatórios, explorações, eventos e outras ferramentas, e cada passo leva tempo. É nesse ponto que o PostHog entra como complemento. O GA4 (Google Analytics 4, a ferramenta de analytics do Google) é bom para medir tráfego, campanhas e vendas no ecossistema do Google. A dificuldade aparece na investigação: sair de um número agregado, como "a conversão do checkout caiu", e chegar à sequência de ações das pessoas que desistiram.
 
 Essa dificuldade tem quatro faces que aparecem com frequência no dia a dia de uma loja. A primeira é o salto do agregado para o comportamento: o GA4 mostra a queda, mas não mostra a tela que o cliente viu, porque gravação de sessão não é um recurso nativo dele. A segunda é a pergunta nova, aquela que nenhum relatório pronto responde e que exige montar uma exploração do zero. A terceira é o contexto comercial: comportamento só vira decisão quando se cruza com pedido, margem, estoque e atendimento. A quarta é a retenção: na versão padrão do GA4, as explorações só alcançam 2 ou 14 meses de dados, conforme a [configuração de retenção](https://support.google.com/analytics/answer/7667196?hl=en).
 
-Vale separar duas coisas antes de culpar a ferramenta. Muitas vezes o problema não é o GA4, e sim a implementação: é um padrão que encontramos com frequência em diagnósticos o GA4 contando eventos em dobro por tags sobrepostas. Num projeto de e-commerce atendido pela Ganica, o GA4 apresentava falhas de rastreamento, e a busca era justamente por uma fonte complementar mais confiável, o que levou a [integrar o PostHog ao BigQuery](/integrar-posthog-bigquery-ecommerce.html). O PostHog não corrige uma medição ruim por mágica; ele oferece outro fluxo de trabalho, que fica mais forte quando eventos e gravações são explorados juntos.
+Vale separar duas coisas antes de culpar a ferramenta. Muitas vezes o problema não é o GA4, e sim a implementação. É um padrão que encontramos com frequência em diagnósticos: o GA4 contando eventos em dobro por tags sobrepostas. Num projeto de e-commerce em que atuamos, o GA4 apresentava falhas de rastreamento, e a busca era justamente por uma fonte complementar mais confiável, o que levou a [integrar o PostHog ao BigQuery](/integrar-posthog-bigquery-ecommerce.html). O PostHog não corrige uma medição ruim por mágica; ele oferece outro fluxo de trabalho, que fica mais forte quando eventos e gravações são explorados juntos.
 
 ## O que é o PostHog e como ele funciona na prática?
 
-O PostHog é uma plataforma de analytics em que vários produtos (web analytics, analytics de produto, gravação de sessão, mapas de calor, testes A/B, feature flags, pesquisas, rastreamento de erros e um editor SQL) trabalham sobre os mesmos eventos e as mesmas pessoas. Essa é a diferença que importa para um e-commerce: não são ferramentas coladas, e sim visões diferentes do mesmo dado. Quem abandonou uma etapa do funil pode ser aberto como lista de pessoas e, dali, como sessões gravadas, como mostra o [tutorial oficial de gravações a partir de insights](https://posthog.com/tutorials/explore-insights-session-recordings).
+O PostHog é uma plataforma de analytics em que vários produtos (web analytics, analytics de produto, gravação de sessão, mapas de calor, testes A/B, feature flags, pesquisas, rastreamento de erros e um editor SQL) trabalham sobre os mesmos eventos e as mesmas pessoas. Feature flag é uma chave que libera uma mudança só para parte do público, e SQL é a linguagem usada para consultar bancos de dados; no PostHog, o dialeto de SQL se chama HogQL. Essa é a diferença que importa para um e-commerce: não são ferramentas coladas, e sim visões diferentes do mesmo dado. Quem abandonou uma etapa do funil pode ser aberto como lista de pessoas e, dali, como sessões gravadas, como mostra o [tutorial oficial de gravações a partir de insights](https://posthog.com/tutorials/explore-insights-session-recordings).
 
 ### Como eventos, pessoas e propriedades formam a base das análises
 
@@ -92,7 +93,7 @@ Todo dado no PostHog começa como um evento: o registro de uma ação, com nome,
 
 Por isso, a qualidade da análise é decidida antes dela. Se o evento de carrinho se chama `add_to_cart` numa página e `adicionar_carrinho` em outra, ou se o preço às vezes vem com centavos e às vezes sem, nenhum funil vai fechar. Convenção de nomes e propriedades consistentes são a base de tudo que vem depois.
 
-Há dois jeitos de capturar eventos. O autocapture, ligado por padrão no SDK de navegador, registra visualizações e saídas de página, cliques em links, botões e campos e envios de formulário, mas não captura os valores digitados nos formulários enviados e exclui campos de senha, segundo a [documentação de autocapture](https://posthog.com/docs/product-analytics/autocapture). Ele ajuda a começar, mas não substitui os eventos de negócio, como compra e início de checkout, que precisam ser enviados de forma explícita, com as propriedades certas.
+Há dois jeitos de capturar eventos. O autocapture, ligado por padrão no SDK de navegador (o código do PostHog instalado no site), registra visualizações e saídas de página, cliques em links, botões e campos e envios de formulário, mas não captura os valores dos formulários enviados, segundo a [documentação de autocapture](https://posthog.com/docs/product-analytics/autocapture). Ele ajuda a começar, mas não substitui os eventos de negócio, como compra e início de checkout, que precisam ser enviados de forma explícita, com as propriedades certas.
 
 A identidade completa a base. Um visitante começa anônimo e, quando faz login ou compra, pode ser identificado, o que liga a navegação anônima ao cliente, conforme a [documentação de identificação](https://posthog.com/docs/product-analytics/identify). Feito com cuidado, isso permite ver a jornada inteira de uma pessoa; feito errado, cria pessoas duplicadas ou junta clientes diferentes num mesmo perfil.
 
@@ -164,7 +165,7 @@ Alguns eventos fazem sentido no navegador, como cliques e visualizações; outro
 
 ### Integre o comportamento ao contexto comercial
 
-O evento de compra no navegador não é o faturamento. Pedidos são cancelados, pagamentos são recusados e produtos são devolvidos, e por isso a plataforma da loja ou o sistema financeiro continua sendo a fonte de verdade para receita. O comportamento ganha valor quando é cruzado com pedidos, estoque, margem, mídia e atendimento, seja dentro do PostHog, com fontes conectadas ao seu data warehouse e consultadas pelo [editor SQL](https://posthog.com/docs/data-warehouse/sql), seja num warehouse externo, como mostra o guia de [integração entre PostHog, GA4 e BigQuery](/integrar-posthog-bigquery-ecommerce.html).
+O evento de compra no navegador não é o faturamento. Pedidos são cancelados, pagamentos são recusados e produtos são devolvidos, e por isso a plataforma da loja ou o sistema financeiro continua sendo a fonte de verdade para receita. O comportamento ganha valor quando é cruzado com pedidos, estoque, margem, mídia e atendimento, seja dentro do PostHog, com fontes conectadas ao seu data warehouse (o banco que junta dados de várias fontes) e consultadas pelo [editor SQL](https://posthog.com/docs/data-warehouse/sql), seja num warehouse externo, como mostra o guia de [integração entre PostHog, GA4 e BigQuery](/integrar-posthog-bigquery-ecommerce.html).
 
 ### Valide se a implementação está confiável
 
@@ -182,6 +183,7 @@ Para a maioria das lojas, PostHog e GA4 não são escolhas excludentes: o GA4 at
 | Critério | Onde cada ferramenta tende a ir melhor |
 |---|---|
 | Medição de marketing e Google Ads | GA4, pela integração nativa com o ecossistema Google |
+| Atribuição de vendas à mídia | GA4, mais maduro; no PostHog, valide a cobertura antes |
 | Investigação de comportamento | PostHog, por ligar funil, pessoa e gravação |
 | Gravação de sessão | PostHog, nativa; no GA4, exige ferramenta extra |
 | Perguntas novas em SQL | PostHog, com editor SQL sobre os eventos |
@@ -192,7 +194,7 @@ Para a maioria das lojas, PostHog e GA4 não são escolhas excludentes: o GA4 at
 
 ## Como conectar o PostHog ao Claude ou ao ChatGPT?
 
-O PostHog se conecta ao Claude, ao ChatGPT e a outros assistentes pelo seu servidor MCP oficial, que permite à IA consultar os dados e, quando autorizado, criar insights. MCP (Model Context Protocol) é um padrão aberto que deixa um assistente de IA usar ferramentas externas de forma controlada. Segundo a [documentação do PostHog](https://posthog.com/docs/model-context-protocol), o servidor é hospedado e gratuito, fica em `https://mcp.posthog.com/mcp` e direciona sozinho para a região de dados da conta, nos Estados Unidos ou na União Europeia.
+O PostHog se conecta ao Claude, ao ChatGPT e a outros assistentes pelo seu servidor MCP oficial, que permite à IA consultar os dados e, quando autorizado, criar insights (gráficos e análises salvos no PostHog). MCP (Model Context Protocol) é um padrão aberto que deixa um assistente de IA usar ferramentas externas de forma controlada. Segundo a [documentação do PostHog](https://posthog.com/docs/model-context-protocol), o servidor é hospedado e gratuito, fica em `https://mcp.posthog.com/mcp` e direciona sozinho para a região de dados da conta, nos Estados Unidos ou na União Europeia.
 
 A mesma documentação lista como clientes compatíveis o Claude Code, o Claude Desktop, o Cursor, o Codex, o VS Code, o Windsurf e o Zed, além de qualquer cliente que siga o padrão MCP. Conectar e usar as ferramentas é gratuito; algumas ferramentas usam IA internamente e podem ser cobradas como uso do PostHog AI, e só ficam disponíveis quando o processamento de dados por IA está ativado na organização.
 
@@ -214,11 +216,13 @@ Uma resposta confiável da IA traz sempre o período analisado, os filtros, a de
 
 > Entre 1 e 7 de novembro, a maior queda foi entre entrega e pagamento no celular: 61% de avanço, contra 68% na semana anterior, com cerca de 2.400 pessoas na etapa. Filtros: celular, todos os canais. Funil fechado, contado por pessoa. A queda coincide com o início de uma campanha nas redes sociais; vale separar esse canal antes de concluir que o problema está no checkout.
 
+O mesmo vale para resumos recorrentes. Uma prática que funciona é fixar as métricas, os filtros e o período de comparação num pedido padrão, como "resumo da semana: conversão por etapa e dispositivo, comparada com a semana anterior", e salvar como insight o que for usado toda semana, para que o número saia sempre da mesma definição.
+
 Se a IA responder sem período, sem filtro ou com uma causa sem evidência, a regra é pedir a consulta e conferir. Ela ajuda a formular e executar investigações; não descobre sozinha a causa de uma queda.
 
 ### Como funciona a conexão no Claude e em outros clientes MCP
 
-A conexão segue três passos. Primeiro, o cliente de IA recebe o endereço do servidor MCP do PostHog. Depois, a pessoa faz login na conta do PostHog; segundo o [FAQ do MCP](https://posthog.com/docs/model-context-protocol/faq), o caminho recomendado é o OAuth, e a alternativa, para clientes sem OAuth, é uma chave pessoal criada com o modelo "MCP Server", restrita a um projeto. Por fim, o cliente lista as ferramentas disponíveis, e o assistente passa a usá-las nas conversas.
+A conexão segue três passos. Primeiro, o cliente de IA recebe o endereço do servidor MCP do PostHog. Depois, a pessoa faz login na conta do PostHog; segundo o [FAQ do MCP](https://posthog.com/docs/model-context-protocol/faq), o caminho recomendado é o OAuth (login com a própria conta, sem copiar chave), e a alternativa, para clientes sem OAuth, é uma chave pessoal criada com o modelo "MCP Server", restrita a um projeto. Por fim, o cliente lista as ferramentas disponíveis, e o assistente passa a usá-las nas conversas.
 
 O mesmo FAQ descreve como limitar o que a IA pode fazer, o que deve ser configurado desde o primeiro dia:
 
@@ -244,8 +248,9 @@ Conectar dados de clientes a uma IA exige os mesmos cuidados de qualquer acesso 
 
 - **Menor privilégio:** comece em somente leitura, num projeto só, com as ferramentas necessárias ao caso de uso.
 - **Dado pessoal fora do alcance:** não capture e-mail, telefone, endereço ou dados de pagamento sem necessidade. Nas gravações, os campos de formulário são mascarados por padrão, mas o texto da página não, segundo os [controles de privacidade](https://posthog.com/docs/session-replay/privacy); mascare áreas como "minha conta" e confirmação de pedido.
-- **Região e contrato:** escolha a região de dados, nos Estados Unidos ou na União Europeia, conforme a [documentação de armazenamento](https://posthog.com/docs/privacy/data-storage), e avalie com o jurídico a transferência internacional pela LGPD.
+- **Região e contrato:** escolha a região de dados, nos Estados Unidos ou na União Europeia, conforme a [documentação de armazenamento](https://posthog.com/docs/privacy/data-storage). Não há região no Brasil, então o envio de dados pessoais é uma transferência internacional, regulada pela [Resolução CD/ANPD nº 19/2024](https://www.migalhas.com.br/depeso/415220/anpd-aprova-o-regulamento-de-transferencia-internacional-de-dados), que trouxe cláusulas-padrão contratuais e deu 12 meses, a partir de agosto de 2024, para incorporá-las aos contratos. Avalie com o jurídico. A versão auto-hospedada do PostHog existe, mas transfere para a loja a operação, a segurança e as atualizações da ferramenta.
 - **Conteúdo não confiável:** textos de formulários, URLs e buscas são escritos por visitantes e podem conter instruções maliciosas para a IA. O PostHog alerta que modelos podem ser induzidos a seguir comandos não confiáveis e recomenda revisar as chamadas de ferramenta antes de executar.
+- **Credenciais e registros:** troque periodicamente as chaves pessoais, revogue as que não estão em uso e mantenha o registro de quem acessou o quê.
 - **Validação humana:** qualquer ação que altere configurações, dashboards ou dados passa por uma pessoa antes.
 
 ## Como interpretar os dados sem cair em conclusões erradas?
@@ -261,11 +266,11 @@ Interpretar bem os dados do PostHog exige lembrar que eles mostram o que foi cap
 
 ## Quanto custa usar o PostHog num e-commerce?
 
-O custo do PostHog depende do volume de cada produto usado, e o plano gratuito cobre lojas pequenas e pilotos. Na [página de preços](https://posthog.com/pricing), consultada em 6/11/2026, o plano gratuito incluía por mês 1 milhão de eventos de analytics, 5 mil gravações de sessão, 1 milhão de requisições de feature flags, 1.500 respostas de pesquisa, 100 mil exceções de rastreamento de erros e 1 milhão de linhas no data warehouse, sem cartão de crédito. No plano gratuito, os eventos ficavam guardados por 1 ano e as gravações, por 1 mês. Acima das cotas, cada produto é cobrado por uso.
+O custo do PostHog depende do volume de cada produto usado, e o plano gratuito cobre lojas pequenas e pilotos. Na [página de preços](https://posthog.com/pricing), consultada em 6/11/2026, o plano gratuito incluía por mês 1 milhão de eventos de analytics, 5 mil gravações de sessão, 1 milhão de requisições de feature flags, 1.500 respostas de pesquisa, 100 mil exceções de rastreamento de erros e 1 milhão de linhas no data warehouse, sem cartão de crédito. No plano gratuito, os eventos ficavam guardados por 1 ano e as gravações, por 1 mês. No plano gratuito, o que passa da cota é descartado; para continuar coletando, é preciso o plano por uso, que mantém a mesma cota gratuita e cobra só o excedente.
 
-A estimativa começa pelo tráfego. Num exemplo hipotético, uma loja com 200 mil sessões por mês e uma média de 8 eventos por sessão gera cerca de 1,6 milhão de eventos, acima da cota gratuita. Se ela gravar todas as sessões que chegam ao checkout (digamos, 10% do total, ou 20 mil) e 5% das demais (9 mil), são cerca de 29 mil gravações por mês, também acima da cota. Com esses números, a calculadora da página de preços mostra o custo estimado.
+A estimativa começa pelo tráfego. Num exemplo hipotético, uma loja com 200 mil sessões por mês e uma média de 8 eventos por sessão gera cerca de 1,6 milhão de eventos, acima da cota gratuita. Se ela gravar todas as sessões que chegam ao checkout (digamos, 10% do total, ou 20 mil) e 5% das demais (9 mil), são cerca de 29 mil gravações por mês, também acima da cota. Pelos preços da página oficial em 6/11/2026, a conta da Ganica fica assim: 600 mil eventos excedentes a US$ 0,00005 somam US$ 30, e 24 mil gravações excedentes somam cerca de US$ 99 (10 mil a US$ 0,005 e 14 mil a US$ 0,0035). São cerca de US$ 129 por mês, sem impostos. No plano gratuito, essa loja perderia o que passasse das cotas.
 
-Três escolhas controlam a conta. A primeira é não instrumentar tudo: autocapture sem filtro gera volume que ninguém analisa. A segunda é gravar com critério, usando amostragem, duração mínima e gatilhos por página, como o [guia de configuração de gravações](https://posthog.com/pocket-guides/session-replay/configure-replays) mostra para o caso de gravar todo o checkout e só 5% do resto. A terceira é decidir quanto histórico precisa ficar no PostHog e quanto pode ir para um warehouse.
+O uso de ferramentas de IA do PostHog também entra na conta: o plano gratuito inclui 500 créditos de PostHog AI, equivalentes a US$ 5, segundo a mesma página. Três escolhas controlam a conta. A primeira é não instrumentar tudo: autocapture sem filtro gera volume que ninguém analisa. A segunda é gravar com critério, usando amostragem, duração mínima e gatilhos por página, como o [guia de configuração de gravações](https://posthog.com/pocket-guides/session-replay/configure-replays) mostra para o caso de gravar todo o checkout e só 5% do resto. A terceira é decidir quanto histórico precisa ficar no PostHog e quanto pode ir para um warehouse externo, como o BigQuery, por meio das [exportações em lote](/integrar-posthog-bigquery-ecommerce.html).
 
 ## O PostHog é a escolha certa para o seu e-commerce?
 
