@@ -388,7 +388,8 @@ pautas:
   # ---------- Estudos prontos com data marcada (têm prioridade sobre a rotação) ----------
   - id: 21
     tipo: cxl
-    status: pronta
+    status: pulada
+    motivo: "Reprovada duas vezes na revisão independente em 06/11/2026. O 'uso mais citado' e o 'atendimento 33%' do NuvemCommerce não batem com o gráfico do relatório primário (a fonte era a TI Inside); o mesmo relatório mostra análise de dados como prioridade de 50% para 2026, o que pede matizar a tese; a Nota Técnica 12/2025 da ANPD trata de IA e decisões automatizadas e o link é cópia da SSP-BA; a tabela e um ## ficaram próximos do original da CXL."
     publicar_em: '2026-11-06'
     arquivo: src/artigos/ia-pesquisa-cro-ecommerce-brasil.md
     titulo_provisorio: "A IA já escreve a sua loja. Mas ainda não está ouvindo o seu cliente"
