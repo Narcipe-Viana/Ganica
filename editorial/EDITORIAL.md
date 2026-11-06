@@ -126,6 +126,14 @@ de `.qa/` do artigo em 390px antes de publicar: tabela legível, títulos sem qu
 
 ## 7. SEO
 
+**SEO de imagens (pedido do Narcipe, 06/11/2026).** Toda imagem de estudo:
+- arquivo em WebP, com nome descritivo em minúsculas e hífens que contenha o tema (ex.:
+  `funil-de-conversao-por-etapa.webp`), salvo em `src/assets/img/estudos/<tema>/`;
+- inserida em Markdown com texto alternativo (alt) que descreve o que a imagem mostra, com a
+  palavra-chave de forma natural, e legenda com o crédito (`"Imagem: Ganica."`);
+- o site cuida do resto: largura e altura reais, carregamento preguiçoso (a primeira imagem
+  carrega com prioridade), dados estruturados (ImageObject) e sitemap de imagens.
+
 - Uma intenção de busca por estudo; a palavra-chave da pauta aparece no `seo_title`, na
   `description`, no primeiro parágrafo e em pelo menos um `##`.
 - Não repetir tema já publicado (ler `src/artigos/` antes).

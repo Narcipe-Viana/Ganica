@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 {%- set ultimo = collections.estudos[0] -%}
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>{{ site.url }}/</loc>
     <lastmod>{{ ((ultimo.data.updated or ultimo.data.date) if ultimo else "2026-09-10") | dataISO }}</lastmod>
@@ -23,6 +23,10 @@ eleventyExcludeFromCollections: true
     <lastmod>{{ (e.data.updated or e.data.date) | dataISO }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image><image:loc>{{ site.url }}{{ e.data.imagem_og or ("/assets/og/" + e.data.slug + ".png") }}</image:loc></image:image>
+    {%- for im in e.data.imagens_corpo %}
+    <image:image><image:loc>{{ site.url }}{{ im }}</image:loc></image:image>
+    {%- endfor %}
   </url>
   {%- endfor %}
 </urlset>

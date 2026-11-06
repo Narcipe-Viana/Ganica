@@ -120,6 +120,7 @@ export default function (eleventyConfig) {
   // a tabela -> legenda (.table-caption); citação (>) -> .pull-quote.
   eleventyConfig.addTransform("componentes-prose", function (content) {
     if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    let nFigura = 0;
     return content
       .replace(/<table>/g, '<div class="data-table-wrap"><table class="data-table">')
       .replace(/<\/table>\s*<p><em>([\s\S]*?)<\/em><\/p>/g, '</table></div>\n<p class="table-caption">$1</p>')
@@ -130,7 +131,9 @@ export default function (eleventyConfig) {
         const d = dimensoesImagem(src);
         const dim = d ? ` width="${d.w}" height="${d.h}"` : "";
         const cap = legenda ? `<figcaption>${legenda}</figcaption>` : "";
-        return `<figure class="figura"><a href="${src}" class="figura-link" aria-label="Abrir imagem em tamanho real"><img src="${src}" alt="${alt}"${dim} loading="lazy" decoding="async"></a>${cap}</figure>`;
+        // A primeira imagem do artigo costuma aparecer logo na abertura: carrega com prioridade (LCP).
+        const carga = nFigura++ === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+        return `<figure class="figura"><a href="${src}" class="figura-link" aria-label="Abrir imagem em tamanho real"><img src="${src}" alt="${alt}"${dim} ${carga} decoding="async"></a>${cap}</figure>`;
       })
       .replace(/<blockquote>\s*<p>([\s\S]*?)<\/p>\s*<\/blockquote>/g, '<p class="pull-quote">$1</p>');
   });

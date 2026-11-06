@@ -52,7 +52,7 @@ faq:
     resposta: "Não sozinho. O mapa de calor mostra onde as pessoas clicam, rolam e param, e isso indica onde investigar. A causa precisa ser confirmada cruzando com o funil, gravações, pesquisa com clientes ou um teste."
   - pergunta: "Melhorar a conversão reduz o custo de aquisição?"
     resposta: "Sim, quando as vendas a mais são reais e lucrativas. Com a mesma verba de mídia, mais pedidos significam um custo menor por cliente. Se a conversão subiu à custa de desconto, o custo de aquisição pode cair enquanto a margem também cai."
-fontes: "Exemplos numéricos de loja, funil e teste são hipotéticos, criados pela Ganica para ilustrar o método. Cálculo de tamanho de amostra pela fórmula padrão para comparar duas proporções, com 95% de confiança e 80% de poder, feito pela Ganica (a regra prática de Lehr dá valores próximos, um pouco menores). Central de Ajuda do Google Analytics, exploração de funil, e Google for Developers, eventos recomendados de e-commerce do GA4, consultados em novembro de 2026. CXL, Conversion Research, descrição do modelo ResearchXL (página modificada em setembro de 2020). Microsoft Clarity, página oficial, consultada em novembro de 2026. TIC Domicílios 2025, Cetic.br/NIC.br, tabela C16A, usuários de internet. Global Payments Report 2026 (Worldpay e Global Payments), conforme o Portal Tela e O Especialista (Safra), 2026. Exemplo de priorização em reais: hipotético, cálculo da Ganica."
+fontes: "Exemplos numéricos de loja, funil e teste são hipotéticos, criados pela Ganica para ilustrar o método. Cálculo de tamanho de amostra pela fórmula padrão para comparar duas proporções, com 95% de confiança e 80% de poder, feito pela Ganica (a regra prática de Lehr dá valores próximos, um pouco menores). Central de Ajuda do Google Analytics, exploração de funil, e Google for Developers, eventos recomendados de e-commerce do GA4, consultados em novembro de 2026. CXL, Conversion Research, descrição do modelo ResearchXL (página modificada em setembro de 2020). Microsoft Clarity, página oficial, consultada em novembro de 2026. TIC Domicílios 2025, Cetic.br/NIC.br, tabela C16A, usuários de internet. Global Payments Report 2026 (Worldpay e Global Payments), conforme o Portal Tela e O Especialista (Safra), 2026. Exemplo de priorização em reais: hipotético, cálculo da Ganica. As imagens são da Ganica."
 fontes_urls:
   - "Exploração de funil (Funnel exploration), Central de Ajuda do Google Analytics | https://support.google.com/analytics/answer/9327974?hl=en"
   - "Eventos recomendados do GA4 (Google for Developers) | https://developers.google.com/analytics/devguides/collection/ga4/reference/events"
@@ -66,6 +66,8 @@ cta_titulo: "Diagnóstico de oportunidades de CRO para e-commerce"
 cta_texto: "O método é o mesmo para toda loja; o gargalo, não. Um diagnóstico de CRO mostra em qual etapa, dispositivo e público a sua operação perde receita, quanto isso vale e o que corrigir primeiro."
 autor_texto: "Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, Looker Studio) e auditoria comportamental. Este guia reúne o caminho que defendo para qualquer decisão de conversão: diagnosticar, investigar, priorizar, testar e medir o resultado financeiro."
 ---
+
+![Funil de conversão do e-commerce em que parte dos visitantes escapa por falhas no meio do caminho e só alguns chegam ao fim como compra](/assets/img/estudos/taxa-de-conversao/funil-de-conversao-ecommerce-perdas.webp "Imagem: Ganica.")
 
 ## Por que aumentar o tráfego nem sempre aumenta as vendas?
 
@@ -83,11 +85,15 @@ Taxa de conversão é o percentual de visitas que termina em compra. Ela pode se
 
 *Exemplo hipotético da Ganica. Não considera mudanças em custos, margem, mix de produtos ou comportamento dos clientes.*
 
+![Simulação de taxa de conversão: com as mesmas 100 mil sessões, subir a conversão de 2,0% para 2,5% leva os pedidos de 2.000 para 2.500 e a receita de R$ 500 mil para R$ 625 mil](/assets/img/estudos/taxa-de-conversao/simulacao-taxa-de-conversao-receita.webp "Imagem: Ganica. Exemplo hipotético.")
+
 Também importa quem chega. Uma campanha que traz muita gente sem intenção de compra derruba a taxa de conversão sem que o site tenha piorado, e por isso a qualidade do tráfego precisa ser lida junto com a conversão, canal por canal. A simulação acima é simples de propósito, e a vida real é mais complicada. A melhora só aparece se o gargalo certo for encontrado e se a mudança for validada, e um ganho de conversão comprado com desconto pode virar prejuízo na margem. A tese deste guia é que, antes de investir mais para atrair visitantes, o e-commerce precisa entender se está aproveitando bem a demanda que já consegue gerar. O resto do texto é o caminho para responder isso: diagnosticar, investigar, priorizar, testar e medir o impacto financeiro.
 
 ## Por que a taxa de conversão média do site esconde problemas?
 
 A taxa de conversão média do site esconde problemas porque soma grupos que se comportam de forma muito diferente, e a melhora de um pode encobrir a piora de outro. Se o computador converte mais neste mês e o celular converte menos, a média pode ficar parada e dar a falsa impressão de que nada mudou, quando na verdade a maior parte dos clientes está tendo uma experiência pior. No Brasil isso pesa ainda mais: segundo a [TIC Domicílios 2025](https://cetic.br/en/tics/domicilios/2025/individuos/C16A/), do Cetic.br, 65% dos usuários de internet acessavam a rede só pelo celular.
+
+![Gráfico ilustrativo da taxa de conversão por dispositivo: a conversão no computador sobe, a do celular cai e a média do site fica parada](/assets/img/estudos/taxa-de-conversao/taxa-de-conversao-media-por-dispositivo.webp "Imagem: Ganica. Ilustração, sem dados reais.")
 
 Por isso, a primeira leitura da taxa de conversão do e-commerce é sempre segmentada. Os cortes que mais revelam são estes:
 
@@ -118,9 +124,13 @@ O cuidado mais importante é usar a mesma base em todas as etapas. A [exploraç�
 
 Um exemplo ajuda a ver por que a etapa importa. Uma loja pode ter uma boa taxa de adição ao carrinho e perder boa parte dos compradores na escolha do frete. Nesse caso, redesenhar a página de produto seria atacar o lugar errado: o produto convenceu, e o que interrompeu a compra foi o custo ou o prazo de entrega. Em muitas lojas, a quebra do celular também está [concentrada em uma etapa só](/conversao-checkout-mobile-funil-por-dispositivo.html), geralmente no pagamento.
 
+![Funil de conversão por etapa: produto, carrinho, checkout, entrega, pagamento e compra, com a maior perda na etapa de frete](/assets/img/estudos/taxa-de-conversao/funil-de-conversao-por-etapa.webp "Imagem: Ganica. Ilustração do método.")
+
 ## Como identificar os gargalos de conversão do e-commerce?
 
 Identificar um gargalo de conversão exige combinar três tipos de evidência: os números dizem onde a venda se perde, o comportamento mostra como ela se perde e a conversa com clientes explica por quê. Essa é também a lógica do modelo ResearchXL, descrito pela [CXL](https://cxl.com/blog/conversion-research/). Ele junta análise técnica, revisão especializada das páginas, analytics, mapas de calor e gravações, pesquisas, testes com usuários e teste de textos, e só então transforma os achados em hipóteses.
+
+![Três evidências para provar um gargalo de conversão: números mostram onde a venda se perde, comportamento mostra como o cliente tenta comprar e clientes explicam por que desistem](/assets/img/estudos/taxa-de-conversao/tres-evidencias-gargalo-de-conversao.webp "Imagem: Ganica.")
 
 ### Análise quantitativa: onde os usuários abandonam a jornada
 
@@ -193,6 +203,8 @@ Priorizar começa por separar o que é para corrigir, o que é para investigar e
 | Implementação direta | Melhoria cuja necessidade já está comprovada |
 
 *Leitura da Ganica.*
+
+![Matriz de priorização de CRO: testar, corrigir ou implementar, investigar ou validar o problema, conforme a certeza sobre o problema e sobre a solução](/assets/img/estudos/taxa-de-conversao/matriz-priorizacao-cro.webp "Imagem: Ganica.")
 
 ### Como ordenar pelo impacto financeiro, pelo esforço e pela confiança
 
@@ -271,6 +283,8 @@ Um exemplo hipotético mostra por que a conversão sozinha engana. A versão A c
 
 *Exemplo hipotético da Ganica.*
 
+![Comparação de teste A/B: a versão B converte 2,3% contra 2,0%, mas gera R$ 4,83 por visitante contra R$ 5,00 da versão A](/assets/img/estudos/taxa-de-conversao/receita-por-visitante-teste-ab.webp "Imagem: Ganica. Exemplo hipotético.")
+
 ## Como estruturar um programa contínuo de CRO?
 
 Um programa de CRO funciona como um ciclo que se repete, e não como um projeto com data para acabar. Cada volta parte do que a anterior ensinou, e a lista de oportunidades fica mais precisa com o tempo.
@@ -283,6 +297,8 @@ Um programa de CRO funciona como um ciclo que se repete, e não como um projeto 
 6. **Analisar os resultados** em receita por visitante e margem, não só em conversão.
 7. **Documentar o aprendizado**, inclusive dos testes que não deram certo.
 8. **Devolver o aprendizado ao backlog**, que alimenta a próxima volta.
+
+![Ciclo contínuo de CRO para e-commerce em oito etapas: diagnosticar, pesquisar, identificar, priorizar, testar ou implementar, analisar, documentar e voltar ao backlog](/assets/img/estudos/taxa-de-conversao/ciclo-cro-continuo-ecommerce.webp "Imagem: Ganica.")
 
 O programa depende de gente de várias áreas trabalhando na mesma lista: marketing, tecnologia, experiência do usuário, analytics, merchandising e operação comercial. A maturidade em CRO não se mede pelo número de testes realizados, mas pela capacidade de transformar evidência em decisões melhores e em resultados que se sustentam. Para quem quer começar pelo básico, o guia de [como aumentar as vendas online](/como-aumentar-vendas-online.html) mostra as quatro alavancas que este processo otimiza.
 
