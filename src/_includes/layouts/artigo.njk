@@ -4,6 +4,8 @@
 {%- set dataPub = date | dataISO -%}
 {%- set dataMod = (updated or date) | dataISO -%}
 {%- set horaPub = (hora or "00:00") + ":00" -%}
+{#- Modificação no mesmo dia da publicação nunca pode ser anterior a ela -#}
+{%- set horaMod = horaPub if dataMod == dataPub else "00:00:00" -%}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -40,7 +42,7 @@
 <meta property="og:url" content="{{ urlArtigo }}">
 <meta property="og:locale" content="pt_BR">
 <meta property="article:published_time" content="{{ dataPub }}T{{ horaPub }}-03:00">
-<meta property="article:modified_time" content="{{ dataMod }}T00:00:00-03:00">
+<meta property="article:modified_time" content="{{ dataMod }}T{{ horaMod }}-03:00">
 <meta property="article:author" content="{{ site.autor }}">
 <meta property="article:section" content="{{ secao or 'E-commerce' }}">
 {%- for t in tags_artigo %}
@@ -99,7 +101,7 @@
       "headline": {{ title | json | safe }},
       "description": {{ description | json | safe }},
       "datePublished": "{{ dataPub }}T{{ horaPub }}-03:00",
-      "dateModified": "{{ dataMod }}T00:00:00-03:00",
+      "dateModified": "{{ dataMod }}T{{ horaMod }}-03:00",
       {%- if resposta_curta %}
       "abstract": {{ resposta_curta | textoPuro | json | safe }},
       {%- endif %}

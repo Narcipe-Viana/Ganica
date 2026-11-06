@@ -487,3 +487,15 @@ pautas:
     titulo_provisorio: "Como aumentar as vendas online? Descubra primeiro onde a sua loja perde venda"
     palavra_chave: "aumentar vendas online / como aumentar as vendas online"
     slug: como-aumentar-vendas-online
+
+  - id: 31
+    tipo: base
+    status: publicada
+    publicado_em: 2026-11-06
+    historico: "Lido e aprovado pelo Narcipe antes da publicação; reescrito duas vezes a pedido dele (texto corrido, contando uma história)."
+    origem: "Pedido do Narcipe em 05/11/2026: estudo da estrutura ideal da página de produto, com imagens, conceitos do Marketing 6.0 e dados reais, dividido em três partes (cliente, SEO, GEO)."
+    titulo_provisorio: "Página de produto que vende: o que ela precisa ter para o cliente, o Google e a IA"
+    campo: [C15]
+    palavra_chave: "página de produto / estrutura de página de produto"
+    slug: estrutura-pagina-de-produto-ecommerce
+    nota: "Pauta 13 (Marketing 3.0 e página de produto) se sobrepõe a este tema; revisar o ângulo antes de escrevê-la."
