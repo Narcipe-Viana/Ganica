@@ -521,3 +521,17 @@ pautas:
     titulo_provisorio: "PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão"
     palavra_chave: "PostHog"
     slug: posthog
+  - id: 34
+    tipo: case
+    status: publicada
+    publicado_em: 2026-11-07
+    usa_dado_cliente: true
+    origem: "Pedido do Narcipe em 07/11/2026: primeiro case do site (checkout mobile). Autorizado como cliente anônimo; ligação com o estudo da pauta 1 aprovada por ele."
+    titulo_provisorio: "Case de CRO: como o checkout mobile quase dobrou a conversão sem um real a mais em mídia"
+    dados_anonimizados:
+      - "Antes da mudança, cerca de 1 em cada 5 pessoas que iniciavam o checkout no celular concluíam o pedido."
+      - "Depois do checkout novo, liberado aos poucos, perto de 2 em cada 5 (quase o dobro), com confiança acima de 99%."
+      - "O ritmo de pedidos a mais ficou perto do teto da projeção feita antes da mudança."
+    palavra_chave: "case de CRO / conversão checkout mobile"
+    slug: case-cro-checkout-mobile-conversao
+    links_com: [1]
