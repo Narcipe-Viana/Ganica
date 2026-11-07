@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt-BR">
+  <title>Estudos da Ganica</title>
+  <subtitle>Estudos exclusivos de CRO para e-commerce: dado de mercado, heatmap real e funil de conversão.</subtitle>
+  <link href="https://ganica.com.br/feed.xml" rel="self"/>
+  <link href="https://ganica.com.br/estudos/"/>
+  <id>https://ganica.com.br/estudos/</id>
+  <updated>2026-11-07T12:00:00.000Z</updated>
+  <author><name>Narcipe Viana</name></author>
+  <icon>https://ganica.com.br/logo-ganica.png</icon>
+  <entry>
+    <title>Case de CRO: como o checkout mobile quase dobrou a conversão sem um real a mais em mídia</title>
+    <link href="https://ganica.com.br/case-cro-checkout-mobile-conversao.html"/>
+    <id>https://ganica.com.br/case-cro-checkout-mobile-conversao.html</id>
+    <published>2026-11-07T12:00:00.000Z</published>
+    <updated>2026-11-07T12:00:00.000Z</updated>
+    <summary>Neste case, o checkout mobile de um e-commerce brasileiro convertia cerca de 1 em cada 5 pessoas que chegavam a ele. O diagnóstico mostrou que a perda estava no último passo: o cliente era tirado da loja para confirmar a identidade e ainda passava por uma segunda verificação. Com um checkout novo, liberado aos poucos, a conversão nessa etapa chegou perto de 2 em cada 5.</summary>
+  </entry>
+  <entry>
+    <title>PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão</title>
+    <link href="https://ganica.com.br/posthog.html"/>
+    <id>https://ganica.com.br/posthog.html</id>
+    <published>2026-11-07T12:00:00.000Z</published>
+    <updated>2026-11-07T12:00:00.000Z</updated>
+    <summary>O PostHog é uma plataforma de analytics que reúne eventos, funis, gravações de sessão, mapas de calor, testes A/B e consultas SQL sobre os mesmos dados. No e-commerce, ele serve para sair do número de conversão e chegar à sessão que explica a perda. Pelo servidor MCP oficial, os dados podem ser consultados em linguagem natural no Claude, no ChatGPT e em outros clientes compatíveis, com permissões controladas.</summary>
+  </entry>
+  <entry>
+    <title>Taxa de conversão do e-commerce: como identificar gargalos e transformar tráfego em mais receita</title>
+    <link href="https://ganica.com.br/taxa-de-conversao-ecommerce.html"/>
+    <id>https://ganica.com.br/taxa-de-conversao-ecommerce.html</id>
+    <published>2026-11-06T12:00:00.000Z</published>
+    <updated>2026-11-06T12:00:00.000Z</updated>
+    <summary>A taxa de conversão do e-commerce é o percentual de visitas que vira pedido, mas a média do site esconde onde a venda se perde. Para identificar gargalos, abra a taxa por etapa do funil, por dispositivo, canal e tipo de cliente, investigue a causa com dados de comportamento e pesquisa com clientes, priorize pelo impacto em reais e meça o resultado em receita por visitante e margem.</summary>
+  </entry>
+  <entry>
+    <title>Página de produto que vende: o que ela precisa ter para o cliente, o Google e a IA</title>
+    <link href="https://ganica.com.br/estrutura-pagina-de-produto-ecommerce.html"/>
+    <id>https://ganica.com.br/estrutura-pagina-de-produto-ecommerce.html</id>
+    <published>2026-11-06T12:00:00.000Z</published>
+    <updated>2026-11-06T12:00:00.000Z</updated>
+    <summary>Uma página de produto que vende responde, na primeira tela do celular, se o produto serve, quanto custa no total e quando chega. Depois, prova com medidas, avaliações e perguntas respondidas. Para o Google, tudo isso precisa estar em texto e em dados estruturados Product. Para a IA, os mesmos fatos precisam ser claros, verificáveis e iguais na tela e no código.</summary>
+  </entry>
+  <entry>
+    <title>Como aumentar as vendas online? Descubra primeiro onde a sua loja perde venda</title>
+    <link href="https://ganica.com.br/como-aumentar-vendas-online.html"/>
+    <id>https://ganica.com.br/como-aumentar-vendas-online.html</id>
+    <published>2026-11-04T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>Para aumentar as vendas online, descubra primeiro qual destes quatro números está fraco na sua loja: visitas, taxa de conversão, ticket médio ou recompra. A venda é a multiplicação deles. Melhore o mais fraco antes de comprar mais anúncios: anúncio leva gente a uma loja que talvez não esteja pronta para vender. Os números estão no Google Analytics e na sua plataforma.</summary>
+  </entry>
+  <entry>
+    <title>Como vender mais no Natal e no Ano Novo? O guia de 2026 para e-commerce e marketplace</title>
+    <link href="https://ganica.com.br/como-vender-mais-natal-ano-novo-ecommerce.html"/>
+    <id>https://ganica.com.br/como-vender-mais-natal-ano-novo-ecommerce.html</id>
+    <published>2026-11-04T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>Para vender mais no Natal e no Ano Novo, trate dezembro como duas temporadas que começam na Black Friday. Segundo o Google com a Offerwise, metade de quem compra presentes pretendia começar nessa temporada. Capture o contato na Black, organize a home por perfil e prazo de entrega e prepare o pós-Natal, que em 2025 vendeu quase tanto por dia quanto a semana do Natal, segundo a Confi Neotrust.</summary>
+  </entry>
+  <entry>
+    <title>O que o rodapé de um e-commerce precisa ter? É ali que o cliente desconfiado confere a loja</title>
+    <link href="https://ganica.com.br/rodape-ecommerce-confianca-saude.html"/>
+    <id>https://ganica.com.br/rodape-ecommerce-confianca-saude.html</id>
+    <published>2026-11-04T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>O rodapé de um e-commerce precisa ter razão social, CNPJ, endereço, canal de atendimento, meios de pagamento e políticas de troca e privacidade. Boa parte disso é exigida pelo Decreto 7.962/2013, e a Nielsen Norman Group indica que usuários vão ao rodapé atrás de contato e suporte. Ele não vende sozinho: serve para o cliente desconfiado confirmar quem está por trás da loja.</summary>
+  </entry>
+  <entry>
+    <title>Quando começa a Black Friday 2026? Para quem vende, antes de 27 de novembro</title>
+    <link href="https://ganica.com.br/quando-comeca-black-friday-brasil-ecommerce.html"/>
+    <id>https://ganica.com.br/quando-comeca-black-friday-brasil-ecommerce.html</id>
+    <published>2026-11-04T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>A Black Friday 2026 acontece em 27 de novembro, e essa sexta-feira segue sendo o pico. Para a loja, o preparo vem antes: na pesquisa LWSA e Opinion Box, 50% de quem pretende comprar inicia a busca por ofertas mais de um mês antes, ou seja, antes de 27 de outubro. A loja precisa medir três datas: comparação, decisão e entrega.</summary>
+  </entry>
+  <entry>
+    <title>PostHog, GA4 e BigQuery no e-commerce: o que integrar e como evitar número errado</title>
+    <link href="https://ganica.com.br/integrar-posthog-bigquery-ecommerce.html"/>
+    <id>https://ganica.com.br/integrar-posthog-bigquery-ecommerce.html</id>
+    <published>2026-11-03T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>As integrações úteis num e-commerce são cinco: PostHog para o BigQuery, BigQuery para o PostHog, GA4 para o BigQuery, painéis sobre o BigQuery e assistentes de IA por MCP. As que valem a pena primeiro são as duas exportações para o BigQuery. O que decide se o número presta é deduplicar eventos, tratar dados atrasados e usar o ID do pedido como chave comum.</summary>
+  </entry>
+  <entry>
+    <title>Por que o celular converte menos? Em muitas lojas, a quebra está em uma etapa só</title>
+    <link href="https://ganica.com.br/conversao-checkout-mobile-funil-por-dispositivo.html"/>
+    <id>https://ganica.com.br/conversao-checkout-mobile-funil-por-dispositivo.html</id>
+    <published>2026-11-02T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>Nos funis que a Ganica analisa, o celular costuma converter menos por perder em um ponto do funil, não no site inteiro: acompanha o computador até o carrinho e quebra entre o início do checkout e o pedido. As hipóteses a testar primeiro são falha de medição e mecânica de pagamento. Por isso, abra o funil por etapa e dispositivo antes de redesenhar páginas.</summary>
+  </entry>
+  <entry>
+    <title>Persona não é um avatar com nome e foto: é o mapa de quem trava em cada etapa do seu funil</title>
+    <link href="https://ganica.com.br/persona-ecommerce-cro-comportamental.html"/>
+    <id>https://ganica.com.br/persona-ecommerce-cro-comportamental.html</id>
+    <published>2026-10-30T12:00:00.000Z</published>
+    <updated>2026-11-04T12:00:00.000Z</updated>
+    <summary>Uma persona útil para CRO não é uma ficha com nome, idade e foto. É a descrição de um grupo de visitantes pelo comportamento no funil, que responde quem chega, o que precisa sentir para comprar e em que etapa desiste. Ela nasce do GA4, se valida com pesquisa e atendimento, e vira uma linha priorizada no backlog.</summary>
+  </entry>
+  <entry>
+    <title>Colocar um Botão de Comprar Direto na Página de Listagem, ou Só na Página do Produto?</title>
+    <link href="https://ganica.com.br/botao-comprar-listagem-produtos-heatmap.html"/>
+    <id>https://ganica.com.br/botao-comprar-listagem-produtos-heatmap.html</id>
+    <published>2026-09-10T12:00:00.000Z</published>
+    <updated>2026-11-02T12:00:00.000Z</updated>
+    <summary>Para a maioria das lojas, o botão de comprar direto na listagem não é a prioridade: em heatmaps reais de dois e-commerces, o clique se concentrou em busca, imagens e escolha de variante, e 6 de 7 grandes marketplaces brasileiros não usam esse botão. A pergunta certa é o que o visitante ainda precisa decidir antes de comprar.</summary>
+  </entry>
+  <entry>
+    <title>Por Que o Faturamento do E-commerce Brasileiro Cresce Mais Rápido que o Número de Compradores</title>
+    <link href="https://ganica.com.br/crescimento-ecommerce-brasil-receita-por-cliente.html"/>
+    <id>https://ganica.com.br/crescimento-ecommerce-brasil-receita-por-cliente.html</id>
+    <published>2026-09-07T12:00:00.000Z</published>
+    <updated>2026-11-02T12:00:00.000Z</updated>
+    <summary>O crescimento do e-commerce brasileiro vem principalmente de quem já compra: entre 2020 e 2025, o faturamento subiu 86,2% e o número de compradores só 22,4%, segundo a Abiacom. A receita por comprador cresceu 52,2%, mais que o dobro da base, o que favorece investir em conversão e ticket médio antes de comprar mais tráfego.</summary>
+  </entry>
+</feed>

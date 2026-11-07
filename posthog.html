@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'article',
+    content_group: 'estudo',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PostHog: como usar a plataforma para otimizar seu e-commerce</title>
+
+<meta name="description" content="PostHog no e-commerce: o que instrumentar, como investigar o checkout com funis e gravações, como conectar ao Claude ou ChatGPT por MCP e quando usar com o GA4.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Narcipe Viana">
+<link rel="canonical" href="https://ganica.com.br/posthog.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ganica">
+<meta property="og:title" content="PostHog no e-commerce: analytics, gravações de sessão e IA para decidir melhor">
+<meta property="og:description" content="PostHog no e-commerce: o que instrumentar, como investigar o checkout com funis e gravações, como conectar ao Claude ou ChatGPT por MCP e quando usar com o GA4.">
+<meta property="og:url" content="https://ganica.com.br/posthog.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-11-07T00:05:00-03:00">
+<meta property="article:modified_time" content="2026-11-07T00:05:00-03:00">
+<meta property="article:author" content="Narcipe Viana">
+<meta property="article:section" content="E-commerce">
+<meta property="article:tag" content="PostHog">
+<meta property="article:tag" content="analytics">
+<meta property="article:tag" content="gravação de sessão">
+<meta property="article:tag" content="MCP">
+<meta property="article:tag" content="IA">
+<meta property="article:tag" content="e-commerce">
+<meta property="og:image" content="https://ganica.com.br/assets/og/posthog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PostHog: como usar a plataforma para otimizar seu e-commerce">
+<meta name="twitter:description" content="Do funil à gravação de sessão e à pergunta em linguagem natural para a IA: o guia prático do PostHog para quem opera um e-commerce.">
+<meta name="twitter:image" content="https://ganica.com.br/assets/og/posthog.png">
+<meta name="theme-color" content="#F5F9F9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/lexend-deca-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+
+
+<!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
+     deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ganica.com.br/#organization",
+      "name": "Ganica",
+      "url": "https://ganica.com.br/",
+      "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
+      "email": "contato@ganica.com.br",
+      "logo": { "@type": "ImageObject", "url": "https://ganica.com.br/logo-ganica.png", "width": 512, "height": 512 },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "https://ganica.com.br/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ganica.com.br/#narcipe-viana",
+      "name": "Narcipe Viana",
+      "jobTitle": "Consultor de CRO",
+      "url": "https://ganica.com.br/#sobre",
+      "image": "https://ganica.com.br/assets/img/narcipe-viana.jpg",
+      "worksFor": { "@id": "https://ganica.com.br/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ganica.com.br/#website",
+      "url": "https://ganica.com.br/",
+      "name": "Ganica",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://ganica.com.br/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ganica.com.br/posthog.html#article",
+      "headline": "PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão",
+      "description": "PostHog no e-commerce: o que instrumentar, como investigar o checkout com funis e gravações, como conectar ao Claude ou ChatGPT por MCP e quando usar com o GA4.",
+      "datePublished": "2026-11-07T00:05:00-03:00",
+      "dateModified": "2026-11-07T00:05:00-03:00",
+      "abstract": "O PostHog é uma plataforma de analytics que reúne eventos, funis, gravações de sessão, mapas de calor, testes A/B e consultas SQL sobre os mesmos dados. No e-commerce, ele serve para sair do número de conversão e chegar à sessão que explica a perda. Pelo servidor MCP oficial, os dados podem ser consultados em linguagem natural no Claude, no ChatGPT e em outros clientes compatíveis, com permissões controladas.",
+      "image": [{ "@type": "ImageObject", "url": "https://ganica.com.br/assets/og/posthog.png", "width": 1200, "height": 630 }],
+      "wordCount": 4313,
+      "timeRequired": "PT22M",
+      "isAccessibleForFree": true,
+      "citation": ["https://posthog.com/docs/model-context-protocol", "https://posthog.com/docs/model-context-protocol/faq", "https://posthog.com/docs/product-analytics/autocapture", "https://posthog.com/pocket-guides/session-replay/configure-replays", "https://posthog.com/docs/session-replay/privacy", "https://posthog.com/tutorials/explore-insights-session-recordings", "https://posthog.com/docs/data-warehouse/sql", "https://posthog.com/docs/data/events", "https://posthog.com/docs/product-analytics/identify", "https://posthog.com/docs/privacy/data-storage", "https://posthog.com/pricing", "https://help.openai.com/pt-br/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt", "https://www.migalhas.com.br/depeso/415220/anpd-aprova-o-regulamento-de-transferencia-internacional-de-dados", "https://support.google.com/analytics/answer/7667196?hl=en"],
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://ganica.com.br/#narcipe-viana" },
+      "publisher": { "@id": "https://ganica.com.br/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ganica.com.br/posthog.html" },
+      "articleSection": "E-commerce",
+      "keywords": ["PostHog","PostHog e-commerce","PostHog MCP","PostHog vs GA4","PostHog session replay","conectar PostHog ao Claude"],
+      "about": [{ "@type": "Thing", "name": "PostHog" }, { "@type": "Thing", "name": "Analytics de comportamento" }, { "@type": "Thing", "name": "Model Context Protocol (MCP)" }, { "@type": "Thing", "name": "Otimização de conversão (CRO)" }],
+      "isPartOf": { "@id": "https://ganica.com.br/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ganica.com.br/posthog.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ganica.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "https://ganica.com.br/estudos/" },
+        { "@type": "ListItem", "position": 3, "name": "PostHog no e-commerce" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Base compartilhada por todas as páginas: marca, tipografia, botões, cabeçalho e rodapé.
+   Cores derivadas da logo. Mobile primeiro. */
+@font-face{
+  font-family:'Lexend Deca';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2-variations'),
+      url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2');
+}
+/* Fallback com métricas próximas: reduz o salto de layout (CLS) quando a fonte carrega */
+@font-face{
+  font-family:'Lexend Fallback';
+  src:local('Arial');
+  size-adjust:112%;
+  ascent-override:89%;
+  descent-override:22%;
+  line-gap-override:0%;
+}
+
+:root{
+  --ink:#0B3842;
+  --ink-hover:#0F4A57;
+  --paper:#F5F9F9;
+  --panel:#E6F1F3;
+  --white:#FFFFFF;
+  --amber:#FAB32B;
+  --amber-hover:#F0A312;
+  --teal:#107088;
+  --teal-bright:#1A8BA3;
+  --body:#2C4A53;
+  --muted:#466069;
+  --line:#C9DEE2;
+  --line-soft:#DCE9EC;
+  --line-strong:#6F8A92;
+  --font:'Lexend Deca','Lexend Fallback',Arial,sans-serif;
+  --max:1440px;
+  --gutter:clamp(20px,5vw,72px);
+  --sombra-card:0 1px 2px rgba(11,56,66,.05),0 14px 32px -22px rgba(11,56,66,.22);
+  --sombra-folha:0 1px 2px rgba(11,56,66,.05),0 28px 64px -28px rgba(11,56,66,.24);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ font-weight:400; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+ul,ol{ list-style:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+[hidden]{ display:none !important; }
+.nw{ white-space:nowrap; }
+.wrap{ max-width:var(--max); margin:0 auto; padding-inline:var(--gutter); }
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--teal-bright);
+  outline-offset:3px;
+}
+.pular{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  padding:10px 16px; background:var(--ink); color:var(--white); border-radius:10px;
+}
+.pular:focus{ top:12px; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Títulos de seção ---------- */
+.rotulo{
+  font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:58px; padding:0 22px;
+  border:1px solid transparent; border-radius:12px;
+  font-weight:600; font-size:1rem; line-height:1.2; text-decoration:none; text-align:center;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+.btn-ambar{ background:var(--amber); color:var(--ink); }
+.btn-ambar:hover{ background:var(--amber-hover); }
+.btn-leve{ background:var(--white); color:var(--ink); font-weight:500; }
+.btn-leve:hover{ background:var(--line-soft); }
+.btn-contorno{ background:transparent; border-color:var(--ink); color:var(--ink); border-radius:10px; font-weight:500; }
+.btn-contorno:hover{ background:var(--panel); }
+.btn-bloco{ display:flex; width:100%; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,249,249,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);
+  min-height:64px;
+}
+.marca{ display:flex; align-items:center; min-height:44px; flex-shrink:0; position:relative; z-index:60; }
+.marca img{ height:32px; width:auto; }
+.nav-links{ display:none; }
+.nav-cta{ display:none; }
+.menu-toggle{
+  position:relative; z-index:60;
+  width:44px; height:44px; margin-right:-10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; flex-shrink:0;
+}
+.menu-icon,.menu-icon::before,.menu-icon::after{
+  display:block; width:22px; height:1.5px; background:var(--ink);
+  transition:transform .2s ease,background .15s ease;
+}
+.menu-icon{ position:relative; }
+.menu-icon::before,.menu-icon::after{ content:""; position:absolute; left:0; }
+.menu-icon::before{ top:-7px; }
+.menu-icon::after{ top:7px; }
+.menu-toggle.open .menu-icon{ background:transparent; }
+.menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+.menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:40;
+  display:flex; flex-direction:column; justify-content:center; gap:40px;
+  padding:88px 24px 48px;
+  background:var(--paper);
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+}
+.mobile-menu.open{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .25s ease,transform .25s ease,visibility 0s;
+}
+.mobile-menu-links{ display:flex; flex-direction:column; }
+.mobile-menu-links a{
+  display:flex; align-items:center; min-height:56px;
+  font-size:1.6rem; text-decoration:none; border-bottom:1px solid var(--line-soft);
+}
+body.menu-open{ overflow:hidden; }
+
+@media (min-width:900px){
+  .nav{ min-height:80px; }
+  .marca img{ height:36px; }
+  .nav-links{ display:flex; gap:32px; font-size:1rem; }
+  .nav-links a{ display:flex; align-items:center; min-height:44px; text-decoration:none; color:var(--body); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{ display:inline-flex; min-height:46px; padding:0 18px; }
+  .menu-toggle,.mobile-menu{ display:none; }
+}
+
+/* ---------- Trama da logo (detalhe de fundo, nunca atrás de texto em peso visual) ---------- */
+.com-trama{ position:relative; overflow:hidden; }
+.com-trama::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:url('/assets/img/trama.svg') center/1200px 900px;
+  opacity:.2;
+  -webkit-mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+  mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+}
+.com-trama > *{ position:relative; }
+@media (min-width:900px){
+  .com-trama::before{
+    left:34%; opacity:.26;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 62%);
+    mask-image:linear-gradient(to right,transparent,#000 62%);
+  }
+}
+
+/* ---------- Etiqueta "Novo" ---------- */
+.tag-novo{
+  display:inline-flex; align-items:center;
+  padding:4px 10px; border-radius:999px;
+  background:var(--amber); color:var(--ink);
+  font-size:.8125rem; font-weight:600; line-height:1.4;
+}
+
+/* ---------- Sobre (card usado nos estudos) ---------- */
+.foto-autor{ display:block; width:100%; height:auto; }
+
+/* ---------- Rodapé ---------- */
+.site-footer{ border-top:1px solid var(--line); }
+.site-footer .wrap{ padding-block:36px; display:flex; flex-direction:column; gap:20px; }
+.site-footer img{ height:32px; width:auto; align-self:flex-start; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:0 24px; font-size:.9375rem; }
+.footer-links a{ display:inline-flex; align-items:center; min-height:44px; color:var(--body); text-decoration:none; }
+.footer-links a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.site-footer p{ font-size:.875rem; color:var(--muted); }
+@media (min-width:900px){
+  .site-footer .wrap{ flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+  .site-footer img{ align-self:center; }
+  .site-footer p{ flex-basis:100%; }
+}
+
+/* Escala do desktop: conteúdo mais contido em telas grandes (o mobile não é afetado) */
+@media (min-width:900px){
+  :root{ --max:1240px; --gutter:clamp(32px,4vw,56px); }
+  .nav{ min-height:72px; }
+  .marca img{ height:32px; }
+  .nav-links{ gap:28px; font-size:.9375rem; }
+  .nav-cta{ min-height:42px; padding:0 16px; font-size:.9375rem; }
+  .btn{ min-height:52px; font-size:.9375rem; }
+}
+
+/* ---------- Article hero ---------- */
+  .article-hero{ background:var(--paper); color:var(--ink); padding:48px 0 56px; border-bottom:1px solid var(--line); }
+  .article-hero h1{ font-weight:500; letter-spacing:-.015em; line-height:1.15; }
+  .biblioteca-selo{ display:flex; align-items:center; gap:8px; margin-bottom:14px; font-size:.9375rem; font-weight:500; color:var(--teal); }
+  @media (max-width:640px){
+    .article-hero{ padding-top:32px; padding-bottom:40px; }
+  }
+  .article-hero .tag-novo{ margin-bottom:18px; }
+  .breadcrumb{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .breadcrumb a{ color:var(--muted); }
+  .breadcrumb a:hover{ color:var(--ink); }
+  .breadcrumb .sep{ margin:0 8px; opacity:0.5; }
+  .article-hero h1{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    max-width:30ch;
+  }
+  @media (min-width:900px){
+    .article-hero h1{ max-width:26ch; }
+  }
+  .article-deck{
+    margin-top:20px;
+    font-size:1.08rem;
+    color:var(--body);
+    max-width:62ch;
+    line-height:1.7;
+  }
+  .article-meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    align-items:center;
+    font-size:0.88rem;
+    color:var(--muted);
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .article-meta strong{ color:var(--ink); font-weight:600; }
+  .article-meta .dot{ opacity:0.5; }
+  @media (max-width:640px){ .article-meta{ flex-direction:column; align-items:flex-start; } .article-meta .dot{ display:none; } }
+
+  /* ---------- Article body / prose ---------- */
+  .article-body{ padding-block:56px; }
+  .autor{ }
+  .prose{ max-width:760px; margin:0 auto; padding:0 20px; }
+  .prose h2{
+    font-weight:500; line-height:1.2; letter-spacing:-.01em;
+    font-size:clamp(1.4rem,2.6vw,1.75rem);
+    margin-top:52px;
+    margin-bottom:18px;
+  }
+  .prose > .prose-lead h2:first-of-type,
+  .prose h2:first-child{ margin-top:0; }
+  .prose p{
+    color:var(--body);
+    font-size:1.03rem;
+    margin-bottom:20px;
+    line-height:1.75;
+  }
+  .prose strong{ color:var(--ink); }
+  .prose a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .prose a:hover{ color:var(--ink); }
+
+  /* Resumo rápido */
+  .resumo-box{
+    background:var(--panel);
+    color:var(--ink);
+    border-radius:16px;
+    padding:32px 30px;
+    margin-bottom:48px;
+  }
+  .resumo-box .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .resumo-list{
+    list-style:none;
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .resumo-list li{
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:0.98rem;
+    color:var(--body);
+    line-height:1.65;
+  }
+  .resumo-list li:first-child{ border-top:none; padding-top:0; }
+  .prose .resumo-list strong{ color:var(--ink); }
+  @media (max-width:640px){
+    .resumo-box{ padding:26px 22px; }
+  }
+
+  /* Pull quote */
+  .pull-quote{
+    font-family:var(--font);
+    font-weight:400;
+    font-size:clamp(1.15rem,2vw,1.35rem);
+    line-height:1.5;
+    color:var(--ink);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:28px 0;
+    margin:8px 0 36px;
+  }
+
+  /* Data table */
+  .data-table-wrap{
+    overflow-x:auto;
+    margin:8px 0 32px;
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .data-table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:520px; }
+  .data-table thead th{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--font);
+    font-weight:600;
+    text-align:left;
+    padding:14px 16px;
+    font-size:0.85rem;
+    letter-spacing:0.01em;
+  }
+  .data-table tbody td{
+    padding:13px 16px;
+    border-top:1px solid var(--line);
+    color:var(--body);
+  }
+  .data-table tbody tr:nth-child(even){ background:var(--paper); }
+  .data-table tbody td:first-child{ font-weight:600; color:var(--ink); }
+  .data-table tbody tr.highlight td{ color:var(--teal); font-weight:600; }
+  .table-caption{
+    font-size:0.85rem;
+    color:var(--body);
+    margin:-16px 0 28px;
+    font-style:italic;
+  }
+
+  /* FAQ */
+  .faq-list{ margin-top:8px; }
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:20px 0;
+  }
+  .faq-item:last-child{ border-bottom:1px solid var(--line); margin-bottom:32px; }
+  .faq-item summary{
+    cursor:pointer;
+    font-family:var(--font);
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--ink);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.3rem;
+    color:var(--teal);
+    flex-shrink:0;
+    font-family:var(--font);
+  }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{
+    margin-top:14px;
+    margin-bottom:0;
+    color:var(--body);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+
+  .article-sources{
+    margin-top:8px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--body);
+    font-style:italic;
+  }
+
+  .figura{ margin:36px 0; }
+  .figura img{
+    display:block; width:100%; max-width:520px; margin:0 auto; height:auto; border-radius:14px;
+    border:1px solid var(--line-soft); box-shadow:var(--sombra-card); background:var(--white);
+  }
+  .figura-link{ display:block; }
+  .figura figcaption{ max-width:520px; margin:12px auto 0; font-size:0.82rem; line-height:1.5; color:var(--muted); }
+  @media (max-width:640px){ .prose .figura{ margin:28px -8px; } .figura img{ border-radius:10px; } }
+
+  .article-links{ margin-top:20px; }
+  .prose .article-links-titulo,.article-links-titulo{
+    font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 10px; line-height:1.4;
+  }
+  .article-links ol{ list-style:none; margin:0; padding:0; counter-reset:fonte; }
+  .article-links li{
+    counter-increment:fonte; position:relative;
+    padding:10px 0 10px 32px; border-top:1px solid var(--line-soft);
+    font-size:0.9rem; line-height:1.45;
+  }
+  .article-links li::before{
+    content:counter(fonte,decimal-leading-zero); position:absolute; left:0; top:11px;
+    font-size:0.75rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  .article-links a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+  .article-links a:hover{ color:var(--ink); }
+  .article-links-dominio{ display:block; font-size:0.75rem; color:var(--muted); margin-top:2px; }
+
+  /* ---------- Sobre (autor) ---------- */
+  .autor{ padding-block:0 56px; }
+  .sobre-card{
+    display:grid; grid-template-columns:1fr; overflow:hidden;
+    background:var(--white); border-radius:18px; box-shadow:var(--sombra-card);
+  }
+  @media (min-width:820px){ .sobre-card{ grid-template-columns:300px 1fr; } }
+  .sobre-photo{ width:100%; height:auto; display:block; }
+  .sobre-caption{ padding:16px 18px; }
+  .sobre-name{ font-size:1.05rem; font-weight:500; color:var(--ink); }
+  .sobre-role{ margin-top:2px; font-size:.85rem; color:var(--muted); }
+  .sobre-text-col{ padding:36px 32px; }
+  .sobre-text-col h2{ margin-bottom:20px; font-size:clamp(1.5rem,3vw,2rem); line-height:1.15; }
+  .sobre-text-col p{ color:var(--body); max-width:60ch; margin-bottom:16px; font-size:1.02rem; }
+  .sobre-text-col p a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .sobre-text-col p a:hover{ color:var(--ink); }
+  @media (max-width:640px){
+    .sobre-text-col{ padding:26px 22px; }
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{ background:var(--panel); color:var(--ink); padding-block:64px; }
+  .cta-final h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); line-height:1.12; letter-spacing:-.015em; max-width:20ch; }
+  .cta-final p{ color:var(--body); margin-top:16px; max-width:52ch; font-size:1.02rem; }
+  .cta-final .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  @media (max-width:479px){
+    .cta-final .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .cta-final .hero-ctas .btn{ width:100%; text-align:center; }
+  }
+
+  /* Resposta direta: o parágrafo que responde a pergunta do título (citável por IA) */
+  .resposta-curta{
+    background:var(--white);
+    border-radius:16px;
+    box-shadow:var(--sombra-card);
+    padding:22px 24px 22px 22px;
+    margin-bottom:28px;
+  }
+  .resposta-curta .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .resposta-curta p{
+    font-size:1.12rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (min-width:760px){
+    .resposta-curta{ padding:26px 30px 26px 28px; }
+    .resposta-curta p{ font-size:1.16rem; }
+  }
+
+  /* Listas no corpo do estudo (mobile primeiro): número dentro da coluna de texto,
+     espaço entre itens e antes do parágrafo seguinte */
+  .prose > ul, .prose > ol{
+    color:var(--body);
+    font-size:1.04rem;
+    line-height:1.7;
+    margin:0 0 26px;
+    padding-left:1.45em;
+  }
+  .prose > ul{ list-style:disc; }
+  .prose > ol{ list-style:decimal; }
+  .prose > ol > li, .prose > ul > li{ margin-bottom:12px; padding-left:4px; }
+  .prose > ol > li::marker{ color:var(--teal); font-weight:600; }
+  .prose > ul > li::marker{ color:var(--teal); }
+  .prose li strong{ color:var(--ink); }
+
+  /* Tabelas de 2 colunas cabem na tela do celular sem rolagem lateral */
+  .data-table:not(:has(th:nth-child(3))){ min-width:0; }
+  @media (max-width:479px){
+    .data-table:not(:has(th:nth-child(3))) thead th,
+    .data-table:not(:has(th:nth-child(3))) tbody td{ padding:12px 12px; }
+  }
+
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="marca" href="/" aria-label="Ganica, página inicial">
+      <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-contorno nav-cta js-cta" data-cta-location="artigo_nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links" aria-label="Menu do celular">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-ambar btn-bloco js-cta" data-cta-location="artigo_nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+
+<main id="conteudo">
+<article>
+<section class="article-hero com-trama">
+  <div class="wrap"><span class="tag-novo">Novo</span>
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb">
+      <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>PostHog no e-commerce
+    </p></nav>
+    <h1>PostHog no <span class="nw">e-commerce</span>: como transformar dados de comportamento em decisões de conversão</h1>
+    <p class="article-deck">O GA4 mostra quanto a loja vende; investigar por que um cliente desiste ainda exige juntar relatórios, eventos e outras ferramentas. Este guia mostra como o PostHog encurta esse caminho num e-commerce: o que instrumentar, como investigar checkout e páginas de produto, como conectar os dados ao Claude ou ao ChatGPT e quando ele faz sentido ao lado do GA4.</p>
+    <div class="article-meta">
+      <span>Por <strong>Narcipe Viana</strong></span>
+      <span class="dot">·</span>
+      <span>Atualizado em <time datetime="2026-11-07">7 de novembro de 2026</time></span>
+      <span class="dot">·</span>
+      <span>22 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="prose">
+    <div class="resposta-curta">
+      <div class="kicker">Resposta direta</div>
+      <p>O PostHog é uma plataforma de analytics que reúne eventos, funis, gravações de sessão, mapas de calor, testes A/B e consultas SQL sobre os mesmos dados. No e-commerce, ele serve para sair do número de conversão e chegar à sessão que explica a perda. Pelo servidor MCP oficial, os dados podem ser consultados em linguagem natural no Claude, no ChatGPT e em outros clientes compatíveis, com permissões controladas.</p>
+    </div>
+    <div class="resumo-box">
+      <div class="kicker">Resumo rápido</div>
+      <ul class="resumo-list">
+        <li>O PostHog junta, sobre os mesmos eventos e pessoas, web analytics, funis, <strong>gravações de sessão</strong>, mapas de calor, testes, feature flags e <strong>SQL</strong>. É isso que permite ir do funil direto às sessões de quem abandonou uma etapa.</li>
+        <li>A qualidade da análise depende da instrumentação: autocapture ajuda a começar, mas os eventos de negócio (carrinho, checkout, compra) precisam ser enviados de forma explícita e conferidos contra os pedidos reais.</li>
+        <li>O servidor MCP oficial é <strong>gratuito</strong>, fica em mcp.posthog.com, funciona com Claude, Cursor, Codex, VS Code e outros clientes, e pode ser restrito a <strong>somente leitura</strong>, a um projeto e a ferramentas específicas.</li>
+        <li>No ChatGPT, servidores MCP personalizados funcionam nos planos Business, Enterprise e Edu; no Pro, só com leitura e busca, no modo desenvolvedor, segundo a OpenAI.</li>
+        <li>Segundo a página de preços do PostHog, consultada em 6/11/2026, o plano gratuito inclui <strong>1 milhão</strong> de eventos e <strong>5 mil</strong> gravações por mês, sem cartão. Uma loja com 200 mil sessões mensais pagaria <strong>cerca de US$ 129</strong> por mês no plano por uso, pela conta da Ganica.</li>
+      </ul>
+    </div>
+
+<h2>Por que gestores de e-commerce procuram complementos ao GA4?</h2>
+<p>Gestores de e-commerce procuram complementos ao GA4 porque, quando a conversão cai, descobrir o porquê costuma exigir juntar relatórios, explorações, eventos e outras ferramentas, e cada passo leva tempo. É nesse ponto que o PostHog entra como complemento. O GA4 (Google Analytics 4, a ferramenta de analytics do Google) é bom para medir tráfego, campanhas e vendas no ecossistema do Google. A dificuldade aparece na investigação: sair de um número agregado, como &quot;a conversão do checkout caiu&quot;, e chegar à sequência de ações das pessoas que desistiram.</p>
+<p>Essa dificuldade tem quatro faces que aparecem com frequência no dia a dia de uma loja. A primeira é o salto do agregado para o comportamento: o GA4 mostra a queda, mas não mostra a tela que o cliente viu, porque gravação de sessão não é um recurso nativo dele. A segunda é a pergunta nova, aquela que nenhum relatório pronto responde e que exige montar uma exploração do zero. A terceira é o contexto comercial: comportamento só vira decisão quando se cruza com pedido, margem, estoque e atendimento. A quarta é a retenção: na versão padrão do GA4, as explorações só alcançam 2 ou 14 meses de dados, conforme a <a href="https://support.google.com/analytics/answer/7667196?hl=en">configuração de retenção</a>.</p>
+<p>Vale separar duas coisas antes de culpar a ferramenta. Muitas vezes o problema não é o GA4, e sim a implementação. É um padrão que encontramos com frequência em diagnósticos: o GA4 contando eventos em dobro por tags sobrepostas. Num projeto de e-commerce em que atuamos, o GA4 apresentava falhas de rastreamento, e a busca era justamente por uma fonte complementar mais confiável, o que levou a <a href="/integrar-posthog-bigquery-ecommerce.html">integrar o PostHog ao BigQuery</a>. O PostHog não corrige uma medição ruim por mágica; ele oferece outro fluxo de trabalho, que fica mais forte quando eventos e gravações são explorados juntos.</p>
+<h2>O que é o PostHog e como ele funciona na prática?</h2>
+<p>O PostHog é uma plataforma de analytics em que vários produtos (web analytics, analytics de produto, gravação de sessão, mapas de calor, testes A/B, feature flags, pesquisas, rastreamento de erros e um editor SQL) trabalham sobre os mesmos eventos e as mesmas pessoas. Feature flag é uma chave que libera uma mudança só para parte do público, e SQL é a linguagem usada para consultar bancos de dados; no PostHog, o dialeto de SQL se chama HogQL. Essa é a diferença que importa para um e-commerce: não são ferramentas coladas, e sim visões diferentes do mesmo dado. Quem abandonou uma etapa do funil pode ser aberto como lista de pessoas e, dali, como sessões gravadas, como mostra o <a href="https://posthog.com/tutorials/explore-insights-session-recordings">tutorial oficial de gravações a partir de insights</a>.</p>
+<h3>Como eventos, pessoas e propriedades formam a base das análises</h3>
+<p>Todo dado no PostHog começa como um evento: o registro de uma ação, com nome, momento (timestamp), um identificador da pessoa (<code>distinct_id</code>) e propriedades, que são os detalhes da ação, como o produto, o preço ou a página, segundo a <a href="https://posthog.com/docs/data/events">documentação de eventos</a>. Propriedades da pessoa descrevem quem fez a ação, como o tipo de cliente ou a cidade. Os funis, tendências e filtros nada mais são do que perguntas sobre esses eventos e propriedades.</p>
+<p>Por isso, a qualidade da análise é decidida antes dela. Se o evento de carrinho se chama <code>add_to_cart</code> numa página e <code>adicionar_carrinho</code> em outra, ou se o preço às vezes vem com centavos e às vezes sem, nenhum funil vai fechar. Convenção de nomes e propriedades consistentes são a base de tudo que vem depois.</p>
+<p>Há dois jeitos de capturar eventos. O autocapture, ligado por padrão no SDK de navegador (o código do PostHog instalado no site), registra visualizações e saídas de página, cliques em links, botões e campos e envios de formulário, mas não captura os valores dos formulários enviados, segundo a <a href="https://posthog.com/docs/product-analytics/autocapture">documentação de autocapture</a>. Ele ajuda a começar, mas não substitui os eventos de negócio, como compra e início de checkout, que precisam ser enviados de forma explícita, com as propriedades certas.</p>
+<p>A identidade completa a base. Um visitante começa anônimo e, quando faz login ou compra, pode ser identificado, o que liga a navegação anônima ao cliente, conforme a <a href="https://posthog.com/docs/product-analytics/identify">documentação de identificação</a>. Feito com cuidado, isso permite ver a jornada inteira de uma pessoa; feito errado, cria pessoas duplicadas ou junta clientes diferentes num mesmo perfil.</p>
+<h3>Quais módulos do PostHog são mais úteis para e-commerce?</h3>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Uso prático no e-commerce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web analytics</td>
+<td>Visitas, páginas de entrada, canais e campanhas</td>
+</tr>
+<tr>
+<td>Analytics de produto</td>
+<td>Funis, tendências, retenção e caminhos</td>
+</tr>
+<tr>
+<td>Gravação de sessão</td>
+<td>Ver como clientes usam produto, carrinho e checkout</td>
+</tr>
+<tr>
+<td>Mapas de calor</td>
+<td>Padrões de clique e rolagem nas páginas</td>
+</tr>
+<tr>
+<td>Testes A/B</td>
+<td>Medir o efeito de mudanças, com volume suficiente</td>
+</tr>
+<tr>
+<td>Feature flags</td>
+<td>Liberar mudanças aos poucos para parte do público</td>
+</tr>
+<tr>
+<td>SQL e data warehouse</td>
+<td>Cruzar eventos com pedidos, CRM e outras fontes</td>
+</tr>
+<tr>
+<td>MCP e IA</td>
+<td>Consultar dados em linguagem natural</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Leitura da Ganica a partir da documentação do PostHog.</p>
+<p>Para a maioria das lojas, o núcleo é a combinação de funis, gravações de sessão e SQL. Testes A/B e feature flags ganham peso quando a loja tem equipe de tecnologia própria e tráfego para testar; em plataformas fechadas, com pouco acesso ao código, eles podem ser mais difíceis de usar.</p>
+<h2>Como o PostHog ajuda a resolver problemas reais de um e-commerce?</h2>
+<p>O PostHog ajuda quando a pergunta de negócio é clara e o caminho de análise sai do número e chega ao comportamento. Os cinco casos abaixo seguem a mesma lógica: a pergunta, os dados necessários, o caminho de investigação e a decisão que pode resultar. Os exemplos são ilustrativos e não descrevem uma loja real.</p>
+<h3>Em qual etapa do checkout os compradores desistem?</h3>
+<p>O primeiro passo é montar o funil com as etapas da compra: visualização de produto, adição ao carrinho, início do checkout, dados de entrega, pagamento e compra. Depois, o mesmo funil é aberto por dispositivo, canal, navegador, categoria e tipo de cliente, procurando a etapa com a maior perda proporcional. Quando a perda aparece, por exemplo, entre a escolha do frete e o pagamento no celular, as gravações de quem abandonou ali mostram o que essas pessoas viram: um erro, um campo que não aceita o CEP, um valor de frete que surpreendeu.</p>
+<p>O funil localiza a perda e a gravação sugere mecanismos possíveis, mas nenhum dos dois, sozinho, prova a causa. A decisão que sai daqui é uma hipótese priorizada, que pode ser corrigida direto, se for um erro, ou testada, se houver dúvida. Em muitas lojas, a quebra do celular está <a href="/conversao-checkout-mobile-funil-por-dispositivo.html">concentrada em uma etapa só</a>.</p>
+<h3>Por que uma página de produto recebe tráfego, mas vende pouco?</h3>
+<p>Comparando produtos por visualização, adição ao carrinho e compra, aparecem as páginas que atraem e não convertem. O passo seguinte é segmentar por origem, dispositivo, faixa de preço e disponibilidade, porque uma página pode converter bem para quem veio da busca e mal para quem veio de um anúncio com outra promessa. Mapas de calor e gravações mostram se o cliente encontra a variação, vê o prazo de entrega, chega às avaliações e entende o botão de compra. O que uma página de produto precisa ter está detalhado no <a href="/estrutura-pagina-de-produto-ecommerce.html">estudo sobre estrutura de página de produto</a>.</p>
+<h3>Por que o celular converte menos que o computador?</h3>
+<p>A comparação de funis por dispositivo, navegador e tamanho de tela mostra onde o celular se afasta. As gravações ajudam a encontrar sobreposição de elementos, teclado que cobre o botão, campos difíceis de preencher e páginas que demoram a responder. O cuidado aqui é não concluir rápido demais: o celular também recebe mais tráfego de redes sociais, com outra intenção de compra, e parte da diferença pode ser do público, e não da tela.</p>
+<h3>A campanha traz visitas ou traz compradores?</h3>
+<p>Filtrando por origem, campanha e página de entrada, dá para comparar o volume de sessões com o que acontece depois da chegada: quantas visitas avançam para produto, carrinho e compra. Uma campanha que traz muita gente e pouca progressão pode estar prometendo algo que a página não entrega. Quando os custos de mídia estão no mesmo ambiente, o investimento entra na conta, mas atribuição continua não sendo causalidade.</p>
+<h3>Que erros técnicos estão custando vendas?</h3>
+<p>Com o rastreamento de erros e as gravações ligados aos mesmos eventos, dá para ver se uma falha se concentra num navegador, num modelo de celular, numa página ou numa etapa do checkout. Antes de priorizar a correção, vale estimar o impacto: quantas sessões passam pelo erro e quantas delas desistem depois dele. Um erro raro numa página pouco visitada pode esperar; um erro frequente no pagamento, não.</p>
+<h2>Como estruturar a mensuração do PostHog num e-commerce?</h2>
+<p>Estruturar a mensuração começa por definir a lista de eventos e propriedades antes de instalar qualquer coisa, e termina conferindo os números do PostHog contra os pedidos reais da loja. É a etapa que mais economiza tempo depois, porque evita refazer análises sobre dados inconsistentes.</p>
+<h3>Defina a taxonomia de eventos antes de instalar tudo</h3>
+<p>Taxonomia é a lista de eventos que a loja vai registrar, com nomes, propriedades e regras. A tabela abaixo é um ponto de partida que segue os nomes comuns no mercado; o projeto pode adaptar os nomes, desde que os mantenha consistentes.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Grupo</th>
+<th>Eventos e propriedades a considerar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Navegação</td>
+<td><code>view_item_list</code>, <code>view_item</code>; página, origem, campanha, dispositivo</td>
+</tr>
+<tr>
+<td>Descoberta</td>
+<td><code>search</code>, <code>select_item</code>, <code>filter_applied</code>; termo buscado, categoria, filtro</td>
+</tr>
+<tr>
+<td>Intenção</td>
+<td><code>add_to_cart</code>, <code>remove_from_cart</code>; produto, variação, quantidade, preço</td>
+</tr>
+<tr>
+<td>Checkout</td>
+<td><code>begin_checkout</code>, <code>add_shipping_info</code>, <code>add_payment_info</code>; frete, meio de pagamento, cupom</td>
+</tr>
+<tr>
+<td>Compra</td>
+<td><code>purchase</code>, <code>refund</code>, <code>order_cancelled</code>; ID do pedido, valor, frete, desconto, itens</td>
+</tr>
+<tr>
+<td>Pós-compra</td>
+<td><code>order_status_viewed</code>, <code>support_contacted</code>, <code>review_submitted</code>; pedido, motivo</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Exemplo de taxonomia da Ganica, não uma convenção obrigatória.</p>
+<h3>Garanta consistência entre navegador, servidor e plataforma</h3>
+<p>Alguns eventos fazem sentido no navegador, como cliques e visualizações; outros são mais confiáveis vindos do servidor ou da plataforma, como a compra aprovada. Quando os dois lados enviam o mesmo evento, é preciso uma regra para não contar a compra duas vezes, e o ID do pedido costuma ser a chave para isso. Moeda, valor, desconto, frete, fuso horário e itens precisam chegar no mesmo formato, e é preciso decidir como o visitante anônimo será ligado ao cliente quando ele fizer login.</p>
+<h3>Integre o comportamento ao contexto comercial</h3>
+<p>O evento de compra no navegador não é o faturamento. Pedidos são cancelados, pagamentos são recusados e produtos são devolvidos, e por isso a plataforma da loja ou o sistema financeiro continua sendo a fonte de verdade para receita. O comportamento ganha valor quando é cruzado com pedidos, estoque, margem, mídia e atendimento, seja dentro do PostHog, com fontes conectadas ao seu data warehouse (o banco que junta dados de várias fontes) e consultadas pelo <a href="https://posthog.com/docs/data-warehouse/sql">editor SQL</a>, seja num warehouse externo, como mostra o guia de <a href="/integrar-posthog-bigquery-ecommerce.html">integração entre PostHog, GA4 e BigQuery</a>.</p>
+<h3>Valide se a implementação está confiável</h3>
+<p>A validação tem quatro testes simples que evitam meses de decisões erradas:</p>
+<ol>
+<li><strong>Veja os eventos chegando</strong> em tempo real enquanto navega e compra no site, conferindo nomes e propriedades.</li>
+<li><strong>Compare pedidos e receita</strong> do PostHog com a plataforma da loja, dia a dia, por uma ou duas semanas.</li>
+<li><strong>Procure duplicidade e ausências</strong>, principalmente na compra, e confira moeda, fuso horário e identificação.</li>
+<li><strong>Documente a taxonomia</strong>, com a versão, o responsável e o que conta como dado confiável.</li>
+</ol>
+<h2>PostHog ou GA4: qual faz mais sentido para o seu e-commerce?</h2>
+<p>Para a maioria das lojas, PostHog e GA4 não são escolhas excludentes: o GA4 atende bem à medição de marketing e ao ecossistema do Google, e o PostHog fica com a investigação de comportamento, as gravações e as consultas sob demanda. A decisão deve partir das perguntas que a equipe precisa responder, da arquitetura que já existe, do custo total e da capacidade de manter mais uma ferramenta.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Critério</th>
+<th>Onde cada ferramenta tende a ir melhor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medição de marketing e Google Ads</td>
+<td>GA4, pela integração nativa com o ecossistema Google</td>
+</tr>
+<tr>
+<td>Atribuição de vendas à mídia</td>
+<td>GA4, mais maduro; no PostHog, valide a cobertura antes</td>
+</tr>
+<tr>
+<td>Investigação de comportamento</td>
+<td>PostHog, por ligar funil, pessoa e gravação</td>
+</tr>
+<tr>
+<td>Gravação de sessão</td>
+<td>PostHog, nativa; no GA4, exige ferramenta extra</td>
+</tr>
+<tr>
+<td>Perguntas novas em SQL</td>
+<td>PostHog, com editor SQL sobre os eventos</td>
+</tr>
+<tr>
+<td>Consulta por IA em linguagem natural</td>
+<td>PostHog, com servidor MCP oficial</td>
+</tr>
+<tr>
+<td>Governança e qualidade de dados</td>
+<td>Ambos exigem taxonomia, consentimento e validação</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Leitura da Ganica.</p>
+<h2>Como conectar o PostHog ao Claude ou ao ChatGPT?</h2>
+<p>O PostHog se conecta ao Claude, ao ChatGPT e a outros assistentes pelo seu servidor MCP oficial, que permite à IA consultar os dados e, quando autorizado, criar insights (gráficos e análises salvos no PostHog). MCP (Model Context Protocol) é um padrão aberto que deixa um assistente de IA usar ferramentas externas de forma controlada. Segundo a <a href="https://posthog.com/docs/model-context-protocol">documentação do PostHog</a>, o servidor é hospedado e gratuito, fica em <code>https://mcp.posthog.com/mcp</code> e direciona sozinho para a região de dados da conta, nos Estados Unidos ou na União Europeia.</p>
+<p>A mesma documentação lista como clientes compatíveis o Claude Code, o Claude Desktop, o Cursor, o Codex, o VS Code, o Windsurf e o Zed, além de qualquer cliente que siga o padrão MCP. Conectar e usar as ferramentas é gratuito; algumas ferramentas usam IA internamente e podem ser cobradas como uso do PostHog AI, e só ficam disponíveis quando o processamento de dados por IA está ativado na organização.</p>
+<h3>O que muda quando a IA consulta os dados diretamente?</h3>
+<p>O que muda é a distância entre a pergunta e a primeira análise. Em vez de abrir relatórios, montar um funil e exportar para uma planilha, o gestor pergunta em português, e o assistente escolhe a ferramenta, monta a consulta, executa e explica o resultado. Para o especialista, a mudança é outra: a IA acelera a consulta SQL, a documentação e o resumo, e libera tempo para interpretar e decidir.</p>
+<p>Alguns exemplos de perguntas que funcionam bem numa loja:</p>
+<ol>
+<li>Quais etapas do checkout tiveram a maior queda de conversão nos últimos sete dias, comparando com os sete dias anteriores?</li>
+<li>Compare a taxa de adição ao carrinho entre celular e computador, separada por canal de aquisição.</li>
+<li>Quais páginas de produto tiveram muitas visualizações e pouca adição ao carrinho no último mês?</li>
+<li>Existe algum segmento com queda atípica entre <code>begin_checkout</code> e <code>purchase</code> nesta semana?</li>
+<li>Monte uma consulta SQL com pedidos por dia e por meio de pagamento, explique a lógica e mostre o resultado.</li>
+<li>Crie um insight diário de conversão por dispositivo e salve no dashboard da operação.</li>
+<li>Considerando volume afetado e recorrência, quais hipóteses devemos investigar primeiro?</li>
+</ol>
+<p>Uma resposta confiável da IA traz sempre o período analisado, os filtros, a definição da métrica, o tamanho da amostra, a consulta executada e as limitações. Um exemplo, com dados fictícios, de como deve ser a resposta à primeira pergunta:</p>
+<p class="pull-quote">Entre 1 e 7 de novembro, a maior queda foi entre entrega e pagamento no celular: 61% de avanço, contra 68% na semana anterior, com cerca de 2.400 pessoas na etapa. Filtros: celular, todos os canais. Funil fechado, contado por pessoa. A queda coincide com o início de uma campanha nas redes sociais; vale separar esse canal antes de concluir que o problema está no checkout.</p>
+<p>O mesmo vale para resumos recorrentes. Uma prática que funciona é fixar as métricas, os filtros e o período de comparação num pedido padrão, como &quot;resumo da semana: conversão por etapa e dispositivo, comparada com a semana anterior&quot;, e salvar como insight o que for usado toda semana, para que o número saia sempre da mesma definição.</p>
+<p>Se a IA responder sem período, sem filtro ou com uma causa sem evidência, a regra é pedir a consulta e conferir. Ela ajuda a formular e executar investigações; não descobre sozinha a causa de uma queda.</p>
+<h3>Como funciona a conexão no Claude e em outros clientes MCP</h3>
+<p>A conexão segue três passos. Primeiro, o cliente de IA recebe o endereço do servidor MCP do PostHog. Depois, a pessoa faz login na conta do PostHog; segundo o <a href="https://posthog.com/docs/model-context-protocol/faq">FAQ do MCP</a>, o caminho recomendado é o OAuth (login com a própria conta, sem copiar chave), e a alternativa, para clientes sem OAuth, é uma chave pessoal criada com o modelo &quot;MCP Server&quot;, restrita a um projeto. Por fim, o cliente lista as ferramentas disponíveis, e o assistente passa a usá-las nas conversas.</p>
+<p>O mesmo FAQ descreve como limitar o que a IA pode fazer, o que deve ser configurado desde o primeiro dia:</p>
+<ul>
+<li><strong>Somente leitura:</strong> com a opção read-only, ficam de fora as ferramentas que criam, alteram ou apagam dados.</li>
+<li><strong>Ferramentas por categoria ou por nome:</strong> dá para expor só dashboards e flags, por exemplo, ou só a ferramenta de consulta SQL.</li>
+<li><strong>Projeto fixo:</strong> a conexão pode ficar presa a uma organização e a um projeto, sem trocar de projeto no meio da conversa.</li>
+</ul>
+<p>O servidor funciona como intermediário: segundo o PostHog, ele não armazena os dados de analytics; as consultas rodam no projeto e o resultado volta direto para o cliente.</p>
+<h3>Como conectar o PostHog ao ChatGPT</h3>
+<p>No ChatGPT, servidores MCP personalizados dependem do plano e da configuração do workspace. Segundo a <a href="https://help.openai.com/pt-br/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt">Central de Ajuda da OpenAI</a>, o suporte completo, com ações de escrita, está disponível em beta para Business, Enterprise e Edu, e o Pro pode conectar servidores MCP apenas com leitura e busca, no modo desenvolvedor. Nos planos de empresa, só administradores ativam o recurso e publicam o app no workspace.</p>
+<p>O fluxo descrito pela OpenAI é ativar o modo desenvolvedor, criar o app em Aplicativos informando o endereço do servidor MCP e a autenticação, verificar as ferramentas, testar num chat novo, confirmando as ações de escrita quando o ChatGPT pedir, e então publicar para o workspace. Como planos e permissões mudam com frequência, confira a disponibilidade no seu próprio workspace antes de planejar a implementação.</p>
+<h3>O que essa integração muda em relação a GA4 com Looker Studio?</h3>
+<p>GA4 com Looker Studio também produz relatórios atualizados e análises avançadas, mas o caminho costuma exigir preparar eventos, configurar conectores, modelar dados, montar o painel e mantê-lo. Para cada pergunta nova, alguém precisa construir algo. Com o PostHog conectado por MCP, a pergunta nova pode virar consulta na hora, sem um painel prévio, e o resultado pode ser salvo como insight se valer a pena repetir. A vantagem não é o Looker ser incapaz; é a fricção menor entre perceber um problema e começar a investigá-lo.</p>
+<h3>Segurança, permissões e limites ao conectar analytics à IA</h3>
+<p>Conectar dados de clientes a uma IA exige os mesmos cuidados de qualquer acesso a dados, e alguns a mais:</p>
+<ul>
+<li><strong>Menor privilégio:</strong> comece em somente leitura, num projeto só, com as ferramentas necessárias ao caso de uso.</li>
+<li><strong>Dado pessoal fora do alcance:</strong> não capture e-mail, telefone, endereço ou dados de pagamento sem necessidade. Nas gravações, os campos de formulário são mascarados por padrão, mas o texto da página não, segundo os <a href="https://posthog.com/docs/session-replay/privacy">controles de privacidade</a>; mascare áreas como &quot;minha conta&quot; e confirmação de pedido.</li>
+<li><strong>Região e contrato:</strong> escolha a região de dados, nos Estados Unidos ou na União Europeia, conforme a <a href="https://posthog.com/docs/privacy/data-storage">documentação de armazenamento</a>. Não há região no Brasil, então o envio de dados pessoais é uma transferência internacional, regulada pela <a href="https://www.migalhas.com.br/depeso/415220/anpd-aprova-o-regulamento-de-transferencia-internacional-de-dados">Resolução CD/ANPD nº 19/2024</a>, que trouxe cláusulas-padrão contratuais e deu 12 meses, a partir de agosto de 2024, para incorporá-las aos contratos. Avalie com o jurídico. A versão auto-hospedada do PostHog existe, mas transfere para a loja a operação, a segurança e as atualizações da ferramenta.</li>
+<li><strong>Conteúdo não confiável:</strong> textos de formulários, URLs e buscas são escritos por visitantes e podem conter instruções maliciosas para a IA. O PostHog alerta que modelos podem ser induzidos a seguir comandos não confiáveis e recomenda revisar as chamadas de ferramenta antes de executar.</li>
+<li><strong>Credenciais e registros:</strong> troque periodicamente as chaves pessoais, revogue as que não estão em uso e mantenha o registro de quem acessou o quê.</li>
+<li><strong>Validação humana:</strong> qualquer ação que altere configurações, dashboards ou dados passa por uma pessoa antes.</li>
+</ul>
+<h2>Como interpretar os dados sem cair em conclusões erradas?</h2>
+<p>Interpretar bem os dados do PostHog exige lembrar que eles mostram o que foi capturado, e não necessariamente o que aconteceu. Seis cuidados evitam a maior parte dos erros:</p>
+<ul>
+<li><strong>Correlação não é causa.</strong> Uma característica ligada a mais conversão não prova que a causou.</li>
+<li><strong>Funis precisam de definição fixa.</strong> Pessoa ou sessão, janela de conversão, ordem das etapas e filtros mudam o resultado.</li>
+<li><strong>Gravações são amostras.</strong> Mostram mecanismos possíveis, não o tamanho do problema.</li>
+<li><strong>Navegador não é pedido pago.</strong> Pedidos são recusados, cancelados e devolvidos depois do evento de compra.</li>
+<li><strong>Captura incompleta.</strong> Consentimento, bloqueadores e falhas de rede reduzem eventos de forma desigual entre públicos.</li>
+<li><strong>Rápido não é completo.</strong> Dados que chegam rápido refletem o que foi recebido até ali, e não garantem uma decisão correta.</li>
+</ul>
+<h2>Quanto custa usar o PostHog num e-commerce?</h2>
+<p>O custo do PostHog depende do volume de cada produto usado, e o plano gratuito cobre lojas pequenas e pilotos. Na <a href="https://posthog.com/pricing">página de preços</a>, consultada em 6/11/2026, o plano gratuito incluía por mês 1 milhão de eventos de analytics, 5 mil gravações de sessão, 1 milhão de requisições de feature flags, 1.500 respostas de pesquisa, 100 mil exceções de rastreamento de erros e 1 milhão de linhas no data warehouse, sem cartão de crédito. No plano gratuito, os eventos ficavam guardados por 1 ano e as gravações, por 1 mês. No plano gratuito, o que passa da cota é descartado; para continuar coletando, é preciso o plano por uso, que mantém a mesma cota gratuita e cobra só o excedente.</p>
+<p>A estimativa começa pelo tráfego. Num exemplo hipotético, uma loja com 200 mil sessões por mês e uma média de 8 eventos por sessão gera cerca de 1,6 milhão de eventos, acima da cota gratuita. Se ela gravar todas as sessões que chegam ao checkout (digamos, 10% do total, ou 20 mil) e 5% das demais (9 mil), são cerca de 29 mil gravações por mês, também acima da cota. Pelos preços da página oficial em 6/11/2026, a conta da Ganica fica assim: 600 mil eventos excedentes a US$ 0,00005 somam US$ 30, e 24 mil gravações excedentes somam cerca de US$ 99 (10 mil a US$ 0,005 e 14 mil a US$ 0,0035). São cerca de US$ 129 por mês, sem impostos. No plano gratuito, essa loja perderia o que passasse das cotas.</p>
+<p>O uso de ferramentas de IA do PostHog também entra na conta: o plano gratuito inclui 500 créditos de PostHog AI, equivalentes a US$ 5, segundo a mesma página. Três escolhas controlam a conta. A primeira é não instrumentar tudo: autocapture sem filtro gera volume que ninguém analisa. A segunda é gravar com critério, usando amostragem, duração mínima e gatilhos por página, como o <a href="https://posthog.com/pocket-guides/session-replay/configure-replays">guia de configuração de gravações</a> mostra para o caso de gravar todo o checkout e só 5% do resto. A terceira é decidir quanto histórico precisa ficar no PostHog e quanto pode ir para um warehouse externo, como o BigQuery, por meio das <a href="/integrar-posthog-bigquery-ecommerce.html">exportações em lote</a>.</p>
+<h2>O PostHog é a escolha certa para o seu e-commerce?</h2>
+<p>O PostHog é a escolha certa quando a loja precisa investigar comportamento, e não só medir resultado, e tem alguém para cuidar da instrumentação. A tabela ajuda a enquadrar a operação:</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Cenário da operação</th>
+<th>Direcionamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Só precisa de relatórios de aquisição e campanhas</td>
+<td>O GA4 talvez já atenda; procure uma lacuna concreta antes</td>
+</tr>
+<tr>
+<td>Precisa investigar abandono e checkout</td>
+<td>O PostHog agrega valor com funis e gravações juntos</td>
+</tr>
+<tr>
+<td>Precisa de consultas sob demanda com contexto</td>
+<td>Vale um piloto com perguntas de negócio definidas</td>
+</tr>
+<tr>
+<td>Precisa ligar métricas a pedidos, margem e estoque</td>
+<td>Planeje integração com backend ou warehouse</td>
+</tr>
+<tr>
+<td>Tem exigências fortes de privacidade e localização</td>
+<td>Faça avaliação jurídica, técnica e contratual antes</td>
+</tr>
+<tr>
+<td>Não tem taxonomia nem responsável por analytics</td>
+<td>Comece pelo desenho de mensuração e governança</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Leitura da Ganica.</p>
+<h2>Como começar: um piloto de PostHog orientado a perguntas de negócio</h2>
+<p>O jeito mais seguro de adotar o PostHog é um piloto curto, numa jornada só, com perguntas definidas antes da instalação. Ele mostra o valor real sem comprometer a operação inteira.</p>
+<ol>
+<li><strong>Escolha uma jornada de alto impacto</strong>, como da página de produto até a compra, ou do início do checkout até o pedido pago.</li>
+<li><strong>Defina as perguntas</strong> que o piloto precisa responder e as métricas que vão julgar a resposta.</li>
+<li><strong>Mapeie eventos, propriedades, identidade, consentimento</strong> e qual sistema é a fonte de verdade dos pedidos.</li>
+<li><strong>Implemente o mínimo necessário</strong> e valide os dados contra a plataforma da loja.</li>
+<li><strong>Configure o funil, as segmentações e as gravações</strong> com as regras de privacidade.</li>
+<li><strong>Conecte o MCP a um assistente de IA</strong>, em somente leitura, se isso fizer parte do escopo.</li>
+<li><strong>Faça investigações reais</strong> e registre as consultas, as evidências, as hipóteses e as decisões.</li>
+<li><strong>Avalie o valor gerado</strong>, o esforço de manutenção, o custo e a adoção pela equipe antes de expandir.</li>
+</ol>
+<p>Esse roteiro conversa com o processo de <a href="/taxa-de-conversao-ecommerce.html">diagnóstico da taxa de conversão</a>: o PostHog é a ferramenta que acelera as etapas de investigar e medir. Para desenhar a mensuração e o piloto da sua loja, um <a href="/#diagnostico">diagnóstico com a Ganica</a> parte das perguntas da sua operação.</p>
+<h2>O que ainda não sabemos</h2>
+<p>Preços, cotas, clientes compatíveis e permissões de MCP mudam com frequência, tanto no PostHog quanto no ChatGPT, e as informações deste guia refletem as páginas oficiais consultadas em 6 de novembro de 2026. Recursos em beta, como o MCP completo no ChatGPT, podem mudar de regra.</p>
+<p>Também não há estudo público e independente que meça quanto tempo uma equipe de e-commerce economiza ao consultar dados por IA, nem quanto isso muda a conversão. Os exemplos de perguntas, de resposta e de volume deste guia são ilustrativos. O ganho real depende da qualidade da instrumentação, da identidade dos clientes, da governança e da disciplina de validar cada resposta.</p>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>O PostHog substitui o GA4?</summary>
+        <p>Na maioria dos e-commerces, não por completo. O GA4 continua mais integrado ao Google Ads e ao ecossistema do Google, enquanto o PostHog vai melhor na investigação de comportamento, com funil, pessoa e gravação no mesmo lugar. O uso mais comum é manter os dois, cada um respondendo às perguntas em que é mais forte.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>O PostHog tem gravação de sessão?</summary>
+        <p>Sim. A gravação reconstrói a navegação a partir das mudanças na página, sem gravar vídeo, e fica ligada aos eventos da mesma pessoa. Dá para gravar só uma parte das sessões, todas as sessões do checkout e excluir visitas muito curtas, o que controla custo e volume.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>O PostHog mostra dados em tempo real?</summary>
+        <p>Os eventos aparecem no PostHog pouco depois de enviados, o que permite acompanhar mudanças no mesmo dia. Mas o que aparece é o que a instrumentação conseguiu capturar: bloqueadores, consentimento e falhas de rede reduzem a captura, e o pedido pago continua sendo confirmado na plataforma da loja.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>A IA consegue criar relatórios a partir dos dados do PostHog?</summary>
+        <p>Consegue consultar os dados e, quando as permissões permitem, criar insights e dashboards pelo servidor MCP. O resultado precisa ser conferido: peça sempre o período, os filtros, a definição da métrica e a consulta usada, e trate a explicação da IA como hipótese até ser validada.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>É seguro enviar dados do e-commerce ao PostHog e à IA?</summary>
+        <p>Depende do que é enviado e de como o acesso é controlado. A prática segura é não capturar dados pessoais sem necessidade, mascarar campos sensíveis nas gravações, escolher a região de dados, dar à IA acesso somente leitura a um projeto e revisar cada chamada de ferramenta, porque o próprio PostHog alerta que modelos de IA podem ser induzidos a seguir comandos não confiáveis.</p>
+
+      </details>
+    </div>
+    <p class="article-sources">Fontes e metodologia: Documentação oficial do PostHog, consultada em 6/11/2026: Model Context Protocol (MCP) e MCP FAQ, Autocapture, Session replay (configuração de gravações e controles de privacidade), tutorial de gravações a partir de insights, SQL editor, Events, Identifying users, Data storage e Pricing. Central de Ajuda da OpenAI, Modo desenvolvedor e apps MCP no ChatGPT, consultada em 6/11/2026. Central de Ajuda do Google Analytics, Data retention. Resolução CD/ANPD nº 19/2024, conforme o Migalhas. O cálculo de custo é da Ganica, com os preços por unidade da página oficial em 6/11/2026. Experiência da Ganica em projeto de e-commerce com PostHog e BigQuery (sem identificação da empresa). A taxonomia de eventos, os prompts, a resposta de exemplo e a estimativa de volume são exemplos da Ganica com dados fictícios. Preços, cotas e disponibilidade de recursos mudam com frequência; confira as páginas oficiais antes de decidir.</p>
+    <nav class="article-links" aria-labelledby="links-fontes">
+      <h2 id="links-fontes" class="article-links-titulo">Links das fontes</h2>
+      <ol>
+        <li><a href="https://posthog.com/docs/model-context-protocol" rel="noopener" target="_blank">Model Context Protocol (MCP), documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/model-context-protocol/faq" rel="noopener" target="_blank">MCP FAQ e configuração avançada, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/product-analytics/autocapture" rel="noopener" target="_blank">Autocapture, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/pocket-guides/session-replay/configure-replays" rel="noopener" target="_blank">Configurar gravações de sessão, guia do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/session-replay/privacy" rel="noopener" target="_blank">Controles de privacidade da gravação de sessão, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/tutorials/explore-insights-session-recordings" rel="noopener" target="_blank">Gravações a partir de insights e funis, tutorial do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/data-warehouse/sql" rel="noopener" target="_blank">SQL editor, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/data/events" rel="noopener" target="_blank">Events, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/product-analytics/identify" rel="noopener" target="_blank">Identifying users, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/docs/privacy/data-storage" rel="noopener" target="_blank">Data storage, documentação do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://posthog.com/pricing" rel="noopener" target="_blank">Preços do PostHog</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://help.openai.com/pt-br/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt" rel="noopener" target="_blank">Modo desenvolvedor e apps MCP no ChatGPT (Central de Ajuda da OpenAI)</a><span class="article-links-dominio">help.openai.com</span></li>
+        <li><a href="https://www.migalhas.com.br/depeso/415220/anpd-aprova-o-regulamento-de-transferencia-internacional-de-dados" rel="noopener" target="_blank">Regulamento de transferência internacional de dados, Resolução CD/ANPD nº 19/2024 (Migalhas)</a><span class="article-links-dominio">migalhas.com.br</span></li>
+        <li><a href="https://support.google.com/analytics/answer/7667196?hl=en" rel="noopener" target="_blank">Data retention, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+</article>
+
+<section id="autor" class="autor">
+  <div class="wrap">
+    <div class="sobre-card">
+      <div class="sobre-photo-col">
+        <picture>
+          <source srcset="/assets/img/narcipe-viana.webp" type="image/webp">
+          <img class="sobre-photo" src="/assets/img/narcipe-viana.jpg" width="700" height="822" loading="lazy" decoding="async" alt="Narcipe Viana, consultor de CRO">
+        </picture>
+        <div class="sobre-caption">
+          <p class="sobre-name">Narcipe Viana</p>
+          <p class="sobre-role">Consultor de CRO</p>
+        </div>
+      </div>
+      <div class="sobre-text-col">
+        <h2>Sobre quem escreveu</h2>
+        <p>Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, PostHog, Looker Studio) e auditoria comportamental. Este guia reúne o que considero essencial para usar o PostHog numa loja: medir certo antes de analisar, e analisar para decidir.</p>
+        <p><a href="/#sobre">Conhecer mais sobre meu trabalho →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>Quer avaliar como o PostHog se aplica ao seu e-commerce?</h2>
+    <p>Converse com um especialista para desenhar a mensuração, validar os dados contra os pedidos reais e montar um piloto com as perguntas de negócio da sua operação.</p>
+    <div class="hero-ctas">
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" loading="lazy" decoding="async">
+    <nav class="footer-links" aria-label="Rodapé">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="mailto:contato@ganica.com.br">contato@ganica.com.br</a>
+    </nav>
+    <p>Consultoria independente de CRO para <span class="nw">e-commerce</span>. © 2026 Ganica.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+
+<script>
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    if(!('IntersectionObserver' in window)) return;
+    var sectionIds = ['autor', 'contato'];
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>
