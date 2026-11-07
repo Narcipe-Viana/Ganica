@@ -17,6 +17,29 @@ Um estudo da Ganica nunca é:
 - promessa de resultado ("aumente suas vendas em X%");
 - crítica ou provocação contra agências ou concorrentes.
 
+## 1.0 Revisão que corrige, não que pula (regra do Narcipe, 07/11/2026)
+
+Estudo não fica sem publicar. A revisão independente existe para achar e corrigir erros, não para
+descartar o trabalho. O processo é:
+
+1. **O revisor classifica cada problema** como BLOQUEANTE (fato ou número que não confere com a
+   fonte, número sem fonte, afirmação técnica não conferida, risco de identificar cliente, caso ou
+   prática da Ganica inventados, trecho copiado ou parafraseado de perto de terceiro, erro jurídico)
+   ou AJUSTE (redação, SEO, GEO, estilo, item da pauta raso). Para cada um, aponta o trecho e a
+   correção.
+2. **Ajustes não reprovam.** São aplicados e pronto.
+3. **Bloqueantes são corrigidos** com a correção apontada. Se o dado não puder ser confirmado, ele
+   sai do texto (ou vira afirmação qualitativa sem número). Se um trecho estiver perto demais do
+   original de terceiro, ele é reescrito com estrutura e exemplos próprios. Não se descarta o
+   estudo por causa de um trecho.
+4. **Até três rodadas** de correção e revisão. Depois da terceira, tudo que ainda for bloqueante é
+   retirado, e o estudo é publicado se continuar útil e dentro do mínimo de estrutura (seções,
+   1.200 palavras, resposta direta, FAQ, fontes).
+5. **Só fica sem publicar** se, depois de retirar o que não se sustenta, o estudo perder a tese ou
+   ficar abaixo do mínimo, ou se houver risco de identificar cliente que não se resolva. Nesse caso
+   ele vai para `status: correcao` no pautas.yml, com a lista em `correcoes`, e é a prioridade da
+   próxima execução. Nunca `pulada`.
+
 ## 1.1 Ordem de prioridades
 
 1. **Conteúdo rico, que gera valor real para o leitor.** Nada passa na frente disso.

@@ -11,16 +11,21 @@
 #              se nenhum artigo de IA da CXL ainda não usado agregar, usa outro conteúdo da CXL (CRO, testes,
 #              analytics, UX, psicologia do consumidor, copy); só sem nada aproveitável na CXL usa a próxima "m30"
 #   outro dia (execução manual) -> próxima pauta "base"
-#   PRIORIDADE: se existir pauta com `status: pronta` e `publicar_em` igual à data de hoje, ela é a
-#   pauta do dia (o artigo já está escrito em src/artigos como rascunho), e a rotação fica para a
-#   próxima execução do mesmo dia da semana.
+#   PRIORIDADE 1: pauta com `status: correcao` (estudo já escrito que a revisão apontou problemas).
+#   A execução corrige os pontos listados em `correcoes`, revisa e publica; a rotação do dia fica para
+#   a próxima execução do mesmo dia da semana.
+#   PRIORIDADE 2: pauta com `status: pronta` e `publicar_em` igual à data de hoje (artigo já escrito
+#   como rascunho).
 # Pauta sem "tipo" é "base".
 #
 # status:
 #   fila       -> pronta para ser escrita e publicada
 #   publicada  -> já está no ar (a tarefa preenche publicado_em e slug)
-#   pulada     -> reprovou nas checagens duas vezes; ver "motivo"
 #   pronta     -> artigo já escrito (rascunho em src/artigos), aguardando a data `publicar_em`
+#   correcao   -> artigo escrito, com problemas apontados pela revisão em `correcoes`; é a prioridade
+#                 da próxima execução, que corrige e publica (regra do Narcipe, 07/11/2026: estudo
+#                 não fica sem publicar; o que estiver errado é corrigido ou retirado, não pulado)
+#   pulada     -> (não usar mais; histórico antigo)
 #
 # ATENÇÃO: este repositório é público. Nunca escreva aqui nome de cliente, de agência parceira,
 # produto real, plataforma, local, período exato ou número bruto de cliente.
@@ -388,8 +393,8 @@ pautas:
   # ---------- Estudos prontos com data marcada (têm prioridade sobre a rotação) ----------
   - id: 21
     tipo: cxl
-    status: pulada
-    motivo: "Reprovada duas vezes na revisão independente em 06/11/2026. O 'uso mais citado' e o 'atendimento 33%' do NuvemCommerce não batem com o gráfico do relatório primário (a fonte era a TI Inside); o mesmo relatório mostra análise de dados como prioridade de 50% para 2026, o que pede matizar a tese; a Nota Técnica 12/2025 da ANPD trata de IA e decisões automatizadas e o link é cópia da SSP-BA; a tabela e um ## ficaram próximos do original da CXL."
+    status: correcao
+    correcoes: "Reprovada duas vezes na revisão independente em 06/11/2026. O 'uso mais citado' e o 'atendimento 33%' do NuvemCommerce não batem com o gráfico do relatório primário (a fonte era a TI Inside); o mesmo relatório mostra análise de dados como prioridade de 50% para 2026, o que pede matizar a tese; a Nota Técnica 12/2025 da ANPD trata de IA e decisões automatizadas e o link é cópia da SSP-BA; a tabela e um ## ficaram próximos do original da CXL."
     publicar_em: '2026-11-06'
     arquivo: src/artigos/ia-pesquisa-cro-ecommerce-brasil.md
     titulo_provisorio: "A IA já escreve a sua loja. Mas ainda não está ouvindo o seu cliente"
@@ -500,7 +505,7 @@ pautas:
     palavra_chave: "página de produto / estrutura de página de produto"
     slug: estrutura-pagina-de-produto-ecommerce
     nota: "Pauta 13 (Marketing 3.0 e página de produto) se sobrepõe a este tema; revisar o ângulo antes de escrevê-la."
-  - id: 31
+  - id: 33
     tipo: base
     status: publicada
     publicado_em: 2026-11-06
@@ -510,8 +515,8 @@ pautas:
     slug: taxa-de-conversao-ecommerce
   - id: 32
     tipo: tecnico
-    status: agendada
-    publicar_em: 2026-11-07
+    status: publicada
+    publicado_em: 2026-11-07
     origem: "Pauta do Narcipe em 06/11/2026 (pauta_posthog_ecommerce_analytics_IA.docx), para publicar em 07/11/2026; precisa superar bixtecnologia.com.br/posthog-plataforma-de-analytics/. Caso usado: T1."
     titulo_provisorio: "PostHog no e-commerce: como transformar dados de comportamento em decisões de conversão"
     palavra_chave: "PostHog"
