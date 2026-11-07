@@ -113,12 +113,13 @@ Essa sequência protege a receita. Se o checkout novo tivesse um defeito, ele at
 
 Comparando o período anterior à mudança com o período posterior, a proporção de pessoas que iniciaram o checkout no celular e concluíram o pedido saiu de **cerca de 1 em cada 5** para **perto de 2 em cada 5**. É quase o dobro.
 
-| Checkout no celular | Antes | Depois |
-|---|---|---|
-| Iniciaram e concluíram o pedido | Cerca de 1 em 5 | Perto de 2 em 5 |
-| Distância para o computador | Grande | Menor, mas ainda existe |
+![Gráfico de linhas semana a semana: a conversão do checkout no celular sai de perto de 100 no índice antes da mudança e passa a oscilar perto de 200 depois que o checkout novo entra no ar; o computador também sobe](/assets/img/estudos/case-checkout-mobile/evolucao-conversao-checkout-mobile.webp "Imagem: Ganica. Índice, celular antes da mudança = 100. Dados anonimizados.")
 
-*Comparação entre o período anterior e o posterior à mudança. Fonte: análise da Ganica, dados anonimizados e arredondados.*
+O gráfico usa um índice para não expor números do cliente: a conversão do celular antes da mudança vale 100, e todo o resto é medido em relação a ela. Um valor de 200 significa o dobro da proporção de antes.
+
+Duas coisas aparecem na evolução. A primeira é a virada: ela começa na semana em que o checkout novo entra no ar e se firma nas semanas seguintes. A segunda é a oscilação. Houve uma semana mais fraca no meio do caminho, e isso é normal quando o número de pedidos por semana é pequeno. Por isso a conclusão se apoia no período inteiro, não numa semana boa.
+
+![Gráfico de barras antes e depois: no índice, o celular vai de 100 para 184 e o computador de 171 para 276](/assets/img/estudos/case-checkout-mobile/antes-depois-checkout-celular-computador.webp "Imagem: Ganica. Índice, celular antes da mudança = 100. Dados anonimizados.")
 
 Três leituras ajudam a entender o tamanho disso:
 
