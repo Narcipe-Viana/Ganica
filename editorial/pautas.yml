@@ -393,13 +393,13 @@ pautas:
   # ---------- Estudos prontos com data marcada (têm prioridade sobre a rotação) ----------
   - id: 21
     tipo: cxl
-    status: correcao
-    correcoes: "Reprovada duas vezes na revisão independente em 06/11/2026. O 'uso mais citado' e o 'atendimento 33%' do NuvemCommerce não batem com o gráfico do relatório primário (a fonte era a TI Inside); o mesmo relatório mostra análise de dados como prioridade de 50% para 2026, o que pede matizar a tese; a Nota Técnica 12/2025 da ANPD trata de IA e decisões automatizadas e o link é cópia da SSP-BA; a tabela e um ## ficaram próximos do original da CXL."
-    publicar_em: '2026-11-06'
+    status: publicada
+    publicado_em: 2026-11-09
+    slug: ia-pesquisa-cro-ecommerce-brasil
+    historico: "Reprovada duas vezes na revisão independente em 06/11/2026 e marcada para correção. Corrigida e publicada em 09/11/2026: NuvemCommerce conferido no relatório primário, link da ANPD trocado pelo gov.br, seção e tabela próximas da CXL reescritas com critério próprio; três rodadas de revisão."
     arquivo: src/artigos/ia-pesquisa-cro-ecommerce-brasil.md
-    titulo_provisorio: "A IA já escreve a sua loja. Mas ainda não está ouvindo o seu cliente"
-    origem: "Análise crítica do artigo da CXL 'AI for CRO research: what to automate (and what not to)' (ago/2026), cruzada com dados brasileiros (TIC Empresas 2025, NuvemCommerce 2026, TIC Domicílios 2025, ANPD, LGPD). Pedido do Narcipe em 01/11/2026 para a sexta 06/11."
-    observacao: "Escrito em sessão com o Narcipe em 01/11/2026 e aprovado nas checagens automáticas. Falta a revisão independente, feita na execução do dia."
+    titulo_provisorio: "A IA já escreve a sua loja. Falta usá-la para ouvir o seu cliente"
+    origem: "Análise crítica do artigo da CXL 'AI for CRO research: what to automate (and what not to)' (ago/2026), cruzada com dados brasileiros (TIC Empresas 2025, NuvemCommerce 2026, ANPD, LGPD). Pedido do Narcipe em 01/11/2026."
 
   - id: 22
     tipo: tecnico
