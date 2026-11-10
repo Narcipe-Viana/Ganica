@@ -435,7 +435,9 @@ pautas:
   # ---------- Trilha técnica (terças) ----------
   - id: 23
     tipo: tecnico
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-10
+    slug: auditoria-rastreamento-ga4-gtm-ecommerce
     titulo_provisorio: "Auditoria de rastreamento: o checklist antes de confiar em qualquer número do seu e-commerce"
     caso: T2
     pontos:
