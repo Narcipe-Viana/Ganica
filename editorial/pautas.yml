@@ -556,3 +556,20 @@ pautas:
       pagamento na tela de espera, recuperação do pedido pendente) e medir o pagamento por meio.
     palavra_chave: "pix fora do ar e-commerce / pix no checkout"
     slug_sugerido: pix-fora-do-ar-ecommerce-checkout
+  - id: 36
+    tipo: base
+    status: fila
+    origem: "Pedido do Narcipe em 11/11/2026: usar a matriz de táticas de GEO (editorial/referencias/geo-taticas.md) num estudo futuro."
+    titulo_provisorio: "GEO na prática: o que faz a IA citar a sua loja (e o que é só moda)"
+    tese: >-
+      As táticas mais populares de GEO (llms.txt, schema feito só para IA, FAQ solta, autopromoção) são as
+      que menos pesam; as que mais pesam são dados próprios, preço e especificação claros, tabelas
+      comparativas, fontes citadas, resposta direta, conteúdo recente e menções em outros sites. Para um
+      e-commerce, isso começa na página de produto e de categoria, não num arquivo técnico.
+    pontos:
+      - "A matriz é ponto de partida, não prova: toda afirmação de eficácia vem da pesquisa original verificada no dia (ex.: artigo GEO de Princeton e outros, 2023/KDD 2024; estudos de citação de IA com metodologia divulgada). Não citar as notas da matriz como dado."
+      - "Traduzir cada tática para a loja: página de produto (preço, especificação, tabela), categoria, estudos e guias, presença fora do site."
+      - "Tabela de 2 colunas: tática e o que fazer no e-commerce; lista numerada de passos; seção O que ainda não sabemos."
+      - "Linkar o estudo da página de produto (estrutura-pagina-de-produto-ecommerce)."
+    palavra_chave: "GEO para e-commerce / como aparecer nas respostas da IA"
+    slug_sugerido: geo-ecommerce-taticas-ia

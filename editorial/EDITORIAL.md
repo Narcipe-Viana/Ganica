@@ -172,6 +172,12 @@ de `.qa/` do artigo em 390px antes de publicar: tabela legível, títulos sem qu
 Motores de resposta não leem o artigo inteiro: eles recortam **trechos** que respondem bem a uma
 pergunta e citam quem parece a fonte mais confiável. Cada estudo é escrito para ser recortado.
 
+**Referência obrigatória (pedido do Narcipe, 11/11/2026):** ler `editorial/referencias/geo-taticas.md`
+(matriz popularidade × eficácia de 20 táticas de GEO) em toda produção de estudo. Priorizar as táticas
+eficazes (dados próprios, tabelas comparativas, estatísticas e fontes com link, preço e especificação
+conferidos, resposta direta, recência) e evitar as de hype (FAQ como lista solta, autopromoção). A matriz
+não é fonte primária: não citar as notas dela como dado.
+
 **Resposta primeiro**
 - `resposta_curta` (obrigatória): 40 a 70 palavras que respondem a pergunta do título de forma
   completa, sem depender do resto do texto. Começa pela resposta, não pelo contexto. Aparece no topo
