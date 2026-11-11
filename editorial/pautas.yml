@@ -537,3 +537,22 @@ pautas:
     palavra_chave: "case de CRO / conversão checkout mobile"
     slug: case-cro-checkout-mobile-conversao
     links_com: [1]
+  - id: 35
+    tipo: tendencia
+    status: publicada
+    publicado_em: 2026-11-11
+    slug: pix-fora-do-ar-ecommerce-checkout
+    titulo_provisorio: "Pix fora do ar: o que o seu e-commerce perde e como preparar o checkout para a próxima falha"
+    sinal:
+      termo: "banco central instabilidade pix / bancos pix fora do ar (termo-semente pix)"
+      valor: "banco central instabilidade pix +900%; bancos pix fora do ar +600%; termo-semente pix +57% em 90 dias"
+      janela: "últimos 90 dias, coleta de 2026-11-10"
+      link: "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=pix&hl=pt-BR"
+    causa: "Indisponibilidade parcial do Pix na noite de 6/11/2026 (primeira sexta-feira do mês), reconhecida em nota pelo Banco Central, no mesmo dia em que o Pix bateu recorde diário de transações; outros episódios em 2026 (jan, fev, mai, ago)."
+    tese: >-
+      Para a loja, a falha do Pix quase nunca aparece como erro: aparece como Pix gerado e não pago.
+      As regras do Banco Central admitem horas de indisponibilidade por mês em cada banco, então a
+      loja precisa desenhar o checkout para sobreviver à falha (validade do QR Code, alternativa de
+      pagamento na tela de espera, recuperação do pedido pendente) e medir o pagamento por meio.
+    palavra_chave: "pix fora do ar e-commerce / pix no checkout"
+    slug_sugerido: pix-fora-do-ar-ecommerce-checkout
