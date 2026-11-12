@@ -85,6 +85,37 @@ pautas:
     slug_sugerido: rodape-ecommerce-confianca-saude
     restricoes: "Exemplos genéricos. Não descrever o rodapé de nenhum site real de cliente."
 
+  - id: 37
+    tipo: base
+    status: fila
+    usa_dado_cliente: true
+    origem: "Achado de diagnóstico enviado pelo Narcipe em 12/11/2026. Prioridade: próxima pauta base (segunda, 16/11/2026)."
+    campo: [C16]
+    titulo_provisorio: "Por que a taxa de conversão não sobe? Às vezes o problema é a mídia, não o site"
+    tese: >-
+      Campanhas pagas com objetivo de engajamento ou de captura de leads são otimizadas pela plataforma
+      para entregar curtidas, cliques baratos ou cadastros, não compras. Elas enchem o site de visitantes
+      sem intenção de comprar, a taxa de conversão média cai e o trabalho de CRO parece não funcionar,
+      quando o site pode estar convertendo bem o público certo. Antes de mexer na página, a loja precisa
+      separar o tráfego por objetivo de campanha e medir a conversão de cada grupo.
+    pontos:
+      - "O problema como o mercado enxerga: 'o site não converte', e a resposta costuma ser redesenhar página ou trocar o checkout."
+      - "Como as plataformas otimizam pelo objetivo escolhido (conferir na documentação oficial do Meta Ads e do Google Ads: objetivos de engajamento, leads e vendas e o que cada um otimiza). Explicar em linguagem simples por que o algoritmo entrega exatamente o público que gera o evento pedido."
+      - "Diluição da taxa de conversão: exemplo HIPOTÉTICO declarado no texto, com duas fatias de tráfego (campanha de vendas e campanha de engajamento) mostrando a média caindo sem o site piorar."
+      - "Como enxergar no GA4: conversão por campanha e por objetivo (dimensões de campanha da sessão, origem/mídia), sinais de público desqualificado (tempo de engajamento, páginas por sessão, taxa de adição ao carrinho por campanha). Conferir nomes de dimensões e métricas na documentação do GA4."
+      - "Por que isso quebra o CRO: testes A/B contaminados pela mudança no mix de tráfego, metas de conversão que oscilam com a verba e não com o site, prioridades erradas."
+      - "O que fazer: separar relatórios de CRO por tráfego qualificado; nomear campanhas por objetivo (padrão de UTM); combinar com mídia o papel de cada campanha; levar o lead para uma régua de nutrição e medir a venda dele em janela própria, em vez de cobrar compra na primeira visita."
+      - "O que ainda não sabemos: quanto do público de engajamento compra depois (janela longa, múltiplos dispositivos), limites da atribuição."
+    dados_anonimizados: []   # AGUARDANDO o Narcipe enviar os números do cliente (só relativos ou arredondados). Se continuar vazio na execução, o estudo usa apenas o padrão C16 e exemplo hipotético, sem nenhum número de cliente.
+    restricoes: "Seguir a seção 5 do EDITORIAL.md à risca: sem segmento estreito, plataforma de anúncio usada pelo cliente, período, verba, volume ou nome de campanha. Não ligar ao caso do checkout mobile nem a outros estudos com caso de cliente (efeito mosaico). Sem tom de crítica a agências ou gestores de mídia: o ponto é alinhar objetivo de campanha e meta de conversão."
+    fontes_a_verificar:
+      - "Documentação oficial do Meta Ads sobre objetivos de campanha (engajamento, cadastros, vendas) e otimização da entrega."
+      - "Documentação oficial do Google Ads sobre objetivos de campanha e estratégias de lance."
+      - "Central de Ajuda do GA4: dimensões de campanha da sessão, taxa de conversão de sessão, tempo de engajamento."
+    palavra_chave: "taxa de conversão não sobe / tráfego desqualificado mídia paga"
+    slug_sugerido: taxa-de-conversao-nao-sobe-trafego-desqualificado
+    links_com: [33]
+
   - id: 3
     status: fila
     usa_dado_cliente: true

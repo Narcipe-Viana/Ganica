@@ -78,3 +78,9 @@ informação da empresa, atendimento visível.
 **C15. Revendedor contra fabricante na mesma busca.** Quando a loja revende um produto que o
 fabricante também vende, a página de produto precisa responder melhor que a do fabricante (dúvidas
 de uso, comparativos, garantia, entrega). Isso pesa também em respostas de IA.
+
+**C16. Mídia de engajamento e de leads dilui a conversão.** Campanhas pagas com objetivo de
+engajamento ou de captura de leads levam ao site muita gente sem intenção de comprar. A taxa de
+conversão média cai ou não sobe, e o trabalho de CRO parece não funcionar, mesmo quando a conversão do
+público qualificado está estável ou melhorando. Antes de qualquer conclusão sobre o site, separar o
+tráfego por objetivo de campanha. (Confirmado pelo Narcipe.)
