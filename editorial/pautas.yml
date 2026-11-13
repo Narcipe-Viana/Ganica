@@ -604,3 +604,18 @@ pautas:
       - "Linkar o estudo da página de produto (estrutura-pagina-de-produto-ecommerce)."
     palavra_chave: "GEO para e-commerce / como aparecer nas respostas da IA"
     slug_sugerido: geo-ecommerce-taticas-ia
+  - id: 38
+    tipo: cxl
+    status: publicada
+    publicado_em: 2026-11-13
+    slug: automacao-ia-ecommerce-alertas
+    origem:
+      titulo: "What we learned from n8n week: Hype vs. reality (Tarek Reslan, CXL, 14/04/2026)"
+      url: https://cxl.com/blog/n8n-week-what-we-learned-ai-automation/
+    titulo: "Automação com IA no e-commerce: comece pelo alerta que avisa quando a loja para de vender"
+    tese: >-
+      O primeiro fluxo de automação com IA de uma loja deve ser um alerta que vigia vendas e pagamento,
+      comparando pedidos da plataforma e GA4, porque usa dado agregado, erra de forma barata e encurta o
+      tempo até perceber uma falha; agentes de conteúdo e atendimento vêm depois.
+    palavra_chave: "automação com IA no e-commerce"
+    campo: [C9]
