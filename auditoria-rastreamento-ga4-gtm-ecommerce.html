@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'article',
+    content_group: 'estudo',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoria GA4 no e-commerce: checklist de rastreamento</title>
+
+<meta name="description" content="Auditoria GA4 para e-commerce: como achar evento duplicado no GTM, conferir a compra pelo ID do pedido e separar erro de diferença normal antes de decidir.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Narcipe Viana">
+<link rel="canonical" href="https://ganica.com.br/auditoria-rastreamento-ga4-gtm-ecommerce.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ganica">
+<meta property="og:title" content="Auditoria de rastreamento: como saber se o GA4 da sua loja conta certo">
+<meta property="og:description" content="Auditoria GA4 para e-commerce: como achar evento duplicado no GTM, conferir a compra pelo ID do pedido e separar erro de diferença normal antes de decidir.">
+<meta property="og:url" content="https://ganica.com.br/auditoria-rastreamento-ga4-gtm-ecommerce.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-11-10T06:54:00-03:00">
+<meta property="article:modified_time" content="2026-11-10T06:54:00-03:00">
+<meta property="article:author" content="Narcipe Viana">
+<meta property="article:section" content="E-commerce">
+<meta property="article:tag" content="GA4">
+<meta property="article:tag" content="Google Tag Manager">
+<meta property="article:tag" content="rastreamento">
+<meta property="article:tag" content="auditoria de dados">
+<meta property="article:tag" content="e-commerce">
+<meta property="og:image" content="https://ganica.com.br/assets/og/auditoria-rastreamento-ga4-gtm-ecommerce.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Auditoria de rastreamento no e-commerce: o checklist antes de confiar no GA4">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auditoria GA4 no e-commerce: checklist de rastreamento">
+<meta name="twitter:description" content="Evento contado em dobro, compra que some, número que não bate com a loja. O checklist para auditar o GA4 e o GTM antes de confiar em qualquer relatório.">
+<meta name="twitter:image" content="https://ganica.com.br/assets/og/auditoria-rastreamento-ga4-gtm-ecommerce.png">
+<meta name="theme-color" content="#F5F9F9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/lexend-deca-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+
+
+<!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
+     deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ganica.com.br/#organization",
+      "name": "Ganica",
+      "url": "https://ganica.com.br/",
+      "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
+      "email": "contato@ganica.com.br",
+      "logo": { "@type": "ImageObject", "url": "https://ganica.com.br/logo-ganica.png", "width": 512, "height": 512 },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "https://ganica.com.br/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ganica.com.br/#narcipe-viana",
+      "name": "Narcipe Viana",
+      "jobTitle": "Consultor de CRO",
+      "url": "https://ganica.com.br/#sobre",
+      "image": "https://ganica.com.br/assets/img/narcipe-viana.jpg",
+      "worksFor": { "@id": "https://ganica.com.br/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ganica.com.br/#website",
+      "url": "https://ganica.com.br/",
+      "name": "Ganica",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://ganica.com.br/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ganica.com.br/auditoria-rastreamento-ga4-gtm-ecommerce.html#article",
+      "headline": "Auditoria de rastreamento no e-commerce: o checklist antes de confiar no GA4",
+      "description": "Auditoria GA4 para e-commerce: como achar evento duplicado no GTM, conferir a compra pelo ID do pedido e separar erro de diferença normal antes de decidir.",
+      "datePublished": "2026-11-10T06:54:00-03:00",
+      "dateModified": "2026-11-10T06:54:00-03:00",
+      "abstract": "Uma auditoria de rastreamento confere se o GA4 conta o que de fato aconteceu na loja. O checklist tem três partes: achar disparos duplicados no Tag Assistant e no DebugView, cruzar cada compra do GA4 com os pedidos pagos pelo ID do pedido e separar erro de medição de diferença esperada, como consentimento recusado e dados atrasados. Só depois disso o número serve para decidir.",
+      "image": [{ "@type": "ImageObject", "url": "https://ganica.com.br/assets/og/auditoria-rastreamento-ga4-gtm-ecommerce.png", "width": 1200, "height": 630 }],
+      "wordCount": 2280,
+      "timeRequired": "PT11M",
+      "isAccessibleForFree": true,
+      "citation": ["https://support.google.com/analytics/answer/12313109?hl=en", "https://support.google.com/analytics/answer/15227167", "https://support.google.com/analytics/answer/7201382?hl=en", "https://support.google.com/analytics/answer/11161109?hl=en", "https://support.google.com/analytics/answer/9358801", "https://support.google.com/analytics/answer/7029846", "https://support.google.com/tagmanager/answer/6107056", "https://support.google.com/tagmanager/answer/6279951", "https://developers.google.com/analytics/devguides/collection/ga4/ecommerce", "https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications", "https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-publicacaooriginal-156212-pl.html"],
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://ganica.com.br/#narcipe-viana" },
+      "publisher": { "@id": "https://ganica.com.br/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ganica.com.br/auditoria-rastreamento-ga4-gtm-ecommerce.html" },
+      "articleSection": "E-commerce",
+      "keywords": ["auditoria GA4 e-commerce","evento duplicado GA4 GTM","compra duplicada GA4","transaction_id GA4","DebugView GA4"],
+      "about": [{ "@type": "Thing", "name": "Web analytics" }, { "@type": "Thing", "name": "Google Analytics 4" }, { "@type": "Thing", "name": "Google Tag Manager" }, { "@type": "Thing", "name": "Otimização de conversão (CRO)" }],
+      "isPartOf": { "@id": "https://ganica.com.br/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ganica.com.br/auditoria-rastreamento-ga4-gtm-ecommerce.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ganica.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "https://ganica.com.br/estudos/" },
+        { "@type": "ListItem", "position": 3, "name": "Auditoria de rastreamento" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Base compartilhada por todas as páginas: marca, tipografia, botões, cabeçalho e rodapé.
+   Cores derivadas da logo. Mobile primeiro. */
+@font-face{
+  font-family:'Lexend Deca';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2-variations'),
+      url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2');
+}
+/* Fallback com métricas próximas: reduz o salto de layout (CLS) quando a fonte carrega */
+@font-face{
+  font-family:'Lexend Fallback';
+  src:local('Arial');
+  size-adjust:112%;
+  ascent-override:89%;
+  descent-override:22%;
+  line-gap-override:0%;
+}
+
+:root{
+  --ink:#0B3842;
+  --ink-hover:#0F4A57;
+  --paper:#F5F9F9;
+  --panel:#E6F1F3;
+  --white:#FFFFFF;
+  --amber:#FAB32B;
+  --amber-hover:#F0A312;
+  --teal:#107088;
+  --teal-bright:#1A8BA3;
+  --body:#2C4A53;
+  --muted:#466069;
+  --line:#C9DEE2;
+  --line-soft:#DCE9EC;
+  --line-strong:#6F8A92;
+  --font:'Lexend Deca','Lexend Fallback',Arial,sans-serif;
+  --max:1440px;
+  --gutter:clamp(20px,5vw,72px);
+  --sombra-card:0 1px 2px rgba(11,56,66,.05),0 14px 32px -22px rgba(11,56,66,.22);
+  --sombra-folha:0 1px 2px rgba(11,56,66,.05),0 28px 64px -28px rgba(11,56,66,.24);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ font-weight:400; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+ul,ol{ list-style:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+[hidden]{ display:none !important; }
+.nw{ white-space:nowrap; }
+.wrap{ max-width:var(--max); margin:0 auto; padding-inline:var(--gutter); }
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--teal-bright);
+  outline-offset:3px;
+}
+.pular{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  padding:10px 16px; background:var(--ink); color:var(--white); border-radius:10px;
+}
+.pular:focus{ top:12px; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Títulos de seção ---------- */
+.rotulo{
+  font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:58px; padding:0 22px;
+  border:1px solid transparent; border-radius:12px;
+  font-weight:600; font-size:1rem; line-height:1.2; text-decoration:none; text-align:center;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+.btn-ambar{ background:var(--amber); color:var(--ink); }
+.btn-ambar:hover{ background:var(--amber-hover); }
+.btn-leve{ background:var(--white); color:var(--ink); font-weight:500; }
+.btn-leve:hover{ background:var(--line-soft); }
+.btn-contorno{ background:transparent; border-color:var(--ink); color:var(--ink); border-radius:10px; font-weight:500; }
+.btn-contorno:hover{ background:var(--panel); }
+.btn-bloco{ display:flex; width:100%; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,249,249,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);
+  min-height:64px;
+}
+.marca{ display:flex; align-items:center; min-height:44px; flex-shrink:0; position:relative; z-index:60; }
+.marca img{ height:32px; width:auto; }
+.nav-links{ display:none; }
+.nav-cta{ display:none; }
+.menu-toggle{
+  position:relative; z-index:60;
+  width:44px; height:44px; margin-right:-10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; flex-shrink:0;
+}
+.menu-icon,.menu-icon::before,.menu-icon::after{
+  display:block; width:22px; height:1.5px; background:var(--ink);
+  transition:transform .2s ease,background .15s ease;
+}
+.menu-icon{ position:relative; }
+.menu-icon::before,.menu-icon::after{ content:""; position:absolute; left:0; }
+.menu-icon::before{ top:-7px; }
+.menu-icon::after{ top:7px; }
+.menu-toggle.open .menu-icon{ background:transparent; }
+.menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+.menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:40;
+  display:flex; flex-direction:column; justify-content:center; gap:40px;
+  padding:88px 24px 48px;
+  background:var(--paper);
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+}
+.mobile-menu.open{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .25s ease,transform .25s ease,visibility 0s;
+}
+.mobile-menu-links{ display:flex; flex-direction:column; }
+.mobile-menu-links a{
+  display:flex; align-items:center; min-height:56px;
+  font-size:1.6rem; text-decoration:none; border-bottom:1px solid var(--line-soft);
+}
+body.menu-open{ overflow:hidden; }
+
+@media (min-width:900px){
+  .nav{ min-height:80px; }
+  .marca img{ height:36px; }
+  .nav-links{ display:flex; gap:32px; font-size:1rem; }
+  .nav-links a{ display:flex; align-items:center; min-height:44px; text-decoration:none; color:var(--body); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{ display:inline-flex; min-height:46px; padding:0 18px; }
+  .menu-toggle,.mobile-menu{ display:none; }
+}
+
+/* ---------- Trama da logo (detalhe de fundo, nunca atrás de texto em peso visual) ---------- */
+.com-trama{ position:relative; overflow:hidden; }
+.com-trama::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:url('/assets/img/trama.svg') center/1200px 900px;
+  opacity:.2;
+  -webkit-mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+  mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+}
+.com-trama > *{ position:relative; }
+@media (min-width:900px){
+  .com-trama::before{
+    left:34%; opacity:.26;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 62%);
+    mask-image:linear-gradient(to right,transparent,#000 62%);
+  }
+}
+
+/* ---------- Etiqueta "Novo" ---------- */
+.tag-novo{
+  display:inline-flex; align-items:center;
+  padding:4px 10px; border-radius:999px;
+  background:var(--amber); color:var(--ink);
+  font-size:.8125rem; font-weight:600; line-height:1.4;
+}
+
+/* ---------- Sobre (card usado nos estudos) ---------- */
+.foto-autor{ display:block; width:100%; height:auto; }
+
+/* ---------- Rodapé ---------- */
+.site-footer{ border-top:1px solid var(--line); }
+.site-footer .wrap{ padding-block:36px; display:flex; flex-direction:column; gap:20px; }
+.site-footer img{ height:32px; width:auto; align-self:flex-start; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:0 24px; font-size:.9375rem; }
+.footer-links a{ display:inline-flex; align-items:center; min-height:44px; color:var(--body); text-decoration:none; }
+.footer-links a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.site-footer p{ font-size:.875rem; color:var(--muted); }
+@media (min-width:900px){
+  .site-footer .wrap{ flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+  .site-footer img{ align-self:center; }
+  .site-footer p{ flex-basis:100%; }
+}
+
+/* Escala do desktop: conteúdo mais contido em telas grandes (o mobile não é afetado) */
+@media (min-width:900px){
+  :root{ --max:1240px; --gutter:clamp(32px,4vw,56px); }
+  .nav{ min-height:72px; }
+  .marca img{ height:32px; }
+  .nav-links{ gap:28px; font-size:.9375rem; }
+  .nav-cta{ min-height:42px; padding:0 16px; font-size:.9375rem; }
+  .btn{ min-height:52px; font-size:.9375rem; }
+}
+
+/* ---------- Article hero ---------- */
+  .article-hero{ background:var(--paper); color:var(--ink); padding:48px 0 56px; border-bottom:1px solid var(--line); }
+  .article-hero h1{ font-weight:500; letter-spacing:-.015em; line-height:1.15; }
+  .biblioteca-selo{ display:flex; align-items:center; gap:8px; margin-bottom:14px; font-size:.9375rem; font-weight:500; color:var(--teal); }
+  @media (max-width:640px){
+    .article-hero{ padding-top:32px; padding-bottom:40px; }
+  }
+  .article-hero .tag-novo{ margin-bottom:18px; }
+  .breadcrumb{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .breadcrumb a{ color:var(--muted); }
+  .breadcrumb a:hover{ color:var(--ink); }
+  .breadcrumb .sep{ margin:0 8px; opacity:0.5; }
+  .article-hero h1{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    max-width:30ch;
+  }
+  @media (min-width:900px){
+    .article-hero h1{ max-width:26ch; }
+  }
+  .article-deck{
+    margin-top:20px;
+    font-size:1.08rem;
+    color:var(--body);
+    max-width:62ch;
+    line-height:1.7;
+  }
+  .article-meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    align-items:center;
+    font-size:0.88rem;
+    color:var(--muted);
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .article-meta strong{ color:var(--ink); font-weight:600; }
+  .article-meta .dot{ opacity:0.5; }
+  @media (max-width:640px){ .article-meta{ flex-direction:column; align-items:flex-start; } .article-meta .dot{ display:none; } }
+
+  /* ---------- Article body / prose ---------- */
+  .article-body{ padding-block:56px; }
+  .autor{ }
+  .prose{ max-width:760px; margin:0 auto; padding:0 20px; }
+  .prose h2{
+    font-weight:500; line-height:1.2; letter-spacing:-.01em;
+    font-size:clamp(1.4rem,2.6vw,1.75rem);
+    margin-top:52px;
+    margin-bottom:18px;
+  }
+  .prose > .prose-lead h2:first-of-type,
+  .prose h2:first-child{ margin-top:0; }
+  .prose p{
+    color:var(--body);
+    font-size:1.03rem;
+    margin-bottom:20px;
+    line-height:1.75;
+  }
+  .prose strong{ color:var(--ink); }
+  .prose a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .prose a:hover{ color:var(--ink); }
+
+  /* Resumo rápido */
+  .resumo-box{
+    background:var(--panel);
+    color:var(--ink);
+    border-radius:16px;
+    padding:32px 30px;
+    margin-bottom:48px;
+  }
+  .resumo-box .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .resumo-list{
+    list-style:none;
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .resumo-list li{
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:0.98rem;
+    color:var(--body);
+    line-height:1.65;
+  }
+  .resumo-list li:first-child{ border-top:none; padding-top:0; }
+  .prose .resumo-list strong{ color:var(--ink); }
+  @media (max-width:640px){
+    .resumo-box{ padding:26px 22px; }
+  }
+
+  /* Pull quote */
+  .pull-quote{
+    font-family:var(--font);
+    font-weight:400;
+    font-size:clamp(1.15rem,2vw,1.35rem);
+    line-height:1.5;
+    color:var(--ink);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:28px 0;
+    margin:8px 0 36px;
+  }
+
+  /* Data table */
+  .data-table-wrap{
+    overflow-x:auto;
+    margin:8px 0 32px;
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .data-table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:520px; }
+  .data-table thead th{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--font);
+    font-weight:600;
+    text-align:left;
+    padding:14px 16px;
+    font-size:0.85rem;
+    letter-spacing:0.01em;
+  }
+  .data-table tbody td{
+    padding:13px 16px;
+    border-top:1px solid var(--line);
+    color:var(--body);
+  }
+  .data-table tbody tr:nth-child(even){ background:var(--paper); }
+  .data-table tbody td:first-child{ font-weight:600; color:var(--ink); }
+  .data-table tbody tr.highlight td{ color:var(--teal); font-weight:600; }
+  .table-caption{
+    font-size:0.85rem;
+    color:var(--body);
+    margin:-16px 0 28px;
+    font-style:italic;
+  }
+
+  /* FAQ */
+  .faq-list{ margin-top:8px; }
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:20px 0;
+  }
+  .faq-item:last-child{ border-bottom:1px solid var(--line); margin-bottom:32px; }
+  .faq-item summary{
+    cursor:pointer;
+    font-family:var(--font);
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--ink);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.3rem;
+    color:var(--teal);
+    flex-shrink:0;
+    font-family:var(--font);
+  }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{
+    margin-top:14px;
+    margin-bottom:0;
+    color:var(--body);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+
+  .article-sources{
+    margin-top:8px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--body);
+    font-style:italic;
+  }
+
+  .figura{ margin:36px 0; }
+  .figura img{
+    display:block; width:100%; max-width:520px; margin:0 auto; height:auto; border-radius:14px;
+    border:1px solid var(--line-soft); box-shadow:var(--sombra-card); background:var(--white);
+  }
+  .figura-link{ display:block; }
+  .figura figcaption{ max-width:520px; margin:12px auto 0; font-size:0.82rem; line-height:1.5; color:var(--muted); }
+  @media (max-width:640px){ .prose .figura{ margin:28px -8px; } .figura img{ border-radius:10px; } }
+
+  .article-links{ margin-top:20px; }
+  .prose .article-links-titulo,.article-links-titulo{
+    font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 10px; line-height:1.4;
+  }
+  .article-links ol{ list-style:none; margin:0; padding:0; counter-reset:fonte; }
+  .article-links li{
+    counter-increment:fonte; position:relative;
+    padding:10px 0 10px 32px; border-top:1px solid var(--line-soft);
+    font-size:0.9rem; line-height:1.45;
+  }
+  .article-links li::before{
+    content:counter(fonte,decimal-leading-zero); position:absolute; left:0; top:11px;
+    font-size:0.75rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  .article-links a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+  .article-links a:hover{ color:var(--ink); }
+  .article-links-dominio{ display:block; font-size:0.75rem; color:var(--muted); margin-top:2px; }
+
+  /* ---------- Sobre (autor) ---------- */
+  .autor{ padding-block:0 56px; }
+  .sobre-card{
+    display:grid; grid-template-columns:1fr; overflow:hidden;
+    background:var(--white); border-radius:18px; box-shadow:var(--sombra-card);
+  }
+  @media (min-width:820px){ .sobre-card{ grid-template-columns:300px 1fr; } }
+  .sobre-photo{ width:100%; height:auto; display:block; }
+  .sobre-caption{ padding:16px 18px; }
+  .sobre-name{ font-size:1.05rem; font-weight:500; color:var(--ink); }
+  .sobre-role{ margin-top:2px; font-size:.85rem; color:var(--muted); }
+  .sobre-text-col{ padding:36px 32px; }
+  .sobre-text-col h2{ margin-bottom:20px; font-size:clamp(1.5rem,3vw,2rem); line-height:1.15; }
+  .sobre-text-col p{ color:var(--body); max-width:60ch; margin-bottom:16px; font-size:1.02rem; }
+  .sobre-text-col p a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .sobre-text-col p a:hover{ color:var(--ink); }
+  @media (max-width:640px){
+    .sobre-text-col{ padding:26px 22px; }
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{ background:var(--panel); color:var(--ink); padding-block:64px; }
+  .cta-final h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); line-height:1.12; letter-spacing:-.015em; max-width:20ch; }
+  .cta-final p{ color:var(--body); margin-top:16px; max-width:52ch; font-size:1.02rem; }
+  .cta-final .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  @media (max-width:479px){
+    .cta-final .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .cta-final .hero-ctas .btn{ width:100%; text-align:center; }
+  }
+
+  /* Resposta direta: o parágrafo que responde a pergunta do título (citável por IA) */
+  .resposta-curta{
+    background:var(--white);
+    border-radius:16px;
+    box-shadow:var(--sombra-card);
+    padding:22px 24px 22px 22px;
+    margin-bottom:28px;
+  }
+  .resposta-curta .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .resposta-curta p{
+    font-size:1.12rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (min-width:760px){
+    .resposta-curta{ padding:26px 30px 26px 28px; }
+    .resposta-curta p{ font-size:1.16rem; }
+  }
+
+  /* Listas no corpo do estudo (mobile primeiro): número dentro da coluna de texto,
+     espaço entre itens e antes do parágrafo seguinte */
+  .prose > ul, .prose > ol{
+    color:var(--body);
+    font-size:1.04rem;
+    line-height:1.7;
+    margin:0 0 26px;
+    padding-left:1.45em;
+  }
+  .prose > ul{ list-style:disc; }
+  .prose > ol{ list-style:decimal; }
+  .prose > ol > li, .prose > ul > li{ margin-bottom:12px; padding-left:4px; }
+  .prose > ol > li::marker{ color:var(--teal); font-weight:600; }
+  .prose > ul > li::marker{ color:var(--teal); }
+  .prose li strong{ color:var(--ink); }
+
+  /* Tabelas de 2 colunas cabem na tela do celular sem rolagem lateral */
+  .data-table:not(:has(th:nth-child(3))){ min-width:0; }
+  @media (max-width:479px){
+    .data-table:not(:has(th:nth-child(3))) thead th,
+    .data-table:not(:has(th:nth-child(3))) tbody td{ padding:12px 12px; }
+  }
+
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="marca" href="/" aria-label="Ganica, página inicial">
+      <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-contorno nav-cta js-cta" data-cta-location="artigo_nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links" aria-label="Menu do celular">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-ambar btn-bloco js-cta" data-cta-location="artigo_nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+
+<main id="conteudo">
+<article>
+<section class="article-hero com-trama">
+  <div class="wrap"><span class="tag-novo">Novo</span>
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb">
+      <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>Auditoria de rastreamento
+    </p></nav>
+    <h1>Auditoria de rastreamento no <span class="nw">e-commerce</span>: o checklist antes de confiar no GA4</h1>
+    <p class="article-deck">Antes de discutir por que a conversão caiu, vale perguntar se ela foi medida direito. Este guia mostra a ordem de auditoria que a Ganica recomenda para GA4 e Google Tag Manager num e-commerce, com cada comportamento das ferramentas conferido na documentação oficial do Google.</p>
+    <div class="article-meta">
+      <span>Por <strong>Narcipe Viana</strong></span>
+      <span class="dot">·</span>
+      <span>Atualizado em <time datetime="2026-11-10">10 de novembro de 2026</time></span>
+      <span class="dot">·</span>
+      <span>11 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="prose">
+    <div class="resposta-curta">
+      <div class="kicker">Resposta direta</div>
+      <p>Uma auditoria de rastreamento confere se o GA4 conta o que de fato aconteceu na loja. O checklist tem três partes: achar disparos duplicados no Tag Assistant e no DebugView, cruzar cada compra do GA4 com os pedidos pagos pelo ID do pedido e separar erro de medição de diferença esperada, como consentimento recusado e dados atrasados. Só depois disso o número serve para decidir.</p>
+    </div>
+    <div class="resumo-box">
+      <div class="kicker">Resumo rápido</div>
+      <ul class="resumo-list">
+        <li>Evento contado em dobro costuma nascer de <strong>tags sobrepostas</strong> no Google Tag Manager. Num projeto de e-commerce em que atuamos, isso foi confirmado no DebugView e resolvido com consolidação de tags.</li>
+        <li>Segundo o Google, o GA4 <strong>deduplica compras com o mesmo ID de transação</strong>. O efeito colateral: ID vazio ou repetido em pedidos diferentes faz o relatório <strong>perder vendas</strong>.</li>
+        <li>A conferência mais confiável é cruzar o <code>transaction_id</code> das compras do GA4 com a <strong>base de pedidos pagos</strong> da loja, olhando falta e sobra.</li>
+        <li>Parte da diferença é normal. O Google só modela quem recusou cookies com o modo de consentimento avançado e pelo menos <strong>1.000 eventos por dia</strong> com consentimento recusado por 7 dias, entre outros requisitos. Cumprir os requisitos não garante a modelagem, e a exportação para o BigQuery não traz esse dado modelado.</li>
+      </ul>
+    </div>
+
+<h2>O que é uma auditoria de rastreamento e por que ela vem antes da análise?</h2>
+<p>Uma auditoria de rastreamento, ou auditoria do GA4 no e-commerce, é a conferência de que cada evento importante da loja (ver produto, adicionar ao carrinho, iniciar o checkout, comprar) é registrado uma vez, com os dados certos, no momento certo. Ela vem antes de qualquer análise de conversão porque um relatório errado não avisa que está errado: ele só mostra um número, e a equipe decide em cima dele.</p>
+<p>No GA4, o Google Analytics 4, tudo é evento. O Google Tag Manager (GTM) é a ferramenta que decide quando cada evento é enviado, por meio de tags (o código que manda o dado) e acionadores (a regra que diz quando a tag dispara). Uma auditoria GA4 de e-commerce olha os dois lados: o que o GTM dispara e o que o GA4 recebe.</p>
+<p>A recomendação da Ganica é abrir qualquer diagnóstico com uma pergunta simples: o número de compras que o GA4 mostra conversa com o número de pedidos pagos da loja? Se a resposta for &quot;não sei&quot;, a auditoria vem primeiro, e o teste A/B, o redesenho e a troca de verba esperam.</p>
+<h2>Por que o GA4 conta o mesmo evento duas vezes?</h2>
+<p>O GA4 conta o mesmo evento duas vezes quando duas estruturas diferentes mandam o mesmo dado. É um padrão que encontramos com frequência em diagnósticos: tags sobrepostas no gerenciador de tags.</p>
+<p>Há três origens possíveis de duplicidade. A primeira é o código do Google instalado direto no tema da loja e, de novo, dentro do contêiner do GTM (o pacote onde ficam todas as tags da loja). A segunda são duas tags no GTM que enviam o mesmo evento, cada uma com um acionador diferente que dispara na mesma página. A terceira aparece em lojas feitas como aplicação de página única, em que a página muda sem recarregar: o <a href="https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications">guia do Google para esse tipo de site</a> avisa que, quando as tags são configuradas no Tag Manager, a medição automática por histórico do navegador no GA4 não deve ficar ligada, porque isso pode contar visualizações de página em dobro.</p>
+<p>O GTM tem uma opção que ajuda a entender o problema, mas não o resolve sozinha. Segundo a <a href="https://support.google.com/tagmanager/answer/6279951">Central de Ajuda do Tag Manager</a>, cada tag pode disparar uma vez por evento, uma vez por página ou sem limite. Essa opção controla a repetição de uma mesma tag. Ela não impede que duas tags diferentes mandem o mesmo evento, que é justamente o caso das estruturas sobrepostas.</p>
+<p>Num projeto de e-commerce em que atuamos, foi exatamente isso: um evento contado em dobro por estruturas de tags sobrepostas no Google Tag Manager. O diagnóstico foi confirmado no DebugView, a tela do GA4 que mostra os eventos em tempo real, e a correção foi a consolidação das tags.</p>
+<h2>Como achar evento duplicado no Tag Assistant e no DebugView?</h2>
+<p>O caminho para achar evento duplicado é fazer a jornada de compra com o modo de visualização do GTM ligado e conferir, ao mesmo tempo, o que o GTM disparou e o que o GA4 recebeu. Segundo a <a href="https://support.google.com/tagmanager/answer/6107056">Central de Ajuda do Tag Manager</a>, o botão Preview abre o Tag Assistant, que mostra quais tags dispararam e em que ordem, e também o que acionou ou deixou de acionar cada uma.</p>
+<p>O DebugView é a tela do GA4 que mostra, em tempo real, os eventos que chegam de um aparelho em modo de depuração. Segundo a <a href="https://support.google.com/analytics/answer/7201382?hl=en">Central de Ajuda do Google Analytics</a>, o modo de depuração pode ser ligado pelo Tag Assistant, pelo parâmetro <code>debug_mode</code> na tag ou no evento, e a tela mostra por padrão os eventos dos últimos 60 segundos, com um seletor para escolher o aparelho. A mesma página avisa que colocar <code>debug_mode</code> como falso não desliga o modo: é preciso retirar o parâmetro.</p>
+<p>A ordem que a Ganica recomenda para essa conferência é esta:</p>
+<ol>
+<li><strong>Abra o modo de visualização do GTM</strong> e conecte a loja. Faça uma jornada completa: página de produto, carrinho, checkout e uma compra de teste.</li>
+<li><strong>Em cada passo, conte as tags que dispararam</strong> no Tag Assistant. Duas tags do GA4 com o mesmo nome de evento no mesmo momento são o sinal clássico de sobreposição.</li>
+<li><strong>Confira no DebugView</strong> se o evento aparece uma vez ou duas, com os mesmos parâmetros. O Tag Assistant mostra a intenção; o DebugView mostra o que chegou.</li>
+<li><strong>Procure código fora do GTM.</strong> Se o DebugView mostra um evento que nenhuma tag do contêiner disparou, existe outra instalação no tema, num aplicativo da plataforma ou em outra ferramenta.</li>
+<li><strong>Consolide antes de criar.</strong> Escolha uma estrutura dona de cada evento, pause as outras e repita a jornada. Só remova de vez depois de confirmar que nada parou de ser medido.</li>
+</ol>
+<h2>Como conferir as compras do GA4 contra os pedidos da loja?</h2>
+<p>A conferência mais confiável das compras é cruzar o <code>transaction_id</code>, o identificador do pedido que vai junto do evento <code>purchase</code>, com a lista de pedidos pagos da loja. Assim a pergunta deixa de ser &quot;o total bate?&quot; e passa a ser &quot;quais pedidos o GA4 viu, quais ele perdeu e quais ele contou a mais?&quot;.</p>
+<p>Não é preciso BigQuery para começar. Segundo a <a href="https://support.google.com/analytics/answer/15227167">Central de Ajuda do Google Analytics</a>, o relatório Transações, no tópico Monetização, mostra cada transação com a dimensão ID da transação e a receita de compra. Exporte essa lista e compare com os pedidos pagos do mesmo período.</p>
+<p>O <code>transaction_id</code> tem um papel que pouca gente conhece. Segundo a <a href="https://support.google.com/analytics/answer/12313109?hl=en">página de e-commerce da Central de Ajuda do Google Analytics</a>, o GA4 deduplica compras registradas com o mesmo ID de transação. A mesma página traz três regras que mudam a leitura de qualquer relatório:</p>
+<ul>
+<li><strong>O ID precisa ser único por pedido.</strong> Se a tag manda o mesmo ID para compras diferentes, o Google avisa que a conta de conversões pode ficar muito abaixo do real.</li>
+<li><strong>O ID não pode ir vazio.</strong> O GA4 deduplica todas as compras enviadas com ID vazio, o que faz várias vendas virarem uma só.</li>
+<li><strong>O ID não pode identificar o cliente.</strong> O Google pede que ele não carregue informação capaz de identificar a pessoa. Na prática, nada de e-mail ou CPF dentro do ID.</li>
+</ul>
+<p>A leitura da Ganica é que essa deduplicação protege o relatório de compras, mas não substitui a auditoria. A página do Google descreve a deduplicação para compras. Ela pede o ID em todos os eventos de e-commerce, mas não diz que eventos como adicionar ao carrinho ou iniciar o checkout são deduplicados. Por isso uma duplicidade nessas etapas pode inflar o começo do funil sem aparecer na receita.</p>
+<p>Quem já exporta o GA4 para o BigQuery, o banco de dados de análise do Google Cloud, pode procurar IDs repetidos direto nos dados brutos. Segundo o <a href="https://support.google.com/analytics/answer/7029846">esquema oficial da exportação</a>, o identificador fica no campo <code>ecommerce.transaction_id</code> e cada dia ganha uma tabela <code>events_AAAAMMDD</code>, quando a exportação diária está ativada. Uma consulta curta resolve: filtrar os eventos com <code>event_name</code> igual a <code>purchase</code>, agrupar por <code>ecommerce.transaction_id</code> e listar os IDs que aparecem mais de uma vez. Cada ID repetido é um de dois erros: o mesmo pedido enviado mais de uma vez ao GA4 ou o mesmo ID usado em pedidos diferentes. A base de pedidos da loja mostra qual dos dois. Separe também as compras com ID vazio, que o GA4 trata como uma compra só, e as compras sem ID, que não têm como ser cruzadas com a loja.</p>
+<p>O método de cruzar compra e pedido pelo ID também aparece no estudo sobre <a href="/conversao-checkout-mobile-funil-por-dispositivo.html">conversão do checkout por dispositivo</a>, e o guia de <a href="/integrar-posthog-bigquery-ecommerce.html">integração entre PostHog, GA4 e BigQuery</a> mostra como levar a base de pedidos para o mesmo lugar.</p>
+<h2>Que diferença entre o GA4 e a plataforma da loja é normal?</h2>
+<p>Alguma diferença entre o GA4 e a plataforma da loja é normal, porque o GA4 mede no navegador e a loja registra o pedido no servidor. O que separa diferença normal de erro é o comportamento: diferença pequena, estável e parecida entre meios de pagamento é esperada; diferença que salta de um dia para o outro, ou que só aparece num aparelho ou num meio de pagamento, é sinal de problema.</p>
+<p>A primeira fonte de diferença é o consentimento. Segundo a <a href="https://support.google.com/analytics/answer/11161109?hl=en">Central de Ajuda do Google Analytics</a>, o GA4 pode estimar o comportamento de quem recusou cookies por modelagem. Para isso, o modo de consentimento precisa estar ativo em todas as páginas, com as tags do Google carregando antes do aviso de cookies e em todos os casos (a implementação avançada). A propriedade também precisa coletar pelo menos 1.000 eventos por dia com consentimento recusado, por pelo menos 7 dias, e ter pelo menos 1.000 usuários diários com consentimento aceito em 7 dos 28 dias anteriores. O dado modelado só aparece nos relatórios com a identidade de relatório Combinada. O Google diz ainda que atingir esses números não garante a modelagem, e que o dado modelado não vai para a exportação ao BigQuery.</p>
+<p>A segunda fonte é o tempo. Segundo o <a href="https://support.google.com/analytics/answer/7029846">esquema da exportação</a>, o GA4 atualiza as tabelas diárias do BigQuery com eventos que chegam atrasados por até três dias, e o evento que chega depois dessa janela não entra. A <a href="https://support.google.com/analytics/answer/9358801">página da exportação para o BigQuery</a> descreve a mesma janela como dois dias corridos mais o dia atual. Ela também avisa que o Google pode refazer tabelas antigas quando reprocessa dados e que os dados exportados podem diferir dos que aparecem na interface do GA4.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Sinal na auditoria</th>
+<th>Leitura provável</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GA4 com mais compras que a loja</td>
+<td>Disparo repetido da compra ou pedidos não pagos contados como venda</td>
+</tr>
+<tr>
+<td>GA4 com menos compras, diferença estável</td>
+<td>Consentimento recusado, bloqueio do navegador ou compra concluída fora da página de confirmação</td>
+</tr>
+<tr>
+<td>Diferença que muda de um dia para o outro</td>
+<td>Mudança recente no site, no tema ou na ferramenta de consentimento</td>
+</tr>
+<tr>
+<td>Falta concentrada num meio de pagamento</td>
+<td>Retorno de aplicativo de banco ou de página externa que não volta à confirmação</td>
+</tr>
+<tr>
+<td>Etapa posterior maior que a anterior no funil</td>
+<td>Evento repetido na etapa posterior, etapa anterior sem disparo ou relatório de funil aberto (que conta quem entrou direto numa etapa do meio)</td>
+</tr>
+<tr>
+<td>Fechamento do dia muda nos dias seguintes</td>
+<td>Eventos atrasados, ainda dentro da janela de atualização</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Tabela: leitura da Ganica, com base na documentação oficial do Google citada no texto.</p>
+<h2>Qual é o checklist completo de auditoria do GA4 no e-commerce?</h2>
+<p>O checklist que a Ganica recomenda segue a ordem do barato para o caro: primeiro a configuração, depois o código.</p>
+<ol>
+<li><strong>Liste o que mede o quê.</strong> Anote cada ferramenta instalada (GA4, GTM, pixels de mídia, ferramentas de comportamento) e onde ela foi instalada: tema, contêiner ou aplicativo da plataforma.</li>
+<li><strong>Escolha um dono para cada evento.</strong> Para cada evento de e-commerce, uma única tag deve ser responsável. Dois donos para o mesmo evento são a receita da duplicidade.</li>
+<li><strong>Faça a jornada em modo de visualização.</strong> Repita em computador e celular e com todos os meios de pagamento. Inclua o caso em que o cliente paga e não volta à loja.</li>
+<li><strong>Confira os parâmetros da compra.</strong> O <a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce">guia de e-commerce para desenvolvedores</a> pede que cada item tenha ao menos <code>item_id</code> ou <code>item_name</code> e recomenda enviar <code>currency</code> sempre que houver <code>value</code>. Confira também se o <code>transaction_id</code> muda a cada pedido e nunca vai vazio.</li>
+<li><strong>Cruze compra e pedido pelo ID</strong> por uma ou duas semanas, separando por aparelho e por meio de pagamento.</li>
+<li><strong>Teste com o consentimento aceito e recusado.</strong> Veja o que deixa de ser enviado quando o visitante recusa, e confira se é isso que a política da loja promete.</li>
+<li><strong>Feche o número do dia com atraso.</strong> Não compare o dia de ontem antes de a janela de eventos atrasados terminar.</li>
+<li><strong>Registre cada correção com data.</strong> Uma anotação simples evita que a equipe compare um mês medido errado com um mês medido certo.</li>
+</ol>
+<p>Na conferência de pedidos entra dado pessoal. A Lei Geral de Proteção de Dados define dado pessoal como informação relacionada a pessoa natural identificada ou identificável e pede que o tratamento se limite ao mínimo necessário para a finalidade (arts. 5º e 6º da <a href="https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-publicacaooriginal-156212-pl.html">Lei 13.709/2018</a>). A recomendação da Ganica é cruzar só o ID do pedido, a data, o valor e o meio de pagamento, sem nome, e-mail ou documento. Mesmo assim, esses dados podem continuar sendo dado pessoal, porque a loja consegue ligar o ID ao cliente. Por isso, deixe o arquivo com acesso restrito e apague-o ao fim da conferência. Este guia não é orientação jurídica.</p>
+<p>A auditoria é o primeiro passo de um <a href="/#diagnostico">diagnóstico de CRO</a> (otimização da taxa de conversão), e o guia sobre <a href="/taxa-de-conversao-ecommerce.html">taxa de conversão do e-commerce</a> mostra o que fazer depois que o dado está confiável.</p>
+<h2>O que ainda não sabemos</h2>
+<p>Não encontramos, na documentação do Google, um número oficial de quanto o GA4 e a plataforma da loja podem divergir. A diferença aceitável depende da parcela de visitantes que recusa cookies, do uso de bloqueadores, do peso de cada meio de pagamento e de como a loja confirma o pedido. Por isso este guia fala em diferença estável, e não em uma porcentagem.</p>
+<p>Também não há, na documentação consultada, uma descrição de deduplicação para eventos além da compra. A leitura da Ganica é tratar qualquer repetição nas etapas do funil como erro a corrigir na origem, e não como algo que o GA4 resolve sozinho.</p>
+<p>Este guia reúne um caso e a documentação oficial do Google, consultada em novembro de 2026. Ele não mede ganho de conversão: mede se o número que orienta a decisão é confiável.</p>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>De quanto em quanto tempo devo auditar o GA4 da loja?</summary>
+        <p>A recomendação da Ganica é auditar sempre que o site muda de tema, de checkout, de plataforma ou de ferramenta de consentimento, e antes de qualquer data de pico. Fora disso, a recomendação é uma conferência mensal da compra contra os pedidos pagos.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>O que fazer com os dados do período em que o evento estava duplicado?</summary>
+        <p>Anote o período e não o use em comparações sem tratamento. A recomendação da Ganica é registrar a data da correção e, se a exportação para o BigQuery já estava ligada naquele período, tratar as repetições na consulta antes de comparar meses.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Preciso do BigQuery para auditar o GA4?</summary>
+        <p>Não. O Tag Assistant e o DebugView mostram duplicidade sem BigQuery, e o relatório Transações do GA4 lista as compras pelo ID do pedido para comparar com a loja. O BigQuery ajuda quando o volume é grande ou quando é preciso tratar períodos antigos.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Quem deve fazer a auditoria de rastreamento, o time de marketing ou o de tecnologia?</summary>
+        <p>Os dois. O marketing sabe quais números orientam decisões e onde eles parecem estranhos; a tecnologia sabe onde as tags e o código foram instalados. A recomendação da Ganica é que uma pessoa só seja dona do contêiner do Tag Manager (o espaço onde ficam todas as tags da loja).</p>
+
+      </details>
+    </div>
+    <p class="article-sources">Fontes e metodologia: Experiência da Ganica em projeto de e-commerce com evento duplicado por tags sobrepostas no Google Tag Manager (sem identificação da empresa). Documentação oficial do Google, consultada em novembro de 2026: Central de Ajuda do Google Analytics (Measure ecommerce; Transactions report; Monitor events in DebugView; Behavioral modeling for consent mode; BigQuery Export; BigQuery Export schema), Central de Ajuda do Google Tag Manager (Get started with Tag Manager; Tag firing options), guias para desenvolvedores do Google Analytics (Measure ecommerce; Measure single-page applications). Lei 13.709/2018 (LGPD), arts. 5º e 6º, no portal da Câmara dos Deputados. A lógica da consulta descrita é da Ganica, a partir do esquema oficial da exportação. Ferramentas mudam com frequência; confira as páginas oficiais antes de aplicar.</p>
+    <nav class="article-links" aria-labelledby="links-fontes">
+      <h2 id="links-fontes" class="article-links-titulo">Links das fontes</h2>
+      <ol>
+        <li><a href="https://support.google.com/analytics/answer/12313109?hl=en" rel="noopener" target="_blank">Measure ecommerce, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/analytics/answer/15227167" rel="noopener" target="_blank">Transactions report, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/analytics/answer/7201382?hl=en" rel="noopener" target="_blank">Monitor events in DebugView, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/analytics/answer/11161109?hl=en" rel="noopener" target="_blank">Behavioral modeling for consent mode, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/analytics/answer/9358801" rel="noopener" target="_blank">BigQuery Export, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/analytics/answer/7029846" rel="noopener" target="_blank">BigQuery Export schema, Central de Ajuda do Google Analytics</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/tagmanager/answer/6107056" rel="noopener" target="_blank">Get started with Tag Manager, Central de Ajuda do Google Tag Manager</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://support.google.com/tagmanager/answer/6279951" rel="noopener" target="_blank">Tag firing options, Central de Ajuda do Google Tag Manager</a><span class="article-links-dominio">support.google.com</span></li>
+        <li><a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce" rel="noopener" target="_blank">Measure ecommerce, guia para desenvolvedores do Google Analytics</a><span class="article-links-dominio">developers.google.com</span></li>
+        <li><a href="https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications" rel="noopener" target="_blank">Measure single-page applications, guia para desenvolvedores do Google Analytics</a><span class="article-links-dominio">developers.google.com</span></li>
+        <li><a href="https://www2.camara.leg.br/legin/fed/lei/2018/lei-13709-14-agosto-2018-787077-publicacaooriginal-156212-pl.html" rel="noopener" target="_blank">Lei nº 13.709/2018, Lei Geral de Proteção de Dados (Câmara dos Deputados)</a><span class="article-links-dominio">camara.leg.br</span></li>
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+</article>
+
+<section id="autor" class="autor">
+  <div class="wrap">
+    <div class="sobre-card">
+      <div class="sobre-photo-col">
+        <picture>
+          <source srcset="/assets/img/narcipe-viana.webp" type="image/webp">
+          <img class="sobre-photo" src="/assets/img/narcipe-viana.jpg" width="700" height="822" loading="lazy" decoding="async" alt="Narcipe Viana, consultor de CRO">
+        </picture>
+        <div class="sobre-caption">
+          <p class="sobre-name">Narcipe Viana</p>
+          <p class="sobre-role">Consultor de CRO</p>
+        </div>
+      </div>
+      <div class="sobre-text-col">
+        <h2>Sobre quem escreveu</h2>
+        <p>Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, PostHog, BigQuery, Looker Studio) e auditoria comportamental. Minha regra é simples: antes de analisar, garantir que o dado conta a verdade.</p>
+        <p><a href="/#sobre">Conhecer mais sobre meu trabalho →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>Os números da sua loja contam a mesma história que os seus pedidos?</h2>
+    <p>Um diagnóstico de CRO começa conferindo o rastreamento: se a compra é medida uma vez, se nada se perde no caminho e onde a conversão de fato quebra.</p>
+    <div class="hero-ctas">
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" loading="lazy" decoding="async">
+    <nav class="footer-links" aria-label="Rodapé">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="mailto:contato@ganica.com.br">contato@ganica.com.br</a>
+    </nav>
+    <p>Consultoria independente de CRO para <span class="nw">e-commerce</span>. © 2026 Ganica.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+
+<script>
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    if(!('IntersectionObserver' in window)) return;
+    var sectionIds = ['autor', 'contato'];
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>
