@@ -619,3 +619,13 @@ pautas:
       tempo até perceber uma falha; agentes de conteúdo e atendimento vêm depois.
     palavra_chave: "automação com IA no e-commerce"
     campo: [C9]
+  - id: 39
+    tipo: base
+    status: publicada
+    publicado_em: 2026-11-15
+    slug: investir-em-cro-ecommerce
+    origem: "Pedido do Narcipe em 15/11/2026: o erro de investir em tráfego pago, SEO, influenciadores e branding sem investir em análise do site, UX e análise de quem compra; o estudo termina reforçando a importância do CRO. Publicar no mesmo dia, se aprovado."
+    campo: [C10, C2, C9]
+    titulo: "Investir em tráfego, influenciador e marca sem investir em CRO: o erro que encarece cada venda"
+    palavra_chave: "investir em CRO"
+    slug_sugerido: investir-em-cro-ecommerce
