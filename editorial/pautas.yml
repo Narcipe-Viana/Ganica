@@ -87,9 +87,12 @@ pautas:
 
   - id: 37
     tipo: base
-    status: fila
+    status: pronta
+    publicar_em: 2026-11-16
+    arquivo: src/artigos/taxa-de-conversao-nao-sobe-trafego-desqualificado.md
     usa_dado_cliente: true
-    origem: "Achado de diagnóstico enviado pelo Narcipe em 12/11/2026. Prioridade: próxima pauta base (segunda, 16/11/2026)."
+    origem: "Achado de diagnóstico enviado pelo Narcipe em 12/11/2026. Relato do caso enviado em 15/11/2026 (pedido de estudo de caso para publicar depois): a taxa de conversão era um desafio; foram feitas diversas mudanças no site e a taxa só caía; ao analisar, o problema não era o site e sim o tráfego que chegava, vindo de campanhas de engajamento e de captação de leads ativadas pela mídia paga, que levavam visitas ao site sem converter. Sem números do cliente."
+    revisao: "Escrito e revisado em 15/11/2026 (2 rodadas de revisão independente, sem bloqueantes; QA aprovado). Na execução de 16/11: reconferir fontes e links, mudar rascunho para false, remover publicar_em, ajustar date/updated/hora e publicar."
     campo: [C16]
     titulo_provisorio: "Por que a taxa de conversão não sobe? Às vezes o problema é a mídia, não o site"
     tese: >-
