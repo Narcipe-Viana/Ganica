@@ -120,6 +120,18 @@ pautas:
     slug_sugerido: taxa-de-conversao-nao-sobe-trafego-desqualificado
     links_com: [33]
 
+  - id: 40
+    tipo: base
+    status: pronta
+    publicar_em: 2026-11-19
+    arquivo: src/artigos/auditoria-ux-baymard-ecommerce.md
+    slug: auditoria-ux-baymard-ecommerce
+    usa_dado_cliente: false
+    origem: "Pedido do Narcipe em 16/11/2026: estudo sobre o serviço de auditoria de UX da Baymard (https://baymard.com/ux-audit-services) e sua funcionalidade, na agenda de publicações."
+    revisao: "Escrito e revisado em 16/11/2026 (3 rodadas de revisão independente; a última sem bloqueantes; QA aprovado). Agendado com rascunho: false e publicar_em: 2026-11-19 (quinta, sem execução da tarefa): o build diário das 00:05 publica sozinho e avisa o IndexNow. Na próxima execução da tarefa, conferir que está no sitemap no ar e marcar status: publicada."
+    titulo_provisorio: "Auditoria de UX da Baymard: como funciona e quando vale para um e-commerce brasileiro"
+    palavra_chave: "auditoria de UX Baymard / auditoria de UX e-commerce"
+
   - id: 3
     status: fila
     usa_dado_cliente: true
