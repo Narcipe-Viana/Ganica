@@ -495,7 +495,10 @@ pautas:
     slug_sugerido: auditoria-rastreamento-ga4-gtm-ecommerce
   - id: 24
     tipo: tecnico
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-17
+    slug: ga4-posthog-hotjar-clarity-logrocket-ecommerce
+    revisao: "Publicado em 17/11/2026 após 3 rodadas de revisão independente. Corrigidos: retenção de gravações do PostHog (1 mês grátis, 3 meses pago), prazo de gravação por ferramenta, práticas da Ganica reescritas como recomendação, base legal da LGPD (art. 7º), limite de 2 meses para propriedades GA4 grandes; retirada a descrição de mapas de atenção e afirmações de mercado sem fonte."
     titulo_provisorio: "GA4, PostHog, Hotjar, Clarity ou LogRocket: qual ferramenta responde qual pergunta do seu e-commerce"
     pontos:
       - "Comparar por pergunta de negócio, não por recurso. Tabela de 2 colunas."
