@@ -648,3 +648,25 @@ pautas:
     titulo: "Investir em tráfego, influenciador e marca sem investir em CRO: o erro que encarece cada venda"
     palavra_chave: "investir em CRO"
     slug_sugerido: investir-em-cro-ecommerce
+  - id: 41
+    tipo: tendencia
+    status: publicada
+    publicado_em: 2026-11-18
+    slug: campo-de-cupom-checkout-ecommerce
+    revisao: "Publicado em 18/11/2026 após 3 rodadas de revisão independente. Corrigidos: causa da alta no Trends (parte ligada à campanha de cupons da Serasa, não só à Black Friday), 51,6% do Reclame AQUI com a condição completa, origem do 83% da Baymard, mecanismo do cliente marcado como hipótese, C6 sem detalhe novo; retirada a afirmação de que o cliente que sai não volta."
+    titulo_provisorio: "Campo de cupom no checkout: quando ele tira o cliente da loja na Black Friday"
+    sinal:
+      termo: "cupom de desconto (termo-semente) e black friday"
+      valor: "cupom de desconto +19% em 90 dias, com consultas de cupom + nome de varejista entre as principais e em ascensão; black friday +1600% em 90 dias"
+      janela: "últimos 90 dias, coleta de 2026-11-17"
+      link: "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=cupom+de+desconto&hl=pt-BR"
+    causa: "Reta final antes da Black Friday de 27/11/2026: a busca por black friday sobe junto, e o consumidor procura o código pronto fora da loja (pesquisa Opinion Box para a Serasa, mai/2026: 73% já desistiram de compra por não achar cupom válido no checkout)."
+    tese: >-
+      Na Black Friday, o cupom deixa de ser detalhe e vira ponto de saída: um campo de cupom exposto no
+      checkout lembra o cliente de que talvez exista um desconto que ele não tem, e ele sai para procurar.
+      A loja reduz essa fuga escondendo o campo atrás de um link, aplicando o desconto sozinha quando puder,
+      deixando as regras claras e medindo o cupom recusado, que o GA4 não registra sem um evento próprio.
+    campo: [C6]
+    palavra_chave: "campo de cupom no checkout / cupom de desconto checkout"
+    slug_sugerido: campo-de-cupom-checkout-ecommerce
+    links_com: [28, 1, 23]
