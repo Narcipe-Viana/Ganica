@@ -14,6 +14,11 @@ usados:
     data_original: 2026-04-14
     estudo_ganica: /automacao-ia-ecommerce-alertas.html
     publicado_em: 2026-11-13
+  - url: https://cxl.com/blog/google-ai-search-optimization-guide/
+    titulo_original: "Google's AI search optimization guide is right about the basics"
+    data_original: 2026-05-26
+    estudo_ganica: /aparecer-modo-ia-google-ecommerce.html
+    publicado_em: 2026-11-20
 
 candidatos:
   - url: https://cxl.com/blog/chatgpt-reddit-citations/
@@ -36,6 +41,14 @@ candidatos:
     titulo_original: "How to build an AI second brain for marketing with Obsidian and Claude Code"
     data_original: 2026-07-28
     angulo_brasil: "Prioridade baixa: tema de produtividade pessoal, pouco ligado a conversão de e-commerce."
+  - url: https://cxl.com/blog/generative-engine-optimization-geo-what-it-is-and-what-the-research-says-works/
+    titulo_original: "Generative engine optimization (GEO): what it is and what the research says works"
+    data_original: 2026-11-10
+    angulo_brasil: "Conversa com a pauta 36 (GEO na prática). Usar só com outro ângulo que não o guia do Google, já tratado em /aparecer-modo-ia-google-ecommerce.html."
+  - url: https://cxl.com/blog/ai-marketing-automation-how-to-build-ai-workflows-and-agents-that-do-real-marketing-work/
+    titulo_original: "AI marketing automation: how to build AI workflows and agents that do real marketing work"
+    data_original: 2026-11-10
+    angulo_brasil: "Perto do estudo de automação já publicado (/automacao-ia-ecommerce-alertas.html); só com ângulo novo."
 
 # Outros conteúdos da CXL (não IA), para quando nenhum artigo de IA agregar.
 candidatos_outros_temas:

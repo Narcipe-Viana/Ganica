@@ -122,8 +122,8 @@ pautas:
 
   - id: 40
     tipo: base
-    status: pronta
-    publicar_em: 2026-11-19
+    status: publicada
+    publicado_em: 2026-11-19
     arquivo: src/artigos/auditoria-ux-baymard-ecommerce.md
     slug: auditoria-ux-baymard-ecommerce
     usa_dado_cliente: false
@@ -623,6 +623,7 @@ pautas:
       - "Linkar o estudo da página de produto (estrutura-pagina-de-produto-ecommerce)."
     palavra_chave: "GEO para e-commerce / como aparecer nas respostas da IA"
     slug_sugerido: geo-ecommerce-taticas-ia
+    nota_sobreposicao: "Em 20/11/2026 foi publicado aparecer-modo-ia-google-ecommerce (guia do Google para busca com IA, llms.txt, Merchant Center, relatório do Search Console). Ao escrever esta pauta, focar na matriz de táticas e em outros motores de IA, sem repetir aquele estudo, e linkar para ele."
   - id: 38
     tipo: cxl
     status: publicada
@@ -670,3 +671,20 @@ pautas:
     palavra_chave: "campo de cupom no checkout / cupom de desconto checkout"
     slug_sugerido: campo-de-cupom-checkout-ecommerce
     links_com: [28, 1, 23]
+  - id: 42
+    tipo: cxl
+    status: publicada
+    publicado_em: 2026-11-20
+    slug: aparecer-modo-ia-google-ecommerce
+    origem:
+      titulo: "Google's AI search optimization guide is right about the basics (Chad Wyatt, CXL, 26/05/2026, atualizado em 10/11/2026)"
+      url: https://cxl.com/blog/google-ai-search-optimization-guide/
+    titulo: "Como aparecer no Modo IA do Google com a sua loja? O que o guia oficial muda no e-commerce"
+    tese: >-
+      Para aparecer no Modo IA e nas Visões gerais do Google, a loja não precisa de llms.txt nem de marcação
+      especial: precisa de páginas indexadas e liberadas para trecho, dado de produto igual no Merchant Center e
+      na página, conteúdo próprio para perguntas longas e uma medição que vá das impressões no relatório de IA
+      generativa do Search Console até a venda no GA4.
+    palavra_chave: "aparecer no Modo IA do Google / Modo IA do Google e-commerce"
+    campo: [C15]
+    revisao: "Publicado em 20/11/2026 após 3 rodadas de revisão independente. Corrigidos: resumo das ressalvas da CXL, max-snippet (só :0 impede), controle de IA generativa do Search Console, checkout com agentes anunciado (não iniciado) para EUA e depois Canadá, Austrália e Reino Unido, papel do Merchant Center, hipótese sobre lojas premium restrita ao Modo IA, dado de tamanho de pergunta sem recorte por país."
