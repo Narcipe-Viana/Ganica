@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'article',
+    content_group: 'estudo',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoria de UX da Baymard: como funciona e quando vale</title>
+
+<meta name="description" content="Auditoria de UX da Baymard: o que o serviço entrega, como funciona, quanto tempo leva e o que ela não cobre num e-commerce brasileiro, com dados de abandono.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Narcipe Viana">
+<link rel="canonical" href="https://ganica.com.br/auditoria-ux-baymard-ecommerce.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ganica">
+<meta property="og:title" content="Auditoria de UX da Baymard: o que entrega, como funciona e quando vale para uma loja brasileira">
+<meta property="og:description" content="Auditoria de UX da Baymard: o que o serviço entrega, como funciona, quanto tempo leva e o que ela não cobre num e-commerce brasileiro, com dados de abandono.">
+<meta property="og:url" content="https://ganica.com.br/auditoria-ux-baymard-ecommerce.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-11-19T07:00:00-03:00">
+<meta property="article:modified_time" content="2026-11-19T07:00:00-03:00">
+<meta property="article:author" content="Narcipe Viana">
+<meta property="article:section" content="E-commerce">
+<meta property="article:tag" content="CRO">
+<meta property="article:tag" content="UX">
+<meta property="article:tag" content="auditoria">
+<meta property="article:tag" content="Baymard">
+<meta property="og:image" content="https://ganica.com.br/assets/og/auditoria-ux-baymard-ecommerce.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Auditoria de UX da Baymard: como funciona e quando vale para um e-commerce brasileiro">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auditoria de UX da Baymard: como funciona e quando vale">
+<meta name="twitter:description" content="O que a auditoria de UX da Baymard entrega, em quanto tempo, com que método, e o que fica de fora para uma loja brasileira: frete, parcelamento e os seus próprios dados.">
+<meta name="twitter:image" content="https://ganica.com.br/assets/og/auditoria-ux-baymard-ecommerce.png">
+<meta name="theme-color" content="#F5F9F9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/lexend-deca-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+
+
+<!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
+     deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ganica.com.br/#organization",
+      "name": "Ganica",
+      "url": "https://ganica.com.br/",
+      "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
+      "email": "contato@ganica.com.br",
+      "logo": { "@type": "ImageObject", "url": "https://ganica.com.br/logo-ganica.png", "width": 512, "height": 512 },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "https://ganica.com.br/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ganica.com.br/#narcipe-viana",
+      "name": "Narcipe Viana",
+      "jobTitle": "Consultor de CRO",
+      "url": "https://ganica.com.br/#sobre",
+      "image": "https://ganica.com.br/assets/img/narcipe-viana.jpg",
+      "worksFor": { "@id": "https://ganica.com.br/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ganica.com.br/#website",
+      "url": "https://ganica.com.br/",
+      "name": "Ganica",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://ganica.com.br/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ganica.com.br/auditoria-ux-baymard-ecommerce.html#article",
+      "headline": "Auditoria de UX da Baymard: como funciona e quando vale para um e-commerce brasileiro",
+      "description": "Auditoria de UX da Baymard: o que o serviço entrega, como funciona, quanto tempo leva e o que ela não cobre num e-commerce brasileiro, com dados de abandono.",
+      "datePublished": "2026-11-19T07:00:00-03:00",
+      "dateModified": "2026-11-19T07:00:00-03:00",
+      "abstract": "A auditoria de UX da Baymard é uma avaliação feita por especialistas, que comparam o site, no computador e no celular, com diretrizes tiradas dos testes com usuários da empresa. Entrega, em inglês, um relatório com 40 melhorias priorizadas, apresentação e até 4 chamadas de apoio, em 15 a 25 dias úteis no site inteiro. Vale mais para quem vai redesenhar o site e já mede o próprio funil.",
+      "image": [{ "@type": "ImageObject", "url": "https://ganica.com.br/assets/og/auditoria-ux-baymard-ecommerce.png", "width": 1200, "height": 630 }],
+      "wordCount": 2052,
+      "timeRequired": "PT10M",
+      "isAccessibleForFree": true,
+      "citation": ["https://baymard.com/ux-audit-services", "https://baymard.com/research/methodology", "https://baymard.com/ux-ray", "https://baymard.com/product/baseline-ux-benchmark", "https://baymard.com/learn/ecommerce-ux-audit", "https://baymard.com/lists/cart-abandonment-rate", "https://baymard.com/blog/ux-ray-progress-2026", "https://www.nngroup.com/articles/baymard-ai-tool-accuracy/", "https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/", "https://content.app-us1.com/JY8yY/2026/07/22/9f1cd26c-4f0b-49a1-a684-95615a71c688.pdf"],
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://ganica.com.br/#narcipe-viana" },
+      "publisher": { "@id": "https://ganica.com.br/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ganica.com.br/auditoria-ux-baymard-ecommerce.html" },
+      "articleSection": "E-commerce",
+      "keywords": ["auditoria de UX Baymard","auditoria de UX e-commerce","avaliação heurística","Baymard Institute","UX de checkout"],
+      "about": [{ "@type": "Thing", "name": "Otimização de conversão (CRO)" }, { "@type": "Thing", "name": "Experiência do usuário (UX)" }, { "@type": "Thing", "name": "Baymard Institute" }],
+      "isPartOf": { "@id": "https://ganica.com.br/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ganica.com.br/auditoria-ux-baymard-ecommerce.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ganica.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "https://ganica.com.br/estudos/" },
+        { "@type": "ListItem", "position": 3, "name": "Auditoria de UX da Baymard" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Base compartilhada por todas as páginas: marca, tipografia, botões, cabeçalho e rodapé.
+   Cores derivadas da logo. Mobile primeiro. */
+@font-face{
+  font-family:'Lexend Deca';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2-variations'),
+      url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2');
+}
+/* Fallback com métricas próximas: reduz o salto de layout (CLS) quando a fonte carrega */
+@font-face{
+  font-family:'Lexend Fallback';
+  src:local('Arial');
+  size-adjust:112%;
+  ascent-override:89%;
+  descent-override:22%;
+  line-gap-override:0%;
+}
+
+:root{
+  --ink:#0B3842;
+  --ink-hover:#0F4A57;
+  --paper:#F5F9F9;
+  --panel:#E6F1F3;
+  --white:#FFFFFF;
+  --amber:#FAB32B;
+  --amber-hover:#F0A312;
+  --teal:#107088;
+  --teal-bright:#1A8BA3;
+  --body:#2C4A53;
+  --muted:#466069;
+  --line:#C9DEE2;
+  --line-soft:#DCE9EC;
+  --line-strong:#6F8A92;
+  --font:'Lexend Deca','Lexend Fallback',Arial,sans-serif;
+  --max:1440px;
+  --gutter:clamp(20px,5vw,72px);
+  --sombra-card:0 1px 2px rgba(11,56,66,.05),0 14px 32px -22px rgba(11,56,66,.22);
+  --sombra-folha:0 1px 2px rgba(11,56,66,.05),0 28px 64px -28px rgba(11,56,66,.24);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ font-weight:400; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+ul,ol{ list-style:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+[hidden]{ display:none !important; }
+.nw{ white-space:nowrap; }
+.wrap{ max-width:var(--max); margin:0 auto; padding-inline:var(--gutter); }
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--teal-bright);
+  outline-offset:3px;
+}
+.pular{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  padding:10px 16px; background:var(--ink); color:var(--white); border-radius:10px;
+}
+.pular:focus{ top:12px; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Títulos de seção ---------- */
+.rotulo{
+  font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:58px; padding:0 22px;
+  border:1px solid transparent; border-radius:12px;
+  font-weight:600; font-size:1rem; line-height:1.2; text-decoration:none; text-align:center;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+.btn-ambar{ background:var(--amber); color:var(--ink); }
+.btn-ambar:hover{ background:var(--amber-hover); }
+.btn-leve{ background:var(--white); color:var(--ink); font-weight:500; }
+.btn-leve:hover{ background:var(--line-soft); }
+.btn-contorno{ background:transparent; border-color:var(--ink); color:var(--ink); border-radius:10px; font-weight:500; }
+.btn-contorno:hover{ background:var(--panel); }
+.btn-bloco{ display:flex; width:100%; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,249,249,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);
+  min-height:64px;
+}
+.marca{ display:flex; align-items:center; min-height:44px; flex-shrink:0; position:relative; z-index:60; }
+.marca img{ height:32px; width:auto; }
+.nav-links{ display:none; }
+.nav-cta{ display:none; }
+.menu-toggle{
+  position:relative; z-index:60;
+  width:44px; height:44px; margin-right:-10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; flex-shrink:0;
+}
+.menu-icon,.menu-icon::before,.menu-icon::after{
+  display:block; width:22px; height:1.5px; background:var(--ink);
+  transition:transform .2s ease,background .15s ease;
+}
+.menu-icon{ position:relative; }
+.menu-icon::before,.menu-icon::after{ content:""; position:absolute; left:0; }
+.menu-icon::before{ top:-7px; }
+.menu-icon::after{ top:7px; }
+.menu-toggle.open .menu-icon{ background:transparent; }
+.menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+.menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:40;
+  display:flex; flex-direction:column; justify-content:center; gap:40px;
+  padding:88px 24px 48px;
+  background:var(--paper);
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+}
+.mobile-menu.open{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .25s ease,transform .25s ease,visibility 0s;
+}
+.mobile-menu-links{ display:flex; flex-direction:column; }
+.mobile-menu-links a{
+  display:flex; align-items:center; min-height:56px;
+  font-size:1.6rem; text-decoration:none; border-bottom:1px solid var(--line-soft);
+}
+body.menu-open{ overflow:hidden; }
+
+@media (min-width:900px){
+  .nav{ min-height:80px; }
+  .marca img{ height:36px; }
+  .nav-links{ display:flex; gap:32px; font-size:1rem; }
+  .nav-links a{ display:flex; align-items:center; min-height:44px; text-decoration:none; color:var(--body); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{ display:inline-flex; min-height:46px; padding:0 18px; }
+  .menu-toggle,.mobile-menu{ display:none; }
+}
+
+/* ---------- Trama da logo (detalhe de fundo, nunca atrás de texto em peso visual) ---------- */
+.com-trama{ position:relative; overflow:hidden; }
+.com-trama::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:url('/assets/img/trama.svg') center/1200px 900px;
+  opacity:.2;
+  -webkit-mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+  mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+}
+.com-trama > *{ position:relative; }
+@media (min-width:900px){
+  .com-trama::before{
+    left:34%; opacity:.26;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 62%);
+    mask-image:linear-gradient(to right,transparent,#000 62%);
+  }
+}
+
+/* ---------- Etiqueta "Novo" ---------- */
+.tag-novo{
+  display:inline-flex; align-items:center;
+  padding:4px 10px; border-radius:999px;
+  background:var(--amber); color:var(--ink);
+  font-size:.8125rem; font-weight:600; line-height:1.4;
+}
+
+/* ---------- Sobre (card usado nos estudos) ---------- */
+.foto-autor{ display:block; width:100%; height:auto; }
+
+/* ---------- Rodapé ---------- */
+.site-footer{ border-top:1px solid var(--line); }
+.site-footer .wrap{ padding-block:36px; display:flex; flex-direction:column; gap:20px; }
+.site-footer img{ height:32px; width:auto; align-self:flex-start; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:0 24px; font-size:.9375rem; }
+.footer-links a{ display:inline-flex; align-items:center; min-height:44px; color:var(--body); text-decoration:none; }
+.footer-links a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.site-footer p{ font-size:.875rem; color:var(--muted); }
+@media (min-width:900px){
+  .site-footer .wrap{ flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+  .site-footer img{ align-self:center; }
+  .site-footer p{ flex-basis:100%; }
+}
+
+/* Escala do desktop: conteúdo mais contido em telas grandes (o mobile não é afetado) */
+@media (min-width:900px){
+  :root{ --max:1240px; --gutter:clamp(32px,4vw,56px); }
+  .nav{ min-height:72px; }
+  .marca img{ height:32px; }
+  .nav-links{ gap:28px; font-size:.9375rem; }
+  .nav-cta{ min-height:42px; padding:0 16px; font-size:.9375rem; }
+  .btn{ min-height:52px; font-size:.9375rem; }
+}
+
+/* ---------- Article hero ---------- */
+  .article-hero{ background:var(--paper); color:var(--ink); padding:48px 0 56px; border-bottom:1px solid var(--line); }
+  .article-hero h1{ font-weight:500; letter-spacing:-.015em; line-height:1.15; }
+  .biblioteca-selo{ display:flex; align-items:center; gap:8px; margin-bottom:14px; font-size:.9375rem; font-weight:500; color:var(--teal); }
+  @media (max-width:640px){
+    .article-hero{ padding-top:32px; padding-bottom:40px; }
+  }
+  .article-hero .tag-novo{ margin-bottom:18px; }
+  .breadcrumb{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .breadcrumb a{ color:var(--muted); }
+  .breadcrumb a:hover{ color:var(--ink); }
+  .breadcrumb .sep{ margin:0 8px; opacity:0.5; }
+  .article-hero h1{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    max-width:30ch;
+  }
+  @media (min-width:900px){
+    .article-hero h1{ max-width:26ch; }
+  }
+  .article-deck{
+    margin-top:20px;
+    font-size:1.08rem;
+    color:var(--body);
+    max-width:62ch;
+    line-height:1.7;
+  }
+  .article-meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    align-items:center;
+    font-size:0.88rem;
+    color:var(--muted);
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .article-meta strong{ color:var(--ink); font-weight:600; }
+  .article-meta .dot{ opacity:0.5; }
+  @media (max-width:640px){ .article-meta{ flex-direction:column; align-items:flex-start; } .article-meta .dot{ display:none; } }
+
+  /* ---------- Article body / prose ---------- */
+  .article-body{ padding-block:56px; }
+  .autor{ }
+  .prose{ max-width:760px; margin:0 auto; padding:0 20px; }
+  .prose h2{
+    font-weight:500; line-height:1.2; letter-spacing:-.01em;
+    font-size:clamp(1.4rem,2.6vw,1.75rem);
+    margin-top:52px;
+    margin-bottom:18px;
+  }
+  .prose > .prose-lead h2:first-of-type,
+  .prose h2:first-child{ margin-top:0; }
+  .prose p{
+    color:var(--body);
+    font-size:1.03rem;
+    margin-bottom:20px;
+    line-height:1.75;
+  }
+  .prose strong{ color:var(--ink); }
+  .prose a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .prose a:hover{ color:var(--ink); }
+
+  /* Resumo rápido */
+  .resumo-box{
+    background:var(--panel);
+    color:var(--ink);
+    border-radius:16px;
+    padding:32px 30px;
+    margin-bottom:48px;
+  }
+  .resumo-box .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .resumo-list{
+    list-style:none;
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .resumo-list li{
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:0.98rem;
+    color:var(--body);
+    line-height:1.65;
+  }
+  .resumo-list li:first-child{ border-top:none; padding-top:0; }
+  .prose .resumo-list strong{ color:var(--ink); }
+  @media (max-width:640px){
+    .resumo-box{ padding:26px 22px; }
+  }
+
+  /* Pull quote */
+  .pull-quote{
+    font-family:var(--font);
+    font-weight:400;
+    font-size:clamp(1.15rem,2vw,1.35rem);
+    line-height:1.5;
+    color:var(--ink);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:28px 0;
+    margin:8px 0 36px;
+  }
+
+  /* Data table */
+  .data-table-wrap{
+    overflow-x:auto;
+    margin:8px 0 32px;
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .data-table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:520px; }
+  .data-table thead th{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--font);
+    font-weight:600;
+    text-align:left;
+    padding:14px 16px;
+    font-size:0.85rem;
+    letter-spacing:0.01em;
+  }
+  .data-table tbody td{
+    padding:13px 16px;
+    border-top:1px solid var(--line);
+    color:var(--body);
+  }
+  .data-table tbody tr:nth-child(even){ background:var(--paper); }
+  .data-table tbody td:first-child{ font-weight:600; color:var(--ink); }
+  .data-table tbody tr.highlight td{ color:var(--teal); font-weight:600; }
+  .table-caption{
+    font-size:0.85rem;
+    color:var(--body);
+    margin:-16px 0 28px;
+    font-style:italic;
+  }
+
+  /* FAQ */
+  .faq-list{ margin-top:8px; }
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:20px 0;
+  }
+  .faq-item:last-child{ border-bottom:1px solid var(--line); margin-bottom:32px; }
+  .faq-item summary{
+    cursor:pointer;
+    font-family:var(--font);
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--ink);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.3rem;
+    color:var(--teal);
+    flex-shrink:0;
+    font-family:var(--font);
+  }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{
+    margin-top:14px;
+    margin-bottom:0;
+    color:var(--body);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+
+  .article-sources{
+    margin-top:8px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--body);
+    font-style:italic;
+  }
+
+  .figura{ margin:36px 0; }
+  .figura img{
+    display:block; width:100%; max-width:520px; margin:0 auto; height:auto; border-radius:14px;
+    border:1px solid var(--line-soft); box-shadow:var(--sombra-card); background:var(--white);
+  }
+  .figura-link{ display:block; }
+  .figura figcaption{ max-width:520px; margin:12px auto 0; font-size:0.82rem; line-height:1.5; color:var(--muted); }
+  @media (max-width:640px){ .prose .figura{ margin:28px -8px; } .figura img{ border-radius:10px; } }
+
+  .article-links{ margin-top:20px; }
+  .prose .article-links-titulo,.article-links-titulo{
+    font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 10px; line-height:1.4;
+  }
+  .article-links ol{ list-style:none; margin:0; padding:0; counter-reset:fonte; }
+  .article-links li{
+    counter-increment:fonte; position:relative;
+    padding:10px 0 10px 32px; border-top:1px solid var(--line-soft);
+    font-size:0.9rem; line-height:1.45;
+  }
+  .article-links li::before{
+    content:counter(fonte,decimal-leading-zero); position:absolute; left:0; top:11px;
+    font-size:0.75rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  .article-links a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+  .article-links a:hover{ color:var(--ink); }
+  .article-links-dominio{ display:block; font-size:0.75rem; color:var(--muted); margin-top:2px; }
+
+  /* ---------- Sobre (autor) ---------- */
+  .autor{ padding-block:0 56px; }
+  .sobre-card{
+    display:grid; grid-template-columns:1fr; overflow:hidden;
+    background:var(--white); border-radius:18px; box-shadow:var(--sombra-card);
+  }
+  @media (min-width:820px){ .sobre-card{ grid-template-columns:300px 1fr; } }
+  .sobre-photo{ width:100%; height:auto; display:block; }
+  .sobre-caption{ padding:16px 18px; }
+  .sobre-name{ font-size:1.05rem; font-weight:500; color:var(--ink); }
+  .sobre-role{ margin-top:2px; font-size:.85rem; color:var(--muted); }
+  .sobre-text-col{ padding:36px 32px; }
+  .sobre-text-col h2{ margin-bottom:20px; font-size:clamp(1.5rem,3vw,2rem); line-height:1.15; }
+  .sobre-text-col p{ color:var(--body); max-width:60ch; margin-bottom:16px; font-size:1.02rem; }
+  .sobre-text-col p a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .sobre-text-col p a:hover{ color:var(--ink); }
+  @media (max-width:640px){
+    .sobre-text-col{ padding:26px 22px; }
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{ background:var(--panel); color:var(--ink); padding-block:64px; }
+  .cta-final h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); line-height:1.12; letter-spacing:-.015em; max-width:20ch; }
+  .cta-final p{ color:var(--body); margin-top:16px; max-width:52ch; font-size:1.02rem; }
+  .cta-final .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  @media (max-width:479px){
+    .cta-final .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .cta-final .hero-ctas .btn{ width:100%; text-align:center; }
+  }
+
+  /* Resposta direta: o parágrafo que responde a pergunta do título (citável por IA) */
+  .resposta-curta{
+    background:var(--white);
+    border-radius:16px;
+    box-shadow:var(--sombra-card);
+    padding:22px 24px 22px 22px;
+    margin-bottom:28px;
+  }
+  .resposta-curta .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .resposta-curta p{
+    font-size:1.12rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (min-width:760px){
+    .resposta-curta{ padding:26px 30px 26px 28px; }
+    .resposta-curta p{ font-size:1.16rem; }
+  }
+
+  /* Listas no corpo do estudo (mobile primeiro): número dentro da coluna de texto,
+     espaço entre itens e antes do parágrafo seguinte */
+  .prose > ul, .prose > ol{
+    color:var(--body);
+    font-size:1.04rem;
+    line-height:1.7;
+    margin:0 0 26px;
+    padding-left:1.45em;
+  }
+  .prose > ul{ list-style:disc; }
+  .prose > ol{ list-style:decimal; }
+  .prose > ol > li, .prose > ul > li{ margin-bottom:12px; padding-left:4px; }
+  .prose > ol > li::marker{ color:var(--teal); font-weight:600; }
+  .prose > ul > li::marker{ color:var(--teal); }
+  .prose li strong{ color:var(--ink); }
+
+  /* Tabelas de 2 colunas cabem na tela do celular sem rolagem lateral */
+  .data-table:not(:has(th:nth-child(3))){ min-width:0; }
+  @media (max-width:479px){
+    .data-table:not(:has(th:nth-child(3))) thead th,
+    .data-table:not(:has(th:nth-child(3))) tbody td{ padding:12px 12px; }
+  }
+
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="marca" href="/" aria-label="Ganica, página inicial">
+      <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-contorno nav-cta js-cta" data-cta-location="artigo_nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links" aria-label="Menu do celular">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-ambar btn-bloco js-cta" data-cta-location="artigo_nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+
+<main id="conteudo">
+<article>
+<section class="article-hero com-trama">
+  <div class="wrap"><span class="tag-novo">Novo</span>
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb">
+      <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>Auditoria de UX da Baymard
+    </p></nav>
+    <h1>Auditoria de UX da Baymard: como funciona e quando vale para um <span class="nw">e-commerce</span> brasileiro</h1>
+    <p class="article-deck">A Baymard Institute é uma empresa de pesquisa em usabilidade de e-commerce. Este estudo explica o que o serviço de auditoria entrega, de onde vem o método, o que ele não enxerga numa loja brasileira e como decidir se faz sentido para a sua.</p>
+    <div class="article-meta">
+      <span>Por <strong>Narcipe Viana</strong></span>
+      <span class="dot">·</span>
+      <span>Atualizado em <time datetime="2026-11-19">19 de novembro de 2026</time></span>
+      <span class="dot">·</span>
+      <span>10 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="prose">
+    <div class="resposta-curta">
+      <div class="kicker">Resposta direta</div>
+      <p>A auditoria de UX da Baymard é uma avaliação feita por especialistas, que comparam o site, no computador e no celular, com diretrizes tiradas dos testes com usuários da empresa. Entrega, em inglês, um relatório com 40 melhorias priorizadas, apresentação e até 4 chamadas de apoio, em 15 a 25 dias úteis no site inteiro. Vale mais para quem vai redesenhar o site e já mede o próprio funil.</p>
+    </div>
+    <div class="resumo-box">
+      <div class="kicker">Resumo rápido</div>
+      <ul class="resumo-list">
+        <li>A auditoria da Baymard é uma <strong>avaliação heurística</strong>: especialistas comparam o site com diretrizes, sem testar com os clientes da própria loja.</li>
+        <li>A entrega descrita na página do serviço é um relatório com <strong>40 melhorias</strong> priorizadas, uma apresentação de cerca de <strong>2 horas</strong> e até <strong>4 chamadas</strong> de apoio, em <strong>15 a 25 dias úteis</strong>. O preço não é publicado.</li>
+        <li>As diretrizes vêm de testes com usuários nos <strong>Estados Unidos, Reino Unido, Alemanha, Irlanda e países nórdicos</strong>. O Brasil não está na lista.</li>
+        <li>No Brasil, <strong>57%</strong> de quem abandona carrinho cita frete mais caro que o esperado e <strong>15%</strong> a falta de parcelamento, segundo a Opinion Box (2026): temas que a loja precisa conferir por conta própria.</li>
+        <li>A auditoria diz o que viola a boa prática; o funil da loja diz <strong>quanto custa</strong> cada problema. As duas leituras juntas definem a ordem do trabalho.</li>
+      </ul>
+    </div>
+
+<h2>O que é a auditoria de UX da Baymard?</h2>
+<p>A auditoria de UX da Baymard é um serviço em que especialistas da Baymard Institute, empresa de pesquisa em usabilidade de e-commerce, analisam um site e apontam o que atrapalha a compra. UX (experiência do usuário) é o quanto o site é fácil e claro de usar para quem quer comprar. Segundo a <a href="https://baymard.com/ux-audit-services">página do serviço</a>, a análise cobre o computador e o celular e pode abranger o site inteiro, fluxos específicos ou sites de concorrentes.</p>
+<p>Esse tipo de trabalho tem nome técnico: avaliação heurística. Avaliação heurística é a análise em que especialistas comparam a tela com um conjunto de regras de boa prática, em vez de observar clientes reais usando o site. No <a href="https://baymard.com/learn/ecommerce-ux-audit">guia de auditoria da Baymard</a>, de julho de 2026, a empresa recomenda avaliar computador e celular separadamente e classificar cada problema por gravidade e frequência. O diferencial que a Baymard declara é a origem das regras: em vez de uma lista genérica, as diretrizes saem da pesquisa com usuários que a própria empresa faz há mais de 15 anos.</p>
+<p>A pesquisa da Baymard aparece com frequência em discussões de CRO (otimização da taxa de conversão, o trabalho de descobrir por que os visitantes não compram e corrigir isso). Por isso, entender o que a auditoria entrega, e o que ela não entrega, ajuda qualquer loja a decidir onde gastar o orçamento de melhoria do site.</p>
+<h2>Como funciona a auditoria de UX da Baymard, passo a passo?</h2>
+<p>A auditoria da Baymard pode ser lida em cinco etapas: conversa inicial, análise, relatório, apresentação e apoio. A <a href="https://baymard.com/ux-audit-services">página do serviço</a>, consultada em novembro de 2026, não traz um passo a passo; a ordem abaixo é organização da Ganica a partir do que ela descreve:</p>
+<ol>
+<li><strong>Conversa inicial.</strong> A loja marca uma chamada, define o escopo (site inteiro, fluxos ou concorrentes) e recebe o prazo de entrega.</li>
+<li><strong>Análise.</strong> Os auditores revisam o site no computador e no celular, nas áreas de página inicial e navegação, busca interna, listagem de produtos, página de produto, carrinho e checkout, conta do cliente e experiência mobile.</li>
+<li><strong>Relatório.</strong> O cliente recebe um relatório com 40 mudanças sugeridas, em ordem de prioridade e com exemplos de como grandes lojas já as aplicam. Segundo a mesma página, os clientes aplicam em média mais de 21 melhorias.</li>
+<li><strong>Apresentação.</strong> Um auditor apresenta o resultado à equipe em cerca de 2 horas.</li>
+<li><strong>Apoio.</strong> A loja tem até 4 chamadas de orientação durante a implementação.</li>
+</ol>
+<p>O prazo informado é de 15 a 25 dias úteis para uma auditoria do site inteiro, conforme a época do ano, o escopo e a agenda dos auditores. A página também oferece auditorias de temas específicos (como rastreio de pedido e devolução ou aplicativo), de protótipos e de concorrentes. O preço não é publicado: a Baymard pede contato com a equipe comercial.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>O que a página do serviço informa</th>
+<th>Como está descrito (novembro de 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quem faz</td>
+<td>Auditores especialistas em e-commerce, com um auditor designado para o cliente</td>
+</tr>
+<tr>
+<td>Entrega</td>
+<td>Relatório com 40 melhorias priorizadas e exemplos de implementação</td>
+</tr>
+<tr>
+<td>Apresentação</td>
+<td>Cerca de 2 horas com a equipe da loja</td>
+</tr>
+<tr>
+<td>Apoio depois da entrega</td>
+<td>Até 4 chamadas de orientação</td>
+</tr>
+<tr>
+<td>Prazo</td>
+<td>De 15 a 25 dias úteis para o site inteiro</td>
+</tr>
+<tr>
+<td>Idioma</td>
+<td>Relatório em inglês; audita sites em alfabeto latino, o que inclui o português</td>
+</tr>
+<tr>
+<td>Preço</td>
+<td>Não publicado; sob consulta</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Fonte: página UX Audit Services, da Baymard Institute, consultada em novembro de 2026. Organização da Ganica.</p>
+<h2>De onde vêm as diretrizes que a Baymard usa?</h2>
+<p>As diretrizes da Baymard vêm de testes de usabilidade e de comparações manuais entre grandes sites de e-commerce. Na <a href="https://baymard.com/research/methodology">página de metodologia</a>, a Baymard descreve mais de 200 mil horas de pesquisa, 25 rodadas de testes individuais em que o participante fala em voz alta o que pensa enquanto compra, com mais de 4.400 sessões de participante e site, e mais de 34 mil problemas de usabilidade observados, condensados em 821 diretrizes. Em outras páginas, a empresa arredonda esse número para mais de 700 diretrizes.</p>
+<p>A mesma página descreve uma comparação manual de 344 grandes sites de e-commerce, com notas em escala de 7 pontos para cada diretriz e pesos por gravidade e frequência do problema. É esse banco de comparações que permite dizer a uma loja como ela se sai frente aos grandes sites, tema por tema.</p>
+<p>Há um detalhe importante para quem vende no Brasil. Os testes com usuários foram feitos nos Estados Unidos, no Reino Unido, na Alemanha, na Irlanda e nos países nórdicos, segundo a própria página de metodologia. As pesquisas quantitativas da Baymard usam amostras de pelo menos 1.000 adultos, e a de motivos de abandono de carrinho descreve compradores online dos Estados Unidos. Os 344 sites da comparação também são dos Estados Unidos e da Europa.</p>
+<h2>O que a auditoria não enxerga numa loja brasileira?</h2>
+<p>A auditoria da Baymard não enxerga, pela própria forma como é feita, dois tipos de informação: os hábitos de compra que só existem no Brasil e os números da sua própria loja. O primeiro ponto aparece quando se comparam os motivos de abandono de carrinho medidos lá fora e aqui.</p>
+<p>Na <a href="https://baymard.com/lists/cart-abandonment-rate">lista de abandono de carrinho da Baymard</a>, com compradores online dos Estados Unidos, os custos extras altos (frete, impostos e taxas) lideram com 40%, depois de excluídos os que estavam só olhando. Na <a href="https://content.app-us1.com/JY8yY/2026/07/22/9f1cd26c-4f0b-49a1-a684-95615a71c688.pdf">pesquisa da Opinion Box de 2026</a>, com 1.000 brasileiros, 57% de quem abandona compras cita o frete mais caro do que imaginava, 32% uma taxa inesperada e 15% a falta de parcelamento.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Motivo de abandono</th>
+<th>O que as pesquisas mostram</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custo extra ou frete acima do esperado</td>
+<td>40% nos EUA (custos extras em geral, Baymard); 57% no Brasil (só frete, Opinion Box)</td>
+</tr>
+<tr>
+<td>Prazo de entrega</td>
+<td>20% nos EUA (entrega lenta); 26% no Brasil (prazo maior que o imaginado)</td>
+</tr>
+<tr>
+<td>Obrigação de criar conta</td>
+<td>18% nos EUA; 9% no Brasil</td>
+</tr>
+<tr>
+<td>Meio de pagamento e parcelamento</td>
+<td>Poucos meios de pagamento: 9% nos EUA e 11% no Brasil; falta de parcelamento: não aparece nos EUA, 15% no Brasil</td>
+</tr>
+<tr>
+<td>Achar mais barato em outro site</td>
+<td>Não aparece na lista dos EUA; 36% no Brasil</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Fontes: Baymard Institute, lista de abandono de carrinho (compradores online dos EUA, sem os que estavam só olhando); Opinion Box, Abandono de Carrinho 2026 (base: quem abandona compras às vezes ou com frequência). As perguntas e as bases são diferentes, então a tabela compara a ordem dos motivos, não os percentuais.</p>
+<p>A leitura da Ganica é que as diretrizes de checkout e de custo total continuam valendo no Brasil, mas o peso de cada uma muda. Aqui, mostrar o frete e o prazo pelo CEP cedo e deixar claras as condições de parcelamento podem ser mais urgentes do que pontos que lideram a lista americana. Um auditor pode perceber isso, mas a loja deve pedir de forma explícita que esses temas entrem no escopo.</p>
+<p>O segundo ponto é estrutural. A auditoria diz o que viola a boa prática; ela não diz quanto cada problema custa na sua loja. O <a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/">Nielsen Norman Group</a>, referência em pesquisa de usabilidade, lembra que a avaliação heurística não substitui a pesquisa com usuários e que nem toda violação de regra é um problema de fato no contexto daquele site.</p>
+<p class="pull-quote">A auditoria diz o que está fora da boa prática. O funil da loja diz quanto isso custa.</p>
+<h2>Quando vale a pena contratar uma auditoria de UX?</h2>
+<p>A auditoria de UX vale a pena quando a loja vai redesenhar o site, quando quer validar um protótipo antes de programar ou quando a equipe quer um olhar externo e independente para alinhar a diretoria com evidência. Esses casos aparecem entre os indicados pela própria Baymard na página do serviço, e eles fazem sentido: são momentos em que errar o desenho sai caro e uma lista priorizada evita retrabalho.</p>
+<p>A auditoria vale menos quando a loja ainda não sabe em que etapa do funil perde venda. Funil é o caminho do visitante até a compra: entrar, ver o produto, pôr no carrinho, iniciar o checkout e pagar. Sem esse mapa, a loja recebe 40 melhorias e não sabe se o problema principal está na página de produto ou no pagamento. O estudo sobre <a href="/conversao-checkout-mobile-funil-por-dispositivo.html">conversão por dispositivo</a> mostra como montar esse funil no GA4.</p>
+<p>O prazo também pesa. Com 15 a 25 dias úteis de execução, uma auditoria que começasse logo após esta publicação terminaria entre 10 e 24 de dezembro, e a Baymard só confirma a data de entrega ao agendar. Para a Black Friday, que neste ano cai em 27 de novembro, como mostra o estudo sobre <a href="/quando-comeca-black-friday-brasil-ecommerce.html">quando começa a Black Friday</a>, a auditoria serve para planejar o próximo ciclo, não para corrigir o checkout da semana que vem.</p>
+<p>A Baymard também oferece opções mais leves. O <a href="https://baymard.com/ux-ray">UX-Ray</a> é uma análise automática que, segundo a Baymard, usa IA só para relacionar as telas do site com parte das diretrizes e indicar onde vale uma análise mais profunda. Em <a href="https://baymard.com/blog/ux-ray-progress-2026">publicação de fevereiro de 2026</a>, a Baymard dizia que a ferramenta cobria 209 parâmetros, com 95% de acerto quando comparada a especialistas humanos. O <a href="https://www.nngroup.com/articles/baymard-ai-tool-accuracy/">Nielsen Norman Group</a> explica que a Baymard incluiu só as diretrizes em que a IA chega a pelo menos 95% de acerto: 154, entre um quinto e um quarto das mais de 700, em janeiro de 2026. Na leitura da Ganica, por isso o UX-Ray não equivale a uma auditoria completa. Já o <a href="https://baymard.com/product/baseline-ux-benchmark">Baseline UX Benchmark</a> é um placar anual de até 250 diretrizes, incluído em alguns planos de assinatura. Nenhuma dessas páginas publica preço.</p>
+<h2>Como tirar o máximo de uma auditoria de UX?</h2>
+<p>Para tirar o máximo de uma auditoria de UX, a loja precisa chegar com os próprios números e sair com um plano de teste. O caminho que a Ganica recomenda:</p>
+<ol>
+<li><strong>Monte o funil antes.</strong> Meça a conversão por etapa e por dispositivo no GA4 (Google Analytics 4, a ferramenta gratuita do Google que mede as visitas e as vendas do site) e marque onde a queda é maior. Isso define o escopo: se a perda está no pagamento pelo celular, a auditoria pode começar por ali.</li>
+<li><strong>Peça os temas brasileiros no escopo.</strong> Frete e prazo pelo CEP, parcelamento, Pix, campo de CPF e cadastro no checkout precisam ser citados na conversa inicial. Peça também que a comparação com concorrentes inclua lojas brasileiras, já que o banco de comparação da Baymard é de sites dos EUA e da Europa, e pergunte quantos dos 40 itens tratam do celular.</li>
+<li><strong>Cruze cada melhoria com o funil.</strong> Para cada item do relatório, anote a etapa em que ele atua e quanto tráfego passa por ela. Melhoria em etapa com muita perda sobe na fila.</li>
+<li><strong>Teste o que for incerto.</strong> Mudança grande ou que mexe em preço, frete ou pagamento deve passar por teste A/B (mostrar duas versões a grupos sorteados de visitantes e comparar) antes de ir para todos.</li>
+<li><strong>Meça depois.</strong> Compare a conversão da etapa antes e depois de cada mudança, separando o tráfego que mudou no período.</li>
+</ol>
+<p>O estudo sobre <a href="/investir-em-cro-ecommerce.html">investir em CRO</a> mostra por que esse cuidado com a ordem muda o custo de cada pedido. E a <a href="/estrutura-pagina-de-produto-ecommerce.html">página de produto</a>, uma das áreas que a auditoria cobre, já foi tratada com dados da Baymard e do Brasil num estudo próprio.</p>
+<h2>O que ainda não sabemos</h2>
+<p>Não sabemos quanto custa a auditoria, porque a Baymard não publica o preço, nem quanto ela melhora a conversão de uma loja brasileira. A página do serviço diz que clientes relataram ganho de até 5% na taxa de conversão depois de aplicar as sugestões, e que a Baymard não promete um ganho específico. É um relato de clientes, sem método publicado, e &quot;até&quot; descreve o melhor caso, não a média; a página também não diz se o ganho é relativo ou em pontos percentuais. Não encontramos estudo público com resultado medido de auditorias em lojas brasileiras.</p>
+<p>Também não sabemos o quanto as diretrizes, testadas em outros países, mudam de prioridade aqui. A comparação entre as pesquisas de abandono sugere diferenças, mas as perguntas e as bases não são iguais. Se você quer saber em que etapa a sua loja perde mais venda antes de decidir por uma auditoria, esse é o ponto de partida de um <a href="/#diagnostico">diagnóstico de CRO</a>.</p>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>A Baymard audita site em português?</summary>
+        <p>Sim. A página do serviço diz que audita sites em outros idiomas desde que usem o alfabeto latino, o que inclui o português. O relatório e a apresentação são em inglês. Mesmo assim, as diretrizes vêm de testes feitos fora do Brasil, então hábitos locais como parcelamento e frete por CEP pedem conferência à parte.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Quanto custa a auditoria de UX da Baymard?</summary>
+        <p>O preço não aparece na página do serviço, consultada em novembro de 2026. A Baymard pede que o interessado marque uma conversa com a equipe; o prazo é confirmado quando a auditoria é agendada. Peça a proposta por escrito com o escopo, o número de melhorias e o que está incluído depois da entrega.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Qual a diferença entre a auditoria e o UX-Ray da Baymard?</summary>
+        <p>A auditoria é feita por especialistas e tem escopo definido com a loja. O UX-Ray é apresentado pela Baymard como um retrato rápido do site a partir das diretrizes, para indicar onde uma análise mais profunda faria sentido. O UX-Ray usa IA para comparar as telas com parte das diretrizes, e a Baymard informa 95% de acerto frente a especialistas humanos nos parâmetros cobertos, o que não equivale a uma auditoria completa.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Uma auditoria de UX substitui teste A/B?</summary>
+        <p>Não. A auditoria aponta problemas prováveis com base em pesquisa; o teste A/B mede, na sua loja e com o seu público, se a mudança melhora a conversão. A própria Baymard diz que não promete um ganho específico de conversão.</p>
+
+      </details>
+    </div>
+    <p class="article-sources">Fontes e metodologia: Baymard Institute: página do serviço UX Audit Services, página de metodologia de pesquisa, página do UX-Ray, página do Baseline UX Benchmark e lista de taxas de abandono de carrinho (50 estudos de 2006 a 2025, atualizada em 28 de outubro de 2026), consultadas em novembro de 2026. Carl MacDonald, Ecommerce UX Audit: How to Find What's Hurting Your Conversion, Baymard Institute, 10 de julho de 2026. Christian Holst, 2026 Progress: Instant UX Analysis of Your Site Now Across 209 UX Parameters, Baymard Institute, 5 de fevereiro de 2026. Kate Moran, Demand Accuracy in Your AI Tools: Lessons from Baymard Institute, Nielsen Norman Group, 30 de janeiro de 2026. Kate Moran e Kelley Gordon, How to Conduct a Heuristic Evaluation, Nielsen Norman Group, 25 de junho de 2023. Opinion Box, Pesquisa Abandono de Carrinho 2026, julho de 2026, 1.000 entrevistas online coletadas em maio e junho de 2026, margem de erro de 3 pontos percentuais; os motivos de abandono têm como base quem diz abandonar compras às vezes ou com frequência. A comparação entre as pesquisas e os critérios de decisão são leitura da Ganica.</p>
+    <nav class="article-links" aria-labelledby="links-fontes">
+      <h2 id="links-fontes" class="article-links-titulo">Links das fontes</h2>
+      <ol>
+        <li><a href="https://baymard.com/ux-audit-services" rel="noopener" target="_blank">UX Audit Services (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/research/methodology" rel="noopener" target="_blank">Baymard&#39;s UX Research Methodology (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/ux-ray" rel="noopener" target="_blank">UX-Ray (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/product/baseline-ux-benchmark" rel="noopener" target="_blank">Baseline UX Benchmark (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/learn/ecommerce-ux-audit" rel="noopener" target="_blank">Ecommerce UX Audit: How to Find What&#39;s Hurting Your Conversion (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/lists/cart-abandonment-rate" rel="noopener" target="_blank">Taxas de abandono de carrinho e motivos de abandono (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://baymard.com/blog/ux-ray-progress-2026" rel="noopener" target="_blank">2026 Progress: UX-Ray across 209 UX parameters (Baymard Institute)</a><span class="article-links-dominio">baymard.com</span></li>
+        <li><a href="https://www.nngroup.com/articles/baymard-ai-tool-accuracy/" rel="noopener" target="_blank">Demand Accuracy in Your AI Tools: Lessons from Baymard Institute (Nielsen Norman Group)</a><span class="article-links-dominio">nngroup.com</span></li>
+        <li><a href="https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/" rel="noopener" target="_blank">How to Conduct a Heuristic Evaluation (Nielsen Norman Group)</a><span class="article-links-dominio">nngroup.com</span></li>
+        <li><a href="https://content.app-us1.com/JY8yY/2026/07/22/9f1cd26c-4f0b-49a1-a684-95615a71c688.pdf" rel="noopener" target="_blank">Pesquisa Abandono de Carrinho 2026 (Opinion Box)</a><span class="article-links-dominio">content.app-us1.com</span></li>
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+</article>
+
+<section id="autor" class="autor">
+  <div class="wrap">
+    <div class="sobre-card">
+      <div class="sobre-photo-col">
+        <picture>
+          <source srcset="/assets/img/narcipe-viana.webp" type="image/webp">
+          <img class="sobre-photo" src="/assets/img/narcipe-viana.jpg" width="700" height="822" loading="lazy" decoding="async" alt="Narcipe Viana, consultor de CRO">
+        </picture>
+        <div class="sobre-caption">
+          <p class="sobre-name">Narcipe Viana</p>
+          <p class="sobre-role">Consultor de CRO</p>
+        </div>
+      </div>
+      <div class="sobre-text-col">
+        <h2>Sobre quem escreveu</h2>
+        <p>Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, Looker Studio) e auditoria comportamental. Este estudo separa o que a auditoria da Baymard cobre do que fica por conta da loja.</p>
+        <p><a href="/#sobre">Conhecer mais sobre meu trabalho →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>Antes de contratar uma auditoria, saiba onde a sua loja perde venda</h2>
+    <p>Um diagnóstico de CRO cruza o funil da sua loja com os pontos de atrito do site e indica em que etapa uma auditoria de UX, um teste ou uma correção rápida tendem a trazer mais retorno.</p>
+    <div class="hero-ctas">
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" loading="lazy" decoding="async">
+    <nav class="footer-links" aria-label="Rodapé">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="mailto:contato@ganica.com.br">contato@ganica.com.br</a>
+    </nav>
+    <p>Consultoria independente de CRO para <span class="nw">e-commerce</span>. © 2026 Ganica.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+
+<script>
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    if(!('IntersectionObserver' in window)) return;
+    var sectionIds = ['autor', 'contato'];
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>
