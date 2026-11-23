@@ -133,7 +133,11 @@ pautas:
     palavra_chave: "auditoria de UX Baymard / auditoria de UX e-commerce"
 
   - id: 3
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-23
+    slug: conversao-por-canal-novo-vs-recorrente
+    arquivo: src/artigos/conversao-por-canal-novo-vs-recorrente.md
+    revisao: "Publicado em 23/11/2026 após 3 rodadas de revisão independente. Corrigidos: metodo do GA4 (segmento de usuário trocado pela dimensão novo/recorrente, que duplicaria a mesma pessoa; taxa de eventos principais por evento, porque a métrica geral mistura compra, carrinho e cadastro), direção do viés do cookie (contamina os dois lados; publicado só como ordem de grandeza), fonte da recompra trocada da imprensa para a divulgação primária da CNDL/SPC Brasil com metodologia, e os três modos de meta de ciclo de vida do Google Ads sem afirmar obrigatoriedade de meta de compra. Retirados: o múltiplo exato (40 vezes) virou 'dezenas de vezes'; o achado do e-mail saiu como achado de cliente e entrou só como padrão C2, para não somar dois achados do mesmo cliente no mesmo texto; o terceiro dado autorizado (mídia paga no desktop) não foi usado, contra o efeito mosaico."
     usa_dado_cliente: true
     titulo_provisorio: "O canal de aquisição importa menos do que você pensa"
     tese: >-

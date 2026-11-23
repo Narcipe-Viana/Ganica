@@ -23,7 +23,7 @@ keywords:
 - como criar persona para CRO
 - persona comportamental
 - segmentação de público e-commerce
-- novo vs recorrente GA4
+- persona comportamental GA4
 sobre:
 - Otimização de conversão (CRO)
 - Pesquisa de usuário
@@ -82,7 +82,7 @@ A persona comportamental descreve quem já chega ao site e o que essa pessoa faz
 
 Esse segundo tipo tem três usos práticos que a persona de slide não tem.
 
-**A média esconde públicos opostos.** Num exemplo hipotético, um canal com conversão média de 1% pode ser a soma de visitantes novos convertendo 0,5% e clientes recorrentes convertendo 5%. Quem olha só a média pode cortar verba de um canal que, para a base de clientes, é o que mais vende. Já mostramos em outro estudo que boa parte do crescimento do e-commerce brasileiro vem de quem já compra gastando mais e comprando mais vezes ([leia a análise de mercado](/crescimento-ecommerce-brasil-receita-por-cliente.html)). Separar esse público do resto deixa de ser detalhe.
+**A média esconde públicos opostos.** Num exemplo hipotético, um canal com conversão média de 1% pode ser a soma de visitantes novos convertendo 0,5% e clientes recorrentes convertendo 5%. Quem olha só a média pode cortar verba de um canal que, para a base de clientes, é o que mais vende. Já mostramos em outro estudo que boa parte do crescimento do e-commerce brasileiro vem de quem já compra gastando mais e comprando mais vezes ([leia a análise de mercado](/crescimento-ecommerce-brasil-receita-por-cliente.html)). Separar esse público do resto deixa de ser detalhe, e o estudo sobre [conversão por canal entre novos e recorrentes](/conversao-por-canal-novo-vs-recorrente.html) mostra como fazer esse corte no GA4.
 
 **A mesma página falha de jeitos diferentes.** O cliente recorrente já confia na loja e quer recomprar rápido; para ele, cada etapa a mais é atrito. O visitante novo e desconfiado precisa de prova antes de pagar; para ele, tirar informação da página pode piorar a decisão. Uma correção que ajuda um pode não mover o outro, e um teste A/B que mistura os dois pode dar resultado neutro escondendo dois efeitos opostos.
 
