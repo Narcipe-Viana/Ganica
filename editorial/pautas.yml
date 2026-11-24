@@ -511,7 +511,10 @@ pautas:
     slug_sugerido: ga4-posthog-hotjar-clarity-logrocket-ecommerce
   - id: 25
     tipo: tecnico
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-24
+    slug: gravacao-de-sessao-lgpd-ecommerce
+    revisao: "Publicado em 24/11/2026 após 3 rodadas de revisão independente (a última sem bloqueantes). Corrigidos: guarda do Clarity (30 dias, favoritas e amostra até 9 meses), padrões do Hotjar para números e e-mails da página, modo de máscara do Clarity por projeto (não por página), efeito retroativo só afirmado para Clarity e Hotjar, transferência internacional com a adequação da UE (Resolução nº 32/2026), comportamento do Clarity sem consentimento e o padrão de cookies fora do EEE/Reino Unido/Suíça. Ajustado o estudo de ferramentas para recomendar conta e confirmação fora da gravação, com link para este guia."
     titulo_provisorio: "Gravação de sessão e LGPD: o que mascarar, o que não gravar e como provar que fez"
     pontos:
       - "Padrões de mascaramento de cada ferramenta (documentação oficial)."

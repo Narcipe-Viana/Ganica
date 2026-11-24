@@ -150,7 +150,7 @@ A LGPD não proíbe a gravação de sessão, mas exige que a loja tenha uma base
 
 O que cada ferramenta mascara por padrão muda. Segundo a [documentação de privacidade do PostHog](https://posthog.com/docs/session-replay/privacy), os campos de digitação são mascarados por padrão, mas o texto comum da página não é. Segundo a [documentação de privacidade do LogRocket](https://docs.logrocket.com/docs/privacy), campos de senha nunca são gravados, e a loja pode esconder qualquer elemento com o atributo `data-private`. Segundo o [FAQ do Clarity](https://learn.microsoft.com/clarity/faq), o conteúdo dos campos de digitação é sempre mascarado, mas o conteúdo dentro de folhas de estilo não é.
 
-A recomendação da Ganica é tratar a página de confirmação do pedido e a área do cliente como zonas de máscara total, porque nelas aparecem nome, endereço e itens comprados. Este guia não é orientação jurídica: a política de privacidade e o aviso de cookies da loja precisam conversar com a ferramenta escolhida.
+A recomendação da Ganica é deixar a página de confirmação do pedido e a área do cliente fora da gravação, porque nelas aparecem nome, endereço e itens comprados. Este guia não é orientação jurídica: a política de privacidade e o aviso de cookies da loja precisam conversar com a ferramenta escolhida. O passo a passo completo, com o que mascarar, o que não gravar e como documentar, está no guia de [gravação de sessão e LGPD](/gravacao-de-sessao-lgpd-ecommerce.html).
 
 ## O que ainda não sabemos
 
