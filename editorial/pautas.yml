@@ -698,17 +698,16 @@ pautas:
   - id: 43
     tipo: base
     status: fila
-    origem: "Pedido do Narcipe em 24/11/2026: conteúdo sobre o GTA 6 com foco no marketing e em como usar a estratégia de escassez em lançamentos. Estudo no site, genérico para lojistas."
-    titulo_provisorio: "O que o marketing do GTA 6 ensina sobre escassez no lançamento de uma loja?"
+    origem: "Pedido do Narcipe em 24/11/2026: conteúdo sobre o GTA 6 com foco em marketing e lançamento. Em 25/11/2026 ele definiu a tese (GTA não é base de comparação: se vende sozinho; quem tem concorrente precisa de produto bom, preço que se justifica na comparação, suporte de verdade, página que responde tudo e recompra) e enviou os CSV do Google Trends (Brasil, 2004 a 25/11/2026)."
+    arquivo: src/artigos/gta-6-lancamento-ecommerce.md
+    titulo_provisorio: "O lançamento do GTA 6 não é aula para a sua loja: o que as buscas no Brasil mostram"
     tese: >-
-      O GTA 6 não teve escassez de estoque, e sim de informação e de tempo, sustentada por uma base de fãs enorme.
-      Para uma loja, a lição é usar escassez real e explicada pela demanda (lote, data, lista de espera), medir o efeito
-      e nunca inventar quantidade ou prazo, que o CDC trata como publicidade enganosa.
-    campo: [C6]
-    arquivo: src/artigos/gta-6-marketing-escassez-lancamento.md
-    observacao: "Rascunho escrito em 24/11/2026 (1 rodada de revisão; ajustes pendentes: estoque físico esgotado na Amazon em out/2026, trailer de lançamento, ressalvas do experimento). Aguardando aprovação do Narcipe antes de publicar."
-    palavra_chave: "marketing do GTA 6 / estratégia de escassez"
-    slug_sugerido: gta-6-marketing-escassez-lancamento
+      O GTA 6 é um produto sem substituto: a busca no Brasil ficou parada entre os trailers e explodiu no lançamento,
+      algo que um produto com concorrente não aguenta. O que serve ao lojista está depois da venda (recorrência) e nas
+      frentes que vencem a comparação: produto, preço com valor percebido, suporte, página que responde e recompra.
+    campo: [C2]
+    palavra_chave: "lançamento do GTA 6 / marketing do GTA 6"
+    slug_sugerido: gta-6-lancamento-ecommerce
   - id: 44
     tipo: tendencia
     status: publicada
