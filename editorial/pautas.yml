@@ -697,7 +697,10 @@ pautas:
     revisao: "Publicado em 20/11/2026 após 3 rodadas de revisão independente. Corrigidos: resumo das ressalvas da CXL, max-snippet (só :0 impede), controle de IA generativa do Search Console, checkout com agentes anunciado (não iniciado) para EUA e depois Canadá, Austrália e Reino Unido, papel do Merchant Center, hipótese sobre lojas premium restrita ao Modo IA, dado de tamanho de pergunta sem recorte por país."
   - id: 43
     tipo: base
-    status: fila
+    status: publicada
+    publicado_em: 2026-11-25
+    slug: gta-6-lancamento-ecommerce
+    revisao: "Publicado em 25/11/2026 com aprovação do Narcipe, após 3 rodadas de revisão independente. Corrigidos: padrão da busca em 2026 (não voltou ao chão entre a pré-venda e o lançamento), primeira apresentação longa de jogabilidade em 27/08 (Netflix), 81% como gasto recorrente de todo o grupo Take-Two, comparação entre curvas tratada como leitura da Ganica, consultas relacionadas cobrindo 2004 a 25/11/2026. Pendente: trocar o link do Trends pela URL com o tema Grand Theft Auto VI, se o Narcipe enviar."
     origem: "Pedido do Narcipe em 24/11/2026: conteúdo sobre o GTA 6 com foco em marketing e lançamento. Em 25/11/2026 ele definiu a tese (GTA não é base de comparação: se vende sozinho; quem tem concorrente precisa de produto bom, preço que se justifica na comparação, suporte de verdade, página que responde tudo e recompra) e enviou os CSV do Google Trends (Brasil, 2004 a 25/11/2026)."
     arquivo: src/artigos/gta-6-lancamento-ecommerce.md
     titulo_provisorio: "O lançamento do GTA 6 não é aula para a sua loja: o que as buscas no Brasil mostram"

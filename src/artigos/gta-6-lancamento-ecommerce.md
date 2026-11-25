@@ -6,9 +6,9 @@ description: "Lançamento do GTA 6 no Brasil: a busca ficou parada em 2024 e exp
 twitter_description: "Pelo Google Trends, a busca pelo GTA 6 no Brasil ficou parada em 2024 e explodiu no lançamento. Produto sem substituto não é modelo para quem disputa cliente. A leitura da Ganica, com dados."
 slug: gta-6-lancamento-ecommerce
 date: '2026-11-25'
-hora: "18:40"
+hora: "19:00"
 updated: '2026-11-25'
-rascunho: true
+rascunho: false
 breadcrumb: Lançamento do GTA 6
 secao: E-commerce
 card_kicker: "CRO · Lançamentos"
