@@ -695,3 +695,17 @@ pautas:
     palavra_chave: "aparecer no Modo IA do Google / Modo IA do Google e-commerce"
     campo: [C15]
     revisao: "Publicado em 20/11/2026 após 3 rodadas de revisão independente. Corrigidos: resumo das ressalvas da CXL, max-snippet (só :0 impede), controle de IA generativa do Search Console, checkout com agentes anunciado (não iniciado) para EUA e depois Canadá, Austrália e Reino Unido, papel do Merchant Center, hipótese sobre lojas premium restrita ao Modo IA, dado de tamanho de pergunta sem recorte por país."
+  - id: 43
+    tipo: base
+    status: fila
+    origem: "Pedido do Narcipe em 24/11/2026: conteúdo sobre o GTA 6 com foco no marketing e em como usar a estratégia de escassez em lançamentos. Estudo no site, genérico para lojistas."
+    titulo_provisorio: "O que o marketing do GTA 6 ensina sobre escassez no lançamento de uma loja?"
+    tese: >-
+      O GTA 6 não teve escassez de estoque, e sim de informação e de tempo, sustentada por uma base de fãs enorme.
+      Para uma loja, a lição é usar escassez real e explicada pela demanda (lote, data, lista de espera), medir o efeito
+      e nunca inventar quantidade ou prazo, que o CDC trata como publicidade enganosa.
+    campo: [C6]
+    arquivo: src/artigos/gta-6-marketing-escassez-lancamento.md
+    observacao: "Rascunho escrito em 24/11/2026 (1 rodada de revisão; ajustes pendentes: estoque físico esgotado na Amazon em out/2026, trailer de lançamento, ressalvas do experimento). Aguardando aprovação do Narcipe antes de publicar."
+    palavra_chave: "marketing do GTA 6 / estratégia de escassez"
+    slug_sugerido: gta-6-marketing-escassez-lancamento
