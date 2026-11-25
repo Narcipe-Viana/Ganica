@@ -709,3 +709,24 @@ pautas:
     observacao: "Rascunho escrito em 24/11/2026 (1 rodada de revisão; ajustes pendentes: estoque físico esgotado na Amazon em out/2026, trailer de lançamento, ressalvas do experimento). Aguardando aprovação do Narcipe antes de publicar."
     palavra_chave: "marketing do GTA 6 / estratégia de escassez"
     slug_sugerido: gta-6-marketing-escassez-lancamento
+  - id: 44
+    tipo: tendencia
+    status: publicada
+    publicado_em: 2026-11-25
+    slug: desconto-black-friday-preco-anterior
+    revisao: "Publicado em 25/11/2026 após 3 rodadas de revisão independente. Corrigidos: leitura do Trends (maioria das consultas pergunta a data), alcance da recomendação de 60 dias do Procon-SP (cartas às 10 empresas mais reclamadas em 2025), base da enquete do Procon-SP, o que mede o 73% da LWSA, regra da UE (pelo menos 30 dias), Lei 13.455/2017 na FAQ do Pix, GA4 conta itens e exige eventos implementados; pesquisa da Globo passou a citar o Meio & Mensagem."
+    titulo_provisorio: "Como mostrar o desconto de Black Friday para o cliente acreditar? Comece pelo preço anterior"
+    sinal:
+      termo: "black friday (termo-semente) e consultas de produto + black friday"
+      valor: "black friday +1712% em 90 dias; em ascensão: tim black friday ps5 +1.100%, samsung galaxy s25 ultra black friday (aumento repentino), black friday amazon +900% (semente amazon), pandora black friday +750%"
+      janela: "últimos 90 dias, coleta de 2026-11-24"
+      link: "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=black+friday&hl=pt-BR"
+    causa: "Reta final antes da Black Friday de 27/11/2026: o consumidor busca o preço de produtos específicos para conferir oferta; pesquisas de 2026 (Dito/Opinion Box, Globo) e enquete do Procon-SP de 2025 mostram desconfiança de desconto falso; Procon-SP orientou desconto sobre o menor preço dos últimos 60 dias (nov/2025) e Procon-RJ recomendou registro dos preços anteriores."
+    tese: >-
+      Na Black Friday, o cliente chega à página de produto com o preço pesquisado e desconfiado. O desconto convence
+      quando o preço anterior é real e explicado (menor preço do período, com registro) e o preço final não muda até o
+      pagamento; a loja mede a confiança pela relação entre visualização, carrinho e compra por produto.
+    campo: [C6]
+    palavra_chave: "desconto de Black Friday / preço anterior promoção"
+    slug_sugerido: desconto-black-friday-preco-anterior
+    links_com: [41]
