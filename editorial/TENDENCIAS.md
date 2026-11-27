@@ -1,47 +1,48 @@
 # Tendências (Google Trends, Brasil)
 
-Gerado em 2026-11-26T18:23:28+00:00 pelo GitHub Actions. Índices do Google Trends são relativos (0 a 100) e variações percentuais; não são volume de buscas.
+Gerado em 2026-11-27T18:08:34+00:00 pelo GitHub Actions. Índices do Google Trends são relativos (0 a 100) e variações percentuais; não são volume de buscas.
 
 ## Próximas datas do varejo
 
-- 2026-11-27: Black Friday (em 1 dias)
-- 2026-11-30: Cyber Monday (em 4 dias)
-- 2026-12-25: Natal (em 29 dias)
+- 2026-11-27: Black Friday (em 0 dias)
+- 2026-11-30: Cyber Monday (em 3 dias)
+- 2026-12-25: Natal (em 28 dias)
 
 ## Em alta hoje com ligação a comércio online
 
-- nenhuma hoje
+- amancio ortega (200+): Amancio Ortega acelera sus compras inmobiliarias con inversiones de más de US$850 millones; Pontegadea compra el edificio de la tienda insignia de Zara en Lisboa
 
 ## Categoria Compras: consultas em ascensão (90 dias)
 
 - semana mundial do espaço de 2026 (Aumento repentino)
-- black friday (Mais 1.050%)
+- black friday (Mais 1.150%)
 - felca (Mais 400%)
-- mercado li (Mais 350%)
-- product (Mais 180%)
-- tiktok coins (Mais 170%)
-- playstation 5 (Mais 110%)
-- chuva (Mais 100%)
-- xbox series s (Mais 90%)
-- ps5 (Mais 70%)
+- mercado li (Mais 300%)
+- product (Mais 170%)
+- tiktok coins (Mais 160%)
+- playstation 5 (Mais 120%)
+- chuva (Mais 110%)
+- xbox series s (Mais 100%)
+- ri happy (Mais 80%)
+- ps5 slim (Mais 80%)
 - xbox series x (Mais 60%)
+- ps5 (Mais 60%)
 - nintendo switch 2 (Mais 60%)
-- playstation (Mais 40%)
-- nintendo switch (Mais 40%)
+- playstation (Mais 50%)
 
 ## Termos de e-commerce e marketplace
 
-- **e-commerce** (variação 90 dias: -23%): em ascensão: plataforma de e-commerce (Mais 90%), tray e-commerce (Mais 60%), plataformas de e-commerce (Mais 60%), tray (Mais 50%), o que é um e-commerce (Mais 50%), o que e e-commerce (Mais 50%)
-- **loja virtual** (variação 90 dias: +6%): em ascensão: loja virtual getnet (Aumento repentino), tevah loja virtual (Aumento repentino), loja virtual suzane von richthofen (Mais 5.000%), loja virtual de suzane von richthofen (Mais 2.400%), paulinas loja virtual (Mais 1.450%), eletrokasa loja virtual (Mais 900%)
-- **marketplace** (variação 90 dias: -19%): em ascensão: ngc marketplace ltda (Aumento repentino), ́facebook marketplace (Mais 300%), blow marketplace ltda (Mais 130%), blow marketplace (Mais 90%), orlando outlet marketplace (Mais 80%), fb marketplace (Mais 60%)
-- **mercado livre** (variação 90 dias: +24%): em ascensão: fornecedor mercado livre (Mais 180%), ps5 mercado livre (Mais 60%)
-- **shopee** (variação 90 dias: -4%): em ascensão: bolsonaro da shopee (Mais 250%), shopee com br entrar (Mais 140%), shopee seller login (Mais 80%), shopee seller (Mais 50%)
-- **amazon** (variação 90 dias: +48%): em ascensão: black friday amazon (Mais 950%), mercado li (Mais 250%), amazon quase novo (Mais 130%), ps5 amazon (Mais 60%)
-- **frete grátis** (variação 90 dias: +5%): em ascensão: cupom shein frete grátis sem valor mínimo (Aumento repentino), cupom netshoes frete grátis (Mais 140%), como ter frete grátis no mercado livre (Mais 120%), cupom wepink frete grátis (Mais 110%)
-- **pix** (variação 90 dias: -17%): em ascensão: pix mei 5 mil (Aumento repentino), pix mei lula (Aumento repentino), pix de 5 mil para mei (Aumento repentino), lula pede pix (Aumento repentino), pt pede pix de 13 reais (Aumento repentino), pt pede pix (Aumento repentino)
-- **cupom de desconto** (variação 90 dias: +39%): em ascensão: cupom de desconto serasa (Mais 160%), cupom de desconto saint germain (Mais 130%), cupom de desconto 99 food hoje (Mais 80%), cupom de desconto stanley (Mais 80%), cupom de desconto ferreira costa (Mais 70%), cupom de desconto sephora (Mais 70%)
-- **black friday** (variação 90 dias: +2425%): em ascensão: dia oficial da black friday (Aumento repentino), quando começa a black friday no brasil (Aumento repentino), que dia e a black friday no brasil (Aumento repentino), black friday nintendo eshop (Aumento repentino), samsung galaxy s25 ultra black friday (Aumento repentino), quando sera a black friday no brasil 2026 (Aumento repentino)
-- **checkout** (variação 90 dias: -3%): em ascensão: dopalina checkout (Aumento repentino), git checkout b (Mais 300%), git switch vs checkout (Mais 300%), check out ou checkout (Mais 140%), 3s checkout (Mais 140%), checkin e checkout (Mais 50%)
-- **taxa de conversão** (variação 90 dias: +162% [série esparsa: pouca busca, ignorar a variação]): em ascensão: o que é taxa de conversão (Mais 40%)
-- **tiktok shop** (variação 90 dias: -8%): em ascensão: código promocional tiktok shop hoje (Mais 110%), cupom frete gratis tiktok shop (Mais 60%), tiktok shop streamer desktop (Mais 60%), cupom tiktok shop hoje (Mais 50%), kalodata tiktok shop (Mais 40%), como entrar no tiktok shop (Mais 40%)
-- **vender online** (variação 90 dias: +0%): em ascensão: nenhuma
+- **e-commerce** (variação 90 dias: -11%): em ascensão: nenhuma
+- **loja virtual** (variação 90 dias: +24%): em ascensão: petz loja virtual (Aumento repentino), south & co loja virtual (Aumento repentino), diamante loja virtual (Aumento repentino), donna dolce loja virtual (Aumento repentino), tevah loja virtual (Aumento repentino), loja virtual de suzane von richthofen (Aumento repentino)
+- **marketplace** (variação 90 dias: -15%): em ascensão: ngc marketplace ltda (Aumento repentino), blow marketplace ltda (Mais 150%), ́facebook marketplace (Mais 130%), xbox series s (Mais 120%), blow marketplace (Mais 100%), orlando outlet marketplace (Mais 80%)
+- **mercado livre** (variação 90 dias: +54%): em ascensão: fornecedor mercado livre (Mais 170%), playstation 5 mercado livre (Mais 80%), ps5 mercado livre (Mais 60%), shopee seller (Mais 40%)
+- **shopee** (variação 90 dias: +5%): em ascensão: mercado li (Mais 400%), bolsonaro da shopee (Mais 200%), shopee com br entrar (Mais 160%), shopee seller login (Mais 60%), tiktok seller (Mais 50%), seller shopee (Mais 40%)
+- **amazon** (variação 90 dias: +88%): em ascensão: black friday amazon (Mais 1.100%), amazon quase novo (Mais 110%), ps5 amazon (Mais 70%), cartao amazon (Mais 40%)
+- **frete grátis** (variação 90 dias: +24%): em ascensão: como ter frete grátis no mercado livre (Aumento repentino), tênis feminino mercado livre frete grátis (Aumento repentino)
+- **pix** (variação 90 dias: -3%): em ascensão: pix mei 5 mil (Aumento repentino), pix mei lula (Aumento repentino), pix de 5 mil para mei (Aumento repentino), lula pede pix (Aumento repentino), pt pede pix de 13 reais (Aumento repentino), pt pede pix (Aumento repentino)
+- **cupom de desconto** (variação 90 dias: +81%): em ascensão: cupom de desconto serasa (Mais 170%), cupom de desconto sephora (Mais 110%), cupom de desconto saint germain (Mais 90%), cupom de desconto ferreira costa (Mais 80%), cupom de desconto havaianas (Mais 80%), cupom de desconto stanley (Mais 60%)
+- **black friday** (variação 90 dias: +4900%): em ascensão: pandora black friday (Aumento repentino), pandora (Aumento repentino), que dia e a black friday no brasil (Aumento repentino), qual o dia da black friday no brasil (Aumento repentino), black friday nintendo eshop (Aumento repentino), quando sera a black friday no brasil 2026 (Aumento repentino)
+- **checkout** (variação 90 dias: +8%): em ascensão: dopalina checkout (Aumento repentino), git checkout b (Mais 120%), git switch vs checkout (Mais 110%), checkout ou check out (Mais 70%), checkin e checkout (Mais 50%), checkin checkout (Mais 50%)
+- **taxa de conversão** (variação 90 dias: +140% [série esparsa: pouca busca, ignorar a variação]): em ascensão: a minimização do tempo e custo de uma reação química bem como o aumento na sua taxa de conversão (Aumento repentino)
+- **tiktok shop** (variação 90 dias: -4%): em ascensão: código promocional tiktok shop hoje (Mais 250%), cupom frete gratis tiktok shop (Mais 80%), tiktok shop streamer desktop (Mais 60%), comprar conta tiktok shop (Mais 50%), kalodata tiktok shop (Mais 40%), como ser afiliado no tiktok shop (Mais 40%)
+- **vender online** (variação 90 dias: -10%): em ascensão: como vender drogas online rapido serie (Aumento repentino), como vender drogas online serie elenco (Mais 3.300%)
