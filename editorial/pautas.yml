@@ -732,3 +732,20 @@ pautas:
     palavra_chave: "desconto de Black Friday / preço anterior promoção"
     slug_sugerido: desconto-black-friday-preco-anterior
     links_com: [41]
+
+  - id: 45
+    tipo: cxl
+    status: publicada
+    publicado_em: 2026-11-27
+    slug: ia-cro-testes-ab-ecommerce
+    origem:
+      titulo: "AI in CRO: Why Strategy Matters More Than Small Tweaks (Stefan Maritz, CXL, 11/03/2025, atualizado em 09/11/2026)"
+      url: https://cxl.com/blog/ai-and-conversion-rate-optimization-strategy/
+    titulo: "IA no CRO: a sua loja tem tráfego para testar tudo o que a IA cria?"
+    tese: >-
+      Com IA, o gargalo do CRO deixa de ser criar a variação e passa a ser o tráfego. Numa loja com
+      algumas dezenas de milhares de visitas por mês, a IA rende mais antes do teste (pesquisa,
+      conserto direto de erros, escolha do que testar) e em menos testes, maiores, do que em mais versões.
+    palavra_chave: "IA no CRO / teste A/B com IA"
+    campo: [C11, C9]
+    revisao: "Publicado em 27/11/2026 após 3 rodadas de revisão independente (a última sem bloqueantes). Corrigidos: o que a CXL diz sobre tráfego (ela reconhece o limite, não faz a conta), 70,2% como velocidade de experimentação e não número de testes, paráfrases próximas do original reescritas, comparação TIC x PINTEC retirada, rótulo de mensagens da TIC, efeito do WhatsApp no teste, correção de Bonferroni acrescentada."
