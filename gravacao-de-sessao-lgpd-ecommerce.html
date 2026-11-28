@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- ==========================================================
+     GOOGLE TAG MANAGER / GA4 — DATA LAYER
+     O dataLayer precisa existir antes do snippet do GTM.
+     ========================================================== -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'page_data',
+    page_type: 'article',
+    content_group: 'estudo',
+    page_language: 'pt-BR',
+    business_unit: 'ganica_cro'
+  });
+</script>
+<!-- TODO: Colar aqui o snippet padrão do Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravação de sessão e LGPD: o guia para e-commerce</title>
+
+<meta name="description" content="Gravação de sessão e LGPD no e-commerce: o que cada ferramenta mascara por padrão, quais páginas não gravar e que registros mostram que a loja fez a sua parte.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Narcipe Viana">
+<link rel="canonical" href="https://ganica.com.br/gravacao-de-sessao-lgpd-ecommerce.html">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ganica">
+<meta property="og:title" content="Gravação de sessão e LGPD: mascarar, não gravar e provar que fez">
+<meta property="og:description" content="Gravação de sessão e LGPD no e-commerce: o que cada ferramenta mascara por padrão, quais páginas não gravar e que registros mostram que a loja fez a sua parte.">
+<meta property="og:url" content="https://ganica.com.br/gravacao-de-sessao-lgpd-ecommerce.html">
+<meta property="og:locale" content="pt_BR">
+<meta property="article:published_time" content="2026-11-24T07:06:00-03:00">
+<meta property="article:modified_time" content="2026-11-24T07:06:00-03:00">
+<meta property="article:author" content="Narcipe Viana">
+<meta property="article:section" content="E-commerce">
+<meta property="article:tag" content="LGPD">
+<meta property="article:tag" content="gravação de sessão">
+<meta property="article:tag" content="Microsoft Clarity">
+<meta property="article:tag" content="Hotjar">
+<meta property="article:tag" content="PostHog">
+<meta property="article:tag" content="LogRocket">
+<meta property="og:image" content="https://ganica.com.br/assets/og/gravacao-de-sessao-lgpd-ecommerce.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gravação de sessão e LGPD: o que mascarar, o que não gravar e como provar que fez">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gravação de sessão e LGPD: o guia para e-commerce">
+<meta name="twitter:description" content="Clarity, Hotjar, PostHog e LogRocket mascaram coisas diferentes por padrão. O guia para gravar sessões na loja sem guardar dado pessoal que não devia, conferido na documentação oficial em novembro de 2026.">
+<meta name="twitter:image" content="https://ganica.com.br/assets/og/gravacao-de-sessao-lgpd-ecommerce.png">
+<meta name="theme-color" content="#F5F9F9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Estudos da Ganica" href="/feed.xml">
+<link rel="preload" href="/assets/fonts/lexend-deca-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js');</script>
+
+
+<!-- SCHEMA.ORG: mesmas entidades (@id) do site. FAQPage não é usada de propósito:
+     deixou de gerar rich results em 2026; as perguntas ficam só em HTML. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ganica.com.br/#organization",
+      "name": "Ganica",
+      "url": "https://ganica.com.br/",
+      "description": "Consultoria independente de CRO (otimização de conversão) para e-commerce, com projetos de escopo e prazo fechados.",
+      "email": "contato@ganica.com.br",
+      "logo": { "@type": "ImageObject", "url": "https://ganica.com.br/logo-ganica.png", "width": 512, "height": 512 },
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce", "Google Analytics 4", "Google Tag Manager", "UX", "Análise comportamental"],
+      "founder": { "@id": "https://ganica.com.br/#narcipe-viana" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ganica.com.br/#narcipe-viana",
+      "name": "Narcipe Viana",
+      "jobTitle": "Consultor de CRO",
+      "url": "https://ganica.com.br/#sobre",
+      "image": "https://ganica.com.br/assets/img/narcipe-viana.jpg",
+      "worksFor": { "@id": "https://ganica.com.br/#organization" },
+      "knowsAbout": ["CRO", "Otimização de Conversão", "E-commerce"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ganica.com.br/#website",
+      "url": "https://ganica.com.br/",
+      "name": "Ganica",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://ganica.com.br/#organization" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://ganica.com.br/gravacao-de-sessao-lgpd-ecommerce.html#article",
+      "headline": "Gravação de sessão e LGPD: o que mascarar, o que não gravar e como provar que fez",
+      "description": "Gravação de sessão e LGPD no e-commerce: o que cada ferramenta mascara por padrão, quais páginas não gravar e que registros mostram que a loja fez a sua parte.",
+      "datePublished": "2026-11-24T07:06:00-03:00",
+      "dateModified": "2026-11-24T07:06:00-03:00",
+      "abstract": "A LGPD não proíbe a gravação de sessão, mas exige finalidade clara, só o dado necessário, segurança e prova do que foi feito. Na prática, a loja mascara no navegador tudo o que é digitado e o texto com dado pessoal, deixa fora da gravação as áreas de conta, pagamento e confirmação, e guarda o registro da configuração, dos testes e de quem acessa as gravações.",
+      "image": [{ "@type": "ImageObject", "url": "https://ganica.com.br/assets/og/gravacao-de-sessao-lgpd-ecommerce.png", "width": 1200, "height": 630 }],
+      "wordCount": 2393,
+      "timeRequired": "PT12M",
+      "isAccessibleForFree": true,
+      "citation": ["https://planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm", "https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-masking", "https://learn.microsoft.com/en-us/clarity/clarity-consent-api-v2", "https://learn.microsoft.com/en-us/clarity/cookie-consent", "https://learn.microsoft.com/clarity/faq", "https://help.hotjar.com/hc/en-us/articles/36819956605329-How-to-Suppress-Text-Images-Videos-and-User-Input-from-Collected-Data", "https://help.hotjar.com/hc/en-us/articles/36820034730641-How-to-Show-Elements-and-Keystrokes-in-Data-Collection", "https://help.hotjar.com/hc/en-us/articles/36820004397713-Privacy-FAQs", "https://posthog.com/docs/session-replay/privacy", "https://docs.logrocket.com/docs/privacy", "https://docs.logrocket.com/reference/dom", "https://www.gov.br/anpd/pt-br/assuntos/assuntos-internacionais/transferencia-internacional-de-dados/international-affairs"],
+      "inLanguage": "pt-BR",
+      "author": { "@id": "https://ganica.com.br/#narcipe-viana" },
+      "publisher": { "@id": "https://ganica.com.br/#organization" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ganica.com.br/gravacao-de-sessao-lgpd-ecommerce.html" },
+      "articleSection": "E-commerce",
+      "keywords": ["gravação de sessão LGPD","session replay LGPD","mascaramento de dados gravação de sessão","Clarity LGPD","Hotjar LGPD"],
+      "about": [{ "@type": "Thing", "name": "Proteção de dados pessoais" }, { "@type": "Thing", "name": "Gravação de sessão" }, { "@type": "Thing", "name": "Lei Geral de Proteção de Dados (LGPD)" }, { "@type": "Thing", "name": "Otimização de conversão (CRO)" }],
+      "isPartOf": { "@id": "https://ganica.com.br/#website" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ganica.com.br/gravacao-de-sessao-lgpd-ecommerce.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://ganica.com.br/" },
+        { "@type": "ListItem", "position": 2, "name": "Estudos", "item": "https://ganica.com.br/estudos/" },
+        { "@type": "ListItem", "position": 3, "name": "Gravação de sessão e LGPD" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Base compartilhada por todas as páginas: marca, tipografia, botões, cabeçalho e rodapé.
+   Cores derivadas da logo. Mobile primeiro. */
+@font-face{
+  font-family:'Lexend Deca';
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2-variations'),
+      url('/assets/fonts/lexend-deca-latin-wght-normal.woff2') format('woff2');
+}
+/* Fallback com métricas próximas: reduz o salto de layout (CLS) quando a fonte carrega */
+@font-face{
+  font-family:'Lexend Fallback';
+  src:local('Arial');
+  size-adjust:112%;
+  ascent-override:89%;
+  descent-override:22%;
+  line-gap-override:0%;
+}
+
+:root{
+  --ink:#0B3842;
+  --ink-hover:#0F4A57;
+  --paper:#F5F9F9;
+  --panel:#E6F1F3;
+  --white:#FFFFFF;
+  --amber:#FAB32B;
+  --amber-hover:#F0A312;
+  --teal:#107088;
+  --teal-bright:#1A8BA3;
+  --body:#2C4A53;
+  --muted:#466069;
+  --line:#C9DEE2;
+  --line-soft:#DCE9EC;
+  --line-strong:#6F8A92;
+  --font:'Lexend Deca','Lexend Fallback',Arial,sans-serif;
+  --max:1440px;
+  --gutter:clamp(20px,5vw,72px);
+  --sombra-card:0 1px 2px rgba(11,56,66,.05),0 14px 32px -22px rgba(11,56,66,.22);
+  --sombra-folha:0 1px 2px rgba(11,56,66,.05),0 28px 64px -28px rgba(11,56,66,.24);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--paper);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ font-weight:400; }
+a{ color:inherit; }
+img,svg{ display:block; max-width:100%; }
+ul,ol{ list-style:none; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+[hidden]{ display:none !important; }
+.nw{ white-space:nowrap; }
+.wrap{ max-width:var(--max); margin:0 auto; padding-inline:var(--gutter); }
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:2px solid var(--teal-bright);
+  outline-offset:3px;
+}
+.pular{
+  position:absolute; left:12px; top:-60px; z-index:100;
+  padding:10px 16px; background:var(--ink); color:var(--white); border-radius:10px;
+}
+.pular:focus{ top:12px; }
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Títulos de seção ---------- */
+.rotulo{
+  font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:58px; padding:0 22px;
+  border:1px solid transparent; border-radius:12px;
+  font-weight:600; font-size:1rem; line-height:1.2; text-decoration:none; text-align:center;
+  cursor:pointer;
+  transition:background .15s ease,border-color .15s ease;
+}
+.btn-ambar{ background:var(--amber); color:var(--ink); }
+.btn-ambar:hover{ background:var(--amber-hover); }
+.btn-leve{ background:var(--white); color:var(--ink); font-weight:500; }
+.btn-leve:hover{ background:var(--line-soft); }
+.btn-contorno{ background:transparent; border-color:var(--ink); color:var(--ink); border-radius:10px; font-weight:500; }
+.btn-contorno:hover{ background:var(--panel); }
+.btn-bloco{ display:flex; width:100%; }
+
+/* ---------- Cabeçalho ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(245,249,249,.96);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  max-width:var(--max); margin:0 auto; padding-inline:var(--gutter);
+  min-height:64px;
+}
+.marca{ display:flex; align-items:center; min-height:44px; flex-shrink:0; position:relative; z-index:60; }
+.marca img{ height:32px; width:auto; }
+.nav-links{ display:none; }
+.nav-cta{ display:none; }
+.menu-toggle{
+  position:relative; z-index:60;
+  width:44px; height:44px; margin-right:-10px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:none; border:0; cursor:pointer; flex-shrink:0;
+}
+.menu-icon,.menu-icon::before,.menu-icon::after{
+  display:block; width:22px; height:1.5px; background:var(--ink);
+  transition:transform .2s ease,background .15s ease;
+}
+.menu-icon{ position:relative; }
+.menu-icon::before,.menu-icon::after{ content:""; position:absolute; left:0; }
+.menu-icon::before{ top:-7px; }
+.menu-icon::after{ top:7px; }
+.menu-toggle.open .menu-icon{ background:transparent; }
+.menu-toggle.open .menu-icon::before{ top:0; transform:rotate(45deg); }
+.menu-toggle.open .menu-icon::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:40;
+  display:flex; flex-direction:column; justify-content:center; gap:40px;
+  padding:88px 24px 48px;
+  background:var(--paper);
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s;
+}
+.mobile-menu.open{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .25s ease,transform .25s ease,visibility 0s;
+}
+.mobile-menu-links{ display:flex; flex-direction:column; }
+.mobile-menu-links a{
+  display:flex; align-items:center; min-height:56px;
+  font-size:1.6rem; text-decoration:none; border-bottom:1px solid var(--line-soft);
+}
+body.menu-open{ overflow:hidden; }
+
+@media (min-width:900px){
+  .nav{ min-height:80px; }
+  .marca img{ height:36px; }
+  .nav-links{ display:flex; gap:32px; font-size:1rem; }
+  .nav-links a{ display:flex; align-items:center; min-height:44px; text-decoration:none; color:var(--body); }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{ display:inline-flex; min-height:46px; padding:0 18px; }
+  .menu-toggle,.mobile-menu{ display:none; }
+}
+
+/* ---------- Trama da logo (detalhe de fundo, nunca atrás de texto em peso visual) ---------- */
+.com-trama{ position:relative; overflow:hidden; }
+.com-trama::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:url('/assets/img/trama.svg') center/1200px 900px;
+  opacity:.2;
+  -webkit-mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+  mask-image:linear-gradient(to bottom left,#000,transparent 58%);
+}
+.com-trama > *{ position:relative; }
+@media (min-width:900px){
+  .com-trama::before{
+    left:34%; opacity:.26;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 62%);
+    mask-image:linear-gradient(to right,transparent,#000 62%);
+  }
+}
+
+/* ---------- Etiqueta "Novo" ---------- */
+.tag-novo{
+  display:inline-flex; align-items:center;
+  padding:4px 10px; border-radius:999px;
+  background:var(--amber); color:var(--ink);
+  font-size:.8125rem; font-weight:600; line-height:1.4;
+}
+
+/* ---------- Sobre (card usado nos estudos) ---------- */
+.foto-autor{ display:block; width:100%; height:auto; }
+
+/* ---------- Rodapé ---------- */
+.site-footer{ border-top:1px solid var(--line); }
+.site-footer .wrap{ padding-block:36px; display:flex; flex-direction:column; gap:20px; }
+.site-footer img{ height:32px; width:auto; align-self:flex-start; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:0 24px; font-size:.9375rem; }
+.footer-links a{ display:inline-flex; align-items:center; min-height:44px; color:var(--body); text-decoration:none; }
+.footer-links a:hover{ color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+.site-footer p{ font-size:.875rem; color:var(--muted); }
+@media (min-width:900px){
+  .site-footer .wrap{ flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+  .site-footer img{ align-self:center; }
+  .site-footer p{ flex-basis:100%; }
+}
+
+/* Escala do desktop: conteúdo mais contido em telas grandes (o mobile não é afetado) */
+@media (min-width:900px){
+  :root{ --max:1240px; --gutter:clamp(32px,4vw,56px); }
+  .nav{ min-height:72px; }
+  .marca img{ height:32px; }
+  .nav-links{ gap:28px; font-size:.9375rem; }
+  .nav-cta{ min-height:42px; padding:0 16px; font-size:.9375rem; }
+  .btn{ min-height:52px; font-size:.9375rem; }
+}
+
+/* ---------- Article hero ---------- */
+  .article-hero{ background:var(--paper); color:var(--ink); padding:48px 0 56px; border-bottom:1px solid var(--line); }
+  .article-hero h1{ font-weight:500; letter-spacing:-.015em; line-height:1.15; }
+  .biblioteca-selo{ display:flex; align-items:center; gap:8px; margin-bottom:14px; font-size:.9375rem; font-weight:500; color:var(--teal); }
+  @media (max-width:640px){
+    .article-hero{ padding-top:32px; padding-bottom:40px; }
+  }
+  .article-hero .tag-novo{ margin-bottom:18px; }
+  .breadcrumb{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-bottom:26px;
+  }
+  .breadcrumb a{ color:var(--muted); }
+  .breadcrumb a:hover{ color:var(--ink); }
+  .breadcrumb .sep{ margin:0 8px; opacity:0.5; }
+  .article-hero h1{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    max-width:30ch;
+  }
+  @media (min-width:900px){
+    .article-hero h1{ max-width:26ch; }
+  }
+  .article-deck{
+    margin-top:20px;
+    font-size:1.08rem;
+    color:var(--body);
+    max-width:62ch;
+    line-height:1.7;
+  }
+  .article-meta{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    align-items:center;
+    font-size:0.88rem;
+    color:var(--muted);
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+  .article-meta strong{ color:var(--ink); font-weight:600; }
+  .article-meta .dot{ opacity:0.5; }
+  @media (max-width:640px){ .article-meta{ flex-direction:column; align-items:flex-start; } .article-meta .dot{ display:none; } }
+
+  /* ---------- Article body / prose ---------- */
+  .article-body{ padding-block:56px; }
+  .autor{ }
+  .prose{ max-width:760px; margin:0 auto; padding:0 20px; }
+  .prose h2{
+    font-weight:500; line-height:1.2; letter-spacing:-.01em;
+    font-size:clamp(1.4rem,2.6vw,1.75rem);
+    margin-top:52px;
+    margin-bottom:18px;
+  }
+  .prose > .prose-lead h2:first-of-type,
+  .prose h2:first-child{ margin-top:0; }
+  .prose p{
+    color:var(--body);
+    font-size:1.03rem;
+    margin-bottom:20px;
+    line-height:1.75;
+  }
+  .prose strong{ color:var(--ink); }
+  .prose a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .prose a:hover{ color:var(--ink); }
+
+  /* Resumo rápido */
+  .resumo-box{
+    background:var(--panel);
+    color:var(--ink);
+    border-radius:16px;
+    padding:32px 30px;
+    margin-bottom:48px;
+  }
+  .resumo-box .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .resumo-list{
+    list-style:none;
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .resumo-list li{
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:0.98rem;
+    color:var(--body);
+    line-height:1.65;
+  }
+  .resumo-list li:first-child{ border-top:none; padding-top:0; }
+  .prose .resumo-list strong{ color:var(--ink); }
+  @media (max-width:640px){
+    .resumo-box{ padding:26px 22px; }
+  }
+
+  /* Pull quote */
+  .pull-quote{
+    font-family:var(--font);
+    font-weight:400;
+    font-size:clamp(1.15rem,2vw,1.35rem);
+    line-height:1.5;
+    color:var(--ink);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:28px 0;
+    margin:8px 0 36px;
+  }
+
+  /* Data table */
+  .data-table-wrap{
+    overflow-x:auto;
+    margin:8px 0 32px;
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .data-table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:520px; }
+  .data-table thead th{
+    background:var(--ink);
+    color:var(--white);
+    font-family:var(--font);
+    font-weight:600;
+    text-align:left;
+    padding:14px 16px;
+    font-size:0.85rem;
+    letter-spacing:0.01em;
+  }
+  .data-table tbody td{
+    padding:13px 16px;
+    border-top:1px solid var(--line);
+    color:var(--body);
+  }
+  .data-table tbody tr:nth-child(even){ background:var(--paper); }
+  .data-table tbody td:first-child{ font-weight:600; color:var(--ink); }
+  .data-table tbody tr.highlight td{ color:var(--teal); font-weight:600; }
+  .table-caption{
+    font-size:0.85rem;
+    color:var(--body);
+    margin:-16px 0 28px;
+    font-style:italic;
+  }
+
+  /* FAQ */
+  .faq-list{ margin-top:8px; }
+  .faq-item{
+    border-top:1px solid var(--line);
+    padding:20px 0;
+  }
+  .faq-item:last-child{ border-bottom:1px solid var(--line); margin-bottom:32px; }
+  .faq-item summary{
+    cursor:pointer;
+    font-family:var(--font);
+    font-size:1.05rem;
+    font-weight:500;
+    color:var(--ink);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:"+";
+    font-size:1.3rem;
+    color:var(--teal);
+    flex-shrink:0;
+    font-family:var(--font);
+  }
+  .faq-item[open] summary::after{ content:"–"; }
+  .faq-item p{
+    margin-top:14px;
+    margin-bottom:0;
+    color:var(--body);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+
+  .article-sources{
+    margin-top:8px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--body);
+    font-style:italic;
+  }
+
+  .figura{ margin:36px 0; }
+  .figura img{
+    display:block; width:100%; max-width:520px; margin:0 auto; height:auto; border-radius:14px;
+    border:1px solid var(--line-soft); box-shadow:var(--sombra-card); background:var(--white);
+  }
+  .figura-link{ display:block; }
+  .figura figcaption{ max-width:520px; margin:12px auto 0; font-size:0.82rem; line-height:1.5; color:var(--muted); }
+  @media (max-width:640px){ .prose .figura{ margin:28px -8px; } .figura img{ border-radius:10px; } }
+
+  .article-links{ margin-top:20px; }
+  .prose .article-links-titulo,.article-links-titulo{
+    font-size:0.78rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 10px; line-height:1.4;
+  }
+  .article-links ol{ list-style:none; margin:0; padding:0; counter-reset:fonte; }
+  .article-links li{
+    counter-increment:fonte; position:relative;
+    padding:10px 0 10px 32px; border-top:1px solid var(--line-soft);
+    font-size:0.9rem; line-height:1.45;
+  }
+  .article-links li::before{
+    content:counter(fonte,decimal-leading-zero); position:absolute; left:0; top:11px;
+    font-size:0.75rem; color:var(--muted); font-variant-numeric:tabular-nums;
+  }
+  .article-links a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+  .article-links a:hover{ color:var(--ink); }
+  .article-links-dominio{ display:block; font-size:0.75rem; color:var(--muted); margin-top:2px; }
+
+  /* ---------- Sobre (autor) ---------- */
+  .autor{ padding-block:0 56px; }
+  .sobre-card{
+    display:grid; grid-template-columns:1fr; overflow:hidden;
+    background:var(--white); border-radius:18px; box-shadow:var(--sombra-card);
+  }
+  @media (min-width:820px){ .sobre-card{ grid-template-columns:300px 1fr; } }
+  .sobre-photo{ width:100%; height:auto; display:block; }
+  .sobre-caption{ padding:16px 18px; }
+  .sobre-name{ font-size:1.05rem; font-weight:500; color:var(--ink); }
+  .sobre-role{ margin-top:2px; font-size:.85rem; color:var(--muted); }
+  .sobre-text-col{ padding:36px 32px; }
+  .sobre-text-col h2{ margin-bottom:20px; font-size:clamp(1.5rem,3vw,2rem); line-height:1.15; }
+  .sobre-text-col p{ color:var(--body); max-width:60ch; margin-bottom:16px; font-size:1.02rem; }
+  .sobre-text-col p a{ color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+  .sobre-text-col p a:hover{ color:var(--ink); }
+  @media (max-width:640px){
+    .sobre-text-col{ padding:26px 22px; }
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{ background:var(--panel); color:var(--ink); padding-block:64px; }
+  .cta-final h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); line-height:1.12; letter-spacing:-.015em; max-width:20ch; }
+  .cta-final p{ color:var(--body); margin-top:16px; max-width:52ch; font-size:1.02rem; }
+  .cta-final .hero-ctas{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    align-items:center;
+  }
+  @media (max-width:479px){
+    .cta-final .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .cta-final .hero-ctas .btn{ width:100%; text-align:center; }
+  }
+
+  /* Resposta direta: o parágrafo que responde a pergunta do título (citável por IA) */
+  .resposta-curta{
+    background:var(--white);
+    border-radius:16px;
+    box-shadow:var(--sombra-card);
+    padding:22px 24px 22px 22px;
+    margin-bottom:28px;
+  }
+  .resposta-curta .kicker{
+    font-size:0.8rem;
+    color:var(--teal);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .resposta-curta p{
+    font-size:1.12rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0;
+  }
+  @media (min-width:760px){
+    .resposta-curta{ padding:26px 30px 26px 28px; }
+    .resposta-curta p{ font-size:1.16rem; }
+  }
+
+  /* Listas no corpo do estudo (mobile primeiro): número dentro da coluna de texto,
+     espaço entre itens e antes do parágrafo seguinte */
+  .prose > ul, .prose > ol{
+    color:var(--body);
+    font-size:1.04rem;
+    line-height:1.7;
+    margin:0 0 26px;
+    padding-left:1.45em;
+  }
+  .prose > ul{ list-style:disc; }
+  .prose > ol{ list-style:decimal; }
+  .prose > ol > li, .prose > ul > li{ margin-bottom:12px; padding-left:4px; }
+  .prose > ol > li::marker{ color:var(--teal); font-weight:600; }
+  .prose > ul > li::marker{ color:var(--teal); }
+  .prose li strong{ color:var(--ink); }
+
+  /* Tabelas de 2 colunas cabem na tela do celular sem rolagem lateral */
+  .data-table:not(:has(th:nth-child(3))){ min-width:0; }
+  @media (max-width:479px){
+    .data-table:not(:has(th:nth-child(3))) thead th,
+    .data-table:not(:has(th:nth-child(3))) tbody td{ padding:12px 12px; }
+  }
+
+</style>
+</head>
+<body>
+<!-- TODO: Colar aqui o snippet <noscript> padrão do Google Tag Manager -->
+
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="nav">
+    <a class="marca" href="/" aria-label="Ganica, página inicial">
+      <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" fetchpriority="high">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-contorno nav-cta js-cta" data-cta-location="artigo_nav_desktop">Solicitar diagnóstico</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu-links" aria-label="Menu do celular">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+    </nav>
+    <a href="/#contato" class="btn btn-ambar btn-bloco js-cta" data-cta-location="artigo_nav_mobile">Solicitar diagnóstico</a>
+  </div>
+</header>
+
+
+<main id="conteudo">
+<article>
+<section class="article-hero com-trama">
+  <div class="wrap"><span class="tag-novo">Novo</span>
+    <nav aria-label="Trilha de navegação"><p class="breadcrumb">
+      <a href="/">Início</a><span class="sep">/</span><a href="/estudos/">Estudos</a><span class="sep">/</span>Gravação de sessão e LGPD
+    </p></nav>
+    <h1>Gravação de sessão e LGPD: o que mascarar, o que não gravar e como provar que fez</h1>
+    <p class="article-deck">Gravar a sessão do visitante ajuda a achar onde a loja perde venda, mas também pode guardar nome, endereço e o que a pessoa comprou. Este guia mostra o que cada ferramenta esconde por padrão, o que a loja precisa esconder por conta própria e como documentar isso, com base na documentação oficial e no texto da LGPD conferidos em novembro de 2026.</p>
+    <div class="article-meta">
+      <span>Por <strong>Narcipe Viana</strong></span>
+      <span class="dot">·</span>
+      <span>Atualizado em <time datetime="2026-11-24">24 de novembro de 2026</time></span>
+      <span class="dot">·</span>
+      <span>12 min de leitura</span>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="prose">
+    <div class="resposta-curta">
+      <div class="kicker">Resposta direta</div>
+      <p>A LGPD não proíbe a gravação de sessão, mas exige finalidade clara, só o dado necessário, segurança e prova do que foi feito. Na prática, a loja mascara no navegador tudo o que é digitado e o texto com dado pessoal, deixa fora da gravação as áreas de conta, pagamento e confirmação, e guarda o registro da configuração, dos testes e de quem acessa as gravações.</p>
+    </div>
+    <div class="resumo-box">
+      <div class="kicker">Resumo rápido</div>
+      <ul class="resumo-list">
+        <li>A LGPD não fala em gravação de sessão, mas os princípios de <strong>finalidade, necessidade, segurança e prestação de contas</strong> (art. 6º) se aplicam a ela sempre que a gravação registra dado pessoal.</li>
+        <li>As ferramentas não mascaram as mesmas coisas por padrão: no <strong>PostHog</strong> e no <strong>LogRocket</strong>, o texto comum da página é gravado; no <strong>Clarity</strong>, o modo padrão mascara números e e-mails; no <strong>Hotjar</strong>, o que é digitado e, por padrão, números e e-mails da página ficam escondidos.</li>
+        <li>Nas quatro ferramentas, a máscara é aplicada <strong>no navegador, antes do envio</strong>. Clarity e Hotjar avisam que mudar a máscara não esconde o que já foi gravado.</li>
+        <li>Em loja de saúde, o item comprado pode revelar algo sobre a saúde do cliente, e a LGPD trata <strong>dado referente à saúde</strong> como sensível, sem a base do legítimo interesse (art. 11).</li>
+        <li>A recomendação da Ganica é deixar <strong>conta e confirmação do pedido</strong> fora da gravação, gravar o <strong>pagamento só com máscara total</strong> e guardar <strong>cinco registros</strong> que provam a configuração.</li>
+      </ul>
+    </div>
+
+<h2>O que a LGPD exige de quem usa gravação de sessão no e-commerce?</h2>
+<p>A LGPD (Lei Geral de Proteção de Dados) exige que a gravação de sessão tenha finalidade clara, colete só o necessário, seja protegida e possa ser comprovada. Gravação de sessão (em inglês, session replay) é o registro da visita de uma pessoa ao site, que a loja assiste depois como se fosse um vídeo da tela: a ferramenta reconstrói a página a partir das mudanças no código, e por isso registra tudo o que aparece na tela, a menos que alguém mande esconder.</p>
+<p>A lei não cita gravação de sessão, mas o <a href="https://planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm">texto da LGPD no Planalto</a> define dado pessoal como informação relacionada a pessoa natural identificada ou identificável (art. 5º, I). Um nome no cabeçalho da conta, um endereço na tela de entrega ou um e-mail digitado no cadastro entram nessa definição. A partir daí valem os princípios do art. 6º: finalidade (um propósito específico e informado), necessidade (o mínimo necessário), transparência, segurança e prestação de contas, que pede que a loja consiga demonstrar as medidas que adotou.</p>
+<p>Por isso este guia organiza o trabalho em três camadas: o que mascarar, o que não gravar e como provar que fez. Ele complementa o comparativo de <a href="/ga4-posthog-hotjar-clarity-logrocket-ecommerce.html">ferramentas de analytics para e-commerce</a>, que mostra qual pergunta de negócio cada ferramenta responde. Este guia não é orientação jurídica: a base legal e o texto da política de privacidade são decisões que pedem apoio de quem cuida da conformidade da loja.</p>
+<h2>O que cada ferramenta mascara por padrão?</h2>
+<p>As ferramentas de gravação de sessão não escondem as mesmas coisas quando são instaladas sem ajuste. Mascarar é trocar o conteúdo por asteriscos, blocos ou caracteres neutros antes que ele seja enviado ao servidor da ferramenta. A diferença mais importante está no texto comum da página, como o nome do cliente impresso na tela.</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>O que vem escondido sem nenhum ajuste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Clarity</td>
+<td>Campos de digitação e listas de seleção em qualquer modo; no modo padrão (Equilibrado), também números e e-mails da página</td>
+</tr>
+<tr>
+<td>Hotjar</td>
+<td>Tudo o que é digitado; números e e-mails no texto da página (opções ligadas por padrão); sequências de 9 ou mais dígitos e e-mails digitados nunca são gravados, nem em campos liberados</td>
+</tr>
+<tr>
+<td>PostHog</td>
+<td>Campos de digitação; o texto comum da página é gravado</td>
+</tr>
+<tr>
+<td>LogRocket</td>
+<td>Campos de senha; os demais elementos, inclusive texto e campos, são gravados</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Tabela: leitura da Ganica a partir da documentação oficial de cada ferramenta, consultada em novembro de 2026.</p>
+<p>No Clarity, a página de <a href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-masking">mascaramento do Microsoft Clarity</a> descreve três modos: Estrito (todo o conteúdo mascarado), Equilibrado (só números e e-mails, o padrão) e Relaxado (nada além de campos e listas). No Hotjar, a <a href="https://help.hotjar.com/hc/en-us/articles/36819956605329-How-to-Suppress-Text-Images-Videos-and-User-Input-from-Collected-Data">central de ajuda sobre supressão</a> informa que o que é digitado é suprimido por padrão e que a supressão acontece antes de a sessão sair da página para o Hotjar. A mesma página informa que números e e-mails no texto da página também são suprimidos por padrão.</p>
+<p>No PostHog, a <a href="https://posthog.com/docs/session-replay/privacy">documentação de privacidade da gravação</a> diz que os campos são mascarados por padrão, mas o texto geral não. No LogRocket, a <a href="https://docs.logrocket.com/reference/dom">referência de configuração do DOM</a> diz que só os campos de senha ficam de fora e que todos os outros elementos são capturados por padrão. Na prática, uma loja que instala PostHog ou LogRocket sem ajuste grava o nome e o endereço que aparecem impressos na tela de entrega.</p>
+<h2>Por que a máscara precisa ser configurada antes de ligar a gravação?</h2>
+<p>A máscara precisa vir antes porque ela age no navegador, antes do envio. A documentação do Clarity afirma que mudanças de máscara não valem para trás, e a do Hotjar diz que, depois que a sessão é enviada, não há como suprimir o dado. A documentação do PostHog diz que o conteúdo mascarado é retirado no navegador e nunca segue pela rede, e a <a href="https://docs.logrocket.com/docs/privacy">página de privacidade do LogRocket</a> diz que o dado excluído nunca é enviado aos servidores dele. A consequência é a mesma nas quatro ferramentas: o que foi enviado antes da máscara já está lá.</p>
+<p>Esse detalhe muda a ordem do trabalho. Ligar a gravação primeiro e ajustar as máscaras quando alguém notar um problema significa guardar dado pessoal por semanas. Segundo o <a href="https://learn.microsoft.com/clarity/faq">FAQ do Clarity</a>, as gravações ficam guardadas por 30 dias, mas as marcadas como favoritas e uma amostra aleatória ficam até 9 meses; o mesmo FAQ informa que, para excluir os dados de um usuário específico, é preciso apagar o projeto inteiro. No Hotjar, segundo as <a href="https://help.hotjar.com/hc/en-us/articles/36820004397713-Privacy-FAQs">perguntas frequentes de privacidade</a>, gravações e mapas de calor ficam 365 dias a partir da captura; quem migrou para o Contentsquare Free tem prazo menor, como mostra o <a href="/ga4-posthog-hotjar-clarity-logrocket-ecommerce.html">comparativo de ferramentas</a>.</p>
+<p>Cada ferramenta tem o próprio comando para esconder um trecho da página. Um atributo é uma marcação colocada no código do elemento, e um seletor é a regra que aponta qual elemento da página deve ser afetado:</p>
+<div class="data-table-wrap"><table class="data-table">
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Como esconder um elemento ou todo o texto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Clarity</td>
+<td>Atributo <code>data-clarity-mask=&quot;True&quot;</code> (vale para o elemento e o que está dentro dele) ou seletor no painel; modo Estrito para todo o texto</td>
+</tr>
+<tr>
+<td>Hotjar</td>
+<td>Atributo ou classe <code>data-hj-suppress</code>; opção de suprimir todo o texto nas configurações do site</td>
+</tr>
+<tr>
+<td>PostHog</td>
+<td>Classe <code>ph-no-capture</code> (troca o elemento por um bloco do mesmo tamanho); opção <code>maskTextSelector: &quot;*&quot;</code> para todo o texto</td>
+</tr>
+<tr>
+<td>LogRocket</td>
+<td>Atributo <code>data-private</code>; opções <code>textSanitizer</code> e <code>inputSanitizer</code>, desligadas por padrão</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-caption">Tabela: atributos e opções descritos na documentação oficial de cada ferramenta, consultada em novembro de 2026.</p>
+<p>Dois detalhes evitam surpresa. O Clarity avisa que não mascara o conteúdo de folhas de estilo, e no Hotjar o atributo <code>data-hj-allow</code> (<a href="https://help.hotjar.com/hc/en-us/articles/36820034730641-How-to-Show-Elements-and-Keystrokes-in-Data-Collection">central de ajuda sobre liberação de campos</a>), que libera a gravação do que é digitado num campo, não vale para os campos que estão dentro do elemento marcado: precisa ir em cada campo.</p>
+<h2>Quais páginas da loja não deveriam ser gravadas?</h2>
+<p>Algumas áreas da loja concentram dado pessoal e raramente precisam do conteúdo visível para responder uma pergunta de conversão. A recomendação da Ganica é deixar fora da gravação a área do cliente (pedidos, endereços, dados cadastrais) e a página de confirmação do pedido, onde aparecem nome, endereço e itens comprados juntos, e gravar as telas de pagamento só com máscara total, porque, num padrão que encontramos com frequência em diagnósticos, é nelas que o celular perde a venda, e o clique continua visível sem o conteúdo.</p>
+<p>Cada ferramenta resolve isso de um jeito. A documentação do PostHog aponta controles para iniciar e parar a gravação por código, indicados para componentes de terceiros que não podem ser mascarados, como formulários de pagamento e telas de login. No Hotjar, a supressão de todo o conteúdo pode valer para o site inteiro ou só para páginas escolhidas, nas configurações do site. No Clarity, a máscara pode ser aplicada por seletor no painel ou pelo atributo <code>data-clarity-mask</code> no código; para não gravar uma página, o FAQ do Clarity orienta tirar o código da ferramenta dessa página.</p>
+<p>O caso que mais pede cuidado é a loja de saúde, de suplementos ou de qualquer produto que revele algo sobre o corpo de quem compra. A LGPD lista o dado referente à saúde entre os dados pessoais sensíveis (art. 5º, II), e o art. 11 não inclui o legítimo interesse entre as bases para tratar dado sensível. Um carrinho com o nome de um medicamento, ligado a uma pessoa identificável, pode ser lido como dado de saúde. Para dado sensível, a base do consentimento precisa ser específica e destacada, para finalidades específicas (art. 11, I). Na dúvida, o caminho mais seguro é mascarar nomes de produto nas telas de carrinho, checkout e confirmação, ou não gravar essas telas. O estudo sobre o <a href="/rodape-ecommerce-confianca-saude.html">rodapé de confiança em lojas de saúde</a> mostra por que esse visitante já chega desconfiado.</p>
+<p>Duas áreas costumam passar despercebidas. A busca interna grava o que a pessoa digitou na barra de busca e pode revelar a mesma coisa que o carrinho. E endereços de página com e-mail ou número de pedido no próprio link aparecem no reprodutor da gravação: o PostHog oferece a função <code>maskCapturedNetworkRequestFn</code>, que edita o endereço no navegador antes do envio, e no LogRocket a limpeza de dados da rede é configurada à parte da limpeza da tela.</p>
+<h2>Como configurar a gravação de sessão com LGPD, passo a passo?</h2>
+<p>A forma mais segura é configurar, testar e registrar antes de liberar a gravação para todo o tráfego, nesta ordem recomendada pela Ganica:</p>
+<ol>
+<li><strong>Escreva a finalidade em uma frase.</strong> Por exemplo: &quot;entender por que o visitante do celular abandona o carrinho&quot;. Gravação sem pergunta coleta dado sem necessidade, e o art. 6º pede propósito específico.</li>
+<li><strong>Escolha e registre a base legal com quem cuida da conformidade.</strong> Base legal é a justificativa, prevista na lei, que autoriza usar o dado. Legítimo interesse exige que só o dado estritamente necessário seja tratado e que haja transparência (art. 10); consentimento exige que o aviso de cookies realmente controle a ferramenta.</li>
+<li><strong>Mapeie as páginas da loja em três grupos:</strong> gravar com máscara padrão, gravar com máscara total e não gravar. Conta, pagamento e confirmação começam no segundo ou no terceiro grupo.</li>
+<li><strong>Ajuste a máscara antes de instalar em produção.</strong> No PostHog, ligue a máscara de texto (<code>maskTextSelector</code>) ou marque os blocos com dado pessoal; no LogRocket, que grava também o que é digitado, ligue <code>inputSanitizer</code> e marque com <code>data-private</code> os blocos com nome e endereço; no Clarity, o modo de máscara vale para o projeto inteiro, então use o Estrito no projeto ou mascare os blocos dessas páginas com <code>data-clarity-mask=&quot;True&quot;</code> ou com um seletor no painel; no Hotjar, aplique a supressão nos elementos com nome e endereço.</li>
+<li><strong>Ligue o aviso de cookies à ferramenta.</strong> No Clarity, a <a href="https://learn.microsoft.com/en-us/clarity/clarity-consent-api-v2">Consent API v2</a> é o comando que avisa a ferramenta se o visitante aceitou. Atenção a dois pontos da documentação. O modo de consentimento do Clarity só vem ligado por padrão para visitantes do Espaço Econômico Europeu, do Reino Unido e da Suíça; para que o Clarity não grave cookies antes do aceite em nenhum lugar, a <a href="https://learn.microsoft.com/en-us/clarity/cookie-consent">página de cookies do Clarity</a> orienta desligar a opção de cookies nas configurações de instalação do projeto. E, quando o consentimento é negado, o Clarity continua coletando, só que sem cookies e com um identificador por página vista. Por isso, se a base legal escolhida for o consentimento, a recomendação da Ganica é carregar o código da ferramenta só depois do aceite.</li>
+<li><strong>Teste com um pedido de mentira.</strong> Faça uma compra de teste com nome e endereço fictícios e assista à própria gravação procurando qualquer dado que deveria estar escondido.</li>
+<li><strong>Restrinja o acesso e repita o teste a cada mudança no checkout.</strong> Uma tela nova pode criar um elemento que a regra antiga não cobre. O art. 46 da LGPD pede medidas técnicas e administrativas de segurança, e o § 2º diz que elas valem desde a concepção do serviço.</li>
+</ol>
+<h2>Como provar que a loja fez a sua parte?</h2>
+<p>A loja prova que fez a sua parte guardando registros simples, com data, do que configurou e testou. A LGPD pede que controlador e operador mantenham registro das operações de tratamento, especialmente quando a base é o legítimo interesse (art. 37), e permite que a ANPD (Autoridade Nacional de Proteção de Dados) peça um relatório de impacto quando o tratamento se apoia nessa base (art. 10, § 3º).</p>
+<p>A recomendação da Ganica é manter cinco registros, num documento que qualquer pessoa da equipe consiga encontrar:</p>
+<ul>
+<li><strong>A finalidade e a base legal</strong>, com a data da decisão e quem decidiu.</li>
+<li><strong>O mapa de páginas</strong>: o que é gravado, com qual máscara e o que fica fora.</li>
+<li><strong>A configuração da ferramenta</strong>: modo de máscara, seletores e atributos usados, prazo de guarda das gravações.</li>
+<li><strong>O teste com pedido fictício</strong>, repetido a cada mudança relevante no site, com a conclusão anotada.</li>
+<li><strong>A lista de quem acessa as gravações</strong> e por quê.</li>
+</ul>
+<p>Há ainda a questão de onde o dado fica guardado. Segundo o FAQ de privacidade do Hotjar, os dados ficam na Amazon Web Services na Irlanda; segundo o FAQ do Clarity, na nuvem Microsoft Azure. Enviar dado pessoal para fora do Brasil é transferência internacional, que a LGPD só admite nas hipóteses do art. 33. Uma delas é o país considerado adequado pela ANPD: segundo a <a href="https://www.gov.br/anpd/pt-br/assuntos/assuntos-internacionais/transferencia-internacional-de-dados/international-affairs">página da ANPD sobre transferência internacional</a>, a União Europeia foi reconhecida como adequada pela Resolução nº 32/2026, o que, na leitura da Ganica, tende a cobrir o envio para servidores na Irlanda. Se o fornecedor repassar dados a empresas fora da União Europeia, vale conferir no contrato como esse repasse é tratado. Para outros destinos, um caminho são as cláusulas-padrão da Resolução CD/ANPD nº 19/2024. O FAQ do Clarity não cita a região de armazenamento, então vale confirmar com o fornecedor e com o jurídico onde o dado fica e como o contrato trata esse ponto.</p>
+<h2>O que ainda não sabemos</h2>
+<p>A ANPD não publicou, até onde este estudo conseguiu verificar, uma orientação específica sobre gravação de sessão em sites. As recomendações deste guia partem dos princípios gerais da LGPD e da documentação das ferramentas, e não de uma decisão da autoridade sobre o tema.</p>
+<p>Também não há resposta fechada sobre quando o nome de um produto passa a ser dado de saúde. Este estudo trata a dúvida com cautela, mas a resposta depende do produto, do contexto e da interpretação jurídica.</p>
+<p>Por fim, os padrões de máscara mudam com as versões das ferramentas, e as páginas oficiais nem sempre mostram a data da mudança. A documentação da Microsoft não é uniforme: o FAQ do Clarity diz que todo o conteúdo é escondido por padrão, enquanto a página de mascaramento indica o modo Equilibrado; vale conferir o modo no próprio painel. O mesmo acontece no Hotjar: a página de supressão diz que números e e-mails no texto vêm escondidos por padrão, enquanto as perguntas frequentes de privacidade citam só as sequências de números; confira as opções de supressão nas configurações do site. Os comportamentos citados foram conferidos em novembro de 2026. Se a loja quer saber o que as gravações registram hoje e se elas respondem alguma pergunta de conversão, esse é um bom ponto de partida para um <a href="/#diagnostico">diagnóstico de CRO</a> (otimização da taxa de conversão).</p>
+
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Preciso pedir consentimento para gravar a sessão do visitante?</summary>
+        <p>Depende da base legal escolhida pela loja e do tipo de dado. A LGPD admite outras bases além do consentimento, como o legítimo interesse (art. 7º, IX), mas ele só permite tratar o dado estritamente necessário, exige transparência (art. 10) e não serve para dado sensível. A decisão precisa ser registrada e combinada com o aviso de cookies e a política de privacidade da loja, de preferência com apoio jurídico.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>O aviso de cookies resolve a LGPD da gravação de sessão?</summary>
+        <p>Não sozinho. O aviso cuida da transparência e, quando a base é o consentimento, da escolha do visitante, mas não impede que a ferramenta grave um nome ou um endereço que aparece na tela. A máscara e a exclusão de páginas são o que de fato limita o dado coletado.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Mapa de calor também tem dado pessoal?</summary>
+        <p>Em geral, bem menos que a gravação. Segundo a documentação do Microsoft Clarity, o mapa de calor é montado a partir dos atributos dos elementos da página, e não do conteúdo deles. Mesmo assim, ele vem do mesmo código da ferramenta instalado no site, então as regras de máscara e de páginas excluídas valem para os dois.</p>
+
+      </details>
+      <details class="faq-item">
+        <summary>Dá para apagar a gravação de um cliente específico que pediu exclusão?</summary>
+        <p>Depende da ferramenta, e vale conferir antes de contratar. O FAQ do Clarity, por exemplo, informa que, para excluir os dados de um usuário, é preciso apagar o projeto inteiro. Por isso a máscara no navegador pesa tanto: dado que nunca foi enviado não precisa ser apagado depois.</p>
+
+      </details>
+    </div>
+    <p class="article-sources">Fontes e metodologia: Documentação oficial consultada em novembro de 2026: Microsoft Learn (Clarity: Masking content, Consent API v2, Cookie consent, FAQ); Central de Ajuda do Hotjar (supressão de dados, liberação de campos, Privacy FAQs); documentação do PostHog (Session replay privacy controls); documentação do LogRocket (Privacy e referência de configuração do DOM). Lei 13.709/2018 (LGPD), texto compilado no Planalto, arts. 5º, 6º, 7º, 10, 11, 33, 37 e 46. Página da ANPD sobre transferência internacional de dados (Resolução CD/ANPD nº 19/2024 e Resolução nº 32/2026, adequação da União Europeia). A organização em três camadas, a lista de áreas da loja e os registros recomendados são leitura da Ganica. Este estudo não é orientação jurídica; configurações e padrões das ferramentas mudam com frequência e devem ser conferidos antes de qualquer decisão.</p>
+    <nav class="article-links" aria-labelledby="links-fontes">
+      <h2 id="links-fontes" class="article-links-titulo">Links das fontes</h2>
+      <ol>
+        <li><a href="https://planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm" rel="noopener" target="_blank">Lei nº 13.709/2018, Lei Geral de Proteção de Dados, texto compilado (Planalto)</a><span class="article-links-dominio">planalto.gov.br</span></li>
+        <li><a href="https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-masking" rel="noopener" target="_blank">Masking content, Microsoft Clarity (Microsoft Learn)</a><span class="article-links-dominio">learn.microsoft.com</span></li>
+        <li><a href="https://learn.microsoft.com/en-us/clarity/clarity-consent-api-v2" rel="noopener" target="_blank">Clarity Consent API v2 (Microsoft Learn)</a><span class="article-links-dominio">learn.microsoft.com</span></li>
+        <li><a href="https://learn.microsoft.com/en-us/clarity/cookie-consent" rel="noopener" target="_blank">Cookie consent, Microsoft Clarity (Microsoft Learn)</a><span class="article-links-dominio">learn.microsoft.com</span></li>
+        <li><a href="https://learn.microsoft.com/clarity/faq" rel="noopener" target="_blank">About Clarity (FAQ), Microsoft Learn</a><span class="article-links-dominio">learn.microsoft.com</span></li>
+        <li><a href="https://help.hotjar.com/hc/en-us/articles/36819956605329-How-to-Suppress-Text-Images-Videos-and-User-Input-from-Collected-Data" rel="noopener" target="_blank">How to suppress text, images, videos and user input, Central de Ajuda do Hotjar</a><span class="article-links-dominio">help.hotjar.com</span></li>
+        <li><a href="https://help.hotjar.com/hc/en-us/articles/36820034730641-How-to-Show-Elements-and-Keystrokes-in-Data-Collection" rel="noopener" target="_blank">How to show elements and keystrokes in data collection, Central de Ajuda do Hotjar</a><span class="article-links-dominio">help.hotjar.com</span></li>
+        <li><a href="https://help.hotjar.com/hc/en-us/articles/36820004397713-Privacy-FAQs" rel="noopener" target="_blank">Privacy FAQs, Central de Ajuda do Hotjar</a><span class="article-links-dominio">help.hotjar.com</span></li>
+        <li><a href="https://posthog.com/docs/session-replay/privacy" rel="noopener" target="_blank">Session replay privacy controls (PostHog Docs)</a><span class="article-links-dominio">posthog.com</span></li>
+        <li><a href="https://docs.logrocket.com/docs/privacy" rel="noopener" target="_blank">Privacy, LogRocket Docs (LogRocket)</a><span class="article-links-dominio">docs.logrocket.com</span></li>
+        <li><a href="https://docs.logrocket.com/reference/dom" rel="noopener" target="_blank">Control how LogRocket records the DOM (LogRocket Docs)</a><span class="article-links-dominio">docs.logrocket.com</span></li>
+        <li><a href="https://www.gov.br/anpd/pt-br/assuntos/assuntos-internacionais/transferencia-internacional-de-dados/international-affairs" rel="noopener" target="_blank">Transferência internacional de dados (ANPD)</a><span class="article-links-dominio">gov.br</span></li>
+      </ol>
+    </nav>
+
+  </div>
+</section>
+
+</article>
+
+<section id="autor" class="autor">
+  <div class="wrap">
+    <div class="sobre-card">
+      <div class="sobre-photo-col">
+        <picture>
+          <source srcset="/assets/img/narcipe-viana.webp" type="image/webp">
+          <img class="sobre-photo" src="/assets/img/narcipe-viana.jpg" width="700" height="822" loading="lazy" decoding="async" alt="Narcipe Viana, consultor de CRO">
+        </picture>
+        <div class="sobre-caption">
+          <p class="sobre-name">Narcipe Viana</p>
+          <p class="sobre-role">Consultor de CRO</p>
+        </div>
+      </div>
+      <div class="sobre-text-col">
+        <h2>Sobre quem escreveu</h2>
+        <p>Sou consultor de CRO focado em e-commerce, com trabalho direto em estrutura de analytics (GTM, GA4, PostHog, BigQuery, Looker Studio) e auditoria comportamental. Antes de ligar qualquer gravação, a pergunta que faço é qual decisão ela vai ajudar a tomar.</p>
+        <p><a href="/#sobre">Conhecer mais sobre meu trabalho →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contato" class="cta-final">
+  <div class="wrap">
+    <h2>A sua ferramenta de gravação está registrando mais do que a loja precisa?</h2>
+    <p>Um diagnóstico de CRO revisa o que está sendo gravado, em quais páginas e com quais máscaras, junto com a pergunta de negócio que justifica cada gravação.</p>
+    <div class="hero-ctas">
+      <a href="/#contato" class="btn btn-ambar js-track-click" data-cta-location="artigo_cta_final">Solicitar diagnóstico</a>
+      <a href="/#diagnostico" class="btn btn-leve js-track-click" data-cta-location="artigo_cta_final_secondary">Ver como funciona</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="/assets/img/logo-ganica.svg" width="787" height="213" alt="Ganica" loading="lazy" decoding="async">
+    <nav class="footer-links" aria-label="Rodapé">
+      <a href="/#metodo">Método</a>
+      <a href="/estudos/">Estudos</a>
+      <a href="/#diagnostico">Diagnóstico</a>
+      <a href="/#principios">Princípios</a>
+      <a href="/#sobre">Sobre</a>
+      <a href="mailto:contato@ganica.com.br">contato@ganica.com.br</a>
+    </nav>
+    <p>Consultoria independente de CRO para <span class="nw">e-commerce</span>. © 2026 Ganica.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function closeMenu(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      document.body.classList.remove('menu-open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var isOpen = menu.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', isOpen);
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({ event: 'menu_toggle', menu_action: isOpen ? 'open' : 'close' });
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  })();
+</script>
+
+<script>
+  document.querySelectorAll('.js-track-click').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'cta_click',
+        cta_location: el.dataset.ctaLocation || 'unknown',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+</script>
+
+<script>
+  (function(){
+    window.dataLayer = window.dataLayer || [];
+    if(!('IntersectionObserver' in window)) return;
+    var sectionIds = ['autor', 'contato'];
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          dataLayer.push({ event: 'section_view', section_name: entry.target.id });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>
