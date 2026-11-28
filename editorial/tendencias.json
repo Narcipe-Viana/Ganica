@@ -1,244 +1,239 @@
 {
- "gerado_em": "2026-11-27T18:08:34+00:00",
+ "gerado_em": "2026-11-28T16:48:57+00:00",
  "geo": "BR",
  "janela_explore": "últimos 90 dias",
  "aviso": "Índices do Google Trends são relativos (0 a 100) e variações percentuais; não são volume de buscas.",
  "calendario_proximo": [
   {
-   "data": "2026-11-27",
-   "evento": "Black Friday",
-   "dias_ate": 0
-  },
-  {
    "data": "2026-11-30",
    "evento": "Cyber Monday",
-   "dias_ate": 3
+   "dias_ate": 2
   },
   {
    "data": "2026-12-25",
    "evento": "Natal",
-   "dias_ate": 28
+   "dias_ate": 27
   }
  ],
  "em_alta_hoje": [
   {
-   "pesquisa": "sap",
-   "trafego_aprox": "200+",
-   "publicado": "Fri, 27 Nov 2026 09:30:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": [
-    {
-     "titulo": "SAP confirma incidente de segurança cibernética e adota medidas de proteção",
-     "url": "https://oglobo.globo.com/economia/tecnologia/noticia/2026/11/27/sap-confirma-incidente-de-seguranca-cibernetica-e-adota-medidas-de-protecao.ghtml",
-     "fonte": "O GLOBO"
-    },
-    {
-     "titulo": "SAP sofre ataque hacker",
-     "url": "https://www.baguete.com.br/noticias/sap-sofre-ataque-hacker",
-     "fonte": "Baguete"
-    },
-    {
-     "titulo": "Gigante do software alemão SAP investiga possível ataque hacker",
-     "url": "https://www.dw.com/pt-br/gigante-do-software-alem%C3%A3o-sap-investiga-poss%C3%ADvel-ataque-hacker/a-80078068",
-     "fonte": "DW.com"
-    }
-   ]
-  },
-  {
-   "pesquisa": "higor miranda frontelli desaparecido",
-   "trafego_aprox": "2000+",
-   "publicado": "Fri, 27 Nov 2026 09:20:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": [
-    {
-     "titulo": "Corpo de jovem de 19 anos que desapareceu após sair de moto é encontrado em Guarulhos",
-     "url": "https://g1.globo.com/sp/sao-paulo/noticia/2026/11/27/corpo-de-jovem-de-19-anos-que-desapareceu-apos-sair-de-moto-e-encontrado-em-guarulhos.ghtml",
-     "fonte": "G1"
-    },
-    {
-     "titulo": "Corpo de jovem desaparecido há oito dias é encontrado em área de mata em Guarulhos (SP)",
-     "url": "https://www1.folha.uol.com.br/cotidiano/2026/11/corpo-de-jovem-desaparecido-ha-oito-dias-e-encontrado-em-area-de-mata-em-guarulhos-sp.shtml",
-     "fonte": "Folha de S.Paulo"
-    },
-    {
-     "titulo": "Caso Higor: novas pistas revelam possibilidade de jovem ter sido forçado a entrar em um carro",
-     "url": "https://record.r7.com/fala-brasil/video/caso-higor-novas-pistas-revelam-possibilidade-de-jovem-ter-sido-forcado-a-entrar-em-um-carro-27112026/",
-     "fonte": "R7"
-    }
-   ]
-  },
-  {
-   "pesquisa": "al ittihad",
-   "trafego_aprox": "200+",
-   "publicado": "Fri, 27 Nov 2026 09:20:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": [
-    {
-     "titulo": "Bergwijn leads Al-Ittihad's attack against Neom as Abidi faces his past",
-     "url": "https://www.goal.com/en-in/news/bergwijn-leads-al-ittihad-s-attack-against-neom-as-abidi-faces-his-past/blt646ae1e0dce72fb8",
-     "fonte": "Goal.com"
-    },
-    {
-     "titulo": "Al Ittihad vs Neom SC: Where to Watch, TV Channel, Live Stream and Kick-off Time",
-     "url": "https://www.goal.com/en/news/live-stream-online-tv-where-to-watch-al-ittihad-v-neom-sc/bltd559a68842cb842c",
-     "fonte": "Goal.com"
-    },
-    {
-     "titulo": "Galtier acknowledges their attacking quality but refuses to back down against Al-Ittihad",
-     "url": "https://www.goal.com/en/news/galtier-acknowledges-their-attacking-quality-but-refuses-to-back-down-against-al-ittihad/blta521e4d4c5f7f799",
-     "fonte": "Goal.com"
-    }
-   ]
-  },
-  {
-   "pesquisa": "ingressos gremio",
+   "pesquisa": "elche x atlético madrid",
    "trafego_aprox": "500+",
-   "publicado": "Fri, 27 Nov 2026 09:20:00 -0800",
+   "publicado": "Sat, 28 Nov 2026 08:30:00 -0800",
    "relevante_ecommerce": false,
    "noticias": [
     {
-     "titulo": "Grêmio teve única vitória sobre o Corinthians na Neo Química Arena com Renato; veja retrospecto",
-     "url": "https://ge.globo.com/rs/futebol/times/gremio/noticia/2026/11/27/gremio-teve-unica-vitoria-sobre-o-corinthians-na-neo-quimica-arena-com-renato-veja-retrospecto.ghtml",
-     "fonte": "ge"
+     "titulo": "¡ONCE OFICIAL!: Un regreso y dos novedades ante el Elche",
+     "url": "https://onefootball.com/es/noticias/once-oficial-un-regreso-y-dos-novedades-ante-el-elche-43858484",
+     "fonte": "OneFootball"
     },
     {
-     "titulo": "O maior problema do Grêmio em Itaquera",
-     "url": "https://gauchazh.clicrbs.com.br/colunistas/luciano-perico/noticia/2026/11/o-maior-problema-do-gremio-em-itaquera-cmwy75bx40106017dbogq0wqd.html",
+     "titulo": "No hay jornada de reflexión para el Atlético de Madrid",
+     "url": "https://www.mundodeportivo.com/futbol/atletico-madrid/20261128/1004256427/no-hay-jornada-reflexion-atletico-madrid.html",
+     "fonte": "Mundo Deportivo"
+    },
+    {
+     "titulo": "Neto vuelve a la titularidad ante un Atlético al que regresan Barrios, Giuliano y Hjulmand",
+     "url": "https://www.infobae.com/espana/agencias/2026/11/28/neto-vuelve-a-la-titularidad-ante-un-atletico-al-que-regresan-barrios-giuliano-y-hjulmand/",
+     "fonte": "Infobae"
+    }
+   ]
+  },
+  {
+   "pesquisa": "vestibular ufrgs 2027",
+   "trafego_aprox": "200+",
+   "publicado": "Sat, 28 Nov 2026 08:30:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Vestibular 2027 da UFRGS ocorre neste fim de semana com 23 mil inscritos; veja tudo o que você precisa saber",
+     "url": "https://gauchazh.clicrbs.com.br/educacao/enem-e-vestibular/noticia/2026/11/vestibular-2027-da-ufrgs-ocorre-neste-fim-de-semana-com-23-mil-inscritos-veja-tudo-o-que-voce-precisa-saber-cmwz3a43c014i0164ibrhkdhg.html",
      "fonte": "GZH"
     },
     {
-     "titulo": "Grêmio vai disponibilizar ingressos gratuitos para 'decisão' contra o Corinthians",
-     "url": "https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/11/26/gremio-vai-disponibilizar-ingressos-gratuitos-para-decisao-contra-o-corinthians-em-itaquera.htm",
-     "fonte": "UOL"
-    }
-   ]
-  },
-  {
-   "pesquisa": "amancio ortega",
-   "trafego_aprox": "200+",
-   "publicado": "Fri, 27 Nov 2026 09:20:00 -0800",
-   "relevante_ecommerce": true,
-   "noticias": [
-    {
-     "titulo": "Amancio Ortega acelera sus compras inmobiliarias con inversiones de más de US$850 millones",
-     "url": "https://www.bloomberglinea.com/negocios/amancio-ortega-acelera-sus-compras-inmobiliarias-con-inversiones-de-mas-de-us850-millones/",
-     "fonte": "Bloomberg Línea"
+     "titulo": "Mais de 23 mil candidatos disputam vagas na Ufrgs",
+     "url": "https://www.correiodopovo.com.br/not%C3%ADcias/ensino/mais-de-23-mil-candidatos-disputam-vagas-na-ufrgs-1.1768382",
+     "fonte": "Correio do Povo"
     },
     {
-     "titulo": "Pontegadea compra el edificio de la tienda insignia de Zara en Lisboa",
-     "url": "https://justretail.news/noticias/pontegadea-compra-el-edificio-de-la-tienda-insignia-de-zara-en-lisboa/",
-     "fonte": "Just Retail"
-    },
-    {
-     "titulo": "Amancio Ortega, a un paso de invertir todo el dividendo que ingresó de Inditex en 2026, con compras de 3.000 millones",
-     "url": "https://www.economiadigital.es/galicia/empresas/amancio-ortega-paso-invertir-todo-dividendo-ingreso-inditex-2026-compras-3-000-millones.html",
-     "fonte": "Economía Digital"
-    }
-   ]
-  },
-  {
-   "pesquisa": "coreia do norte",
-   "trafego_aprox": "500+",
-   "publicado": "Fri, 27 Nov 2026 09:10:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": [
-    {
-     "titulo": "Coreia do Norte suspende envio de mísseis à Rússia, diz Ucrânia",
-     "url": "https://valor.globo.com/mundo/noticia/2026/11/26/coreia-do-norte-suspende-envio-de-msseis-rssia-diz-ucrnia.ghtml",
-     "fonte": "Valor Econômico"
-    },
-    {
-     "titulo": "Coreia do Norte freia envio de novos soldados para guerra na Ucrânia",
-     "url": "https://www.dw.com/pt-br/coreia-do-norte-freia-envio-de-novos-soldados-para-guerra-na-ucr%C3%A2nia/a-80041003",
-     "fonte": "DW.com"
-    },
-    {
-     "titulo": "Coreia do Norte terá cortado apoio militar à Rússia: em causa está uma tensão diplomática entre os dois países",
-     "url": "https://cnnportugal.iol.pt/russia/ucrania/kiev-avanca-que-coreia-do-norte-cortou-apoio-militar-a-russia-em-causa-esta-uma-tensao-diplomatica-entre-os-dois-paises/20261126/6b08221a0cf22114c9129027",
-     "fonte": "CNN Portugal"
-    }
-   ]
-  },
-  {
-   "pesquisa": "belo horizonte",
-   "trafego_aprox": "200+",
-   "publicado": "Fri, 27 Nov 2026 08:40:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": [
-    {
-     "titulo": "Asfalto cede no bairro Havaí, em BH",
-     "url": "https://g1.globo.com/mg/minas-gerais/mg1/video/asfalto-cede-no-bairro-havai-em-bh-15287438.ghtml",
+     "titulo": "Agora no g1",
+     "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/11/27/vestibular-ufrgs-2027-horarios-documentos-prova-sabado-domingo-fim-de-semana.ghtml",
      "fonte": "G1"
-    },
-    {
-     "titulo": "Forte chuva transforma rua em cachoeira e deixa rastro de destruição em Belo Horizonte",
-     "url": "https://noticias.r7.com/record-news/alerta-brasil/video/forte-chuva-transforma-rua-em-cachoeira-e-deixa-rastro-de-destruicao-em-belo-horizonte-27112026/",
-     "fonte": "R7"
-    },
-    {
-     "titulo": "Previsão do tempo em Belo Horizonte hoje: veja como fica o clima nesta sexta-feira",
-     "url": "https://www.terra.com.br/noticias/previsao-do-tempo/previsao-do-tempo-em-belo-horizonte-hoje-veja-como-fica-o-clima-nesta-sexta-feira,1239afd9398c042aaff4e14257cb73b5x14k0xd2.html",
-     "fonte": "Terra"
     }
    ]
   },
   {
-   "pesquisa": "chico buarque",
-   "trafego_aprox": "200+",
-   "publicado": "Fri, 27 Nov 2026 08:40:00 -0800",
+   "pesquisa": "danny trejo",
+   "trafego_aprox": "100+",
+   "publicado": "Sat, 28 Nov 2026 08:30:00 -0800",
    "relevante_ecommerce": false,
    "noticias": [
     {
-     "titulo": "Revista americana inclui músicas de Chico Buarque, Milton Nascimento e Lô Borges entre as 100 melhores da história",
-     "url": "https://oglobo.globo.com/cultura/noticia/2026/11/27/revista-americana-inclui-musicas-de-chico-buarque-milton-nascimento-e-lo-borges-entre-as-100-melhores-da-historia.ghtml",
-     "fonte": "O GLOBO"
-    },
-    {
-     "titulo": "Chico, Milton e Lô entram em lista de cem melhores músicas de revista dos EUA",
-     "url": "https://www1.folha.uol.com.br/ilustrada/2026/11/chico-milton-e-lo-entram-em-lista-de-cem-melhores-musicas-de-revista-dos-eua.shtml",
+     "titulo": "Ator mexicano diz ter sido ameaçado ao tentar abandonar filme sobre ICE",
+     "url": "https://www1.folha.uol.com.br/ilustrada/2026/11/ator-mexicano-diz-ter-sido-ameacado-ao-tentar-abandonar-filme-sobre-ice.shtml",
      "fonte": "Folha de S.Paulo"
     },
     {
-     "titulo": "Chico Buarque e Milton Nascimento entram na lista de melhores canções de todos os tempos",
-     "url": "https://novabrasilfm.com.br/notas-musicais/chico-buarque-e-milton-nascimento-entram-na-lista-de-melhores-cancoes-de-todos-os-tempos",
-     "fonte": "Novabrasil"
+     "titulo": "Danny Trejo diz ter sido ameaçado de processo ao tentar abandonar filme pró-ICE",
+     "url": "https://oglobo.globo.com/cultura/filmes/noticia/2026/11/28/danny-trejo-de-um-drink-no-inferno-diz-ter-sido-ameacado-de-processo-ao-tentar-abandonar-filme-pro-ice.ghtml",
+     "fonte": "O GLOBO"
+    },
+    {
+     "titulo": "Neste sábado, RECORD exibe o filme: \"Os Esquecidos\"",
+     "url": "https://recordminas.tv.br/os-esquecidos-4.htm",
+     "fonte": "RECORD MINAS"
     }
    ]
   },
   {
-   "pesquisa": "enfeitiçadas: bem-vindos a hexe",
+   "pesquisa": "f2",
    "trafego_aprox": "100+",
-   "publicado": "Fri, 27 Nov 2026 08:30:00 -0800",
-   "relevante_ecommerce": false,
-   "noticias": []
-  },
-  {
-   "pesquisa": "auditor fiscal",
-   "trafego_aprox": "2000+",
-   "publicado": "Fri, 27 Nov 2026 08:20:00 -0800",
+   "publicado": "Sat, 28 Nov 2026 08:20:00 -0800",
    "relevante_ecommerce": false,
    "noticias": [
     {
-     "titulo": "COMUNICADO - Receita Federal divulga versões provisórias dos conteúdos programáticos do concurso público",
-     "url": "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/comunicado-receita-federal-divulga-versoes-provisorias-dos-conteudos-programaticos-do-concurso-publico",
-     "fonte": "Governo Federal"
+     "titulo": "Rafa Câmara cita exigência física do GP do Catar e espera \"corrida longa\"",
+     "url": "https://ge.globo.com/motor/formula-1/noticia/2026/11/27/rafa-camara-cita-exigencia-fisica-do-gp-do-catar-e-espera-corrida-longa.ghtml",
+     "fonte": "ge"
     },
     {
-     "titulo": "Concurso Receita Federal: veja o cronograma proposto!",
-     "url": "https://blog.grancursosonline.com.br/concurso-receita-federal-cronograma-proposto/",
-     "fonte": "Blog Gran Cursos Online"
+     "titulo": "BEARMAN RENOVADO e grid 2027 FECHADO, RUSSELL debate MAX, CÂMARA e BORTOLETO, FINAL da PORSCHE CUP!",
+     "url": "https://motorsport.uol.com.br/f1/video/bearman-renovado-e-grid-2027-fechado-russell-debate-max-camara-e-bortoleto-final-da-porsche-cup/670209/",
+     "fonte": "Motorsport.com - Fórmula 1, NASCAR, MotoGP, Fórmula Indy"
     },
     {
-     "titulo": "Concurso Receita Federal: banca é definida para novo edital",
-     "url": "https://folha.qconcursos.com/n/concurso-receita-federal-2026-banca-definida",
-     "fonte": "Qconcursos"
+     "titulo": "Fórmula 1: Haas confirma companheiro de Câmara, e grid da F1 2027 fica completo",
+     "url": "https://www.estadao.com.br/esportes/velocidade/formula-1-haas-confirma-companheiro-de-camara-e-grid-da-f1-2027-fica-completo/",
+     "fonte": "Estadão"
     }
    ]
+  },
+  {
+   "pesquisa": "torino x lazio",
+   "trafego_aprox": "500+",
+   "publicado": "Sat, 28 Nov 2026 08:10:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Assista a Torino x Lazio ao vivo hoje: onde passa o jogo na TV e no streaming?",
+     "url": "https://www.goal.com/br/not%C3%ADcias/assista-a-torino-x-lazio-ao-vivo-hoje-onde-passa-o-jogo-na-tv-e-no-streaming/blt2ae02583c388bb1a",
+     "fonte": "Goal.com"
+    },
+    {
+     "titulo": "Torino x Lazio: horário, escalações e onde assistir (Campeonato Italiano 28/11)",
+     "url": "https://www.ogol.com.br/noticias/torino-x-lazio-horario-escalacoes-e-onde-assistir-campeonato-italiano-28-11/1270572",
+     "fonte": "ogol.com.br"
+    },
+    {
+     "titulo": "Assista a Torino x Lazio ao vivo hoje: onde ver o jogo na TV e no streaming?",
+     "url": "https://www.goal.com/br/not%C3%ADcias/assista-a-torino-x-lazio-ao-vivo-hoje-onde-ver-o-jogo-na-tv-e-no-streaming/blt2ae02583c388bb1a",
+     "fonte": "Goal.com"
+    }
+   ]
+  },
+  {
+   "pesquisa": "corinthians x grêmio",
+   "trafego_aprox": "500+",
+   "publicado": "Sat, 28 Nov 2026 08:00:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Cartola 2026: veja suspensos, lesionados e escalações prováveis da rodada #37 do Brasileirão",
+     "url": "https://ge.globo.com/cartola/noticia/2026/11/28/cartola-2026-veja-suspensos-lesionados-e-escalacoes-provaveis-da-rodada-37-do-brasileirao.ghtml",
+     "fonte": "ge"
+    },
+    {
+     "titulo": "Dicas da Cami: com cinco do Flamengo, veja time da influenciadora para a rodada 37 do Cartola",
+     "url": "https://ge.globo.com/cartola/noticia/2026/11/28/dicas-da-cami-com-cinco-do-flamengo-veja-time-da-influenciadora-para-a-rodada-37-do-cartola.ghtml",
+     "fonte": "ge"
+    },
+    {
+     "titulo": "37ª rodada | Dicas da Cami | Cartola 2026 🎩⚽",
+     "url": "https://ge.globo.com/cartola-fc/video/37a-rodada-dicas-da-cami-cartola-2026-15288280.ghtml",
+     "fonte": "ge"
+    }
+   ]
+  },
+  {
+   "pesquisa": "fiat argo",
+   "trafego_aprox": "500+",
+   "publicado": "Sat, 28 Nov 2026 08:00:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Exclusivo: Leapmotor B03 será vendido como Fiat E-Argo no Brasil",
+     "url": "https://www.automaistv.com.br/segredos/fiat-e-argo-leapmotor-b03-brasil/",
+     "fonte": "Auto+ TV"
+    },
+    {
+     "titulo": "Argo X inaugura o novo visual da Fiat no Brasil com luzes em X na dianteira e na traseira",
+     "url": "https://garagem360.com.br/argo-x-inaugura-o-novo-visual-da-fiat-no-brasil-com-luzes-em-x-na-dianteira-e-na-traseira/",
+     "fonte": "garagem 360"
+    },
+    {
+     "titulo": "Flagra revela versão enxuta do novo Fiat Argo X, com cara de carro popular",
+     "url": "https://www.estadao.com.br/jornal-do-carro/flagra-revela-versao-enxuta-do-novo-fiat-argo-x-com-cara-de-carro-popular/",
+     "fonte": "Estadão"
+    }
+   ]
+  },
+  {
+   "pesquisa": "guitarra stage tour",
+   "trafego_aprox": "200+",
+   "publicado": "Sat, 28 Nov 2026 08:00:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Guitarra de Stage Tour será vendida no Brasil",
+     "url": "https://projectn.com.br/guitarra-de-stage-tour-sera-vendida-no-brasil/",
+     "fonte": "Project N"
+    },
+    {
+     "titulo": "Stage Tour terá 95 músicas no lançamento em 10 de dezembro",
+     "url": "https://criticalhits.com.br/games/stage-tour-tera-95-musicas-no-lancamento-em-10-de-dezembro/",
+     "fonte": "Critical Hits"
+    },
+    {
+     "titulo": "Mais músicas são anunciadas para Stage Tour; jogo terá suporte a diversos hardwares",
+     "url": "https://psxbrasil.com.br/mais-musicas-sao-anunciadas-para-stage-tour-jogo-tera-suporte-a-diversos-hardwares/",
+     "fonte": "PSX Brasil"
+    }
+   ]
+  },
+  {
+   "pesquisa": "kate middleton",
+   "trafego_aprox": "100+",
+   "publicado": "Sat, 28 Nov 2026 08:00:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": [
+    {
+     "titulo": "Catherine's emotional cancer documentary strips away the stiff upper lip",
+     "url": "https://www.bbc.com/news/articles/c6zxvy9j0wpjo",
+     "fonte": "BBC"
+    },
+    {
+     "titulo": "What we know about the Princess of Wales’ new documentary",
+     "url": "https://www.cnn.com/2026/11/27/uk/kate-princess-of-wales-heal-cancer-documentary-gbr-intl",
+     "fonte": "CNN"
+    },
+    {
+     "titulo": "Princess Catherine’s Cancer Documentary ‘Heal’: 3 Takeaways",
+     "url": "https://www.nytimes.com/2026/11/27/world/europe/princess-catherine-kate-heal-cancer-documentary.html",
+     "fonte": "The New York Times"
+    }
+   ]
+  },
+  {
+   "pesquisa": "universidad católica x independiente del valle",
+   "trafego_aprox": "2000+",
+   "publicado": "Sat, 28 Nov 2026 07:50:00 -0800",
+   "relevante_ecommerce": false,
+   "noticias": []
   }
  ],
  "categoria_compras": {
-  "variacao_90d_pct": 26,
-  "indice_atual": 97,
+  "variacao_90d_pct": 23,
+  "indice_atual": 70,
   "base_baixa": false,
   "principais": [
    {
@@ -247,27 +242,27 @@
    },
    {
     "consulta": "canva",
-    "valor": "70"
+    "valor": "68"
    },
    {
     "consulta": "vestido",
-    "valor": "64"
-   },
-   {
-    "consulta": "netflix",
-    "valor": "61"
-   },
-   {
-    "consulta": "amazon",
-    "valor": "56"
+    "valor": "57"
    },
    {
     "consulta": "nike",
-    "valor": "56"
+    "valor": "55"
+   },
+   {
+    "consulta": "netflix",
+    "valor": "52"
    },
    {
     "consulta": "adidas",
-    "valor": "54"
+    "valor": "52"
+   },
+   {
+    "consulta": "amazon",
+    "valor": "51"
    },
    {
     "consulta": "caixa",
@@ -275,31 +270,31 @@
    },
    {
     "consulta": "relogio",
-    "valor": "35"
+    "valor": "33"
    },
    {
     "consulta": "pje",
-    "valor": "34"
-   },
-   {
-    "consulta": "paraguai",
-    "valor": "29"
-   },
-   {
-    "consulta": "google",
-    "valor": "29"
+    "valor": "32"
    },
    {
     "consulta": "renner",
-    "valor": "29"
+    "valor": "28"
    },
    {
     "consulta": "chuva",
-    "valor": "28"
+    "valor": "27"
    },
    {
     "consulta": "ouro",
-    "valor": "28"
+    "valor": "27"
+   },
+   {
+    "consulta": "google",
+    "valor": "27"
+   },
+   {
+    "consulta": "paraguai",
+    "valor": "26"
    }
   ],
   "em_ascensao": [
@@ -309,7 +304,7 @@
    },
    {
     "consulta": "black friday",
-    "valor": "Mais 1.150%"
+    "valor": "Mais 1.350%"
    },
    {
     "consulta": "felca",
@@ -317,27 +312,23 @@
    },
    {
     "consulta": "mercado li",
-    "valor": "Mais 300%"
+    "valor": "Mais 350%"
    },
    {
     "consulta": "product",
     "valor": "Mais 170%"
    },
    {
-    "consulta": "tiktok coins",
-    "valor": "Mais 160%"
-   },
-   {
     "consulta": "playstation 5",
-    "valor": "Mais 120%"
+    "valor": "Mais 130%"
    },
    {
     "consulta": "chuva",
-    "valor": "Mais 110%"
+    "valor": "Mais 100%"
    },
    {
     "consulta": "xbox series s",
-    "valor": "Mais 100%"
+    "valor": "Mais 90%"
    },
    {
     "consulta": "ri happy",
@@ -348,19 +339,23 @@
     "valor": "Mais 80%"
    },
    {
-    "consulta": "xbox series x",
-    "valor": "Mais 60%"
+    "consulta": "nintendo switch 2",
+    "valor": "Mais 80%"
    },
    {
     "consulta": "ps5",
     "valor": "Mais 60%"
    },
    {
-    "consulta": "nintendo switch 2",
+    "consulta": "xbox series x",
     "valor": "Mais 60%"
    },
    {
     "consulta": "playstation",
+    "valor": "Mais 50%"
+   },
+   {
+    "consulta": "nintendo switch",
     "valor": "Mais 50%"
    }
   ],
@@ -368,16 +363,34 @@
  },
  "sementes": {
   "e-commerce": {
-   "variacao_90d_pct": -11,
-   "indice_atual": 7,
+   "variacao_90d_pct": -21,
+   "indice_atual": 6,
    "base_baixa": false,
-   "principais": [],
-   "em_ascensao": [],
+   "principais": [
+    {
+     "consulta": "ecommerce",
+     "valor": "100"
+    },
+    {
+     "consulta": "e commerce",
+     "valor": "61"
+    },
+    {
+     "consulta": "best laptop for work",
+     "valor": "4"
+    }
+   ],
+   "em_ascensao": [
+    {
+     "consulta": "best laptop for work",
+     "valor": "Aumento repentino"
+    }
+   ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=e-commerce&hl=pt-BR"
   },
   "loja virtual": {
-   "variacao_90d_pct": 24,
-   "indice_atual": 97,
+   "variacao_90d_pct": 32,
+   "indice_atual": 36,
    "base_baixa": false,
    "principais": [
     {
@@ -386,84 +399,64 @@
     },
     {
      "consulta": "uol host loja virtual",
-     "valor": "75"
+     "valor": "74"
+    },
+    {
+     "consulta": "chip virtual",
+     "valor": "45"
     },
     {
      "consulta": "montar loja virtual",
-     "valor": "43"
+     "valor": "44"
     },
     {
-     "consulta": "tim loja virtual",
+     "consulta": "loja tim virtual",
      "valor": "41"
     },
     {
-     "consulta": "juntos somos mais loja virtual",
-     "valor": "37"
-    },
-    {
-     "consulta": "sptrans loja virtual",
-     "valor": "35"
+     "consulta": "loja virtual grátis",
+     "valor": "39"
     },
     {
      "consulta": "como criar uma loja virtual",
+     "valor": "36"
+    },
+    {
+     "consulta": "juntos somos mais",
      "valor": "35"
     },
     {
-     "consulta": "loja virtual grátis",
+     "consulta": "loja virtual sptrans",
+     "valor": "35"
+    },
+    {
+     "consulta": "sptrans",
      "valor": "34"
     },
     {
      "consulta": "site para loja virtual",
-     "valor": "30"
+     "valor": "33"
     },
     {
-     "consulta": "como fazer uma loja virtual",
-     "valor": "29"
+     "consulta": "juntos somos mais loja virtual",
+     "valor": "33"
     },
     {
      "consulta": "plataforma de loja virtual",
+     "valor": "27"
+    },
+    {
+     "consulta": "como fazer uma loja virtual",
      "valor": "26"
     },
     {
      "consulta": "como montar uma loja virtual",
      "valor": "25"
-    },
-    {
-     "consulta": "loja de roupas virtual",
-     "valor": "25"
-    },
-    {
-     "consulta": "loja virtual nuvem",
-     "valor": "23"
-    },
-    {
-     "consulta": "loja virtual vivo",
-     "valor": "22"
     }
    ],
    "em_ascensao": [
     {
-     "consulta": "petz loja virtual",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "south & co loja virtual",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "diamante loja virtual",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "donna dolce loja virtual",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "tevah loja virtual",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "loja virtual de suzane von richthofen",
+     "consulta": "loja virtual getnet",
      "valor": "Aumento repentino"
     },
     {
@@ -471,52 +464,72 @@
      "valor": "Aumento repentino"
     },
     {
+     "consulta": "south & co loja virtual",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "donna dolce loja virtual",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "paulinas loja virtual",
+     "valor": "Aumento repentino"
+    },
+    {
      "consulta": "www seiki com br loja virtual",
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "loja virtual editora do brasil",
-     "valor": "Mais 3.600%"
+     "consulta": "art stilo loja virtual",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "tevah loja virtual",
+     "valor": "Mais 1.400%"
+    },
+    {
+     "consulta": "loja virtual de suzane von richthofen",
+     "valor": "Mais 1.400%"
     },
     {
      "consulta": "pagseguro loja virtual",
-     "valor": "Mais 400%"
+     "valor": "Mais 350%"
     },
     {
-     "consulta": "paulinas loja virtual",
-     "valor": "Mais 300%"
-    },
-    {
-     "consulta": "art stilo loja virtual",
-     "valor": "Mais 300%"
+     "consulta": "getnet loja virtual",
+     "valor": "Mais 350%"
     },
     {
      "consulta": "loja virtual pronta",
-     "valor": "Mais 300%"
-    },
-    {
-     "consulta": "sylvia designer loja virtual",
      "valor": "Mais 250%"
     },
     {
+     "consulta": "paulus loja virtual",
+     "valor": "Mais 200%"
+    },
+    {
      "consulta": "loja virtual grátis",
-     "valor": "Mais 160%"
+     "valor": "Mais 200%"
+    },
+    {
+     "consulta": "uol host loja virtual",
+     "valor": "Mais 50%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=loja+virtual&hl=pt-BR"
   },
   "marketplace": {
    "variacao_90d_pct": -15,
-   "indice_atual": 13,
+   "indice_atual": 12,
    "base_baixa": false,
    "principais": [
     {
-     "consulta": "facebook marketplace",
+     "consulta": "marketplace facebook",
      "valor": "100"
     },
     {
      "consulta": "marketplace no facebook",
-     "valor": "18"
+     "valor": "17"
     },
     {
      "consulta": "marketplace do facebook",
@@ -524,14 +537,14 @@
     },
     {
      "consulta": "what is an nft marketplace",
-     "valor": "15"
+     "valor": "14"
     },
     {
-     "consulta": "marketplace o que é",
-     "valor": "7"
+     "consulta": "olx",
+     "valor": "13"
     },
     {
-     "consulta": "marketplace minecraft",
+     "consulta": "o que é marketplace",
      "valor": "7"
     },
     {
@@ -539,11 +552,15 @@
      "valor": "7"
     },
     {
+     "consulta": "marketplace minecraft",
+     "valor": "7"
+    },
+    {
      "consulta": "amazon marketplace",
      "valor": "5"
     },
     {
-     "consulta": "marketplace magalu",
+     "consulta": "magalu marketplace",
      "valor": "4"
     },
     {
@@ -555,19 +572,15 @@
      "valor": "3"
     },
     {
-     "consulta": "marketplace shopping",
-     "valor": "3"
-    },
-    {
      "consulta": "roblox marketplace",
      "valor": "3"
     },
     {
-     "consulta": "marketplace curitiba",
+     "consulta": "marketplace shopping",
      "valor": "3"
     },
     {
-     "consulta": "ps5 marketplace",
+     "consulta": "marketplace curitiba",
      "valor": "3"
     }
    ],
@@ -578,42 +591,30 @@
     },
     {
      "consulta": "blow marketplace ltda",
-     "valor": "Mais 150%"
-    },
-    {
-     "consulta": "́facebook marketplace",
-     "valor": "Mais 130%"
-    },
-    {
-     "consulta": "xbox series s",
-     "valor": "Mais 120%"
+     "valor": "Mais 200%"
     },
     {
      "consulta": "blow marketplace",
      "valor": "Mais 100%"
     },
     {
-     "consulta": "orlando outlet marketplace",
+     "consulta": "́facebook marketplace",
      "valor": "Mais 80%"
     },
     {
-     "consulta": "marketplace bh",
-     "valor": "Mais 50%"
+     "consulta": "outlet marketplace orlando",
+     "valor": "Mais 60%"
     },
     {
      "consulta": "webcontinental marketplace",
-     "valor": "Mais 40%"
-    },
-    {
-     "consulta": "marketplace simulation",
-     "valor": "Mais 40%"
+     "valor": "Mais 50%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=marketplace&hl=pt-BR"
   },
   "mercado livre": {
-   "variacao_90d_pct": 54,
-   "indice_atual": 100,
+   "variacao_90d_pct": 53,
+   "indice_atual": 68,
    "base_baixa": false,
    "principais": [
     {
@@ -622,11 +623,11 @@
     },
     {
      "consulta": "shopee",
-     "valor": "72"
+     "valor": "70"
     },
     {
      "consulta": "mercado livre brasil",
-     "valor": "41"
+     "valor": "40"
     },
     {
      "consulta": "mercado livre entrar",
@@ -641,39 +642,39 @@
      "valor": "19"
     },
     {
-     "consulta": "mercado pago",
-     "valor": "19"
-    },
-    {
      "consulta": "site mercado livre",
      "valor": "17"
     },
     {
      "consulta": "mercado livre entregador",
-     "valor": "15"
-    },
-    {
-     "consulta": "afiliado mercado livre",
-     "valor": "14"
-    },
-    {
-     "consulta": "agencia mercado livre",
-     "valor": "14"
+     "valor": "16"
     },
     {
      "consulta": "mercado livre login",
      "valor": "14"
     },
     {
+     "consulta": "afiliado mercado livre",
+     "valor": "13"
+    },
+    {
+     "consulta": "agencia mercado livre",
+     "valor": "13"
+    },
+    {
      "consulta": "cupom de desconto mercado livre",
      "valor": "13"
     },
     {
-     "consulta": "mercado livre vendedor",
+     "consulta": "vender no mercado livre",
      "valor": "12"
     },
     {
-     "consulta": "vender no mercado livre",
+     "consulta": "cupons mercado livre",
+     "valor": "12"
+    },
+    {
+     "consulta": "mercado livre vendedor",
      "valor": "12"
     }
    ],
@@ -689,17 +690,13 @@
     {
      "consulta": "ps5 mercado livre",
      "valor": "Mais 60%"
-    },
-    {
-     "consulta": "shopee seller",
-     "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=mercado+livre&hl=pt-BR"
   },
   "shopee": {
-   "variacao_90d_pct": 5,
-   "indice_atual": 74,
+   "variacao_90d_pct": 4,
+   "indice_atual": 59,
    "base_baixa": false,
    "principais": [
     {
@@ -708,30 +705,30 @@
     },
     {
      "consulta": "mercado livre",
-     "valor": "19"
+     "valor": "18"
     },
     {
-     "consulta": "mercadolivre",
-     "valor": "8"
-    },
-    {
-     "consulta": "shopee afiliado",
+     "consulta": "entrega shopee",
      "valor": "8"
     },
     {
      "consulta": "shopee brasil",
-     "valor": "8"
+     "valor": "7"
     },
     {
      "consulta": "shein",
      "valor": "7"
     },
     {
-     "consulta": "seller shopee",
+     "consulta": "afiliado shopee",
      "valor": "7"
     },
     {
-     "consulta": "entregador shopee",
+     "consulta": "shopee seller",
+     "valor": "6"
+    },
+    {
+     "consulta": "shopee entregador",
      "valor": "5"
     },
     {
@@ -751,11 +748,11 @@
      "valor": "3"
     },
     {
-     "consulta": "shopee site",
+     "consulta": "ponto de coleta shopee",
      "valor": "3"
     },
     {
-     "consulta": "ponto de coleta shopee",
+     "consulta": "site shopee",
      "valor": "3"
     },
     {
@@ -765,8 +762,8 @@
    ],
    "em_ascensao": [
     {
-     "consulta": "mercado li",
-     "valor": "Mais 400%"
+     "consulta": "maree instituição de pagamento ltda é da shopee",
+     "valor": "Mais 800%"
     },
     {
      "consulta": "bolsonaro da shopee",
@@ -778,22 +775,22 @@
     },
     {
      "consulta": "shopee seller login",
-     "valor": "Mais 60%"
+     "valor": "Mais 70%"
     },
     {
      "consulta": "tiktok seller",
      "valor": "Mais 50%"
     },
     {
-     "consulta": "seller shopee",
+     "consulta": "shopee seller",
      "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=shopee&hl=pt-BR"
   },
   "amazon": {
-   "variacao_90d_pct": 88,
-   "indice_atual": 100,
+   "variacao_90d_pct": 95,
+   "indice_atual": 72,
    "base_baixa": false,
    "principais": [
     {
@@ -802,26 +799,34 @@
     },
     {
      "consulta": "amazon prime",
-     "valor": "99"
+     "valor": "98"
     },
     {
      "consulta": "amazon video",
      "valor": "33"
     },
     {
+     "consulta": "prime video",
+     "valor": "29"
+    },
+    {
      "consulta": "amazon prime video",
      "valor": "28"
     },
     {
-     "consulta": "cupom amazon",
-     "valor": "22"
-    },
-    {
      "consulta": "amazon brasil",
-     "valor": "22"
+     "valor": "23"
     },
     {
-     "consulta": "kindle amazon",
+     "consulta": "cupom amazon",
+     "valor": "23"
+    },
+    {
+     "consulta": "amazon kindle",
+     "valor": "19"
+    },
+    {
+     "consulta": "kindle",
      "valor": "18"
     },
     {
@@ -830,14 +835,14 @@
     },
     {
      "consulta": "amazon livros",
-     "valor": "9"
-    },
-    {
-     "consulta": "site amazon",
-     "valor": "9"
+     "valor": "10"
     },
     {
      "consulta": "cartao amazon",
+     "valor": "9"
+    },
+    {
+     "consulta": "amazon site",
      "valor": "9"
     },
     {
@@ -847,59 +852,51 @@
     {
      "consulta": "cartão amazon",
      "valor": "7"
-    },
-    {
-     "consulta": "cupom desconto amazon",
-     "valor": "6"
-    },
-    {
-     "consulta": "amazon seller",
-     "valor": "6"
     }
    ],
    "em_ascensao": [
     {
      "consulta": "black friday amazon",
-     "valor": "Mais 1.100%"
+     "valor": "Mais 1.050%"
     },
     {
      "consulta": "amazon quase novo",
-     "valor": "Mais 110%"
-    },
-    {
-     "consulta": "ps5 amazon",
      "valor": "Mais 70%"
     },
     {
-     "consulta": "cartao amazon",
-     "valor": "Mais 40%"
+     "consulta": "ps5 amazon",
+     "valor": "Mais 60%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=amazon&hl=pt-BR"
   },
   "frete grátis": {
-   "variacao_90d_pct": 24,
+   "variacao_90d_pct": 35,
    "indice_atual": 78,
    "base_baixa": false,
    "principais": [
     {
-     "consulta": "mercado livre frete grátis",
+     "consulta": "frete grátis mercado livre",
      "valor": "100"
     },
     {
      "consulta": "cupom frete grátis",
-     "valor": "76"
+     "valor": "77"
     },
     {
-     "consulta": "frete grátis shopee",
-     "valor": "44"
+     "consulta": "shopee frete grátis",
+     "valor": "43"
+    },
+    {
+     "consulta": "cupom frete grátis mercado livre",
+     "valor": "19"
     },
     {
      "consulta": "frete grátis shein",
      "valor": "19"
     },
     {
-     "consulta": "cupom mercado livre frete grátis",
+     "consulta": "shein frete grátis",
      "valor": "19"
     },
     {
@@ -908,7 +905,7 @@
     },
     {
      "consulta": "frete grátis amazon",
-     "valor": "12"
+     "valor": "11"
     },
     {
      "consulta": "cupom de frete grátis mercado livre",
@@ -920,18 +917,14 @@
     },
     {
      "consulta": "cupom frete grátis shein",
-     "valor": "7"
+     "valor": "8"
     },
     {
      "consulta": "guarda roupa frete grátis",
      "valor": "6"
     },
     {
-     "consulta": "aliexpress cupom frete grátis",
-     "valor": "4"
-    },
-    {
-     "consulta": "promoção mercado livre frete grátis",
+     "consulta": "cupom frete grátis aliexpress",
      "valor": "4"
     },
     {
@@ -939,25 +932,25 @@
      "valor": "4"
     },
     {
-     "consulta": "cama box casal frete grátis",
-     "valor": "3"
+     "consulta": "promoção mercado livre frete grátis",
+     "valor": "4"
     }
    ],
    "em_ascensao": [
     {
-     "consulta": "como ter frete grátis no mercado livre",
+     "consulta": "tênis feminino mercado livre frete grátis",
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "tênis feminino mercado livre frete grátis",
-     "valor": "Aumento repentino"
+     "consulta": "cupom netshoes frete grátis",
+     "valor": "Mais 250%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=frete+gr%C3%A1tis&hl=pt-BR"
   },
   "pix": {
-   "variacao_90d_pct": -3,
-   "indice_atual": 27,
+   "variacao_90d_pct": -7,
+   "indice_atual": 29,
    "base_baixa": false,
    "principais": [
     {
@@ -966,47 +959,47 @@
     },
     {
      "consulta": "pix nubank",
-     "valor": "94"
+     "valor": "92"
     },
     {
      "consulta": "pix mei",
-     "valor": "90"
+     "valor": "85"
     },
     {
      "consulta": "qr code pix",
-     "valor": "36"
+     "valor": "34"
     },
     {
      "consulta": "pix parcelado",
-     "valor": "32"
+     "valor": "30"
     },
     {
      "consulta": "pix mei 5 mil",
-     "valor": "30"
-    },
-    {
-     "consulta": "bet pix",
-     "valor": "30"
-    },
-    {
-     "consulta": "pix no crédito",
      "valor": "29"
     },
     {
-     "consulta": "taxa pix",
-     "valor": "26"
+     "consulta": "bet pix",
+     "valor": "27"
+    },
+    {
+     "consulta": "pix no crédito",
+     "valor": "27"
     },
     {
      "consulta": "cassino pix",
      "valor": "26"
     },
     {
-     "consulta": "live pix",
-     "valor": "22"
+     "consulta": "taxa pix",
+     "valor": "25"
     },
     {
      "consulta": "pix fora do ar",
      "valor": "22"
+    },
+    {
+     "consulta": "live pix",
+     "valor": "20"
     },
     {
      "consulta": "pix para mei",
@@ -1014,11 +1007,11 @@
     },
     {
      "consulta": "quem criou o pix",
-     "valor": "17"
+     "valor": "16"
     },
     {
      "consulta": "pix caiu",
-     "valor": "15"
+     "valor": "14"
     }
    ],
    "em_ascensao": [
@@ -1039,10 +1032,6 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "pt pede pix de 13 reais",
-     "valor": "Aumento repentino"
-    },
-    {
      "consulta": "pt pede pix",
      "valor": "Aumento repentino"
     },
@@ -1052,42 +1041,46 @@
     },
     {
      "consulta": "lula pede pix de 13 reais",
-     "valor": "Mais 4.300%"
-    },
-    {
-     "consulta": "pix mei",
-     "valor": "Mais 1.450%"
+     "valor": "Mais 4.550%"
     },
     {
      "consulta": "como vai funcionar o pix mei",
-     "valor": "Mais 1.300%"
+     "valor": "Mais 3.950%"
+    },
+    {
+     "consulta": "pt pede pix de 13 reais",
+     "valor": "Mais 1.800%"
+    },
+    {
+     "consulta": "pix mei",
+     "valor": "Mais 1.600%"
     },
     {
      "consulta": "pix para mei",
-     "valor": "Mais 900%"
+     "valor": "Mais 1.050%"
     },
     {
      "consulta": "banco central instabilidade pix",
-     "valor": "Mais 600%"
+     "valor": "Mais 700%"
     },
     {
      "consulta": "pix do mei",
-     "valor": "Mais 600%"
+     "valor": "Mais 650%"
     },
     {
      "consulta": "nova regra pix",
-     "valor": "Mais 500%"
+     "valor": "Mais 550%"
     },
     {
-     "consulta": "bancos pix fora do ar",
+     "consulta": "pix da caixa fora do ar",
      "valor": "Mais 500%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=pix&hl=pt-BR"
   },
   "cupom de desconto": {
-   "variacao_90d_pct": 81,
-   "indice_atual": 100,
+   "variacao_90d_pct": 97,
+   "indice_atual": 76,
    "base_baixa": false,
    "principais": [
     {
@@ -1095,24 +1088,8 @@
      "valor": "100"
     },
     {
-     "consulta": "cupom mercado livre",
-     "valor": "100"
-    },
-    {
-     "consulta": "cupom desconto mercado livre",
-     "valor": "100"
-    },
-    {
-     "consulta": "cupom de desconto amazon",
-     "valor": "64"
-    },
-    {
-     "consulta": "cupom amazon",
-     "valor": "64"
-    },
-    {
-     "consulta": "cupom desconto amazon",
-     "valor": "64"
+     "consulta": "amazon cupom de desconto",
+     "valor": "66"
     },
     {
      "consulta": "cupom de desconto shopee",
@@ -1120,27 +1097,19 @@
     },
     {
      "consulta": "cupom de desconto mercado livre hoje",
-     "valor": "18"
-    },
-    {
-     "consulta": "cupom mercado livre hoje",
-     "valor": "18"
+     "valor": "19"
     },
     {
      "consulta": "cupom de desconto netshoes",
      "valor": "18"
     },
     {
-     "consulta": "cupom de desconto centauro",
-     "valor": "16"
-    },
-    {
      "consulta": "cupom de desconto magalu",
      "valor": "16"
     },
     {
-     "consulta": "cupom de desconto 99",
-     "valor": "15"
+     "consulta": "cupom de desconto centauro",
+     "valor": "16"
     },
     {
      "consulta": "cupom de desconto shein",
@@ -1149,51 +1118,67 @@
     {
      "consulta": "cupom de desconto renner",
      "valor": "14"
+    },
+    {
+     "consulta": "cupom de desconto 99",
+     "valor": "14"
+    },
+    {
+     "consulta": "cupom de desconto magazine luiza",
+     "valor": "14"
+    },
+    {
+     "consulta": "cupom de desconto nike",
+     "valor": "13"
+    },
+    {
+     "consulta": "cupom de desconto adidas",
+     "valor": "12"
+    },
+    {
+     "consulta": "cupom de desconto natura",
+     "valor": "12"
+    },
+    {
+     "consulta": "cupom de desconto pague menos",
+     "valor": "12"
     }
    ],
    "em_ascensao": [
     {
      "consulta": "cupom de desconto serasa",
-     "valor": "Mais 170%"
+     "valor": "Mais 180%"
+    },
+    {
+     "consulta": "cupom de desconto 99 food hoje",
+     "valor": "Mais 120%"
     },
     {
      "consulta": "cupom de desconto sephora",
      "valor": "Mais 110%"
     },
     {
-     "consulta": "cupom de desconto saint germain",
+     "consulta": "cupom de desconto stanley",
      "valor": "Mais 90%"
     },
     {
      "consulta": "cupom de desconto ferreira costa",
-     "valor": "Mais 80%"
+     "valor": "Mais 50%"
     },
     {
      "consulta": "cupom de desconto havaianas",
-     "valor": "Mais 80%"
-    },
-    {
-     "consulta": "cupom de desconto stanley",
-     "valor": "Mais 60%"
-    },
-    {
-     "consulta": "cupom de desconto 99 food hoje",
-     "valor": "Mais 60%"
+     "valor": "Mais 50%"
     },
     {
      "consulta": "cupom de desconto pneustore",
-     "valor": "Mais 60%"
-    },
-    {
-     "consulta": "cupom de desconto leroy merlin",
-     "valor": "Mais 40%"
+     "valor": "Mais 50%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=cupom+de+desconto&hl=pt-BR"
   },
   "black friday": {
-   "variacao_90d_pct": 4900,
-   "indice_atual": 100,
+   "variacao_90d_pct": 5775,
+   "indice_atual": 56,
    "base_baixa": false,
    "principais": [
     {
@@ -1202,59 +1187,59 @@
     },
     {
      "consulta": "dia black friday",
-     "valor": "65"
+     "valor": "66"
     },
     {
-     "consulta": "black friday é quando",
-     "valor": "42"
-    },
-    {
-     "consulta": "quando é a black friday",
-     "valor": "30"
+     "consulta": "quando é black friday",
+     "valor": "45"
     },
     {
      "consulta": "black friday brasil",
+     "valor": "29"
+    },
+    {
+     "consulta": "quando é a black friday",
      "valor": "28"
     },
     {
-     "consulta": "dia da black friday",
-     "valor": "22"
-    },
-    {
      "consulta": "promoção black friday",
-     "valor": "21"
+     "valor": "24"
     },
     {
-     "consulta": "black friday data",
-     "valor": "16"
+     "consulta": "dia da black friday",
+     "valor": "23"
+    },
+    {
+     "consulta": "ps5 black friday",
+     "valor": "18"
     },
     {
      "consulta": "ps5",
-     "valor": "16"
+     "valor": "17"
     },
     {
-     "consulta": "black friday ps5",
-     "valor": "16"
+     "consulta": "data black friday",
+     "valor": "17"
     },
     {
      "consulta": "black friday amazon",
-     "valor": "15"
+     "valor": "16"
     },
     {
-     "consulta": "quando começa black friday",
+     "consulta": "amazon black friday",
+     "valor": "16"
+    },
+    {
+     "consulta": "black friday começa quando",
      "valor": "15"
     },
     {
      "consulta": "que dia é black friday",
+     "valor": "15"
+    },
+    {
+     "consulta": "iphone black friday",
      "valor": "14"
-    },
-    {
-     "consulta": "black friday iphone",
-     "valor": "13"
-    },
-    {
-     "consulta": "qual dia da black friday",
-     "valor": "11"
     }
    ],
    "em_ascensao": [
@@ -1263,11 +1248,7 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "pandora",
-     "valor": "Aumento repentino"
-    },
-    {
-     "consulta": "que dia e a black friday no brasil",
+     "consulta": "qual dia da black friday 2026",
      "valor": "Aumento repentino"
     },
     {
@@ -1275,7 +1256,11 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "black friday nintendo eshop",
+     "consulta": "qual o dia da black friday 2026",
+     "valor": "Aumento repentino"
+    },
+    {
+     "consulta": "samsung galaxy s25 ultra black friday",
      "valor": "Aumento repentino"
     },
     {
@@ -1283,47 +1268,47 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "dia oficial da black friday",
-     "valor": "Mais 1.050%"
-    },
-    {
-     "consulta": "dia da black friday no brasil",
-     "valor": "Mais 650%"
-    },
-    {
-     "consulta": "quando começa a black friday no brasil",
-     "valor": "Mais 600%"
+     "consulta": "pandora",
+     "valor": "Mais 1.150%"
     },
     {
      "consulta": "quando comeca a black friday",
-     "valor": "Mais 550%"
+     "valor": "Mais 650%"
     },
     {
-     "consulta": "vivara life",
-     "valor": "Mais 450%"
+     "consulta": "dia oficial da black friday",
+     "valor": "Mais 600%"
+    },
+    {
+     "consulta": "que dia e a black friday no brasil",
+     "valor": "Mais 600%"
+    },
+    {
+     "consulta": "tim black friday ps5",
+     "valor": "Mais 600%"
     },
     {
      "consulta": "vivara life black friday",
-     "valor": "Mais 450%"
+     "valor": "Mais 500%"
     },
     {
-     "consulta": "black friday zara",
-     "valor": "Mais 450%"
+     "consulta": "que dia é a black friday no brasil",
+     "valor": "Mais 500%"
+    },
+    {
+     "consulta": "dia da black friday no brasil",
+     "valor": "Mais 400%"
     },
     {
      "consulta": "qual dia da black friday",
      "valor": "Mais 400%"
-    },
-    {
-     "consulta": "dia da black friday",
-     "valor": "Mais 300%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=black+friday&hl=pt-BR"
   },
   "checkout": {
-   "variacao_90d_pct": 8,
-   "indice_atual": 14,
+   "variacao_90d_pct": 29,
+   "indice_atual": 12,
    "base_baixa": false,
    "principais": [
     {
@@ -1331,60 +1316,60 @@
      "valor": "100"
     },
     {
+     "consulta": "git checkout",
+     "valor": "93"
+    },
+    {
+     "consulta": "self checkout",
+     "valor": "91"
+    },
+    {
      "consulta": "checkin checkout",
      "valor": "91"
     },
     {
-     "consulta": "self checkout",
-     "valor": "87"
-    },
-    {
-     "consulta": "git checkout",
-     "valor": "86"
-    },
-    {
-     "consulta": "checkout o que é",
-     "valor": "75"
+     "consulta": "o que é checkout",
+     "valor": "78"
     },
     {
      "consulta": "checkin e checkout",
-     "valor": "73"
+     "valor": "76"
     },
     {
      "consulta": "checkout mercado pago",
-     "valor": "48"
+     "valor": "54"
     },
     {
      "consulta": "checkout de pagamento",
-     "valor": "43"
+     "valor": "46"
+    },
+    {
+     "consulta": "check in",
+     "valor": "44"
     },
     {
      "consulta": "checkout transparente",
+     "valor": "39"
+    },
+    {
+     "consulta": "stripe checkout",
+     "valor": "37"
+    },
+    {
+     "consulta": "stripe",
      "valor": "36"
     },
     {
      "consulta": "late checkout",
-     "valor": "34"
+     "valor": "36"
     },
     {
-     "consulta": "checkout stripe",
-     "valor": "34"
+     "consulta": "check out",
+     "valor": "31"
     },
     {
      "consulta": "samsung checkout",
-     "valor": "28"
-    },
-    {
-     "consulta": "checkout supermercado",
-     "valor": "25"
-    },
-    {
-     "consulta": "checkout rh",
-     "valor": "16"
-    },
-    {
-     "consulta": "checkout ou check out",
-     "valor": "13"
+     "valor": "30"
     }
    ],
    "em_ascensao": [
@@ -1393,16 +1378,20 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "git checkout b",
-     "valor": "Mais 120%"
-    },
-    {
      "consulta": "git switch vs checkout",
-     "valor": "Mais 110%"
+     "valor": "Mais 130%"
     },
     {
-     "consulta": "checkout ou check out",
-     "valor": "Mais 70%"
+     "consulta": "o'que é checkout",
+     "valor": "Mais 130%"
+    },
+    {
+     "consulta": "git checkout b",
+     "valor": "Mais 100%"
+    },
+    {
+     "consulta": "3s checkout",
+     "valor": "Mais 100%"
     },
     {
      "consulta": "checkin e checkout",
@@ -1410,18 +1399,14 @@
     },
     {
      "consulta": "checkin checkout",
-     "valor": "Mais 50%"
-    },
-    {
-     "consulta": "self checkout",
-     "valor": "Mais 50%"
+     "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=checkout&hl=pt-BR"
   },
   "taxa de conversão": {
-   "variacao_90d_pct": 140,
-   "indice_atual": 58,
+   "variacao_90d_pct": -9,
+   "indice_atual": 21,
    "base_baixa": true,
    "principais": [
     {
@@ -1429,20 +1414,24 @@
      "valor": "100"
     },
     {
-     "consulta": "taxa de conversão de vendas",
-     "valor": "36"
-    },
-    {
-     "consulta": "como calcular taxa de conversão",
-     "valor": "11"
-    },
-    {
-     "consulta": "a minimização do tempo e custo de uma reação química bem como o aumento na sua taxa de conversão",
-     "valor": "8"
+     "consulta": "wise",
+     "valor": "22"
     },
     {
      "consulta": "conversão de taxa anual para mensal",
-     "valor": "7"
+     "valor": "9"
+    },
+    {
+     "consulta": "como calcular taxa de conversão",
+     "valor": "9"
+    },
+    {
+     "consulta": "revolut",
+     "valor": "5"
+    },
+    {
+     "consulta": "a minimização do tempo e custo de uma reação química bem como o aumento na sua taxa de conversão",
+     "valor": "4"
     }
    ],
    "em_ascensao": [
@@ -1454,13 +1443,21 @@
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=taxa+de+convers%C3%A3o&hl=pt-BR"
   },
   "tiktok shop": {
-   "variacao_90d_pct": -4,
-   "indice_atual": 49,
+   "variacao_90d_pct": 2,
+   "indice_atual": 51,
    "base_baixa": false,
    "principais": [
     {
-     "consulta": "seller tiktok shop",
+     "consulta": "tiktok shop seller",
      "valor": "100"
+    },
+    {
+     "consulta": "tiktok seller",
+     "valor": "99"
+    },
+    {
+     "consulta": "shopee",
+     "valor": "71"
     },
     {
      "consulta": "vender no tiktok shop",
@@ -1468,11 +1465,7 @@
     },
     {
      "consulta": "tiktok shop brasil",
-     "valor": "55"
-    },
-    {
-     "consulta": "tiktok shop live",
-     "valor": "51"
+     "valor": "57"
     },
     {
      "consulta": "tik tok",
@@ -1483,11 +1476,7 @@
      "valor": "45"
     },
     {
-     "consulta": "afiliado tiktok shop",
-     "valor": "42"
-    },
-    {
-     "consulta": "cupom tiktok shop",
+     "consulta": "tiktok shop vendedor",
      "valor": "39"
     },
     {
@@ -1495,61 +1484,65 @@
      "valor": "38"
     },
     {
-     "consulta": "tiktok shop vendedor",
-     "valor": "38"
-    },
-    {
      "consulta": "entrega tiktok shop",
      "valor": "35"
     },
     {
-     "consulta": "seller center tiktok shop",
-     "valor": "33"
+     "consulta": "tiktok seller center",
+     "valor": "34"
     },
     {
-     "consulta": "tiktok shop login",
+     "consulta": "seller center tiktok shop",
+     "valor": "34"
+    },
+    {
+     "consulta": "shop tiktok streamer",
      "valor": "25"
     },
     {
      "consulta": "tiktok login",
-     "valor": "24"
+     "valor": "25"
     },
     {
-     "consulta": "shop tiktok streamer",
+     "consulta": "tiktok shop login",
      "valor": "24"
     }
    ],
    "em_ascensao": [
     {
      "consulta": "código promocional tiktok shop hoje",
-     "valor": "Mais 250%"
+     "valor": "Mais 90%"
     },
     {
-     "consulta": "cupom frete gratis tiktok shop",
-     "valor": "Mais 80%"
-    },
-    {
-     "consulta": "tiktok shop streamer desktop",
+     "consulta": "shein brasil",
      "valor": "Mais 60%"
+    },
+    {
+     "consulta": "rastrear pedido tiktok shop j&t express",
+     "valor": "Mais 50%"
     },
     {
      "consulta": "comprar conta tiktok shop",
      "valor": "Mais 50%"
     },
     {
-     "consulta": "kalodata tiktok shop",
+     "consulta": "tiktok shop streamer desktop",
      "valor": "Mais 40%"
     },
     {
-     "consulta": "como ser afiliado no tiktok shop",
+     "consulta": "tiktok coins",
+     "valor": "Mais 40%"
+    },
+    {
+     "consulta": "kalodata tiktok shop",
      "valor": "Mais 40%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=tiktok+shop&hl=pt-BR"
   },
   "vender online": {
-   "variacao_90d_pct": -10,
-   "indice_atual": 54,
+   "variacao_90d_pct": 0,
+   "indice_atual": 55,
    "base_baixa": false,
    "principais": [
     {
@@ -1562,22 +1555,22 @@
     },
     {
      "consulta": "vender produtos online",
-     "valor": "20"
+     "valor": "19"
     },
     {
      "consulta": "vender curso online",
-     "valor": "9"
+     "valor": "10"
     },
     {
      "consulta": "vender cursos online",
-     "valor": "7"
-    },
-    {
-     "consulta": "vender online sem estoque",
-     "valor": "5"
+     "valor": "6"
     },
     {
      "consulta": "vender carro online",
+     "valor": "6"
+    },
+    {
+     "consulta": "vender online sem estoque",
      "valor": "5"
     },
     {
@@ -1585,32 +1578,24 @@
      "valor": "5"
     },
     {
-     "consulta": "serie como vender drogas online",
+     "consulta": "como vender online sem estoque",
      "valor": "4"
     },
     {
-     "consulta": "como vender curso online",
-     "valor": "3"
-    },
-    {
-     "consulta": "como vender online sem estoque",
-     "valor": "3"
+     "consulta": "serie como vender drogas online",
+     "valor": "4"
     },
     {
      "consulta": "como vender drogas online vai ter 5 temporada",
      "valor": "3"
     },
     {
-     "consulta": "como vender cursos online",
-     "valor": "3"
-    },
-    {
-     "consulta": "elenco como vender drogas online",
-     "valor": "2"
+     "consulta": "vender vr online",
+     "valor": "1"
     },
     {
      "consulta": "como vender drogas online rapido serie",
-     "valor": "1"
+     "valor": "<1"
     }
    ],
    "em_ascensao": [
@@ -1619,8 +1604,8 @@
      "valor": "Aumento repentino"
     },
     {
-     "consulta": "como vender drogas online serie elenco",
-     "valor": "Mais 3.300%"
+     "consulta": "vender vr online",
+     "valor": "Mais 250%"
     }
    ],
    "link": "https://trends.google.com/trends/explore?date=today+3-m&geo=BR&q=vender+online&hl=pt-BR"
